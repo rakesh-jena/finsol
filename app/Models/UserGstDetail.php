@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserGstDetail extends Authenticatable
 {
@@ -19,15 +19,16 @@ class UserGstDetail extends Authenticatable
         'trade_name',
         'pancard_img',
         'aadharcard_img',
-        'voterid_or_passport_img', 
-        'drivinglicence_img', 
-        'userphoto_img', 
+        'voterid_or_passport_img',
+        'drivinglicence_img',
+        'userphoto_img',
         'rentalagreement_img',
-        'electricitybill_img', 
-        'municipallandreceipt_img', 
+        'electricitybill_img',
+        'municipallandreceipt_img',
         'aadharpan_landlord_img',
         'aoa_img',
         'moa_img',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -38,7 +39,7 @@ class UserGstDetail extends Authenticatable
         'user_note',
         'gst_id',
         'gst_password',
-        'gst_number'
+        'gst_number',
     ];
 
 }

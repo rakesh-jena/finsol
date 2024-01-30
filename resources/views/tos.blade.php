@@ -99,14 +99,10 @@
                             </li>
                         @endauth
 
-
-
-
                     </ul>
                 </div>
             </div>
         </nav>
-
 
         <style>
             [data-custom-class='body'],
@@ -307,7 +303,7 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">These
                         accessing the Services, you have read, understood, and agreed to be bound by all of these Legal
                         Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM
                         USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.<bdt class="block-component"></bdt>
-                        </span></div>
+                    </span></div>
                 <div class="MsoNormal" style="line-height: 1;"><br></div>
                 <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
                         style="font-size:11.0pt;line-height:115%;font-family:Arial;
@@ -542,7 +538,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">
                 <div class="MsoNormal" style="line-height: 1.5;"><br></div>
                 <div class="MsoNormal" style="line-height: 1.5;"><br></div>
                 <div class="MsoNormal" data-custom-class="heading_1" id="services" style="line-height: 1.5;">
-                    <strong><span style="font-size: 19px;">1. OUR SERVICES</span></strong></div>
+                    <strong><span style="font-size: 19px;">1. OUR SERVICES</span></strong>
+                </div>
                 <div class="MsoNormal" style="line-height: 1.5;"><br></div>
                 <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
                         style="font-size: 15px;">The information provided when using the Services is not intended for
@@ -708,7 +705,7 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>Your
                             class="statement-end-if-in-editor"></bdt> includes our use of your name, company name, and
                         franchise name, as applicable, and any of the trademarks, service marks, trade names, logos, and
                         personal and commercial images you provide.<bdt class="statement-end-if-in-editor"></bdt>
-                        </span></div>
+                    </span></div>
                 <div class="MsoNormal" style="line-height: 1.5;"><br></div>
                 <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
                         style="font-size: 15px;"><strong>You are responsible for what you post or upload:</strong> By
@@ -733,7 +730,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>Your
                     <li class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
                             style="font-size: 15px;">to the extent permissible by applicable law, waive any and all
                             moral rights to any such Submission<bdt class="block-component"></bdt> and/or Contribution
-                            <bdt class="statement-end-if-in-editor"></bdt>;</span></li>
+                            <bdt class="statement-end-if-in-editor"></bdt>;
+                        </span></li>
                     <li class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
                             style="font-size: 15px;">warrant that any such Submission<bdt class="block-component">
                             </bdt> and/or Contributions<bdt class="statement-end-if-in-editor"></bdt> are original to
@@ -742,7 +740,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>Your
                                 class="block-component"></bdt> and/or Contributions<bdt
                                 class="statement-end-if-in-editor"></bdt> and that you have full authority to grant us
                             the above-mentioned rights in relation to your Submissions<bdt class="block-component">
-                            </bdt> and/or Contributions<bdt class="statement-end-if-in-editor"></bdt>; and</span></li>
+                            </bdt> and/or Contributions<bdt class="statement-end-if-in-editor"></bdt>; and
+                        </span></li>
                     <li class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
                             style="font-size: 15px;">warrant and represent that your Submissions<bdt
                                 class="block-component"></bdt> and/or Contributions<bdt
@@ -922,19 +921,22 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                         style="font-size:11.0pt;line-height:115%;font-family:Arial;
 Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">
                         <bdt class="forloop-component"></bdt>-  <bdt class="question">Visa</bdt>
-                    </span></div>
+                    </span>
+                </div>
                 <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; margin-left: 20px;">
                     <span
                         style="font-size:11.0pt;line-height:115%;font-family:Arial;
 Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">
                         <bdt class="forloop-component"></bdt>-  <bdt class="question">Mastercard</bdt>
-                    </span></div>
+                    </span>
+                </div>
                 <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; margin-left: 20px;">
                     <span
                         style="font-size:11.0pt;line-height:115%;font-family:Arial;
 Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">
                         <bdt class="forloop-component"></bdt>
-                    </span></div>
+                    </span>
+                </div>
                 <div class="MsoNormal" style="line-height: 1;"><span
                         style="font-size:11.0pt;line-height:115%;font-family:Arial;
 Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><br></span>
@@ -949,7 +951,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">You
                         price of purchases as deemed required by us. We may change prices at any time. All payments
                         shall be </span><span
                         style="font-size: 15px; line-height: 115%; font-family: Arial; color: rgb(89, 89, 89);">in
-                        <bdt class="question">INR</bdt>.</span></div>
+                        <bdt class="question">INR</bdt>.
+                    </span></div>
             </div>
             <div align="center" style="line-height: 1.5;"><br></div>
             <div align="center" style="text-align: left;">
@@ -997,7 +1000,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                 </div>
                 <div class="MsoNormal" style="line-height: 1.5;"><br></div>
                 <div class="MsoNormal" data-custom-class="heading_1" id="cancel" style="line-height: 1.5;">
-                    <span style="font-size: 19px;"><strong>6. CANCELLATION</strong></span></div>
+                    <span style="font-size: 19px;"><strong>6. CANCELLATION</strong></span>
+                </div>
                 <div class="MsoNormal" style="line-height: 1.5;"><br></div>
                 <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;">
                     <bdt class="block-component"><span style="font-size: 15px;"></bdt>
@@ -1257,7 +1261,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                                                         unsolicited email, or creating user accounts by automated means
                                                         or under false <bdt class="block-component"></bdt>pretenses
                                                         <bdt class="statement-end-if-in-editor"></bdt>
-                                                        .</span></span></span></span></span></li>
+                                                        .
+                                                    </span></span></span></span></span></li>
                                 <li class="MsoNormal" data-custom-class="body_text"
                                     style="line-height: 1.5; text-align: left;"><span style="font-size: 15px;"><span
                                             style="line-height: 16.8667px; color: rgb(89, 89, 89);"><span
@@ -1268,7 +1273,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                                                         otherwise use the Services and/or the Content for any
                                                         revenue-generating <bdt class="block-component"></bdt>endeavor
                                                         <bdt class="statement-end-if-in-editor"></bdt> or commercial
-                                                        enterprise.</span><span
+                                                        enterprise.
+                                                    </span><span
                                                         style="font-size: 11pt; line-height: 16.8667px; color: rgb(89, 89, 89);font-family: sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: -29.4px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; color: rgb(89, 89, 89);">
                                                         <bdt class="forloop-component"></bdt>
                                                     </span></span></span></span></span></li>
@@ -1418,7 +1424,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                                     <span style="font-size: 11pt; line-height: 16.8667px; color: rgb(89, 89, 89);">Any
                                         use of the Services in violation of the foregoing violates these Legal Terms and
                                         may result in, among other things, termination or suspension of your rights to
-                                        use the Services.</span></div>
+                                        use the Services.</span>
+                                </div>
                             </bdt>
                         </bdt>
                     </bdt>
@@ -1435,7 +1442,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                                                             style="line-height: 115%; font-family: Arial; font-size: 19px;"><strong><span
                                                                     style="line-height: 115%; font-family: Arial; font-size: 19px;">9.</span></strong></span></strong></span> </strong>CONTRIBUTION
                                             <bdt class="block-component"></bdt>LICENSE<bdt
-                                                class="statement-end-if-in-editor"></bdt></span></strong></div>
+                                                class="statement-end-if-in-editor"></bdt>
+                                        </span></strong></div>
                             </bdt>
                         </bdt>
                     </bdt>
@@ -1475,7 +1483,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                                                 class="block-component"></bdt>authorize sublicenses<bdt
                                                 class="statement-end-if-in-editor"></bdt> of the foregoing. The use
                                             and distribution may occur in any media formats and through any media
-                                            channels.</span></div>
+                                            channels.</span>
+                                </div>
                             </bdt>
                         </bdt>
                     </bdt>
@@ -1495,7 +1504,9 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                                         trademarks, service marks, trade names, logos, and personal and commercial
                                         images you provide. You waive all moral rights in your Contributions, and you
                                         warrant that moral rights have not otherwise been asserted in your
-                                        Contributions.</span></div>
+                                        Contributions.
+                                    </span>
+                                </div>
                             </bdt>
                         </bdt>
                     </bdt>
@@ -1514,7 +1525,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                                         on the Services. You are solely responsible for your Contributions to the
                                         Services and you expressly agree to exonerate us from any and all responsibility
                                         and to refrain from any legal action against us regarding your
-                                        Contributions.</span></div>
+                                        Contributions.</span>
+                                </div>
                             </bdt>
                         </bdt>
                     </bdt>
@@ -1531,7 +1543,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                                         re-categorize<bdt class="statement-end-if-in-editor"></bdt> any Contributions
                                         to place them in more appropriate locations on the Services; and (3) to
                                         pre-screen or delete any Contributions at any time and for any reason, without
-                                        notice. We have no obligation to monitor your Contributions.</span></div>
+                                        notice. We have no obligation to monitor your Contributions.</span>
+                                </div>
                             </bdt>
                         </bdt>
                     </bdt>
@@ -1583,7 +1596,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                 <strong><span style="line-height: 24.5333px; font-size: 19px;"><strong><span
                                 style="line-height: 115%; font-family: Arial; font-size: 19px;"><strong><span
                                         style="line-height: 115%; font-family: Arial; font-size: 19px;">10.</span></strong></span></strong> </span>THIRD-PARTY
-                    WEBSITES AND CONTENT</strong></div>
+                    WEBSITES AND CONTENT</strong>
+            </div>
             <div class="MsoNormal" style="line-height: 1.5;"><br></div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
                     style="font-size: 11pt; line-height: 16.8667px; color: rgb(89, 89, 89);">The Services may contain
@@ -1637,7 +1651,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                                 style="line-height: 24.5333px; font-size: 19px;"><strong><span
                                         style="line-height: 115%; font-family: Arial; font-size: 19px;"><strong><span
                                                 style="line-height: 115%; font-family: Arial; font-size: 19px;">11.</span></strong></span></strong></span> </strong>SERVICES
-                        MANAGEMENT</span></strong></div>
+                        MANAGEMENT</span></strong>
+            </div>
             <div class="MsoNormal" style="line-height: 1.5;"><br></div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;">We reserve the right,
                 but not the obligation, to: (1) monitor the Services for violations of these Legal Terms; (2) take
@@ -1662,7 +1677,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                 <strong><span style="line-height: 24.5333px; font-size: 19px;"><strong><span
                                 style="line-height: 115%; font-family: Arial; font-size: 19px;"><strong><span
                                         style="line-height: 115%; font-family: Arial; font-size: 19px;">12.</span></strong></span></strong> </span>PRIVACY
-                    POLICY</strong></div>
+                    POLICY</strong>
+            </div>
             <div class="MsoNormal" style="line-height: 1.5;"><br></div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
                     style="font-size: 11pt; line-height: 16.8667px; color: rgb(89, 89, 89);">We care about data
@@ -1799,7 +1815,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                     change, modify, or remove the contents of the Services at any time or for any reason at our sole
                     discretion without notice. However, we have no obligation to update any information on our Services.
                     <bdt class="block-component"></bdt> We will not be liable to you or any third party for any
-                    modification, price change, suspension, or discontinuance of the Services.</span></div>
+                    modification, price change, suspension, or discontinuance of the Services.
+                </span></div>
             <div class="MsoNormal" style="line-height: 1.5; text-align: left;"><br></div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; text-align: left;"><span
                     style="font-size: 11pt; line-height: 16.8667px; color: rgb(89, 89, 89);">We cannot guarantee the
@@ -1858,7 +1875,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                 <bdt class="block-component"></bdt>
             </div>
             <div class="MsoNormal" data-custom-class="heading_2" style="line-height: 1.5; text-align: left;">
-                <strong>Informal Negotiations</strong></div>
+                <strong>Informal Negotiations</strong>
+            </div>
             <div class="MsoNormal" style="line-height: 1.5; text-align: left;"><br></div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; text-align: left;"><span
                     style="font-size: 15px;">To expedite resolution and control the cost of any dispute, controversy,
@@ -1868,13 +1886,15 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
                     <bdt class="statement-end-if-in-editor"></bdt>), the Parties agree to first attempt to negotiate
                     any Dispute (except those Disputes expressly provided below) informally for at least <bdt
                         class="question">one hundred eighty (180)</bdt> days before initiating arbitration. Such
-                    informal negotiations commence upon written notice from one Party to the other Party.</span></div>
+                    informal negotiations commence upon written notice from one Party to the other Party.
+                </span></div>
             <div class="MsoNormal" style="line-height: 1.5; text-align: left;"><br></div>
             <div class="MsoNormal" style="line-height: 1.5; text-align: left;">
                 <bdt class="statement-end-if-in-editor"></bdt>
             </div>
             <div class="MsoNormal" data-custom-class="heading_2" style="line-height: 1.5; text-align: left;">
-                <strong>Binding Arbitration</strong></div>
+                <strong>Binding Arbitration</strong>
+            </div>
             <div class="MsoNormal" style="line-height: 1.5; text-align: left;"><br></div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; text-align: left;">
                 <bdt class="block-component"><span style="font-size: 15px;"></bdt>
@@ -1902,7 +1922,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We
             </div>
             <div class="MsoNormal" style="line-height: 1.5; text-align: left;"><br></div>
             <div class="MsoNormal" data-custom-class="heading_2" style="line-height: 1.5; text-align: left;">
-                <strong>Restrictions</strong></div>
+                <strong>Restrictions</strong>
+            </div>
             <div class="MsoNormal" style="line-height: 1.5; text-align: left;"><br></div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; text-align: left;">The
                 Parties agree that any arbitration shall be limited to the Dispute between the Parties individually. To
@@ -2226,19 +2247,22 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">In
                         style="font-size:11.0pt;line-height:115%;font-family:Arial;
 Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>
                             <bdt class="block-component"></bdt>
-                        </strong></span></strong></div>
+                        </strong></span></strong>
+            </div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; text-align: left;">
                 <strong><span
                         style="font-size:11.0pt;line-height:115%;font-family:Arial;
 Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>
                             <bdt class="block-component"></bdt>
-                        </strong></span></strong></span></strong></div>
+                        </strong></span></strong></span></strong>
+            </div>
             <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5; text-align: left;">
                 <strong><span
                         style="font-size:11.0pt;line-height:115%;font-family:Arial;
 Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>
                             <bdt class="question">contact@sampurnasuvidhakendra.com</bdt>
-                        </strong></span></strong></div>
+                        </strong></span></strong>
+            </div>
         </div>
         </div>
         <style>
@@ -2260,15 +2284,11 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>
         </style>
         </div>
 
-
         </div>
-
 
     </main><!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
-
-
 
     <!-- ===============================================-->
     <!--    JavaScripts-->
@@ -2285,10 +2305,6 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>
     <script src="{{ asset('vendors/list.js/list.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.js') }}"></script>
 
-
 </body>
-
-
-
 
 </html>

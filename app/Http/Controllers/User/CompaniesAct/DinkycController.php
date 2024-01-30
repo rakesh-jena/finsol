@@ -5,6 +5,7 @@ use App\Helpers\Helper as Helper;
 use App\Http\Controllers\Controller;
 use App\Models\CompaniesAct\UserDinkycDetail;
 use App\Models\Documents;
+use App\Models\PaymentValue;
 use Illuminate\Http\Request;
 
 class DinkycController extends Controller
@@ -30,8 +31,9 @@ class DinkycController extends Controller
             }
             return redirect('/dinkyc/register')->with('success', $msg);
         }
-        
+
         $data['dinkycimages'] = Documents::where('for_multiple', 'DINKYC')->get();
+        $data['amount'] = PaymentValue::where('id', 29)->first()->value;
         return view('user.pages.companiesact.dinkycform')->with($data);
     }
 
@@ -46,11 +48,11 @@ class DinkycController extends Controller
         $data['name_of_company'] = $request['name_of_company'];
         $data['mobile_number'] = $request['mobile_number'];
         $insert_data = UserDinkycDetail::Create($data);
-        
+
         if (isset($insert_data->id) && !empty($insert_data->id)) {
             $data['insert_id'] = $insert_data->id;
             $data['payment_purpose'] = 'Payment for DINKYC Register';
-            $data['payment_amount'] = 10;
+            $data['payment_amount'] = PaymentValue::where('id', 29)->first()->value;
             $data['name_of_pan'] = $data['name_of_company'];
             $data['type'] = 'DINKYC';
             $data['route'] = 'dinkyc.register';

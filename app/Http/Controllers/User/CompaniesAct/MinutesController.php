@@ -5,6 +5,7 @@ use App\Helpers\Helper as Helper;
 use App\Http\Controllers\Controller;
 use App\Models\CompaniesAct\UserMinutesDetail;
 use App\Models\Documents;
+use App\Models\PaymentValue;
 use Illuminate\Http\Request;
 
 class MinutesController extends Controller
@@ -32,6 +33,7 @@ class MinutesController extends Controller
         }
 
         $data['minutesimages'] = Documents::where('for_multiple', 'MINUTES')->get();
+        $data['amount'] = PaymentValue::where('id', 25)->first()->value;
         return view('user.pages.companiesact.minutesform')->with($data);
     }
 
@@ -51,7 +53,7 @@ class MinutesController extends Controller
             $data['insert_id'] = $insert_data->id;
             $data['payment_purpose'] = 'Payment for Minutes Register';
             $data['name_of_pan'] = $data['name_of_company'];
-            $data['payment_amount'] = 10;
+            $data['payment_amount'] = PaymentValue::where('id', 25)->first()->value;
             $data['type'] = 'Minutes';
             $data['route'] = 'minutes.register';
             $payment_Req = Helper::createInstaMojoOrder($data);

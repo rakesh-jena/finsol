@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserGstUploadDocument extends Authenticatable
 {
     use Notifiable;
 
     protected $table = 'users_gst_upload_documents';
- 
+
     protected $fillable = [
         'user_id',
         'gst_id',
@@ -18,7 +18,7 @@ class UserGstUploadDocument extends Authenticatable
         'doc_type',
         'year',
         'month',
-        'quarter'
+        'quarter',
     ];
 
 }

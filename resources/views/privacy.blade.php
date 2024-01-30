@@ -99,14 +99,10 @@
                             </li>
                         @endauth
 
-
-
-
                     </ul>
                 </div>
             </div>
         </nav>
-
 
         <style>
             [data-custom-class='body'],
@@ -637,7 +633,7 @@
                                                         <bdt class="block-component"></bdt>
                                                     </bdt>
                                                 </span></span></span></span></bdt>
-                                    </span></span></span></span></span></span></span></span><span
+                                </span></span></span></span></span></span></span></span><span
                             style="font-size: 15px;"><span data-custom-class="body_text">
                                 <bdt class="block-component"></bdt>
                             </span></span></div>
@@ -824,7 +820,7 @@
                                                             time. For more information, see <bdt
                                                                 class="block-component"></bdt>"<bdt
                                                                 class="statement-end-if-in-editor"></bdt>
-                                                            </span></span><a href="#privacyrights"><span
+                                                        </span></span><a href="#privacyrights"><span
                                                             data-custom-class="link"><span
                                                                 style="font-size: 15px;"><span
                                                                     data-custom-class="link">WHAT ARE YOUR PRIVACY
@@ -955,7 +951,7 @@
                                                                                                         rights.<bdt
                                                                                                             class="statement-end-if-in-editor">
                                                                                                         </bdt>
-                                                                                                        </span></span>
+                                                                                                    </span></span>
                                                                                             </li>
                                                                                         </ul>
                                                                                         <div style="line-height: 1.5;">
@@ -996,7 +992,8 @@
                                                                                             </div>
                                                                                             <div
                                                                                                 style="line-height: 1.5;">
-                                                                                                <br></div>
+                                                                                                <br>
+                                                                                            </div>
                                                                                             <div id="whoshare"
                                                                                                 style="line-height: 1.5;">
                                                                                                 <span
@@ -1020,7 +1017,8 @@
                                                                                             </div>
                                                                                             <div
                                                                                                 style="line-height: 1.5;">
-                                                                                                <br></div>
+                                                                                                <br>
+                                                                                            </div>
                                                                                             <div
                                                                                                 style="line-height: 1.5;">
                                                                                                 <span
@@ -1044,7 +1042,8 @@
                                                                                                                     class="block-component">
                                                                                                                 </bdt>
                                                                                                                 third
-                                                                                                                parties.</em></span></span></span>
+                                                                                                                parties.
+                                                                                                            </em></span></span></span>
                                                                                             </div>
                                                                                             <div
                                                                                                 style="line-height: 1.5;">
@@ -1054,10 +1053,12 @@
                                                                                                             data-custom-class="body_text">
                                                                                                             <bdt
                                                                                                                 class="block-component">
-                                                                                                        </span></div>
+                                                                                                        </span>
+                                                                                            </div>
                                                                                             <div
                                                                                                 style="line-height: 1.5;">
-                                                                                                <br></div>
+                                                                                                <br>
+                                                                                            </div>
                                                                                             <div
                                                                                                 style="line-height: 1.5;">
                                                                                                 <span
@@ -1070,7 +1071,8 @@
                                                                                                         personal
                                                                                                         information in
                                                                                                         the following
-                                                                                                        situations:</span></span>
+                                                                                                        situations:
+                                                                                                    </span></span>
                                                                                             </div>
                                                                                             <ul>
                                                                                                 <li
@@ -1257,7 +1259,8 @@
                                                                                                                                     otherwise
                                                                                                                                     required
                                                                                                                                     by
-                                                                                                                                    law.</em></span></span></span>
+                                                                                                                                    law.
+                                                                                                                                </em></span></span></span>
                                                                                                                 </div>
                                                                                                                 <div
                                                                                                                     style="line-height: 1.5;">
@@ -1441,7 +1444,8 @@
                                                                                                                                     <bdt
                                                                                                                                         class="block-component">
                                                                                                                                     </bdt>
-                                                                                                                                </span></span></span></span>
+                                                                                                                                </span>
+                                                                                                                            </span></span></span>
                                                                                                                 </div>
                                                                                                                 <div
                                                                                                                     style="line-height: 1.5;">
@@ -1496,7 +1500,8 @@
                                                                                                                                     and
                                                                                                                                     technical
                                                                                                                                     security
-                                                                                                                                    measures.</em></span></span></span>
+                                                                                                                                    measures.
+                                                                                                                                </em></span></span></span>
                                                                                                                 </div>
                                                                                                                 <div
                                                                                                                     style="line-height: 1.5;">
@@ -1644,7 +1649,8 @@
                                                                                                                                         <bdt
                                                                                                                                             class="block-component">
                                                                                                                                         </bdt>
-                                                                                                                                    </span></span></span></span></span>
+                                                                                                                                    </span></span>
+                                                                                                                            </span></span></span>
                                                                                                                 </div>
                                                                                                                 <div
                                                                                                                     style="line-height: 1.5;">
@@ -1699,7 +1705,8 @@
                                                                                                                                     <bdt
                                                                                                                                         class="else-block">
                                                                                                                                     </bdt>
-                                                                                                                                    .</em>
+                                                                                                                                    .
+                                                                                                                                </em>
                                                                                                                                 <bdt
                                                                                                                                     class="block-component">
                                                                                                                                 </bdt>
@@ -1974,7 +1981,7 @@
                                                                                                                                 <bdt
                                                                                                                                     class="statement-end-if-in-editor">
                                                                                                                                 </bdt>
-                                                                                                                                </span></span></span><a
+                                                                                                                            </span></span></span><a
                                                                                                                         data-custom-class="link"
                                                                                                                         href="#contact"><span
                                                                                                                             style="font-size: 15px; color: rgb(89, 89, 89);"><span
@@ -2061,7 +2068,7 @@
                                                                                                                             <bdt
                                                                                                                                 class="block-component">
                                                                                                                             </bdt>
-                                                                                                                            </span></span>
+                                                                                                                        </span></span>
                                                                                                                     <bdt
                                                                                                                         class="block-component">
                                                                                                                         <span
@@ -2113,7 +2120,7 @@
                                                                                                                             <bdt
                                                                                                                                 class="forloop-component">
                                                                                                                             </bdt>
-                                                                                                                            </span></span>
+                                                                                                                        </span></span>
                                                                                                                 </div>
                                                                                                                 <div
                                                                                                                     style="line-height: 1.5;">
@@ -2222,7 +2229,8 @@
                                                                                                                                 class="question">
                                                                                                                                 contact@sampurnasuvidhakendra.com
                                                                                                                             </bdt>
-                                                                                                                            .</span></span>
+                                                                                                                            .
+                                                                                                                        </span></span>
                                                                                                                     <bdt
                                                                                                                         class="statement-end-if-in-editor">
                                                                                                                         <span
@@ -2392,7 +2400,7 @@
                                                                                                                                     class="block-component">
                                                                                                                                 </bdt>
                                                                                                                                 </bdt>
-                                                                                                                                </span></span></span></span></span></span></span></span></span></span></span>
+                                                                                                                            </span></span></span></span></span></span></span></span></span></span></span>
                                                                                                                     </bdt>
                                                                                                                     </span></span></span></span></span></span></span></span></span></span>
                                                                                                                     <bdt
@@ -2545,7 +2553,8 @@
                                                                                                                                 are
                                                                                                                                 protecting
                                                                                                                                 your
-                                                                                                                                information.</span></span></span>
+                                                                                                                                information.
+                                                                                                                            </span></span></span>
                                                                                                                 </div>
                                                                                                                 <div
                                                                                                                     style="line-height: 1.5;">
@@ -2730,7 +2739,7 @@
                                                                                                                                 </span></span>
                                                                                                                         </span>
                                                                                                                         </bdt>
-                                                                                                                        </span>
+                                                                                                                    </span>
                                                                                                                 </div>
                                                                                                                 <div
                                                                                                                     style="line-height: 1.5;">
@@ -2934,17 +2943,11 @@
                                                                                                                     }
                                                                                                                 </style>
 
-
-
-
                                                                                                             </div>
-
 
     </main><!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
-
-
 
     <!-- ===============================================-->
     <!--    JavaScripts-->
@@ -2961,10 +2964,6 @@
     <script src="{{ asset('vendors/list.js/list.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.js') }}"></script>
 
-
 </body>
-
-
-
 
 </html>

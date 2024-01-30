@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Helpers\Helper as Helper;
+use App\Http\Controllers\Controller;
 use App\Models\Documents;
+use App\Models\PaymentValue;
 use App\Models\UserISIDetail;
+use Illuminate\Http\Request;
 
 class ISIController extends Controller
 {
@@ -31,8 +32,9 @@ class ISIController extends Controller
             }
             return redirect('/isi/register')->with('success', $msg);
         }
-        
+
         $data['isiImages'] = Documents::where('for_multiple', 'ISI')->get();
+        $data['amount'] = PaymentValue::where('id', 37)->first()->value;
         return view('user.pages.isi.isiForm')->with($data);
     }
 
@@ -51,7 +53,7 @@ class ISIController extends Controller
         if (isset($insert_data->id) && !empty($insert_data->id)) {
             $data['insert_id'] = $insert_data->id;
             $data['payment_purpose'] = 'Payment for ISI Register';
-            $data['payment_amount'] = 10;
+            $data['payment_amount'] = PaymentValue::where('id', 37)->first()->value;
             $data['name_of_pan'] = $data['name_of_company'];
             $data['type'] = 'ISI';
             $data['route'] = 'isi.register';

@@ -2,9 +2,8 @@
 
 namespace App\Models\LoanFinance;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class ProjectReport extends Authenticatable
 {
@@ -32,6 +31,6 @@ class ProjectReport extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 }

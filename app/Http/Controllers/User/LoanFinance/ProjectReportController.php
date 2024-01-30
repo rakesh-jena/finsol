@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\User\LoanFinance;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Helpers\Helper as Helper;
+use App\Http\Controllers\Controller;
 use App\Models\Documents;
 use App\Models\LoanFinance\ProjectReport;
+use App\Models\PaymentValue;
+use Illuminate\Http\Request;
 
 class ProjectReportController extends Controller
 {
@@ -31,8 +32,9 @@ class ProjectReportController extends Controller
             }
             return redirect('/loan-finance/project-report/register')->with('success', $msg);
         }
-        
+
         $data['projectReportImages'] = Documents::where('for_multiple', 'LFPR')->get();
+        $data['amount'] = PaymentValue::where('id', 35)->first()->value;
         return view('user.pages.loanfinance.projectReportForm')->with($data);
     }
 
@@ -53,7 +55,7 @@ class ProjectReportController extends Controller
         if (isset($insert_data->id) && !empty($insert_data->id)) {
             $data['insert_id'] = $insert_data->id;
             $data['payment_purpose'] = 'Payment for Project Report Register';
-            $data['payment_amount'] = 10;
+            $data['payment_amount'] = PaymentValue::where('id', 35)->first()->value;
             $data['name_of_pan'] = $data['name_of_company'];
             $data['type'] = 'LFProjectReport';
             $data['route'] = 'projectReport.register';

@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserUdamyDetail extends Authenticatable
 {
@@ -17,6 +17,7 @@ class UserUdamyDetail extends Authenticatable
         'udamy_number',
         'udamy_email',
         'udamy_mobile',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -25,6 +26,6 @@ class UserUdamyDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 }

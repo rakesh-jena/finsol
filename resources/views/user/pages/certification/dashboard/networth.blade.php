@@ -44,12 +44,14 @@
 
                                         <input type="hidden" name="form_type" value="Networth">
                                         <input type="hidden" name="insert_id" value="{{ $detail->id }}">
-                                        <input type="hidden" name="payment_amount" value="10">
+                                        <input type="hidden" name="payment_amount"
+                                            value="{{ $networth_instamojo_amount }}">
                                         <input type="hidden" name="route" value="form_dashboard">
                                         <input type="hidden" name="payment_purpose" value="Networth">
                                         <input type="hidden" name="email_id" value="{{ $detail->email_id }}">
                                         <input type="hidden" name="name_of_pan" value="{{ $detail->name_of_pan }}">
-                                        <input type="hidden" name="mobile_number" value="{{ $detail->mobile_number }}">
+                                        <input type="hidden" name="mobile_number"
+                                            value="{{ $detail->mobile_number }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit">
                                             <small>Pay</small>

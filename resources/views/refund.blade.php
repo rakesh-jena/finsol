@@ -99,14 +99,10 @@
                             </li>
                         @endauth
 
-
-
-
                     </ul>
                 </div>
             </div>
         </nav>
-
 
         <style>
             [data-custom-class='body'],
@@ -165,7 +161,8 @@
                             name="_2cipo4yr3w5d"></a>
                         <div align="center" class="MsoNormal" style="text-align: left; line-height: 150%;">
                             <strong><span style="font-size: 26px;"><span data-custom-class="title">RETURN
-                                        POLICY</span></span></strong></div>
+                                        POLICY</span></span></strong>
+                        </div>
                         <div align="center" class="MsoNormal" style="text-align: left; line-height: 150%;"><br></div>
                         <div align="center" class="MsoNormal" style="text-align: left; line-height: 150%;"><span
                                 style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><strong><span
@@ -219,15 +216,11 @@
                     </style>
                 </div>
 
-
             </div>
-
 
     </main><!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
-
-
 
     <!-- ===============================================-->
     <!--    JavaScripts-->
@@ -244,10 +237,6 @@
     <script src="{{ asset('vendors/list.js/list.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.js') }}"></script>
 
-
 </body>
-
-
-
 
 </html>

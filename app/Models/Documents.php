@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class Documents extends Authenticatable
 {
@@ -14,7 +14,7 @@ class Documents extends Authenticatable
     protected $fillable = [
         'doc_key_name',
         'doc_name',
-        'gst_type_val'
+        'gst_type_val',
     ];
 
 }

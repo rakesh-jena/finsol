@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\State;
-use App\Models\District;
 use App\Models\Block;
+use App\Models\District;
+use App\Models\State;
 
 class DropdownController extends Controller
 {

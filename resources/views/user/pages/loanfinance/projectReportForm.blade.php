@@ -24,8 +24,8 @@
                     <div class="col-xl-12">
                         <div class="card mb-3">
                             <!-- <div class="card-header">
-                                 <h6 class="mb-0">Get yourself a New PAN Card</h6>
-                            </div> -->
+                                     <h6 class="mb-0">Get yourself a New PAN Card</h6>
+                                </div> -->
                             <div class="card-body">
                                 @if (session('success'))
                                     <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
@@ -60,7 +60,8 @@
                                             <div class="mb-3">
                                                 <label class="form-label"
                                                     for="bootstrap-wizard-validation-wizard-email">Email ID
-                                                </label><input class="form-control" type="email" name="email_id"
+                                                </label><input class="form-control" type="email"
+                                                    value="{{ Auth::user()->email }}" name="email_id"
                                                     placeholder="Email address"
                                                     pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
                                                     required="required" id="bootstrap-wizard-validation-wizard-email"
@@ -81,7 +82,9 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="mb-3">
-                                                <label class="form-label" for="form-wizard-progress-wizard-addregnum">Address of the Project</label>
+                                                <label class="form-label"
+                                                    for="form-wizard-progress-wizard-addregnum">Address of the
+                                                    Project</label>
                                                 <input class="form-control"
                                                     type="text" name="project_address"
                                                     placeholder="Enter Project Address"
@@ -91,7 +94,8 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="mb-3">
-                                                <label class="form-label" for="form-wizard-progress-wizard-addregnum">Net worth of Promoter</label>
+                                                <label class="form-label" for="form-wizard-progress-wizard-addregnum">Net
+                                                    worth of Promoter</label>
                                                 <input class="form-control"
                                                     required="" type="text" name="networth"
                                                     placeholder="Enter Networth"
@@ -100,8 +104,8 @@
                                             </div>
                                         </div>
                                         <!-- <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
-                                            <h6 class="detailspadding mb-0">Upload documents required for Minutes </h6>
-                                        </div> -->
+                                                <h6 class="detailspadding mb-0">Upload documents required for Minutes </h6>
+                                            </div> -->
                                         <div class="row g-2 ">
                                             @foreach ($projectReportImages as $keyname => $image)
                                                 <div class="col-4 mb-3">
@@ -116,7 +120,9 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="mb-3">
-                                                <button class="btn btn-primary me-1 mb-1" type="submit">Submit</button>
+                                                <button class="btn btn-primary me-1 mb-1" type="submit">Submit &
+                                                    Pay</button>
+                                                <p>Amount: ₹{{ $amount }}</p>
                                             </div>
                                         </div>
                                     </div>

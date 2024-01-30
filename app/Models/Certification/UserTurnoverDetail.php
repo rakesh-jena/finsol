@@ -2,8 +2,8 @@
 
 namespace App\Models\Certification;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserTurnoverDetail extends Authenticatable
 {
@@ -28,7 +28,7 @@ class UserTurnoverDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 
 }

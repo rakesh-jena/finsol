@@ -15,8 +15,6 @@
                 }
             </script>
 
-
-
             @include('user.partials.header')
 
             <script>
@@ -76,113 +74,109 @@
                                     </div>
                                 </div>
                                 <!--    <div class="row mt-6">
-                                        <div class="col-lg-4">
-                                            <div onclick="location.href='{{ route('gst') }}'" type="button">
-                                                <div class="card card-span h-100">
-                                                    <div class="roundlogobg card-span-img">
-                                                        <h2 class="roundtext">GST</h2>
+                                            <div class="col-lg-4">
+                                                <div onclick="location.href='{{ route('gst') }}'" type="button">
+                                                    <div class="card card-span h-100">
+                                                        <div class="roundlogobg card-span-img">
+                                                            <h2 class="roundtext">GST</h2>
+                                                        </div>
+                                                        <div class="card-body pt-6 pb-4">
+                                                            <h5 class="mb-2">GST</h5>
+                                                            <p>One of the best cloud platforms to make new GST registration, analyse
+                                                                taxes, manage
+                                                                filings and services online at one place</p>
+                                                        </div>
                                                     </div>
-                                                    <div class="card-body pt-6 pb-4">
-                                                        <h5 class="mb-2">GST</h5>
-                                                        <p>One of the best cloud platforms to make new GST registration, analyse
-                                                            taxes, manage
-                                                            filings and services online at one place</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                                <div onclick="location.href='{{ route('pan.register_form') }}'" type="button">
+                                                    <div class="card card-span h-100">
+                                                        <div class="roundlogobgred card-span-img">
+                                                            <h2 class="roundtext">PAN</h2>
+                                                        </div>
+                                                        <div class="card-body pt-6 pb-4">
+                                                            <h5 class="mb-2">PAN</h5>
+                                                            <p>With your purchased copy of Falcon, you will get all the uncompressed
+                                                                & documented SCSS and
+                                                                Javascript source code files.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                                <div onclick="location.href='{{ route('tan.register_form') }}'" type="button">
+                                                    <div class="card card-span h-100">
+                                                        <div class="roundlogobg card-span-img">
+                                                            <h2 class="roundtext">TAN</h2>
+                                                        </div>
+                                                        <div class="card-body pt-6 pb-4">
+                                                            <h5 class="mb-2">TAN</h5>
+                                                            <p>All the painful or time-consuming tasks in your development workflow
+                                                                such as compiling the
+                                                                SCSS or transpiring the JS are automated.</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-4 mt-6 mt-lg-0">
-                                            <div onclick="location.href='{{ route('pan.register_form') }}'" type="button">
-                                                <div class="card card-span h-100">
-                                                    <div class="roundlogobgred card-span-img">
-                                                        <h2 class="roundtext">PAN</h2>
-                                                    </div>
-                                                    <div class="card-body pt-6 pb-4">
-                                                        <h5 class="mb-2">PAN</h5>
-                                                        <p>With your purchased copy of Falcon, you will get all the uncompressed
-                                                            & documented SCSS and
-                                                            Javascript source code files.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 mt-6 mt-lg-0">
-                                            <div onclick="location.href='{{ route('tan.register_form') }}'" type="button">
-                                                <div class="card card-span h-100">
-                                                    <div class="roundlogobg card-span-img">
-                                                        <h2 class="roundtext">TAN</h2>
-                                                    </div>
-                                                    <div class="card-body pt-6 pb-4">
-                                                        <h5 class="mb-2">TAN</h5>
-                                                        <p>All the painful or time-consuming tasks in your development workflow
-                                                            such as compiling the
-                                                            SCSS or transpiring the JS are automated.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-
-                                    <div class="row mt-6">
-                                        <div class="col-lg-4">
-                                            <div onclick="location.href='{{ route('epf.register_form') }}'" type="button">
-                                                <div class="card card-span h-100">
-                                                    <div class="roundlogobgred card-span-img">
-                                                        <h2 class="roundtext">EPF</h2>
-                                                    </div>
-                                                    <div class="card-body pt-6 pb-4">
-                                                        <h5 class="mb-2">EPF</h5>
-                                                        <p>Build your webapp with the world's most popular front-end component
-                                                            library along with
-                                                            Falcon's 32 sets of carefully designed elements.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 mt-6 mt-lg-0">
-                                            <div onclick="location.href='{{ route('esic.register_form') }}'" type="button">
-                                                <div class="card card-span h-100">
-                                                    <div class="roundlogobg card-span-img">
-                                                        <h2 class="roundtext">ESIC</h2>
-                                                    </div>
-                                                    <div class="card-body pt-6 pb-4">
-                                                        <h5 class="mb-2">ESIC</h5>
-                                                        <p>With your purchased copy of Falcon, you will get all the uncompressed
-                                                            & documented SCSS and
-                                                            Javascript source code files.</p>
+                                        <div class="row mt-6">
+                                            <div class="col-lg-4">
+                                                <div onclick="location.href='{{ route('epf.register_form') }}'" type="button">
+                                                    <div class="card card-span h-100">
+                                                        <div class="roundlogobgred card-span-img">
+                                                            <h2 class="roundtext">EPF</h2>
+                                                        </div>
+                                                        <div class="card-body pt-6 pb-4">
+                                                            <h5 class="mb-2">EPF</h5>
+                                                            <p>Build your webapp with the world's most popular front-end component
+                                                                library along with
+                                                                Falcon's 32 sets of carefully designed elements.</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-4 mt-6 mt-lg-0">
-                                            <div onclick="location.href='{{ route('trademark.register_form') }}'" type="button">
-                                                <div class="card card-span h-100">
-                                                    <div class="roundlogobgred card-span-img">
-                                                        <h2 class="roundtext">TM</h2>
-                                                    </div>
-                                                    <div class="card-body pt-6 pb-4">
-                                                        <h5 class="mb-2">Trademark</h5>
-                                                        <p>With your purchased copy of Falcon, you will get all the uncompressed
-                                                            & documented SCSS and
-                                                            Javascript source code files.</p>
+                                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                                <div onclick="location.href='{{ route('esic.register_form') }}'" type="button">
+                                                    <div class="card card-span h-100">
+                                                        <div class="roundlogobg card-span-img">
+                                                            <h2 class="roundtext">ESIC</h2>
+                                                        </div>
+                                                        <div class="card-body pt-6 pb-4">
+                                                            <h5 class="mb-2">ESIC</h5>
+                                                            <p>With your purchased copy of Falcon, you will get all the uncompressed
+                                                                & documented SCSS and
+                                                                Javascript source code files.</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div> -->
-
+                                            <div class="col-lg-4 mt-6 mt-lg-0">
+                                                <div onclick="location.href='{{ route('trademark.register_form') }}'" type="button">
+                                                    <div class="card card-span h-100">
+                                                        <div class="roundlogobgred card-span-img">
+                                                            <h2 class="roundtext">TM</h2>
+                                                        </div>
+                                                        <div class="card-body pt-6 pb-4">
+                                                            <h5 class="mb-2">Trademark</h5>
+                                                            <p>With your purchased copy of Falcon, you will get all the uncompressed
+                                                                & documented SCSS and
+                                                                Javascript source code files.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
 
                             </div><!-- end of .container-->
                         </section><!-- <section> close ============================-->
                         <!-- ============================================-->
 
-
-
                     </div>
                 </div>
-
 
                 @include('user.partials.footer')
             </div>
@@ -192,27 +186,24 @@
     <!--    End of Main Content-->
     <!-- ===============================================-->
 
-
-
-
     <!-- <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">Dashboard Page for User</div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">Dashboard Page for User</div>
 
-                        <div class="card-body">
-                            @if (session('status'))
+                            <div class="card-body">
+                                @if (session('status'))
     <div class="alert alert-success" role="alert">
-                                    {{ session('status') }}
-                                </div>
+                                        {{ session('status') }}
+                                    </div>
     @endif
 
-                            You are logged in!
+                                You are logged in!
+                            </div>
+                            
                         </div>
-                        
                     </div>
                 </div>
-            </div>
-        </div> -->
+            </div> -->
 @endsection

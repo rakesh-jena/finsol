@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class GstFormType extends Authenticatable
 {
@@ -12,7 +12,7 @@ class GstFormType extends Authenticatable
     protected $table = 'gst_form_type';
 
     protected $fillable = [
-        'type'
+        'type',
     ];
 
 }

@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserDirector extends Authenticatable
 {
@@ -20,7 +20,7 @@ class UserDirector extends Authenticatable
         'd_aadharcard_img',
         'd_voterid_or_passport_img',
         'd_drivinglicence_img',
-        'd_userphoto_img'
+        'd_userphoto_img',
     ];
 
 }

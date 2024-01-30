@@ -5,6 +5,7 @@ use App\Helpers\Helper as Helper;
 use App\Http\Controllers\Controller;
 use App\Models\CompaniesAct\UserAdtDetail;
 use App\Models\Documents;
+use App\Models\PaymentValue;
 use Illuminate\Http\Request;
 
 class AdtController extends Controller
@@ -30,8 +31,9 @@ class AdtController extends Controller
             }
             return redirect('/adt/register')->with('success', $msg);
         }
-        
+
         $data['adtimages'] = Documents::where('for_multiple', 'ADT')->get();
+        $data['amount'] = PaymentValue::where('id', 27)->first()->value;
         return view('user.pages.companiesact.adtform')->with($data);
     }
 
@@ -46,11 +48,11 @@ class AdtController extends Controller
         $data['name_of_company'] = $request['name_of_company'];
         $data['mobile_number'] = $request['mobile_number'];
         $insert_data = UserAdtDetail::Create($data);
-        
+
         if (isset($insert_data->id) && !empty($insert_data->id)) {
             $data['insert_id'] = $insert_data->id;
             $data['payment_purpose'] = 'Payment for ADT Register';
-            $data['payment_amount'] = 10;
+            $data['payment_amount'] = PaymentValue::where('id', 27)->first()->value;
             $data['name_of_pan'] = $data['name_of_company'];
             $data['type'] = 'ADT';
             $data['route'] = 'adt.register';

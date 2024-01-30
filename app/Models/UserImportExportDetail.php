@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserImportExportDetail extends Authenticatable
 {
@@ -17,6 +17,7 @@ class UserImportExportDetail extends Authenticatable
         'firm_number',
         'firm_email',
         'firm_mobile',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -25,6 +26,6 @@ class UserImportExportDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 }

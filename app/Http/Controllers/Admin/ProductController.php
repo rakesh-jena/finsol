@@ -47,15 +47,15 @@ class ProductController extends Controller
 
         return DataTables::of($items)
 //            ->editColumn('title', function($item) {
-//                return mb_substr($item->title, 0, 5);
-//            })
+        //                return mb_substr($item->title, 0, 5);
+        //            })
             ->make(true);
     }
 
     public function show($item_id)
     {
         $item = Product::find($item_id);
-        if(empty($item)){
+        if (empty($item)) {
             return redirect()->route('admin.dashboard');
         }
 
@@ -67,7 +67,7 @@ class ProductController extends Controller
     public function edit($item_id)
     {
         $item = Product::find($item_id);
-        if(empty($item)){
+        if (empty($item)) {
             return redirect()->route('admin.dashboard');
         }
 
@@ -86,8 +86,7 @@ class ProductController extends Controller
         $item_id = $request->get('item_id');
         $item = Product::find($item_id);
 
-        if(empty($item))
-        {
+        if (empty($item)) {
             return response()->json([
                 'success' => false,
                 'message' => 'Item not found!',
@@ -105,7 +104,7 @@ class ProductController extends Controller
     {
         $image_id = $request->get('image_id');
         $image = ProductImage::find($image_id);
-        if(empty($image)){
+        if (empty($image)) {
             return response()->json([
                 'success' => false,
                 'message' => 'Image not found!',
@@ -113,14 +112,13 @@ class ProductController extends Controller
         }
         $item_id = $request->get('item_id');
 
-        if($item_id == $image->product->id){
+        if ($item_id == $image->product->id) {
             $image->delete();
 
             return response()->json([
                 'success' => true,
             ]);
-        }
-        else {
+        } else {
             return response()->json([
                 'success' => false,
                 'message' => 'Image not found!',
@@ -152,13 +150,13 @@ class ProductController extends Controller
             $item = Product::find($item_id);
             $status = $request->get('status');
 
-            if(empty($item)) {
+            if (empty($item)) {
                 return response()->json([
                     'success' => false,
                     'message' => 'Item not found!',
                 ]);
             } else {
-                if($item->status == $status){
+                if ($item->status == $status) {
                     return response()->json([
                         'success' => false,
                         'message' => 'Item already have ' . $status . ' status!',

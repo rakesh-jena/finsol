@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class CopyOfReturns extends Authenticatable
 {
@@ -20,7 +20,7 @@ class CopyOfReturns extends Authenticatable
         'year',
         'month',
         'quarter',
-        'documents'
+        'documents',
     ];
 
 }

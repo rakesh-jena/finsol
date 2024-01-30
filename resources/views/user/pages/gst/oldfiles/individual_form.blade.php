@@ -2,13 +2,14 @@
      id="bootstrap-wizard-validation-tab1">
      <h3>Individual</h3>
      <form class="needs-validation  " id="myDropzone" data-dropzone="data-dropzone"
-         action="{{route('gst.register.individual')}}" method="post" enctype="multipart/form-data"
+         action="{{ route('gst.register.individual') }}" method="post" enctype="multipart/form-data"
          novalidate="novalidate">
          @csrf
          <input type="hidden" name="gst_type" value="Individual" />
          <div class="mb-3">
              <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Email*</label><input
-                 class="form-control" type="email" name="email_id" placeholder="Email address"
+                 class="form-control" type="email" value="{{ Auth::user()->email }}" name="email_id"
+                 placeholder="Email address"
                  pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$" required="required"
                  id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
              <div class="invalid-feedback">You must add email</div>
@@ -47,14 +48,15 @@
          <br />
          <div class="row g-2 ">
              @foreach ($images as $keyname => $image)
-             <div class="col-4 mb-3">
-                 <div class="mb-3">
-                     <label>{{$image['doc_name']}} Upload :</label>
-                     <!-- required="required"  -->
-                     <input type="file" name="{{$image['doc_key_name']}}[]" id="image-upload" class="myfrm form-control"
-                         multiple />
+                 <div class="col-4 mb-3">
+                     <div class="mb-3">
+                         <label>{{ $image['doc_name'] }} Upload :</label>
+                         <!-- required="required"  -->
+                         <input type="file" name="{{ $image['doc_key_name'] }}[]" id="image-upload"
+                             class="myfrm form-control"
+                             multiple />
+                     </div>
                  </div>
-             </div>
              @endforeach
          </div>
          <br />

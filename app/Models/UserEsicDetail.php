@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserEsicDetail extends Authenticatable
 {
     use Notifiable;
 
     protected $table = 'users_esic_details';
- 
+
     protected $fillable = [
         'user_id',
         'esic_email',
@@ -28,6 +28,7 @@ class UserEsicDetail extends Authenticatable
         'esic_oth_pan_img',
         'esic_oth_photo_img',
         'esic_oth_spaceman_img',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -36,7 +37,7 @@ class UserEsicDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 
 }

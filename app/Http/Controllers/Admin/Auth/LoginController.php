@@ -23,7 +23,8 @@ class LoginController extends Controller
         return view('admin.auth.login');
     }
 
-    protected function guard(){
+    protected function guard()
+    {
         return Auth::guard('admin');
     }
 }

@@ -27,11 +27,13 @@ class Product extends Model
         'deleted_at',
     ];
 
-    public function admin(){
+    public function admin()
+    {
         return $this->belongsTo(Admin::class, 'admin_id');
     }
 
-    public function getAdminNameAttribute(){
+    public function getAdminNameAttribute()
+    {
         return $this->admin->name;
     }
 }

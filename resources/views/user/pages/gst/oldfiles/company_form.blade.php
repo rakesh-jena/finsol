@@ -1,5 +1,5 @@
   <div class="tab-pane fade" id="pill-tab-contact" role="tabpanel" aria-labelledby="contact-tab">
-      <form class="needs-validation" novalidate="novalidate" action="{{route('gst.company')}}" method="post"
+      <form class="needs-validation" novalidate="novalidate" action="{{ route('gst.company') }}" method="post"
           enctype="multipart/form-data">
           @csrf
           <input type="hidden" name="gst_type" value="Company" />
@@ -41,7 +41,6 @@
                   </div>
               </div>
 
-
               <!-- Upload for Company Images -->
               <div class="col-4">
                   <label class="form-label" for="form-wizard-progress-wizard-addregnum">Upload
@@ -58,7 +57,8 @@
                                           data-max-files="2" multiple="multiple" />
                                   </div>
                                   <div class="dz-message" data-dz-message="data-dz-message"> <img class="me-2"
-                                          src="../../../assets/img/icons/cloud-upload.svg" width="25" alt="" />CLick or
+                                          src="../../../assets/img/icons/cloud-upload.svg" width="25"
+                                          alt="" />CLick or
                                       Drop
                                       your
                                       files here
@@ -114,7 +114,8 @@
                                   <div class="fallback"><input name="file" type="file" multiple="multiple" />
                                   </div>
                                   <div class="dz-message" data-dz-message="data-dz-message"> <img class="me-2"
-                                          src="../../../assets/img/icons/cloud-upload.svg" width="25" alt="" />CLick or
+                                          src="../../../assets/img/icons/cloud-upload.svg" width="25"
+                                          alt="" />CLick or
                                       Drop
                                       your
                                       files here
@@ -170,7 +171,8 @@
                                   <div class="fallback"><input name="file" type="file" multiple="multiple" />
                                   </div>
                                   <div class="dz-message" data-dz-message="data-dz-message"> <img class="me-2"
-                                          src="../../../assets/img/icons/cloud-upload.svg" width="25" alt="" />CLick or
+                                          src="../../../assets/img/icons/cloud-upload.svg" width="25"
+                                          alt="" />CLick or
                                       Drop
                                       your
                                       files here
@@ -222,7 +224,8 @@
               <div class="col-6">
                   <div class="mb-3">
                       <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Director
-                          Email</label><input class="form-control" type="email" name="email" placeholder="Email address"
+                          Email</label><input class="form-control" type="email" name="email"
+                          placeholder="Email address"
                           pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$" required="required"
                           id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
                       <div class="invalid-feedback">You must add email</div>
@@ -232,7 +235,8 @@
                   <div class="mb-3">
                       <label class="form-label" for="form-wizard-progress-wizard-addregnum">Director
                           Mobile number registered with aadhar
-                          of the firm</label><input class="form-control" required="" type="text" name="name"
+                          of the firm</label><input class="form-control" required="" type="text"
+                          name="name"
                           placeholder="Enter Registration No" id="form-wizard-progress-wizard-addregnum" />
                       <div class="invalid-feedback">Please provide Mobile
                           number</div>
@@ -251,7 +255,8 @@
                                   <div class="fallback"><input name="file" type="file" multiple="multiple" />
                                   </div>
                                   <div class="dz-message" data-dz-message="data-dz-message"> <img class="me-2"
-                                          src="../../../assets/img/icons/cloud-upload.svg" width="25" alt="" />CLick or
+                                          src="../../../assets/img/icons/cloud-upload.svg" width="25"
+                                          alt="" />CLick or
                                       Drop
                                       your
                                       files here
@@ -308,7 +313,8 @@
                                   <div class="fallback"><input name="file" type="file" multiple="multiple" />
                                   </div>
                                   <div class="dz-message" data-dz-message="data-dz-message"> <img class="me-2"
-                                          src="../../../assets/img/icons/cloud-upload.svg" width="25" alt="" />CLick or
+                                          src="../../../assets/img/icons/cloud-upload.svg" width="25"
+                                          alt="" />CLick or
                                       Drop
                                       your
                                       files here
@@ -365,7 +371,8 @@
                                   <div class="fallback"><input name="file" type="file" multiple="multiple" />
                                   </div>
                                   <div class="dz-message" data-dz-message="data-dz-message"> <img class="me-2"
-                                          src="../../../assets/img/icons/cloud-upload.svg" width="25" alt="" />CLick or
+                                          src="../../../assets/img/icons/cloud-upload.svg" width="25"
+                                          alt="" />CLick or
                                       Drop
                                       your
                                       files here
@@ -422,7 +429,8 @@
                                   <div class="fallback"><input name="file" type="file" multiple="multiple" />
                                   </div>
                                   <div class="dz-message" data-dz-message="data-dz-message"> <img class="me-2"
-                                          src="../../../assets/img/icons/cloud-upload.svg" width="25" alt="" />CLick or
+                                          src="../../../assets/img/icons/cloud-upload.svg" width="25"
+                                          alt="" />CLick or
                                       Drop
                                       your
                                       files here
@@ -478,7 +486,8 @@
                                   <div class="fallback"><input name="file" type="file" multiple="multiple" />
                                   </div>
                                   <div class="dz-message" data-dz-message="data-dz-message"> <img class="me-2"
-                                          src="../../../assets/img/icons/cloud-upload.svg" width="25" alt="" />CLick or
+                                          src="../../../assets/img/icons/cloud-upload.svg" width="25"
+                                          alt="" />CLick or
                                       Drop
                                       your
                                       files here
@@ -533,7 +542,8 @@
           <br />
           <div class="col-4">
               <div class="mb-3">
-                  <button class="btn btn-primary me-1 mb-1" type="submit">Submit</button>
+                  <button class="btn btn-primary me-1 mb-1" type="submit">Submit & Pay</button>
+                  <p>Amount: ₹{{ $amount }}</p>
               </div>
           </div>
       </form>

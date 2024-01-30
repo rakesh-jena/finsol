@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserPanDetail extends Authenticatable
 {
@@ -21,6 +21,7 @@ class UserPanDetail extends Authenticatable
         'pan_aadhar_voterid_passport_img',
         'pan_driving_license',
         'pan_your_photo',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -29,7 +30,7 @@ class UserPanDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 
 }

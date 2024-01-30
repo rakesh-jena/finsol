@@ -2,8 +2,8 @@
 
 namespace App\Models\CompaniesAct;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserStatutoryAuditDetail extends Authenticatable
 {
@@ -34,7 +34,7 @@ class UserStatutoryAuditDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 
 }

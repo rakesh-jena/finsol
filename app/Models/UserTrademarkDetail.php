@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserTrademarkDetail extends Authenticatable
 {
     use Notifiable;
 
     protected $table = 'users_trademark_details';
- 
+
     protected $fillable = [
         'user_id',
         'trademark_number',
@@ -31,6 +31,7 @@ class UserTrademarkDetail extends Authenticatable
         'trademark_aff_img',
         'trademark_oth_photo_img',
         'trademark_oth_spaceman_img',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -39,7 +40,7 @@ class UserTrademarkDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 
 }

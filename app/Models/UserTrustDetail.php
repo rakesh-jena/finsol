@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserTrustDetail extends Authenticatable
 {
@@ -18,6 +18,7 @@ class UserTrustDetail extends Authenticatable
         'trust_email',
         'trust_mobile',
         'name_of_trust',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -26,6 +27,6 @@ class UserTrustDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 }

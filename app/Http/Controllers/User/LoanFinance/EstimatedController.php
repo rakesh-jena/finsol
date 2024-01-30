@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\User\LoanFinance;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Helpers\Helper as Helper;
+use App\Http\Controllers\Controller;
 use App\Models\Documents;
 use App\Models\LoanFinance\Estimated;
+use App\Models\PaymentValue;
+use Illuminate\Http\Request;
 
 class EstimatedController extends Controller
 {
@@ -31,8 +32,9 @@ class EstimatedController extends Controller
             }
             return redirect('/loan-finance/estimated/register')->with('success', $msg);
         }
-        
+
         $data['estimatedImages'] = Documents::where('for_multiple', 'LF Estimated')->get();
+        $data['amount'] = PaymentValue::where('id', 36)->first()->value;
         return view('user.pages.loanfinance.estimatedForm')->with($data);
     }
 
@@ -51,7 +53,7 @@ class EstimatedController extends Controller
         if (isset($insert_data->id) && !empty($insert_data->id)) {
             $data['insert_id'] = $insert_data->id;
             $data['payment_purpose'] = 'Payment for LF Estimated Register';
-            $data['payment_amount'] = 10;
+            $data['payment_amount'] = PaymentValue::where('id', 36)->first()->value;
             $data['name_of_pan'] = $data['name_of_company'];
             $data['type'] = 'LFEstimated';
             $data['route'] = 'estimated.register';

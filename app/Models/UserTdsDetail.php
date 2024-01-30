@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserTdsDetail extends Authenticatable
 {
@@ -21,6 +21,7 @@ class UserTdsDetail extends Authenticatable
         'tan_img',
         'tds_img',
         'challan_img',
+        'docs_img',
         'tds_date',
         'tds_rate',
         'tds_amount',
@@ -33,7 +34,7 @@ class UserTdsDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 
 }

@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserPartner extends Authenticatable
 {
@@ -12,7 +12,7 @@ class UserPartner extends Authenticatable
     protected $table = 'users_partners';
 
     protected $fillable = [
-         'user_id',
+        'user_id',
         'user_gst_id',
         'partner_mobile',
         'partner_email',
@@ -20,7 +20,8 @@ class UserPartner extends Authenticatable
         'p_aadharcard_img',
         'p_voterid_or_passport_img',
         'p_drivinglicence_img',
-        'p_userphoto_img'
+        'p_userphoto_img',
+        'docs_img',
     ];
 
 }

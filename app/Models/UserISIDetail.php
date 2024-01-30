@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserISIDetail extends Authenticatable
 {
@@ -31,6 +30,7 @@ class UserISIDetail extends Authenticatable
         'test_img',
         'machinery_list_img',
         'calibration_img',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -39,6 +39,6 @@ class UserISIDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 }

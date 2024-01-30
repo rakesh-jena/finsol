@@ -5,6 +5,7 @@ use App\Helpers\Helper as Helper;
 use App\Http\Controllers\Controller;
 use App\Models\CompaniesAct\UserStatutoryAuditDetail;
 use App\Models\Documents;
+use App\Models\PaymentValue;
 use Illuminate\Http\Request;
 
 class StatutoryAuditController extends Controller
@@ -30,8 +31,9 @@ class StatutoryAuditController extends Controller
             }
             return redirect('/pan/register')->with('success', $msg);
         }
-        
+
         $data['statutoryauditimages'] = Documents::where('for_multiple', 'SA')->get();
+        $data['amount'] = PaymentValue::where('id', 30)->first()->value;
         return view('user.pages.companiesact.statutoryauditform')->with($data);
     }
 
@@ -50,7 +52,7 @@ class StatutoryAuditController extends Controller
         if (isset($insert_data->id) && !empty($insert_data->id)) {
             $data['insert_id'] = $insert_data->id;
             $data['payment_purpose'] = 'Payment for Statutory Audit Register';
-            $data['payment_amount'] = 10;
+            $data['payment_amount'] = PaymentValue::where('id', 30)->first()->value;
             $data['name_of_pan'] = $data['name_of_company'];
             $data['type'] = 'StatutoryAudit';
             $data['route'] = 'statutoryaudit.register';

@@ -2,18 +2,19 @@
     <div class="col-xl-12">
         <div class="card mb-3">
             <!-- <div class="card-header">
-                             <h6 class="mb-0">Get yourself a New PAN Card</h6> 
+                             <h6 class="mb-0">Get yourself a New PAN Card</h6>
                         </div> -->
             <div class="card-body">
                 @if (session('success'))
-                <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
-                    <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span>
+                    <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
+                        <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span>
+                        </div>
+                        <p class="mb-0 flex-1">{{ session('success') }}</p>
+                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <p class="mb-0 flex-1">{{ session('success') }}</p>
-                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
                 @endif
-                <form class="needs-validation" novalidate="novalidate" action="{{route('udamy.register')}}" method="post"
+                <form class="needs-validation" novalidate="novalidate" action="{{ route('udamy.register') }}"
+                    method="post"
                     enctype="multipart/form-data">
                     @csrf
 
@@ -46,7 +47,8 @@
                         <div class="col-6">
                             <div class="mb-3">
                                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
-                                    Number linked with Aadhar</label><input class="form-control" required="" type="text"
+                                    Number linked with Aadhar</label><input class="form-control" required=""
+                                    type="text"
                                     name="udamy_mobile" placeholder="Mobile No"
                                     id="form-wizard-progress-wizard-addregnum" />
                                 <div class="invalid-feedback">Please provide Mobile
@@ -60,20 +62,20 @@
                         <div class="row g-2 ">
 
                             @foreach ($udamy_images as $keyname => $image)
-                            <div class="col-6 mb-3">
-                                <div class="mb-3">
-                                    <label>{{$image['doc_name']}} :</label>
-                                    <input type="file" name="trustmember[0][{{$image['doc_key_name']}}][]"
-                                        id="image-upload" class="myfrm form-control" multiple />
+                                <div class="col-6 mb-3">
+                                    <div class="mb-3">
+                                        <label>{{ $image['doc_name'] }} :</label>
+                                        <input type="file" name="trustmember[0][{{ $image['doc_key_name'] }}][]"
+                                            id="image-upload" class="myfrm form-control" multiple />
+                                    </div>
                                 </div>
-                            </div>
                             @endforeach
-
 
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
-                                <button class="btn btn-primary me-1 mb-1" type="submit">Submit</button>
+                                <button class="btn btn-primary me-1 mb-1" type="submit">Submit & Pay</button>
+                                <p>Amount: ₹{{ $amount }}</p>
                             </div>
                         </div>
                     </div>

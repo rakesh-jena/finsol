@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
 class Admin extends Authenticatable
@@ -17,6 +17,8 @@ class Admin extends Authenticatable
         'name',
         'email',
         'password',
+        'type_of_user',
+        'access_level_id',
     ];
 
     protected $hidden = [

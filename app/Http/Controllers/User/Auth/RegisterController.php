@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\User\Auth;
 
-use App\Models\User;
+use App\Helpers\Helper as Helper;
 use App\Http\Controllers\Controller;
+use App\Models\State;
+use App\Models\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Models\State;
-use Illuminate\Http\Request;
-use App\Helpers\Helper as Helper;
 
 class RegisterController extends Controller
 {
@@ -24,11 +24,12 @@ class RegisterController extends Controller
 
     protected function validator(array $data)
     {
-         
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'mobile' => ['required', 'numeric', 'unique:users'],
             'password' => ['required', 'string', 'min:6'],
+            //'aadhaar' => ['required', 'unique:users']
         ]);
     }
 
@@ -38,9 +39,11 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'mobile' => $data['mobile'],
             'state' => $data['state'],
             'district' => $data['district'],
             'block' => $data['block'],
+            'aadhaar' => $data['aadhaar'],
         ]);
         session()->flash('message', 'Thank you for registering!');
     }
@@ -49,6 +52,6 @@ class RegisterController extends Controller
     {
         $states = State::all();
         $routeUrl = Helper::getBaseUrl($request);
-        return view('user.auth.register', compact('states','routeUrl'));
+        return view('user.auth.register', compact('states', 'routeUrl'));
     }
 }

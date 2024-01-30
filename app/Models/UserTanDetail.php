@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserTanDetail extends Authenticatable
 {
@@ -22,6 +22,7 @@ class UserTanDetail extends Authenticatable
         'tan_driving_license_img',
         'tan_your_img',
         'tan_pan_img',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -30,7 +31,7 @@ class UserTanDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 
 }

@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class UserEpfDetail extends Authenticatable
 {
     use Notifiable;
 
     protected $table = 'users_epf_details';
- 
+
     protected $fillable = [
         'user_id',
         'epf_email',
@@ -28,6 +28,7 @@ class UserEpfDetail extends Authenticatable
         'epf_oth_pan_img',
         'epf_oth_photo_img',
         'epf_oth_spaceman_img',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',
@@ -36,7 +37,7 @@ class UserEpfDetail extends Authenticatable
         'raised_img',
         'admin_note',
         'user_note',
-        'type'
+        'type',
     ];
 
 }
