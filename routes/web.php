@@ -94,7 +94,6 @@ Route::post('pan/register', 'PanController@storePan')->name('pan.register');
 Route::post('dashboard_register', 'DashboardController@createInstaMojoOrder')->name('dashboard.register');
 Route::get('store_payment_data', 'DashboardController@storePaymentData')->name('dashboard.storedata');
 
-
 //
 Route::get('pay/register', 'PayController@register_form')->name('pay.register_form');
 Route::post('pay/register', 'PayController@storePay')->name('pay.register');
@@ -246,7 +245,7 @@ Route::group(
 
 //Loan & Finance
 Route::group(
-    ['namespace' => 'LoanFinance'], function() {        
+    ['namespace' => 'LoanFinance'], function () {
         Route::get('loan-finance/estimated/register', 'EstimatedController@register_form')->name('estimated.register_form');
         Route::post('loan-finance/estimated/register', 'EstimatedController@storeEstimated')->name('estimated.register');
 
@@ -266,7 +265,7 @@ Route::group(
 
 //Legal Work
 Route::group(
-    ['namespace' => 'LegalWork'], function() {
+    ['namespace' => 'LegalWork'], function () {
         Route::get('legal-work/register', 'LegalController@register_form')->name('legalwork.register_form');
         Route::post('legal-work/register', 'LegalController@storeLegalWork')->name('legalwork.register');
 

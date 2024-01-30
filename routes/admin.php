@@ -43,9 +43,9 @@ Route::group(
             });
             Route::get('profile', 'UserController@profile');
             Route::get('employee/profile/{id}', 'UserController@profile_employee');
-            
+
             Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
-                
+
                 Route::get('gst/details/{id}', 'UserGstController@index')->name('gstDetails');
                 Route::post('gst/change_status', 'UserGstController@change_status')->name('change_status');
                 Route::get('profile/{id}', 'UserGstController@profile')->name('user-profile');
@@ -119,7 +119,7 @@ Route::group(
             Route::get('payment/history', 'PaymentController@allTransactions');
             Route::get('payment/form-value', 'PaymentController@showFormValue');
             Route::post('payment/update-form-value', 'PaymentController@updateFormValue');
-            Route::group(['prefix' => 'forms'], function(){
+            Route::group(['prefix' => 'forms'], function () {
                 Route::get('/PAN', 'AdminController@form_list');
                 Route::get('/TAN', 'AdminController@form_list');
                 Route::get('/GST', 'AdminController@form_list');
@@ -156,7 +156,7 @@ Route::group(
                 Route::get('/net-worth', 'AdminController@form_list');
                 Route::get('/turnover', 'AdminController@form_list');
             });
-            Route::group(['prefix' => 'status'], function(){
+            Route::group(['prefix' => 'status'], function () {
                 Route::get('{status}', 'AdminController@status_list');
             });
             // Route::get('gst/statusview/{id}', 'UserGstController@statusview')->name('gstStatusView');
