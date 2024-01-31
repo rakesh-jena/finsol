@@ -52,14 +52,14 @@
                                         <form method="POST" action="{{ route('login') }}">
                                             @csrf
                                             <div class="mb-3">
-                                                <label class="form-label" for="card-email">Mobile/Aadhar
-                                                    Number</label><input
+                                                <label class="form-label" for="card-mobile">Mobile</label>
+                                                <input
                                                     class="form-control"
                                                     maxlength="12"
-                                                    required="required" id="card-email"
-                                                    type="text" value="{{ old('email') }}" name="email"
+                                                    required="required" id="card-mobile"
+                                                    type="text" value="{{ old('mobile') }}" name="mobile"
                                                     autofocus />
-                                                @error('email')
+                                                @error('mobile')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>

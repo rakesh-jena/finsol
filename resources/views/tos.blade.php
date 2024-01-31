@@ -2301,7 +2301,6 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>
     <script src="{{ asset('vendors/typed.js/typed.js') }}"></script>
     <script src="{{ asset('vendors/fontawesome/all.min.js') }}"></script>
     <script src="{{ asset('vendors/lodash/lodash.min.js') }}"></script>
-    <script src="{{ asset('polyfill.io/v3/polyfill.min58be.js?features=window.scroll') }}"></script>
     <script src="{{ asset('vendors/list.js/list.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.js') }}"></script>
 
