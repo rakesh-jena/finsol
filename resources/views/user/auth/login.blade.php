@@ -49,13 +49,13 @@
                                             </div>
                                         </div>
                                         <!-- <form class="needs-validation" novalidate=""> -->
-                                        <form method="POST" action="{{ route('login') }}">
+                                        <form method="POST" action="{{ route('send-otp') }}" id="login_form">
                                             @csrf
                                             <div class="mb-3">
                                                 <label class="form-label" for="card-mobile">Mobile</label>
                                                 <input
                                                     class="form-control"
-                                                    maxlength="12"
+                                                    maxlength="10"
                                                     required="required" id="card-mobile"
                                                     type="text" value="{{ old('mobile') }}" name="mobile"
                                                     autofocus />
@@ -64,10 +64,35 @@
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                                <div class="invalid-feedback">Please Provide Mobile Number or Aadhar Number
+                                                <div class="invalid-feedback">Please Provide Mobile Number
+                                                </div>
+                                            <div class="mb-3">
+                                                <button class="btn btn-primary d-block w-100 mt-3"
+                                                    type="submit" name="submit">Send OTP</button>
+                                            </div>
+                                        </form>
+
+                                        <form method="POST" action="{{ route('login') }}" id="otp_form">
+                                            @csrf
+                                            <input type="hidden" name="user_id" value="">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="card-otp">OTP</label>
+                                                <input
+                                                    class="form-control"
+                                                    maxlength="10"
+                                                    required="required" id="card-otp"
+                                                    type="text" name="code"
+                                                    autofocus />
+                                                @error('otp')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                                <div class="invalid-feedback">
+                                                    Enter correct OTP
                                                 </div>
                                             </div>
-                                            <div class="mb-3">
+                                            {{-- <div class="mb-3">
                                                 <div class="d-flex justify-content-between"><label class="form-label"
                                                         for="card-password">Password</label></div><input
                                                     class="form-control @error('password') is-invalid @enderror"
@@ -78,27 +103,13 @@
                                                     </span>
                                                 @enderror
                                                 <div class="invalid-feedback">Please enter a valid Password</div>
+                                            </div> --}}
+                                            
+                                            <div class="mb-3">
+                                                <button class="btn btn-primary d-block w-100 mt-3"
+                                                    type="submit" name="submit">Login</button>
                                             </div>
-                                            <div class="row flex-between-center">
-                                                <div class="col-auto">
-                                                    <div class="form-check mb-0"><input class="form-check-input"
-                                                            type="checkbox" id="card-checkbox" checked="checked"
-                                                            name="remember" {{ old('remember') ? 'checked' : '' }} /><label
-                                                            class="form-check-label mb-0" for="card-checkbox">Remember
-                                                            me</label></div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    @if (Route::has('password.request'))
-                                                        <a class="fs--1" href="{{ route('password.request') }}">
-                                                            {{ __('Forgot Password?') }}
-                                                        </a>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                            <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3"
-                                                    type="submit" name="submit">Log in</button></div>
                                         </form>
-
                                     </div>
                                 </div>
                             </div>
