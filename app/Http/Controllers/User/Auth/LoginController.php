@@ -39,20 +39,22 @@ class LoginController extends Controller
         return $otp;
     }
 
-    public function resendOTP(Request $request)
+    public function resendOTP($id)
     {
-        $request->validate([
-            'user_id' => 'required',
-        ]);
-
         $otp = rand(123456, 999999);
-        $code = OTPCode::where('user_id', $request->input('user_id'));
+        $code = OTPCode::where('user_id', $id);
         $code->update([
             'code' => $otp,
             'expiry' => Carbon::now()->addMinutes(10),
         ]);
 
-        return $otp;
+        $user = User::where('id', $id)->first();
+        $res = $this->sendOTP($user->mobile, $otp);
+
+        if($res->getStatus() === 0)
+        {
+            return view('user.auth.otp', compact('user'));
+        }
     }
 
     public function checkOTP(Request $request)
@@ -97,7 +99,7 @@ class LoginController extends Controller
 
         if($res->getStatus() === 0)
         {
-            return view('user.auth.otp');
+            return view('user.auth.otp', compact('user'));
         }
     }
 }

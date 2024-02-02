@@ -12,9 +12,11 @@ Route::group(
     function () {
         // Authentication Routes...
         Route::get('login', 'LoginController@showLoginForm')->name('login_page');
-        Route::post('login', 'LoginController@login')->name('login');
+        Route::post('login', 'LoginController@checkOTP')->name('login');
         Route::post('logout', 'LoginController@logout')->name('logout');
         Route::get('logout', 'LoginController@logout')->name('logout_page');
+        Route::post('send-otp', 'LoginController@generateOTPForm')->name('otp.send');
+        Route::get('resend-otp/{id}', 'LoginController@resendOTP')->name('otp.resend');
 
         // Registration Routes...
         Route::get('register', 'RegisterController@showRegistrationForm')->name('register_page');

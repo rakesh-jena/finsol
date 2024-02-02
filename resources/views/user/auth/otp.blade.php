@@ -47,25 +47,34 @@
                                                 <h3>Login</h3>
                                             </div>
                                         </div>
-                                        <!-- <form class="needs-validation" novalidate=""> -->
-                                        <form method="POST" action="{{ route('otp.send') }}" id="login_form">
+                                        <form method="POST" action="{{ route('login') }}" id="otp_form">
                                             @csrf
+                                            <input type="hidden" name="user_id" value="{{ $user->id }}">
                                             <div class="mb-3">
-                                                <label class="form-label" for="card-mobile">Mobile</label>
+                                                <label class="form-label" for="card-otp">OTP</label>
                                                 <input class="form-control" maxlength="10" required="required"
-                                                    id="card-mobile" type="text" value="{{ old('mobile') }}"
-                                                    name="mobile" autofocus />
-                                                @error('mobile')
+                                                    id="card-otp" type="text" name="code" autofocus />
+                                                @error('otp')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                                <div class="invalid-feedback">Please Provide Mobile Number
+                                                <div class="invalid-feedback">
+                                                    Enter correct OTP
                                                 </div>
-                                                <div class="mb-3">
-                                                    <button class="btn btn-primary d-block w-100 mt-3" type="submit"
-                                                        name="submit">Send OTP</button>
+                                            </div>
+                                            <div class="row flex-between-center">
+                                                <div class="col-auto">
+                                                    @if (Route::has('otp.resend'))
+                                                    <a class="fs--1" href="{{ route('otp.resend', ['id' => $user->id]) }}">
+                                                        {{ __('Resend OTP') }}
+                                                    </a>
+                                                    @endif
                                                 </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <button class="btn btn-primary d-block w-100 mt-3" type="submit"
+                                                    name="submit">Login</button>
                                             </div>
                                         </form>
                                     </div>
