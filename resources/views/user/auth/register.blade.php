@@ -68,7 +68,7 @@
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="">Mobile No.</label>
-                                                    <input class="form-control" type="text" name="mobile"
+                                                    <input class="form-control" type="number" name="mobile"
                                                         autocomplete="on" required="" id="" maxlength="10"
                                                         pattern="^$|^[0-9]{10}$" />
                                                     <div class="invalid-feedback">Please Provide Mobile No.</div>
@@ -89,7 +89,7 @@
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="">Adhaar No.</label>
-                                                    <input class="form-control" type="text" maxlength="12" name="aadhaar"
+                                                    <input class="form-control" type="number" maxlength="12" name="aadhaar"
                                                         autocomplete="on" id=""
                                                         pattern="^$|^[0-9]{12}$" />
                                                     <div class="invalid-feedback">Please provide correct Aadhaar Number

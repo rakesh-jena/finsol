@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class LoginController extends Controller
 {
@@ -51,8 +52,7 @@ class LoginController extends Controller
         $user = User::where('id', $id)->first();
         $res = $this->sendOTP($user->mobile, $otp);
 
-        if($res->getStatus() === 0)
-        {
+        if ($res->getStatus() === 0) {
             return view('user.auth.otp', compact('user'));
         }
     }
@@ -78,12 +78,16 @@ class LoginController extends Controller
 
     public function sendOTP($mobile, $otp)
     {
-        $basic = new \Vonage\Client\Credentials\Basic("26370151", "pp7rNfKvnGp51XIR");
-        $client = new \Vonage\Client($basic);
-        $response = $client->sms()->send(new \Vonage\SMS\Message\SMS('91'.$mobile, 'FINSOL', 'Your OTP for Finsol is ' . $otp . '.'));
-        $message = $response->current();
+        $response = Http::post('https://control.msg91.com/api/v5/flow/', [
+            'body' => '{"template_id":"65c37c54d6fc0530c10059e2","recipients":[{"mobiles":"91' . $mobile . '","VAR1":"' . $otp . '"}]}',
+            'headers' => [
+                    'accept' => 'application/json',
+                    'authkey' => '269800AKJ12m4XMp6z65c37b75P1',
+                    'content-type' => 'application/json',
+                ],
+        ]);
 
-        return $message;
+        echo $response;
     }
 
     public function generateOTPForm(Request $request)
@@ -97,9 +101,21 @@ class LoginController extends Controller
 
         $res = $this->sendOTP($request->input('mobile'), $otp);
 
-        if($res->getStatus() === 0)
-        {
-            return view('user.auth.otp', compact('user'));
-        }
+        // if($res->getStatus() === 0)
+        // {
+        //     return view('user.auth.otp', compact('user'));
+        // }
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required'],
+            'password' => ['required'],
+        ]);
+
+        Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember);
+        
+        return redirect()->route('home');
     }
 }

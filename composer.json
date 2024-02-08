@@ -9,7 +9,7 @@
         "boolfalse/clearcaches": "^1.1",
         "fideloper/proxy": "^4.0",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.8",
         "instamojo/instamojo-php": "^0.4",
         "intervention/image": "^2.5",
         "laravel/framework": "8.6.*",
