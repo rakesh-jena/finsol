@@ -99,16 +99,14 @@
                                         @if ($detail->status == 1 || $detail->status == 3)
                                             <td colspan=6 style="display:flex;">
                                                 <span class="btn btn-info ml-1 mb-1 btn-sm" title="Add Note"
-                                                    type="button"
-                                                    onclick="openDinkycNoteModal({{ $detail->id }})"
+                                                    type="button" onclick="openDinkycNoteModal({{ $detail->id }})"
                                                     href="{{ url('companiesact/statusview/' . $detail->id) }}"
                                                     data-target="#myDinkycNoteModal">
                                                     Note<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
 
                                                 <span class="btn btn-success ml-1 mb-1 btn-sm  " title="Change Status"
-                                                    type="button"
-                                                    data-toggle="modal"
+                                                    type="button" data-toggle="modal"
                                                     onclick="openDinkycApproveModal({{ $detail->id }})"
                                                     data-target="#myDinkycApprovedModal">
                                                     Approve<span class="glyphicon glyphicon-eye-open ms-1"></span>

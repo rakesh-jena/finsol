@@ -10,18 +10,14 @@
              <h5 class="fs-0  offset-4">STATUS</h5>
              <div>
                  @if ($gstDetails->status == 2)
-                     <div><span
-                             class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
-                             Raised<span class="ms-1 fas fa-stream"
-                                 data-fa-transform="shrink-2"></span></span>
+                     <div><span class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
+                             Raised<span class="ms-1 fas fa-stream" data-fa-transform="shrink-2"></span></span>
 
                      </div>
                  @else
                      @if ($gstDetails->status == 3)
-                         <div><span
-                                 class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
-                                 Updated<span class="ms-1 fas fa-stream"
-                                     data-fa-transform="shrink-2"></span></span>
+                         <div><span class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
+                                 Updated<span class="ms-1 fas fa-stream" data-fa-transform="shrink-2"></span></span>
                              @if ($gstDetails->additional_img != '')
                                  <form
                                      action="{{ url('admin/user/gst/download/additional/file/' . $gstDetails->user_id) }}"
@@ -39,13 +35,10 @@
                          </div>
                      @else
                          @if ($gstDetails->status == 4)
-                             <span
-                                 class="badge badge rounded-pill d-block p-2 badge-subtle-success">Approved<span
-                                     class="ms-1 fas fa-check"
-                                     data-fa-transform="shrink-2"></span></span>
+                             <span class="badge badge rounded-pill d-block p-2 badge-subtle-success">Approved<span
+                                     class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
                          @else
-                             <span
-                                 class="badge badge rounded-pill d-block p-2 badge-subtle-primary">Processing
+                             <span class="badge badge rounded-pill d-block p-2 badge-subtle-primary">Processing
                                  <span class="ms-1 fas fa-redo" data-fa-transform="shrink-2">
                                  </span>
                              </span>

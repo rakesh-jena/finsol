@@ -1,13 +1,12 @@
 <aside class="main-sidebar">
     <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand" style="display: none;">
-        <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button"
+        <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3 here-2" type="button"
             data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse"
             aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span
                     class="toggle-line"></span></span></button>
         <a class="navbar-brand me-1 me-sm-3" href="index-2.html">
-            <div class="d-flex align-items-center"><img class="me-2"
-                    src="{{ asset('assets/img/icons/spot-illustrations/falcon.png') }}" alt="" width="40" /><span
-                    class="font-sans-serif">finsol</span></div>
+            <div class="d-flex align-items-center"><img class="me-2" src="{{ asset('assets/img/logos/finsol.png') }}"
+                    alt="" width="80" /></div>
         </a>
         <ul class="navbar-nav align-items-center d-none d-lg-block">
             <li class="nav-item">
@@ -154,8 +153,9 @@
             <li class="nav-item dropdown">
                 <a class="nav-link notification-indicator notification-indicator-primary px-0 fa-icon-wait"
                     id="navbarDropdownNotification" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false" data-hide-on-body-scroll="data-hide-on-body-scroll"><span
-                        class="fas fa-bell" data-fa-transform="shrink-6" style="font-size: 33px;"></span></a>
+                    aria-expanded="false" data-hide-on-body-scroll="data-hide-on-body-scroll">
+                    <span class="fas fa-bell" data-fa-transform="shrink-6" style="font-size: 33px;"></span>
+                </a>
                 <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end dropdown-menu-card dropdown-menu-notification dropdown-caret-bg"
                     aria-labelledby="navbarDropdownNotification">
                     <div class="card card-notification shadow-none">
@@ -177,8 +177,8 @@
                                     <a class="notification notification-flush notification-unread" href="#!">
                                         <div class="notification-avatar">
                                             <div class="avatar avatar-2xl me-3">
-                                                <img class="rounded-circle" src="{{ asset('assets/img/team/1-thumb.png') }}" 
-                                                    alt="" />
+                                                <img class="rounded-circle"
+                                                    src="{{ asset('assets/img/team/1-thumb.png') }}" alt="" />
                                             </div>
                                         </div>
                                         <div class="notification-body">
@@ -211,7 +211,8 @@
                                         <div class="notification-avatar">
                                             <div class="avatar avatar-2xl me-3">
                                                 <img class="rounded-circle"
-                                                    src="{{ asset('assets/img/icons/weather-sm.jpg') }}" alt="" />
+                                                    src="{{ asset('assets/img/icons/weather-sm.jpg') }}"
+                                                    alt="" />
                                             </div>
                                         </div>
                                         <div class="notification-body">
@@ -229,8 +230,8 @@
                                         href="#!">
                                         <div class="notification-avatar">
                                             <div class="avatar avatar-xl me-3">
-                                                <img class="rounded-circle" src="{{ asset('assets/img/logos/oxford.png') }}" 
-                                                    alt="" />
+                                                <img class="rounded-circle"
+                                                    src="{{ asset('assets/img/logos/oxford.png') }}" alt="" />
                                             </div>
                                         </div>
                                         <div class="notification-body">
@@ -246,8 +247,8 @@
                                     <a class="border-bottom-0 notification notification-flush" href="#!">
                                         <div class="notification-avatar">
                                             <div class="avatar avatar-xl me-3">
-                                                <img class="rounded-circle" src="{{ asset('assets/img/team/10.jpg') }}"
-                                                    alt="" />
+                                                <img class="rounded-circle"
+                                                    src="{{ asset('assets/img/team/10.jpg') }}" alt="" />
                                             </div>
                                         </div>
                                         <div class="notification-body">
@@ -280,7 +281,8 @@
                         <circle cx="14" cy="14" r="2" fill="#6C6E71"></circle>
                         <circle cx="8" cy="2" r="2" fill="#6C6E71"></circle>
                         <circle cx="14" cy="2" r="2" fill="#6C6E71"></circle>
-                    </svg></a>
+                    </svg>
+                </a>
                 <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end dropdown-menu-card dropdown-caret-bg"
                     aria-labelledby="navbarDropdownMenu">
                     <div class="card shadow-none">
@@ -291,21 +293,22 @@
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="pages/user/profile.html" target="_blank">
                                             <div class="avatar avatar-2xl"> <img class="rounded-circle"
-                                                    src="{{ asset('assets/img/team/3.jpg') }}" alt="" /></div>
+                                                    src="{{ asset('assets/img/team/3.jpg') }}" alt="" />
+                                            </div>
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2">Account</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="https://themewagon.com/" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/themewagon.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/themewagon.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Themewagon</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="https://mailbluster.com/" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/mailbluster.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/mailbluster.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Mailbluster</p>
                                         </a></div>
                                     <div class="col-4"><a
@@ -332,8 +335,8 @@
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/github-light.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/github-light.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Github</p>
                                         </a></div>
                                     <div class="col-4"><a
@@ -391,15 +394,15 @@
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/instagram.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/instagram.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Instagram</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/pinterest.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/pinterest.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Pinterest</p>
                                         </a></div>
                                     <div class="col-4"><a
@@ -412,8 +415,8 @@
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/deviantart.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/deviantart.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Deviantart</p>
                                         </a></div>
                                     <div class="col-4"><a
@@ -461,7 +464,7 @@
     </nav>
     <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-lg" style="display: none;"
         data-move-target="#navbarVerticalNav" data-navbar-top="combo">
-        <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button"
+        <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3 here-3" type="button"
             data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse"
             aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span
                     class="toggle-line"></span></span></button>
@@ -497,7 +500,7 @@
                     <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="apps">
                         <div class="card navbar-card-app shadow-none dark__bg-1000">
                             <div class="card-body scrollbar max-h-dropdown"><img class="img-dropdown"
-                                    src="{{ asset('assets/img/icons/spot-illustrations/authentication-corner.png') }}" 
+                                    src="{{ asset('assets/img/icons/spot-illustrations/authentication-corner.png') }}"
                                     width="130" alt="" />
                                 <div class="row">
                                     <div class="col-6 col-md-4">
@@ -603,7 +606,7 @@
                         aria-labelledby="pagess">
                         <div class="card navbar-card-pages shadow-none dark__bg-1000">
                             <div class="card-body scrollbar max-h-dropdown"><img class="img-dropdown"
-                                    src="{{ asset('assets/img/icons/spot-illustrations/authentication-corner.png') }}" 
+                                    src="{{ asset('assets/img/icons/spot-illustrations/authentication-corner.png') }}"
                                     width="130" alt="" />
                                 <div class="row">
                                     <div class="col-6 col-xxl-3">
@@ -756,7 +759,7 @@
                         aria-labelledby="moduless">
                         <div class="card navbar-card-components shadow-none dark__bg-1000">
                             <div class="card-body scrollbar max-h-dropdown"><img class="img-dropdown"
-                                    src="{{ asset('assets/img/icons/spot-illustrations/authentication-corner.png') }}" 
+                                    src="{{ asset('assets/img/icons/spot-illustrations/authentication-corner.png') }}"
                                     width="130" alt="" />
                                 <div class="row">
                                     <div class="col-6 col-xxl-3">
@@ -1076,7 +1079,8 @@
                                         <div class="notification-avatar">
                                             <div class="avatar avatar-2xl me-3">
                                                 <img class="rounded-circle"
-                                                    src="{{ asset('assets/img/team/1-thumb.png') }}" alt="" />
+                                                    src="{{ asset('assets/img/team/1-thumb.png') }}"
+                                                    alt="" />
                                             </div>
                                         </div>
                                         <div class="notification-body">
@@ -1109,7 +1113,8 @@
                                         <div class="notification-avatar">
                                             <div class="avatar avatar-2xl me-3">
                                                 <img class="rounded-circle"
-                                                    src="{{ asset('assets/img/icons/weather-sm.jpg') }}" alt="" />
+                                                    src="{{ asset('assets/img/icons/weather-sm.jpg') }}"
+                                                    alt="" />
                                             </div>
                                         </div>
                                         <div class="notification-body">
@@ -1128,7 +1133,8 @@
                                         <div class="notification-avatar">
                                             <div class="avatar avatar-xl me-3">
                                                 <img class="rounded-circle"
-                                                    src="{{ asset('assets/img/logos/oxford.png') }}" alt="" />
+                                                    src="{{ asset('assets/img/logos/oxford.png') }}"
+                                                    alt="" />
                                             </div>
                                         </div>
                                         <div class="notification-body">
@@ -1144,8 +1150,8 @@
                                     <a class="border-bottom-0 notification notification-flush" href="#!">
                                         <div class="notification-avatar">
                                             <div class="avatar avatar-xl me-3">
-                                                <img class="rounded-circle" src="{{ asset('assets/img/team/10.jpg') }}"
-                                                    alt="" />
+                                                <img class="rounded-circle"
+                                                    src="{{ asset('assets/img/team/10.jpg') }}" alt="" />
                                             </div>
                                         </div>
                                         <div class="notification-body">
@@ -1190,21 +1196,22 @@
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="pages/user/profile.html" target="_blank">
                                             <div class="avatar avatar-2xl"> <img class="rounded-circle"
-                                                    src="{{ asset('assets/img/team/3.jpg') }}" alt="" /></div>
+                                                    src="{{ asset('assets/img/team/3.jpg') }}" alt="" />
+                                            </div>
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2">Account</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="https://themewagon.com/" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/themewagon.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/themewagon.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Themewagon</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="https://mailbluster.com/" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/mailbluster.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/mailbluster.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Mailbluster
                                             </p>
                                         </a></div>
@@ -1218,8 +1225,8 @@
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/spotify.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/spotify.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Spotify</p>
                                         </a></div>
                                     <div class="col-4"><a
@@ -1232,15 +1239,15 @@
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/github-light.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/github-light.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Github</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/discord.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/discord.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Discord</p>
                                         </a></div>
                                     <div class="col-4"><a
@@ -1270,36 +1277,36 @@
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/linkedin.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/linkedin.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Linkedin</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/twitter.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/twitter.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Twitter</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/facebook.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/facebook.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Facebook</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/instagram.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/instagram.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Instagram</p>
                                         </a></div>
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/pinterest.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/pinterest.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Pinterest</p>
                                         </a></div>
                                     <div class="col-4"><a
@@ -1312,8 +1319,8 @@
                                     <div class="col-4"><a
                                             class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none"
                                             href="#!" target="_blank"><img class="rounded"
-                                                src="{{ asset('assets/img/nav-icons/deviantart.png') }}" alt=""
-                                                width="40" height="40" />
+                                                src="{{ asset('assets/img/nav-icons/deviantart.png') }}"
+                                                alt="" width="40" height="40" />
                                             <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Deviantart</p>
                                         </a></div>
                                     <div class="col-4"><a
@@ -1361,18 +1368,10 @@
         </ul>
     </nav>
     <script>
-        var isFluid = JSON.parse(localStorage.getItem('isFluid'));
-        if (isFluid) {
-            var container = document.querySelector('[data-layout]');
-            container.classList.remove('container');
-            container.classList.add('container-fluid');
-        }
-    </script>
-    <script>
         var navbarPosition = localStorage.getItem('navbarPosition');
         var navbarVertical = document.querySelector('.navbar-vertical');
         var navbarTopVertical = document.querySelector('.content .navbar-top');
-        var navbarTop = document.querySelector('[data-layout] .navbar-top:not([data-double-top-nav');
+        var navbarTop = document.querySelector('[data-layout] .navbar-top:not([data-double-top-nav]');
         var navbarDoubleTop = document.querySelector('[data-double-top-nav]');
         var navbarTopCombo = document.querySelector('.content [data-navbar-top="combo"]');
 

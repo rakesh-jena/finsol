@@ -1,10 +1,11 @@
-<div id="form-table" data-list='{"valueNames":["id","name","mobile","aadhaar","email","type_of_user"],"page":15,"pagination":true}'>
+<div id="form-table"
+    data-list='{"valueNames":["id","name","mobile","aadhaar","email","type_of_user"],"page":15,"pagination":true}'>
     <div class="row justify-content-start g-2">
-        <div class="col-auto col-sm-5 mb-3">
+        <div class="col-md-auto col-sm-12 mb-3 mt-4">
             <form>
                 <div class="input-group">
-                    <input class="form-control form-control-sm shadow-none search"
-                        type="search" placeholder="Search..." aria-label="search" />
+                    <input class="form-control form-control-sm shadow-none search" type="search" placeholder="Search..."
+                        aria-label="search" />
                     <div class="input-group-text bg-transparent">
                         <span class="fa fa-search fs--1 text-600"></span>
                     </div>
@@ -59,26 +60,21 @@
                         </td>
                         <td class="status">
                             @if ($form->status == 2)
-                                <div><span
-                                        class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
+                                <div><span class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
                                         Raised<span class="ms-1 fas fa-stream"
                                             data-fa-transform="shrink-2"></span></span>
 
                                 </div>
                             @elseif ($form->status == 3)
-                                <div><span
-                                        class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
+                                <div><span class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
                                         Updated<span class="ms-1 fas fa-stream"
                                             data-fa-transform="shrink-2"></span></span>
                                 </div>
                             @elseif ($form->status == 4)
-                                <span
-                                    class="badge badge rounded-pill d-block p-2 badge-subtle-success">Approved<span
-                                        class="ms-1 fas fa-check"
-                                        data-fa-transform="shrink-2"></span></span>
+                                <span class="badge badge rounded-pill d-block p-2 badge-subtle-success">Approved<span
+                                        class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
                             @else
-                                <span
-                                    class="badge badge rounded-pill d-block p-2 badge-subtle-primary">Processing
+                                <span class="badge badge rounded-pill d-block p-2 badge-subtle-primary">Processing
                                     <span class="ms-1 fas fa-redo" data-fa-transform="shrink-2">
                                     </span>
                                 </span>
@@ -96,24 +92,19 @@
         <div class="pagination d-none"></div>
         <div class="col">
             <p class="mb-0 fs--1">
-                <span class="d-none d-sm-inline-block"
-                    data-list-info="data-list-info"></span>
+                <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                 <span class="d-none d-sm-inline-block"> &mdash;</span>
-                <a class="fw-semi-bold" href="#!" data-list-view="*">View all<span
-                        class="fas fa-angle-right ms-1"
-                        data-fa-transform="down-1"></span></a><a
-                    class="fw-semi-bold d-none" href="#!" data-list-view="less">View
-                    Less<span class="fas fa-angle-right ms-1"
-                        data-fa-transform="down-1"></span></a>
+                <a class="fw-semi-bold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ms-1"
+                        data-fa-transform="down-1"></span></a><a class="fw-semi-bold d-none" href="#!"
+                    data-list-view="less">View
+                    Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
             </p>
         </div>
         <div class="col-auto d-flex">
-            <button class="btn btn-sm btn-primary" type="button"
-                data-list-pagination="prev">
+            <button class="btn btn-sm btn-primary" type="button" data-list-pagination="prev">
                 <span>Previous</span>
             </button>
-            <button class="btn btn-sm btn-primary px-4 ms-2" type="button"
-                data-list-pagination="next">
+            <button class="btn btn-sm btn-primary px-4 ms-2" type="button" data-list-pagination="next">
                 <span>Next</span>
             </button>
         </div>

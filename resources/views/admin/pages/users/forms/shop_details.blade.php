@@ -2,18 +2,16 @@
     <div class="row">
         <h5>SHOP Form Details</h5>
         <div class="col-12">
-            <div id="tableExample"
-                data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
+            <div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
                 <div class="table-responsive scrollbar">
                     @if (session('additionalfilenotexist_shop'))
-                        <div class="alert alert-danger border-2 d-flex align-items-center"
-                            role="alert">
+                        <div class="alert alert-danger border-2 d-flex align-items-center" role="alert">
                             <div class="bg-danger me-3 icon-item"><span
                                     class="fas fa-check-circle text-white fs-3"></span>
                             </div>
                             <p class="mb-0 flex-1">{{ session('additionalfilenotexist_shop') }}</p>
-                            <button class="btn-close" type="button"
-                                data-bs-dismiss="alert" aria-label="Close"></button>
+                            <button class="btn-close" type="button" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
                         </div>
                     @endif
 
@@ -129,10 +127,8 @@
                                                 <span class="btn btn-success ml-1 mb-1 btn-sm  " title="Change Status"
                                                     type="button" data-toggle="modal"
                                                     onclick="openShopApproveModal({{ $detail->id }})"
-
                                                     data-target="#myShopApprovedModal">
-                                                    Approve<span
-                                                        class="glyphicon glyphicon-eye-open ms-1"></span>
+                                                    Approve<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
                                             @else
                                                 @if ($detail->status == 4)
@@ -153,19 +149,15 @@
                     <div class="pagination d-none"></div>
                     <div class="col">
                         <p class="mb-0 fs--1">
-                            <span class="d-none d-sm-inline-block"
-                                data-list-info="data-list-info"></span>
+                            <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                             <span class="d-none d-sm-inline-block"> &mdash;</span>
                             <a class="fw-semi-bold" href="#!" data-list-view="*">View all<span
-                                    class="fas fa-angle-right ms-1"
-                                    data-fa-transform="down-1"></span></a><a
+                                    class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
                                 class="fw-semi-bold d-none" href="#!" data-list-view="less">View
-                                Less<span class="fas fa-angle-right ms-1"
-                                    data-fa-transform="down-1"></span></a>
+                                Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                         </p>
                     </div>
-                    <div class="col-auto d-flex"><button class="btn btn-sm btn-primary"
-                            type="button"
+                    <div class="col-auto d-flex"><button class="btn btn-sm btn-primary" type="button"
                             data-list-pagination="prev"><span>Previous</span></button><button
                             class="btn btn-sm btn-primary px-4 ms-2" type="button"
                             data-list-pagination="next"><span>Next</span></button></div>
