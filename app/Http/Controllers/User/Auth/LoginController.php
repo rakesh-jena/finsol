@@ -110,12 +110,21 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email' => ['required'],
+            'mobile' => ['required', 'exists:users'],
             'password' => ['required'],
         ]);
 
-        Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember);
+        if(Auth::attempt(['mobile' => $request->mobile, 'password' => $request->password], $request->remember))
+        {
+            return redirect()->route('home');
+        } else {
+            return back()->withErrors(
+                [
+                    'password' => 'Incorrect password!'
+                ]
+            );
+        }
         
-        return redirect()->route('home');
+        
     }
 }

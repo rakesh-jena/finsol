@@ -70,16 +70,34 @@
                                         </form> --}}
                                         <form method="POST" action="{{ route('login') }}">
                                             @csrf
+                                            @if ($errors->any())
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+
+                                            @if (session()->has('message'))
+                                                <p class="alert alert-success alert-dismissible fade show"
+                                                    role="alert">{{ session('message') }}
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </p>
+                                            @endif
                                             <div class="mb-3">
-                                                <label class="form-label" for="card-email">Email</label><input
-                                                    class="form-control" required="required" id="card-email" type="email"
-                                                    value="{{ old('email') }}" name="email" autofocus />
-                                                @error('email')
+                                                <label class="form-label" for="card-mobile">Mobile</label>
+                                                <input class="form-control" maxlength="10" required="required"
+                                                    id="card-mobile" type="text" value="{{ old('mobile') }}"
+                                                    name="mobile" autofocus pattern="^$|^[0-9]{10}$"/>
+                                                @error('mobile')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                                <div class="invalid-feedback">Please Provide Mobile Number or Aadhar Number
+                                                <div class="invalid-feedback">Please Provide Mobile Number
                                                 </div>
                                             </div>
                                             <div class="mb-3">

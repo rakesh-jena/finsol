@@ -39,8 +39,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'mobile' => ['required', 'numeric', 'unique:users'],
             'password' => ['required', 'string', 'min:6'],
-            'aadhaar' => ['unique:users'],
-            'email' => ['unique:users']
+            //'aadhaar' => ['unique:users'],
+            //'email' => ['unique:users']
         ]);
 
         $user = User::create([
