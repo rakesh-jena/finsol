@@ -13,7 +13,7 @@
 
                     <div class="card h-md-100 ecommerce-card-min-width">
                         <div class="card-header pb-0">
-                            <h6 class="mb-0 mt-2 d-flex align-items-center">List of Users</h6>
+                            <h6 class="mb-0 mt-2 d-flex align-items-center">List of Offices</h6>
                         </div>
                         <div class="card-body d-flex flex-column justify-content-end">
                             <div class="row">
@@ -24,7 +24,20 @@
                                         </p>
                                     @endif
                                     <div id="tableExample"
-                                        data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
+                                        data-list='{"valueNames":["name","email","type_of_user","access_level_id"],"page":15,"pagination":true}'>
+                                        <div class="row justify-content-start g-2">
+                                            <div class="col-auto col-sm-5 mb-3">
+                                                <form>
+                                                    <div class="input-group">
+                                                        <input class="form-control form-control-sm shadow-none search"
+                                                            type="search" placeholder="Search..." aria-label="search" />
+                                                        <div class="input-group-text bg-transparent">
+                                                            <span class="fa fa-search fs--1 text-600"></span>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                         <div class="table-responsive scrollbar">
                                             @if ($errors->any())
                                                 <div class="alert alert-danger">

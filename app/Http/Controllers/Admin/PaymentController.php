@@ -26,50 +26,30 @@ class PaymentController extends Controller
 
     public function allTransactions()
     {
-        $data['states'] = State::all();
-        $histories = Instamojo::select('*')->orderBy('updated_at', 'DESC')->get();
+        $data['states'] = State::orderBy('name', 'asc')->get();
         if(request()->has('state') && request('state') != null)
         {   
             if(request()->has('district') && request('district') != null)
             {
                 if(request()->has('block') && request('block') != null)
                 {
-                    $users = User::select('id')->where('block', request('block'))->get()->toArray();
-                    $transaction = [];
-                    foreach($histories as $history)
-                    {
-                        if(in_array($history->user_id, $users))
-                        {
-                            $transaction[] = $history;
-                        }
-                    }
-                    $data['transaction'] = $transaction;
+                    $users = User::select('id')->where('block', request('block'))->get()->toArray();                    
+                    $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
                 } else {
-                    $users = User::select('id')->where('district', request('district'))->get()->toArray();
-                    $transaction = [];
-                    foreach($histories as $history)
-                    {
-                        if(in_array($history->user_id, $users))
-                        {
-                            $transaction[] = $history;
-                        }
-                    }
-                    $data['transaction'] = $transaction;
+                    $users = User::select('id')->where('district', request('district'))->get()->toArray();                    
+                    $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
                 }
             } else {
                 $users = User::select('id')->where('state', request('state'))->get()->toArray();
-                $transaction = [];
-                foreach($histories as $history)
-                {
-                    if(in_array($history->user_id, $users))
-                    {
-                        $transaction[] = $history;
-                    }
-                }
-                $data['transaction'] = $transaction;
+                $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
             }
         } else {
-            $data['transaction'] = $histories;
+            $data['transaction'] = Instamojo::select('*')->orderBy('updated_at', 'DESC')->get();
+        }
+
+        if(request()->has('from') && request()->has('to'))
+        {
+            $data['transaction'] = Instamojo::whereBetween('created_at', [request('from'), request('to')])->orderBy('updated_at', 'DESC')->get();
         }
         
         $total = 0;

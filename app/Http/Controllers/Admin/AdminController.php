@@ -38,6 +38,9 @@ use App\Models\UserTdsDetail;
 use App\Models\UserTrademarkDetail;
 use App\Models\UserTrustDetail;
 use App\Models\UserUdamyDetail;
+use App\Models\Block;
+use App\Models\District;
+use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -61,30 +64,43 @@ class AdminController extends Controller
         $user = Auth::user();
         switch ($user->type_of_user) {
             case 'State Office':
-                $data['users'] = User::select('name', 'image', 'status', 'email', 'id')
+                $data['users'] = User::select('name', 'image', 'mobile', 'aadhaar', 'status', 'email', 'id')
                     ->where('state', $user->access_level_id)
                     ->orderBy('id', 'DESC')
                     ->get();
                 break;
 
             case 'District Office':
-                $data['users'] = User::select('name', 'image', 'status', 'email', 'id')
+                $data['users'] = User::select('name', 'image', 'mobile', 'aadhaar', 'status', 'email', 'id')
                     ->where('district', $user->access_level_id)
                     ->orderBy('id', 'DESC')
                     ->get();
                 break;
 
             case 'Block Office':
-                $data['users'] = User::select('name', 'image', 'status', 'email', 'id')
+                $data['users'] = User::select('name', 'image', 'mobile', 'aadhaar', 'status', 'email', 'id')
                     ->where('block', $user->access_level_id)
                     ->orderBy('id', 'DESC')
                     ->get();
                 break;
 
-            default:
-                $data['users'] = User::select('name', 'image', 'status', 'email', 'id')
-                    ->orderBy('id', 'DESC')
-                    ->get();
+            default:                
+                if(request()->has('state') && request('state') != null)
+                {   
+                    if(request()->has('district') && request('district') != null)
+                    {
+                        if(request()->has('block') && request('block') != null)
+                        {                   
+                            $data['users'] = User::where('block', request('block'))->orderBy('created_at', 'DESC')->get();
+                        } else {
+                            $data['users'] = User::where('district', request('district'))->orderBy('created_at', 'DESC')->get();
+                        }
+                    } else {
+                        $data['users'] = User::where('state', request('state'))->orderBy('created_at', 'DESC')->get();
+                    }
+                } else {
+                    $data['users'] = User::orderBy('created_at', 'DESC')->get();
+                }
         }
 
         return $data;
@@ -445,6 +461,7 @@ class AdminController extends Controller
 
     public function status_list($status)
     {
+        $data['states'] = State::orderBy('name', 'asc')->get();
         switch ($status) {
             case 'processing':
                 $data['forms'] = AdminController::all_forms(1);
@@ -471,6 +488,7 @@ class AdminController extends Controller
         foreach ($list['users'] as $user) {
             $users[] = (int) $user->id;
         }
+        $data['states'] = State::orderBy('name', 'asc')->get();
         switch ($request->form_type) {
             case 'pan':
                 $data['forms'] = UserPanDetail::whereIn('status', [1, 2, 3, 4])
@@ -712,6 +730,7 @@ class AdminController extends Controller
                 break;
             default:
         }
+
         return view('admin.pages.forms.dashboard')->with($data);
     }
 }

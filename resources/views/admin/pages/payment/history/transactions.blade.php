@@ -63,7 +63,23 @@
                                         </select>
                                     </div>
                                     <div class="col-3">
-                                        <button class="btn btn-primary" type="submit">
+                                        <button class="btn btn-primary btn-sm" type="submit">
+                                            <i class="fas fa-filter"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-12">
+                                <h6 class="mb-1">Between Date</h6>
+                                <form action="" class="row">
+                                    <div class="col-3">
+                                        <input class="form-control form-control-sm" type="date" name="from" id="from" placeholder="From date..." value="@if(request('from'))<?=date_format(date_create(request('from')), 'Y-m-d')?>@endif">
+                                    </div>
+                                    <div class="col-3">
+                                        <input class="form-control form-control-sm" type="date" name="to" id="to" placeholder="To date..." value="@if(request('to'))<?=date_format(date_create(request('to')), 'Y-m-d')?>@endif">
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-primary btn-sm" type="submit">
                                             <i class="fas fa-filter"></i>
                                         </button>
                                     </div>

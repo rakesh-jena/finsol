@@ -33,6 +33,8 @@ class UserController extends Controller
                     'name',
                     'image',
                     'status',
+                    'aadhaar',
+                    'mobile',
                     'email',
                     'id'
                 )->where("state", $user->access_level_id)->orderBy('id', 'DESC')->get();
@@ -43,6 +45,8 @@ class UserController extends Controller
                     'name',
                     'image',
                     'status',
+                    'aadhaar',
+                    'mobile',
                     'email',
                     'id'
                 )->where("district", $user->access_level_id)->orderBy('id', 'DESC')->get();
@@ -52,6 +56,8 @@ class UserController extends Controller
                 $data['users'] = User::select(
                     'name',
                     'image',
+                    'aadhaar',
+                    'mobile',
                     'status',
                     'email',
                     'id'
@@ -59,13 +65,24 @@ class UserController extends Controller
                 break;
 
             default:
-                $data['users'] = User::select(
-                    'name',
-                    'image',
-                    'status',
-                    'email',
-                    'id'
-                )->orderBy('id', 'DESC')->get();
+                $data['states'] = State::orderBy('name', 'asc')->get();
+                if(request()->has('state') && request('state') != null)
+                {   
+                    if(request()->has('district') && request('district') != null)
+                    {
+                        if(request()->has('block') && request('block') != null)
+                        {                   
+                            $data['users'] = User::where('block', request('block'))->orderBy('created_at', 'DESC')->get();
+                        } else {
+                            $data['users'] = User::where('district', request('district'))->orderBy('created_at', 'DESC')->get();
+                        }
+                    } else {
+                        $data['users'] = User::where('state', request('state'))->orderBy('created_at', 'DESC')->get();
+                    }
+                } else {
+                    $data['users'] = User::orderBy('created_at', 'DESC')->get();
+                }
+                
         }
 
         return view('admin.pages.users.index')->with($data);
@@ -152,7 +169,7 @@ class UserController extends Controller
 
     public function addUserForm(Request $request)
     {
-        $states = State::all();
+        $states = State::orderBy('name', 'asc')->get();
         $routeUrl = Helper::getBaseUrl($request);
         return view('admin.auth.register', compact('states', 'routeUrl'));
     }

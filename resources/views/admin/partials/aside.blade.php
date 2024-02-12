@@ -20,9 +20,12 @@
                 data-bs-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span
                         class="toggle-line"></span></span></button>
         </div><a class="navbar-brand" href="index-2.html">
-            <div class="d-flex align-items-center py-3"><img class="me-2"
-                    src="{{ asset('assets/img/logos/finsol.png') }}" alt=""
-                    width="120" /></div>
+            <div class="d-flex align-items-center py-3">
+                <a href="{{ url('admin') }}">
+                    <img class="me-2" src="{{ asset('assets/img/logos/finsol.png') }}" alt=""
+                        width="120" />
+                </a>
+            </div>
         </a>
     </div>
     <!-- Current Sidebar -->
@@ -30,11 +33,14 @@
         <div class="navbar-vertical-content scrollbar">
             <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
                 <li class="nav-item">
-                    <!-- parent pages--><a class="nav-link dropdown-indicator" href="{{ url('admin') }}" role="button"
-                        data-bs-toggle="collapse" aria-expanded="true" aria-controls="dashboard">
-                        <div class="d-flex align-items-center"><span class="nav-link-icon"><span
-                                    class="fas fa-chart-pie"></span></span><span
-                                class="nav-link-text ps-1">Dashboard</span></div>
+                    <!-- parent pages-->
+                    <a class="nav-link href="{{ url('admin') }}">
+                        <div class="d-flex align-items-center">
+                            <span class="nav-link-icon">
+                                <span class="fas fa-chart-pie"></span>
+                            </span>
+                            <span class="nav-link-text ps-1">Dashboard</span>
+                        </div>
                     </a>
                 </li>
 
@@ -408,13 +414,11 @@
 <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-lg" style="display: none;">
     <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button"
         data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard"
-        aria-expanded="false"
-        aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span
+        aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span
                 class="toggle-line"></span></span></button>
     <a class="navbar-brand me-1 me-sm-3" href="index-2.html">
         <div class="d-flex align-items-center">
-            <img class="me-2" src="{{ asset('assets/img/logos/finsol.png') }}" alt=""
-                width="40" />
+            <img class="me-2" src="{{ asset('assets/img/logos/finsol.png') }}" alt="" width="40" />
         </div>
     </a>
     <div class="collapse navbar-collapse scrollbar" id="navbarStandard">
@@ -441,8 +445,7 @@
         <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl">
-                    <img class="rounded-circle" src="{{ asset('assets/img/team/3-thumb.png') }}"
-                        alt="" />
+                    <img class="rounded-circle" src="{{ asset('assets/img/team/3-thumb.png') }}" alt="" />
                 </div>
             </a>
             <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"
@@ -470,8 +473,8 @@
                     class="toggle-line"></span></span></button>
         <a class="navbar-brand me-1 me-sm-3" href="index-2.html">
             <div class="d-flex align-items-center"><img class="me-2"
-                    src="{{ asset('assets/img/logos/finsol.png') }}" alt=""
-                    width="40" /><span class="font-sans-serif">falcon</span></div>
+                    src="{{ asset('assets/img/logos/finsol.png') }}" alt="" width="40" /><span
+                    class="font-sans-serif">falcon</span></div>
         </a>
         <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
             <li class="nav-item px-2">

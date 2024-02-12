@@ -20,8 +20,62 @@
                                             {{ session('message') }}
                                         </p>
                                     @endif
+                                    @if (Auth::user()->type_of_user === 'Head Office')
+                                        <h6 class="mb-1">Filter</h6>
+                                        <form action="" class="row">
+                                            <div class="col-3">
+                                                <select class="form-select form-select-sm mb-3" id="filter-select-state"
+                                                    name="state">
+                                                    <option selected="" value="">Select State</option>
+                                                    @foreach ($states as $state)
+                                                        <option value="{{ $state->id }}">{{ $state->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+                                            <div class="col-3 px-3">
+                                                <select class="form-select form-select-sm mb-3" id="filter-select-district"
+                                                    name="district">
+                                                    <option selected="" value="">Select District</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-3">
+                                                <select class="form-select form-select-sm mb-3" id="filter-select-block"
+                                                    name="block">
+                                                    <option selected="" value="">Select Block</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-3">
+                                                <button class="btn btn-primary btn-sm" type="submit">
+                                                    <i class="fas fa-filter"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    @endif
                                     <div id="tableExample"
-                                        data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
+                                        data-list='{"valueNames":["id","name","mobile","aadhaar","email","status"],"page":15,"pagination":true,"filter":{"key":"status"}}'>
+                                        <div class="row justify-content-start g-2">
+                                            <div class="col-auto col-sm-5 mb-3">
+                                                <form>
+                                                    <div class="input-group">
+                                                        <input class="form-control form-control-sm shadow-none search"
+                                                            type="search" placeholder="Search..." aria-label="search" />
+                                                        <div class="input-group-text bg-transparent">
+                                                            <span class="fa fa-search fs--1 text-600"></span>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-auto px-3">
+                                                <select class="form-select form-select-sm mb-3" aria-label="Bulk actions"
+                                                    data-list-filter="data-list-filter">
+                                                    <option selected="" value="">Select user status</option>
+                                                    <option value="active">Active</option>
+                                                    <option value="not_active">Inactive</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="table-responsive scrollbar">
                                             @if ($errors->any())
                                                 <div class="alert alert-danger">
@@ -37,10 +91,11 @@
                                                     <tr>
                                                         <th class="sort" data-sort="id">ID</th>
                                                         <th class="sort" data-sort="name">Name</th>
+                                                        <th class="sort" data-sort="mobile">Mobile</th>
+                                                        <th class="sort" data-sort="aadhaar">Aadhaar</th>
                                                         <th class="sort" data-sort="email">Email</th>
-                                                        <th class="sort" data-sort="age">Status</th>
-
-                                                        <th class="sort" data-sort="age">Details</th>
+                                                        <th class="sort" data-sort="status">Status</th>
+                                                        <th>Details</th>
 
                                                     </tr>
                                                 </thead>
@@ -49,11 +104,12 @@
                                                         <tr>
                                                             <td>{{ $user->id }}</td>
                                                             <td class="name">{{ $user['name'] }}</td>
+                                                            <td class="mobile">{{ $user['mobile'] }}</td>
+                                                            <td class="aadhaar">{{ $user['aadhaar'] }}</td>
                                                             <td class="email">{{ $user['email'] }}</td>
-                                                            <td class="age">{{ $user['status'] }}</td>
-
-                                                            <td class="gst"><a
-                                                                    href="{{ URL('/admin/user/profile/' . $user['id']) }}">View
+                                                            <td class="status">{{ $user['status'] }}</td>
+                                                            <td>
+                                                                <a href="{{ URL('/admin/user/profile/' . $user['id']) }}">View
                                                                     Profile</a>
                                                             </td>
                                                         </tr>
@@ -78,8 +134,7 @@
                                                 </p>
                                             </div>
                                             <div class="col-auto d-flex">
-                                                <button class="btn btn-sm btn-primary"
-                                                    type="button"
+                                                <button class="btn btn-sm btn-primary" type="button"
                                                     data-list-pagination="prev">
                                                     <span>Previous</span>
                                                 </button>

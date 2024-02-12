@@ -28,7 +28,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm(Request $request)
     {
-        $states = State::all();
+        $states = State::orderBy('name', 'asc')->get();
         $routeUrl = Helper::getBaseUrl($request);
         return view('user.auth.register', compact('states', 'routeUrl'));
     }

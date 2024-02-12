@@ -1,4 +1,17 @@
-<div id="form-table" data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
+<div id="form-table" data-list='{"valueNames":["id","name","mobile","aadhaar","email","type_of_user"],"page":15,"pagination":true}'>
+    <div class="row justify-content-start g-2">
+        <div class="col-auto col-sm-5 mb-3">
+            <form>
+                <div class="input-group">
+                    <input class="form-control form-control-sm shadow-none search"
+                        type="search" placeholder="Search..." aria-label="search" />
+                    <div class="input-group-text bg-transparent">
+                        <span class="fa fa-search fs--1 text-600"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="table-responsive scrollbar">
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -14,10 +27,12 @@
                 <tr>
                     <th class="sort" data-sort="id">ID</th>
                     <th class="sort" data-sort="name">Name</th>
+                    <th class="sort" data-sort="mobile">Mobile</th>
+                    <th class="sort" data-sort="aadhaar">Aadhaar</th>
                     <th class="sort" data-sort="email">Email</th>
                     <th class="sort" data-sort="type_of_user">Type</th>
-                    <th class="sort" data-sort="access_level_id">Status</th>
-                    <th class="sort" data-sort="access_level_id">Details</th>
+                    <th>Status</th>
+                    <th>Details</th>
                 </tr>
             </thead>
             <tbody class="list">
@@ -30,10 +45,16 @@
                                 {{ $user['name'] }}
                             </a>
                         </td>
+                        <td class="mobile">
+                            {{ $user['mobile'] }}
+                        </td>
+                        <td class="aadhaar">
+                            {{ $user['aadhaar'] }}
+                        </td>
                         <td class="email">
                             {{ $user['email'] }}
                         </td>
-                        <td class="type">
+                        <td class="type_of_user">
                             {{ $form['type'] }}
                         </td>
                         <td class="status">
