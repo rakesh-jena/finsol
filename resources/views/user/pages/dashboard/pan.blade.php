@@ -16,8 +16,7 @@
         <tbody>
             @if ($userPanDetails)
                 @foreach ($userPanDetails as $key => $detail)
-                    <tr class="align-middle" data-toggle="collapse"
-                        data-target="#{{ $detail->type . $key }}"
+                    <tr class="align-middle" data-toggle="collapse" data-target="#{{ $detail->type . $key }}"
                         class="accordion-toggle">
 
                         <td class="text-nowrap">{{ isset($detail->name_of_pan) ? $detail->name_of_pan : '-' }}</td>
@@ -128,8 +127,8 @@
                                     <br /><br />
                                     <div class="col">
                                         <form class="needs-validation" novalidate="novalidate"
-                                            action="{{ route('form.query_raised') }}"
-                                            method="post" enctype="multipart/form-data">
+                                            action="{{ route('form.query_raised') }}" method="post"
+                                            enctype="multipart/form-data">
                                             @csrf
                                             <span
                                                 class="badge badge rounded-pill d-block p-2 badge-subtle-warning toggleButton">Query
@@ -152,8 +151,7 @@
                                                 <label>Upload Required
                                                     doc:</label>
                                                 <input type="file" name="additional_img[]" id="image-upload"
-                                                    class="myfrm form-control"
-                                                    multiple />
+                                                    class="myfrm form-control" multiple />
                                             </div>
 
                                             <div class="mt-3">

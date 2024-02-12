@@ -192,16 +192,7 @@
                         <div class="echart-bar-weekly-sales h-100"></div>
                     </div>
                 </div>
-
             @endif
         </div>
     </div>
-
 @endsection
-
-@include('admin.pages.users.modal')
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    crossorigin="anonymous">
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>

@@ -21,8 +21,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Business
                         Email</label><input class="form-control" type="email" value="{{ Auth::user()->email }}"
-                        name="email_id"
-                        placeholder="Email address"
+                        name="email_id" placeholder="Email address"
                         pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$" required="required"
                         id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
                     <div class="invalid-feedback">You must add email</div>
@@ -33,8 +32,7 @@
                     <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                         number
                         registered with aadhar</label><input class="form-control" required="" type="text"
-                        name="mobile_number" placeholder="Enter Mobile No"
-                        id="form-wizard-progress-wizard-addregnum" />
+                        name="mobile_number" placeholder="Enter Mobile No" id="form-wizard-progress-wizard-addregnum" />
                     <div class="invalid-feedback">Please provide Mobile
                         number</div>
                 </div>
@@ -61,8 +59,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-email">
                         Email</label><input class="form-control" type="email" name="esicsignatory[0][email]"
-                        placeholder="Email address"
-                        pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
+                        placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
                         id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
                     <div class="invalid-feedback">You must add email</div>
                 </div>

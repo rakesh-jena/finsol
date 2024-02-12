@@ -14,8 +14,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Trademark
                     </label><input class="form-control" type="text" name="name_of_trademark"
-                        placeholder="Name of Trademark"
-                        required="required" />
+                        placeholder="Name of Trademark" required="required" />
                     <div class="invalid-feedback">Please provide name of Trademark</div>
                 </div>
             </div>
@@ -24,8 +23,7 @@
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of
                         Individual/Business
                     </label><input class="form-control" type="text" name="name_of_trademark"
-                        placeholder="Name of Individual/Business"
-                        required="required" />
+                        placeholder="Name of Individual/Business" required="required" />
                     <div class="invalid-feedback">Please provide name of Individual/Business</div>
                 </div>
             </div>
@@ -36,10 +34,9 @@
                 <div class="mb-3">
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Business
                         Email</label><input class="form-control" type="email" value="{{ Auth::user()->email }}"
-                        name="email_id"
-                        placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
-                        required="required" id="bootstrap-wizard-validation-wizard-email"
-                        data-wizard-validate-email="true" />
+                        name="email_id" placeholder="Email address"
+                        pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$" required="required"
+                        id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
                     <div class="invalid-feedback">You must add email</div>
                 </div>
             </div>

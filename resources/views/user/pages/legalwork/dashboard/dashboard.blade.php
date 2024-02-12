@@ -3,76 +3,60 @@
     @php
         use App\Models\UserGstDetail;
     @endphp
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
-        <div class="container-fluid" data-layout="container">
-            @include('user.partials.header')
-            <div class="content">
-                @include('user.partials.aside')
-                <div class="row g-3">
-                    <div class="col-xl-12">
-                        <div class="card mb-3">
-                            <!-- ============================================-->
-                            <!-- <section> begin ============================-->
-                            <section class="text-center">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">Legal Work<font
-                                                    color="#ec465f">Status
-                                                </font>
-                                            </h1>
-                                            <p class="lead">Things you will get right out of the box with Finsol.</p>
-                                        </div>
-                                    </div>
-
-                                    <!------ GST options drop ------->
-
-                                    <div class="row mt-2 g-3">
-                                        <div class="card-body" bis_skin_checked="1">
-
-                                            <div class="table-responsive scrollbar">
-                                                <div class="container">
-                                                    <div class="col-md-12">
-                                                        <div class="panel panel-default">
-                                                            <div class="panel-body">
-                                                                @if (session('success'))
-                                                                    <div class="alert alert-success border-2 d-flex align-items-center"
-                                                                        role="alert">
-                                                                        <div class="bg-success me-3 icon-item"><span
-                                                                                class="fas fa-check-circle text-white fs-3"></span>
-                                                                        </div>
-                                                                        <p class="mb-0 flex-1">{{ session('success') }}</p>
-                                                                        <button class="btn-close" type="button"
-                                                                            data-bs-dismiss="alert"
-                                                                            aria-label="Close"></button>
-                                                                    </div>
-                                                                @endif
-                                                                @include('user.pages.legalwork.dashboard.legal')
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!------ GST options drop close ------->
-                                </div><!-- end of .container-->
-                            </section><!-- <section> close ============================-->
-                            <!-- ============================================-->
+    <div class="row g-3">
+        <div class="col-xl-12">
+            <div class="card mb-3">
+                <!-- ============================================-->
+                <!-- <section> begin ============================-->
+                <section class="text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">Legal Work<font color="#ec465f">Status
+                                    </font>
+                                </h1>
+                                <p class="lead">Things you will get right out of the box with Finsol.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                @include('user.partials.footer')
+
+                        <!------ GST options drop ------->
+
+                        <div class="row mt-2 g-3">
+                            <div class="card-body" bis_skin_checked="1">
+
+                                <div class="table-responsive scrollbar">
+                                    <div class="container">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    @if (session('success'))
+                                                        <div class="alert alert-success border-2 d-flex align-items-center"
+                                                            role="alert">
+                                                            <div class="bg-success me-3 icon-item"><span
+                                                                    class="fas fa-check-circle text-white fs-3"></span>
+                                                            </div>
+                                                            <p class="mb-0 flex-1">{{ session('success') }}</p>
+                                                            <button class="btn-close" type="button" data-bs-dismiss="alert"
+                                                                aria-label="Close"></button>
+                                                        </div>
+                                                    @endif
+                                                    @include('user.pages.legalwork.dashboard.legal')
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------ GST options drop close ------->
+                    </div><!-- end of .container-->
+                </section><!-- <section> close ============================-->
+                <!-- ============================================-->
             </div>
         </div>
-    </main><!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- ===============================================-->
+    </div>
 @endsection
 
 <style>

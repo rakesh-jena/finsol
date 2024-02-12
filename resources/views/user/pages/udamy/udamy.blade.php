@@ -14,8 +14,7 @@
                     </div>
                 @endif
                 <form class="needs-validation" novalidate="novalidate" action="{{ route('udamy.register') }}"
-                    method="post"
-                    enctype="multipart/form-data">
+                    method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
@@ -48,8 +47,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                                     Number linked with Aadhar</label><input class="form-control" required=""
-                                    type="text"
-                                    name="udamy_mobile" placeholder="Mobile No"
+                                    type="text" name="udamy_mobile" placeholder="Mobile No"
                                     id="form-wizard-progress-wizard-addregnum" />
                                 <div class="invalid-feedback">Please provide Mobile
                                     number</div>

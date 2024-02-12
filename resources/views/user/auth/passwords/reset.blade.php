@@ -1,4 +1,4 @@
-@extends('user.layouts.app')
+@extends('user.layouts.blank')
 
 @section('content')
     <main class="main" id="top">

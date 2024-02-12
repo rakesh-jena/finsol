@@ -1,5 +1,4 @@
-<div class="tab-pane fade" id="pill-tab-profile" role="tabpanel"
-    aria-labelledby="profile-tab">
+<div class="tab-pane fade" id="pill-tab-profile" role="tabpanel" aria-labelledby="profile-tab">
     <form class="needs-validation" novalidate="novalidate" action="{{ route('gst.uploaddocumentscreate') }}"
         method="post"enctype="multipart/form-data">
         @csrf
@@ -12,8 +11,7 @@
                     <label class="form-label" for="form-wizard-progress-wizard-legalnamename">Select
                         GST Number</label>
                     <select name="gstnumber" class="form-select" id="gstSelect2" required="required"
-                        onChange="getTradeName2()"
-                        aria-label="Default select example">
+                        onChange="getTradeName2()" aria-label="Default select example">
                         <option value="">GST Number</option>
                         @foreach ($gstNumbers as $key => $numbers)
                             <option value="{{ $numbers->gst_number }}">{{ $numbers->gst_number }}</option>
@@ -30,8 +28,7 @@
                         Name of
                         the
                         Business</label><input required="" class="form-control tradeName2" type="text" disabled
-                        name="name" placeholder="Legal Name of Business"
-                        id="form-wizard-progress-wizard-legalname"
+                        name="name" placeholder="Legal Name of Business" id="form-wizard-progress-wizard-legalname"
                         data-wizard-validate-legal-name="true" />
                     <div class="invalid-feedback">Please provide Trade Name</div>
                 </div>

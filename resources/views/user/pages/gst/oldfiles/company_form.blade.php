@@ -122,8 +122,9 @@
                                   </div>
                                   <div class="dz-preview dz-preview-multiple m-0 d-flex flex-column">
                                       <div class="d-flex media mb-3 pb-3 border-bottom btn-reveal-trigger">
-                                          <img class="dz-image" src="{{ asset('assets/img/generic/image-file-2.png') }}"
-                                              alt="..." data-dz-thumbnail="data-dz-thumbnail" />
+                                          <img class="dz-image"
+                                              src="{{ asset('assets/img/generic/image-file-2.png') }}" alt="..."
+                                              data-dz-thumbnail="data-dz-thumbnail" />
                                           <div class="flex-1 d-flex flex-between-center">
                                               <div>
                                                   <h6 data-dz-name="data-dz-name">
@@ -179,8 +180,9 @@
                                   </div>
                                   <div class="dz-preview dz-preview-multiple m-0 d-flex flex-column">
                                       <div class="d-flex media mb-3 pb-3 border-bottom btn-reveal-trigger">
-                                          <img class="dz-image" src="{{ asset('assets/img/generic/image-file-2.png') }}"
-                                              alt="..." data-dz-thumbnail="data-dz-thumbnail" />
+                                          <img class="dz-image"
+                                              src="{{ asset('assets/img/generic/image-file-2.png') }}" alt="..."
+                                              data-dz-thumbnail="data-dz-thumbnail" />
                                           <div class="flex-1 d-flex flex-between-center">
                                               <div>
                                                   <h6 data-dz-name="data-dz-name">
@@ -236,8 +238,8 @@
                       <label class="form-label" for="form-wizard-progress-wizard-addregnum">Director
                           Mobile number registered with aadhar
                           of the firm</label><input class="form-control" required="" type="text"
-                          name="name"
-                          placeholder="Enter Registration No" id="form-wizard-progress-wizard-addregnum" />
+                          name="name" placeholder="Enter Registration No"
+                          id="form-wizard-progress-wizard-addregnum" />
                       <div class="invalid-feedback">Please provide Mobile
                           number</div>
                   </div>
@@ -263,8 +265,9 @@
                                   </div>
                                   <div class="dz-preview dz-preview-multiple m-0 d-flex flex-column">
                                       <div class="d-flex media mb-3 pb-3 border-bottom btn-reveal-trigger">
-                                          <img class="dz-image" src="{{ asset('assets/img/generic/image-file-2.png') }}"
-                                              alt="..." data-dz-thumbnail="data-dz-thumbnail" />
+                                          <img class="dz-image"
+                                              src="{{ asset('assets/img/generic/image-file-2.png') }}" alt="..."
+                                              data-dz-thumbnail="data-dz-thumbnail" />
                                           <div class="flex-1 d-flex flex-between-center">
                                               <div>
                                                   <h6 data-dz-name="data-dz-name">
@@ -321,8 +324,9 @@
                                   </div>
                                   <div class="dz-preview dz-preview-multiple m-0 d-flex flex-column">
                                       <div class="d-flex media mb-3 pb-3 border-bottom btn-reveal-trigger">
-                                          <img class="dz-image" src="{{ asset('assets/img/generic/image-file-2.png') }}"
-                                              alt="..." data-dz-thumbnail="data-dz-thumbnail" />
+                                          <img class="dz-image"
+                                              src="{{ asset('assets/img/generic/image-file-2.png') }}" alt="..."
+                                              data-dz-thumbnail="data-dz-thumbnail" />
                                           <div class="flex-1 d-flex flex-between-center">
                                               <div>
                                                   <h6 data-dz-name="data-dz-name">
@@ -379,8 +383,9 @@
                                   </div>
                                   <div class="dz-preview dz-preview-multiple m-0 d-flex flex-column">
                                       <div class="d-flex media mb-3 pb-3 border-bottom btn-reveal-trigger">
-                                          <img class="dz-image" src="{{ asset('assets/img/generic/image-file-2.png') }}"
-                                              alt="..." data-dz-thumbnail="data-dz-thumbnail" />
+                                          <img class="dz-image"
+                                              src="{{ asset('assets/img/generic/image-file-2.png') }}" alt="..."
+                                              data-dz-thumbnail="data-dz-thumbnail" />
                                           <div class="flex-1 d-flex flex-between-center">
                                               <div>
                                                   <h6 data-dz-name="data-dz-name">
@@ -437,8 +442,9 @@
                                   </div>
                                   <div class="dz-preview dz-preview-multiple m-0 d-flex flex-column">
                                       <div class="d-flex media mb-3 pb-3 border-bottom btn-reveal-trigger">
-                                          <img class="dz-image" src="{{ asset('assets/img/generic/image-file-2.png') }}"
-                                              alt="..." data-dz-thumbnail="data-dz-thumbnail" />
+                                          <img class="dz-image"
+                                              src="{{ asset('assets/img/generic/image-file-2.png') }}" alt="..."
+                                              data-dz-thumbnail="data-dz-thumbnail" />
                                           <div class="flex-1 d-flex flex-between-center">
                                               <div>
                                                   <h6 data-dz-name="data-dz-name">
@@ -494,8 +500,9 @@
                                   </div>
                                   <div class="dz-preview dz-preview-multiple m-0 d-flex flex-column">
                                       <div class="d-flex media mb-3 pb-3 border-bottom btn-reveal-trigger">
-                                          <img class="dz-image" src="{{ asset('assets/img/generic/image-file-2.png') }}"
-                                              alt="..." data-dz-thumbnail="data-dz-thumbnail" />
+                                          <img class="dz-image"
+                                              src="{{ asset('assets/img/generic/image-file-2.png') }}" alt="..."
+                                              data-dz-thumbnail="data-dz-thumbnail" />
                                           <div class="flex-1 d-flex flex-between-center">
                                               <div>
                                                   <h6 data-dz-name="data-dz-name">

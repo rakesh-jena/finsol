@@ -1,6 +1,6 @@
 <div class="tab-pane fade show active" id="labour-petty" role="tabpanel" aria-labelledby="home-tab">
-    <form class="needs-validation" novalidate="novalidate" action="{{ route('labour.register.petty') }}"
-        method="post" enctype="multipart/form-data">
+    <form class="needs-validation" novalidate="novalidate" action="{{ route('labour.register.petty') }}" method="post"
+        enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="labour_type" value="Company" />
         <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
@@ -12,8 +12,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Labour
                     </label><input class="form-control" type="text" name="name_of_labour"
-                        placeholder="Name of Labour"
-                        required="required" />
+                        placeholder="Name of Labour" required="required" />
                     <div class="invalid-feedback">Please provide name of Labour</div>
                 </div>
             </div>
@@ -22,8 +21,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Business
                     </label><input class="form-control" type="text" name="name_of_business"
-                        placeholder="Name of Business"
-                        required="required" />
+                        placeholder="Name of Business" required="required" />
                     <div class="invalid-feedback">Please provide name of Business</div>
                 </div>
             </div>
@@ -32,10 +30,9 @@
                 <div class="mb-3">
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Business
                         Email</label><input class="form-control" type="email" value="{{ Auth::user()->email }}"
-                        name="email_id"
-                        placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
-                        required="required" id="bootstrap-wizard-validation-wizard-email"
-                        data-wizard-validate-email="true" />
+                        name="email_id" placeholder="Email address"
+                        pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$" required="required"
+                        id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
                     <div class="invalid-feedback">You must add email</div>
                 </div>
             </div>
@@ -58,8 +55,7 @@
                     <div class="mb-3">
                         <label>{{ $image['doc_name'] }} :</label>
                         <input type="file" name="{{ $image['doc_key_name'] }}[]" id="image-upload"
-                            class="myfrm form-control"
-                            multiple />
+                            class="myfrm form-control" multiple />
                     </div>
                 </div>
             @endforeach
@@ -96,8 +92,7 @@
                         <label>{{ $image['doc_name'] }} :</label>
                         <!-- required="required"  -->
                         <input type="file" name="laboursignatory[0][{{ $image['doc_key_name'] }}][]"
-                            id="image-upload"
-                            class="myfrm form-control" multiple />
+                            id="image-upload" class="myfrm form-control" multiple />
                     </div>
                 </div>
             @endforeach

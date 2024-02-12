@@ -48,8 +48,7 @@
                         <label>{{ $image['doc_name'] }} Upload :</label>
 
                         <input type="file" name="{{ $image['doc_key_name'] }}[]" id="image-upload"
-                            class="myfrm form-control"
-                            multiple />
+                            class="myfrm form-control" multiple />
                     </div>
                 </div>
             @endforeach
@@ -64,8 +63,8 @@
                 <div class="mb-3">
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Directors
                         Email</label><input class="form-control" required="required" type="email"
-                        name="directors[0][email]"
-                        placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
+                        name="directors[0][email]" placeholder="Email address"
+                        pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
                         id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
                     <div class="invalid-feedback">You must add email</div>
                 </div>

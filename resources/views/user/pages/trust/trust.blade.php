@@ -19,8 +19,8 @@
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-email">
                     Email</label><input class="form-control" type="email" name="trust_email"
                     placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
-                    required="required"
-                    id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
+                    required="required" id="bootstrap-wizard-validation-wizard-email"
+                    data-wizard-validate-email="true" />
                 <div class="invalid-feedback">You must add email</div>
             </div>
         </div>
@@ -28,8 +28,7 @@
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Nature of Trust/NGO
                 </label><input class="form-control" type="text" name="nature_of_trust"
-                    placeholder="Nature of Trust/NGO"
-                    required="required" />
+                    placeholder="Nature of Trust/NGO" required="required" />
                 <div class="invalid-feedback">Please provide nature of trust</div>
             </div>
         </div>
@@ -37,9 +36,8 @@
             <div class="mb-3">
                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">
                     Mobile number
-                </label><input class="form-control" type="text"
-                    name="trust_mobile" required="required" maxlength="10" placeholder="Enter Mobile No"
-                    id="form-wizard-progress-wizard-addregnum" />
+                </label><input class="form-control" type="text" name="trust_mobile" required="required"
+                    maxlength="10" placeholder="Enter Mobile No" id="form-wizard-progress-wizard-addregnum" />
                 <div class="invalid-feedback">Please provide Mobile
                     number</div>
             </div>
@@ -52,8 +50,7 @@
                 <div class="mb-3">
                     <label>{{ $image['doc_name'] }} :</label>
                     <input type="file" name="{{ $image['doc_key_name'] }}[]" id="image-upload"
-                        class="myfrm form-control"
-                        multiple />
+                        class="myfrm form-control" multiple />
                 </div>
             </div>
         @endforeach
@@ -71,8 +68,7 @@
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Trustee/Member
                 </label><input class="form-control" type="text" name="trustmember[0][name_of_member]"
-                    placeholder="Name of Karta"
-                    required="required" />
+                    placeholder="Name of Karta" required="required" />
                 <div class="invalid-feedback">Please provide name of Member</div>
             </div>
         </div>

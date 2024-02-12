@@ -17,7 +17,8 @@
                     <tr class="align-middle" data-toggle="collapse" data-target="#{{ $detail->type . $key }}"
                         class="accordion-toggle">
 
-                        <td class="text-nowrap">{{ isset($detail->name_of_company) ? $detail->name_of_company : '-' }}</td>
+                        <td class="text-nowrap">{{ isset($detail->name_of_company) ? $detail->name_of_company : '-' }}
+                        </td>
 
                         <td class="text-nowrap">
                             <div class="align-items-center">
@@ -148,8 +149,7 @@
                                                 <label>Upload Required
                                                     doc:</label>
                                                 <input type="file" name="additional_img[]" id="image-upload"
-                                                    class="myfrm form-control"
-                                                    multiple />
+                                                    class="myfrm form-control" multiple />
                                             </div>
 
                                             <div class="mt-3">

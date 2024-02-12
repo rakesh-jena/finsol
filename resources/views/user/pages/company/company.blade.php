@@ -11,8 +11,7 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Business
-                </label><input class="form-control" type="text" name="name_of_company"
-                    placeholder="Name of Business"
+                </label><input class="form-control" type="text" name="name_of_company" placeholder="Name of Business"
                     required="required" />
                 <div class="invalid-feedback">Please provide name of Business</div>
             </div>
@@ -33,8 +32,7 @@
                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                     number
                     registered with aadhar</label><input class="form-control" required="" type="text"
-                    name="company_mobile" placeholder="Enter Mobile No"
-                    id="form-wizard-progress-wizard-addregnum" />
+                    name="company_mobile" placeholder="Enter Mobile No" id="form-wizard-progress-wizard-addregnum" />
                 <div class="invalid-feedback">Please provide Mobile
                     number</div>
             </div>
@@ -47,8 +45,7 @@
                 <div class="mb-3">
                     <label>{{ $image['doc_name'] }} :</label>
                     <input type="file" name="{{ $image['doc_key_name'] }}[]" id="image-upload"
-                        class="myfrm form-control"
-                        multiple />
+                        class="myfrm form-control" multiple />
                 </div>
             </div>
         @endforeach

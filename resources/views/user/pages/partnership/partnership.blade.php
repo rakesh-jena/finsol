@@ -11,8 +11,7 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-partnership">Name of Firm
-                </label><input class="form-control" type="text" name="name_of_partnership"
-                    placeholder="Name of Firm"
+                </label><input class="form-control" type="text" name="name_of_partnership" placeholder="Name of Firm"
                     required="required" />
                 <div class="invalid-feedback">Please provide name of Firm</div>
             </div>
@@ -47,8 +46,7 @@
                 <div class="mb-3">
                     <label>{{ $image['doc_name'] }} :</label>
                     <input type="file" name="{{ $image['doc_key_name'] }}[]" id="image-upload"
-                        class="myfrm form-control"
-                        multiple />
+                        class="myfrm form-control" multiple />
                 </div>
             </div>
         @endforeach
@@ -84,8 +82,7 @@
                 <div class="mb-3">
                     <label>{{ $image['doc_name'] }} :</label>
                     <!-- required="required"  -->
-                    <input type="file" name="partnershippartner[0][{{ $image['doc_key_name'] }}][]"
-                        id="image-upload"
+                    <input type="file" name="partnershippartner[0][{{ $image['doc_key_name'] }}][]" id="image-upload"
                         class="myfrm form-control" multiple />
                 </div>
             </div>

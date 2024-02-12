@@ -17,9 +17,8 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-email">
-                    Email</label><input class="form-control" type="email" name="huf_email"
-                    placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
-                    required="required"
+                    Email</label><input class="form-control" type="email" name="huf_email" placeholder="Email address"
+                    pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$" required="required"
                     id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
                 <div class="invalid-feedback">You must add email</div>
             </div>
@@ -36,9 +35,8 @@
             <div class="mb-3">
                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">
                     Mobile number
-                </label><input class="form-control" type="text"
-                    name="huf_mobile" required="required" maxlength="10" placeholder="Enter Mobile No"
-                    id="form-wizard-progress-wizard-addregnum" />
+                </label><input class="form-control" type="text" name="huf_mobile" required="required" maxlength="10"
+                    placeholder="Enter Mobile No" id="form-wizard-progress-wizard-addregnum" />
                 <div class="invalid-feedback">Please provide Mobile
                     number</div>
             </div>
@@ -56,8 +54,7 @@
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Member
                 </label><input class="form-control" type="text" name="hufmember[0][name_of_member]"
-                    placeholder="Name of Member"
-                    required="required" />
+                    placeholder="Name of Member" required="required" />
                 <div class="invalid-feedback">Please provide name of Member</div>
             </div>
         </div>

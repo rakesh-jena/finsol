@@ -37,9 +37,8 @@
                                         aria-controls="esic-existing-company" aria-selected="true">Company</a>
                                 </li>
                                 <li class="nav-item"><a class="nav-link" id="esic-existing-company-other"
-                                        data-bs-toggle="tab"
-                                        href="#esic-existing-others" role="tab" aria-controls="esic-existing-others"
-                                        aria-selected="false">Others</a></li>
+                                        data-bs-toggle="tab" href="#esic-existing-others" role="tab"
+                                        aria-controls="esic-existing-others" aria-selected="false">Others</a></li>
 
                             </ul>
                             <div class="tab-content mt-3" id="pill-myExistingContent">

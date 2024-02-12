@@ -11,8 +11,7 @@
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Business/Firm
                 </label><input class="form-control" type="text" name="name_of_firm"
-                    placeholder="Name of Business/Firm"
-                    required="required" />
+                    placeholder="Name of Business/Firm" required="required" />
                 <div class="invalid-feedback">Please provide name of Business/Firm</div>
             </div>
         </div>
@@ -21,9 +20,9 @@
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Business
                     Email</label><input class="form-control" type="email" name="firm_email"
-                    placeholder="Email address"
-                    pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$" required="required"
-                    id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
+                    placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
+                    required="required" id="bootstrap-wizard-validation-wizard-email"
+                    data-wizard-validate-email="true" />
                 <div class="invalid-feedback">You must add email</div>
             </div>
         </div>
