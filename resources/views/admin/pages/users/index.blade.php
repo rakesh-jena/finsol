@@ -21,7 +21,7 @@
                                         </p>
                                     @endif
                                     <div id="tableExample"
-                                        data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
+                                        data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
                                         <div class="table-responsive scrollbar">
                                             @if ($errors->any())
                                                 <div class="alert alert-danger">

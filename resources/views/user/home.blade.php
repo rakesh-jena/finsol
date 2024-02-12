@@ -66,7 +66,7 @@
 
                                 <div class="row">
 
-                                    <div class="col">
+                                    <div class="col py-md-10">
                                         <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">Hello
                                             {{ Auth::user()->name }}! <br>Welcome to <font color="#ec465f">Finsol</font>
                                         </h1>

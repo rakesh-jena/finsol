@@ -1,6 +1,5 @@
 @if (count($cma) > 0)<b>CMA Details</b>
-    <hr />
-    <table class="table table-condensed table-striped">
+    <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
                 <th scope="col">Name Of Company</th>

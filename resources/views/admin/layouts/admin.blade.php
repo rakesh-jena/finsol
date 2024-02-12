@@ -22,6 +22,7 @@
     <link rel="manifest" href="{{ asset('assets/img/favicons/manifest.json') }}">
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/mstile-150x150.png') }}">
     <meta name="theme-color" content="#ffffff">
+    <link href="{{ asset('vendors/datatables.net-bs5/dataTables.bootstrap5.min.css') }}" rel="stylesheet">
     <script src="{{ asset('assets/js/config.js') }}"></script>
     <script src="{{ asset('vendors/simplebar/simplebar.min.js') }}"></script>
 
@@ -63,6 +64,9 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('vendors/datatables.net/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendors/datatables.net-bs5/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('vendors/popper/popper.min.js') }}"></script>
     <script src="{{ asset('vendors/bootstrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendors/anchorjs/anchor.min.js') }}"></script>
@@ -71,6 +75,55 @@
     <script src="{{ asset('vendors/lodash/lodash.min.js') }}"></script>
     <script src="{{ asset('vendors/list.js/list.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.js') }}"></script>
+    <script>
+        var urlpath = "{{ url('/register') }}";
+    
+        $(document).ready(function() {
+            $('#filter-select-state').change(function() {
+                var stateId = $(this).val();
+                console.log(urlpath);
+                if (stateId) {
+                    $.ajax({
+                        url: urlpath + '/get-districts/' + stateId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#filter-select-district').empty().append(
+                                '<option value="">Select District</option>');
+                            $.each(data, function(key, value) {
+                                $('#filter-select-district').append('<option value="' + value
+                                    .d_code + '">' + value.name + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#filter-select-district').empty().append('<option value="">Select District</option>');
+                    $('#filter-select-block').empty().append('<option value="">Select Block</option>');
+                }
+            });
+    
+            $('#filter-select-district').change(function() {
+                var districtId = $(this).val();
+                if (districtId) {
+                    $.ajax({
+                        url: urlpath + '/get-blocks/' + districtId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#filter-select-block').empty().append(
+                                '<option value="">Select Block</option>');
+                            $.each(data, function(key, value) {
+                                $('#filter-select-block').append('<option value="' + value.id +
+                                    '">' + value.name + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#filter-select-block').empty().append('<option value="">Select Block</option>');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

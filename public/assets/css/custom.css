@@ -91,3 +91,25 @@
     filter: brightness(0.5);
 }
 
+@media (min-width: 992px) {
+    section {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .w-100 {
+        width: 100%;
+    }
+    
+    .w-15 {
+        width: 15%;
+    }
+    .w-25 {
+        width: 25%;
+    }
+    .w-30 {
+        width: 30%;
+    }
+    .w-35 {
+        width: 35%;
+    }
+}

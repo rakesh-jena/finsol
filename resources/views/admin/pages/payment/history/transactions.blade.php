@@ -7,96 +7,185 @@
     <main class="main" id="top">
         <div class="container" data-layout="container">
             @include('admin.partials.aside')
-            <div class="row g-3 mb-3">
-
-                <div class="col-md-12 col-xxl-3">
-                    <div class="card h-md-100 ecommerce-card-min-width">
-                        <div class="card-header pb-0">
-                            <h6 class="mb-0 mt-2 d-flex align-items-center">All Payments</h6>
+            <div class="card mb-3">
+                <div class="bg-holder d-none d-lg-block bg-card"
+                    style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);"></div>
+                <!--/.bg-holder-->
+                <div class="card-body position-relative">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h3 class="mb-4">Payment History</h3>
+                            <h5 class="mb-2">Total: ₹{{ $total }}</h5>
+                            <h5>Commission</h5>
+                            <p class="mt-1">
+                                <b>State:</b> ₹{{ $total / 10 }}<br>
+                                <b>District:</b> ₹{{ $total / 10 }}<br>
+                                <b>Block:</b> ₹{{ $total / 5 }}<br>
+                                <b>Marketing:</b> ₹{{ $total / 4 }}<br>
+                                <b>Admin:</b> ₹{{ $total / 4 }}<br>
+                                <b>Remaining:</b> ₹{{ ($total * 3) / 20 }}<br>
+                            </p>
                         </div>
-                        <div class="card-body d-flex flex-column justify-content-end">
-                            @if ($transaction)
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div id="tableExample"
-                                            data-list='{"valueNames":["type","updated_at","staus", "amount"],"page":5,"pagination":true}'>
-                                            <div class="table-responsive scrollbar">
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header pb-0">
+                    <h5 class="mb-3 mt-2 d-flex align-items-center">All Payments</h5>
+                </div>
+                <div class="card-body d-flex flex-column justify-content-end">
+                    @if ($transaction)
+                        <div class="row">
+                            <div class="col-12">
+                                <h6 class="mb-1">Filter</h6>
+                                <form action="" class="row">
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm mb-3" id="filter-select-state"
+                                            name="state">
+                                            <option selected="" value="">Select State</option>
+                                            @foreach ($states as $state)
+                                                <option value="{{ $state->id }}">{{ $state->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
-                                                <table class="table table-bordered table-striped fs--1 mb-0">
-                                                    <thead class="bg-200 text-900">
-                                                        <tr>
-                                                            <!-- <th scope="col"></th> -->
-                                                            <th scope="col">User(ID)</th>
-                                                            <th scope="col">Type</th>
-                                                            <th scope="col">Amount</th>
-                                                            <th scope="col">Status</th>
-                                                            <th scope="col">Payment ID</th>
-                                                            <th scope="col">Date</th>
-                                                        </tr>
-                                                    </thead>
-
-                                                    <tbody class="list">
-                                                        @if ($transaction)
-                                                            @foreach ($transaction as $detail)
-                                                                @php
-                                                                    $user = App\Models\User::select('*')
-                                                                        ->where('id', $detail->user_id)
-                                                                        ->first();
-                                                                @endphp
-                                                                <tr class="align-middle">
-                                                                    <td>{{ $user->name }}({{ $detail->user_id ? $detail->user_id : '' }})
-                                                                    </td>
-                                                                    <td class="text-nowrap">
-                                                                        {{ $detail->type ? $detail->type : '--' }}</td>
-
-                                                                    <td class="text-nowrap">
-                                                                        {{ $detail->amount ? $detail->amount : '' }}</td>
-                                                                    <td>{{ $detail->staus ? $detail->staus : '' }}</td>
-                                                                    <td>{{ $detail->payment_id ? $detail->payment_id : '' }}
-                                                                    </td>
-                                                                    <td>{{ $detail->updated_at ? $detail->updated_at : '' }}
-                                                                    </td>
-                                                                </tr>
-                                                            @endforeach
-                                                        @endif
-                                                    </tbody>
-                                                </table>
-
-                                            </div>
-                                            <div class="row align-items-center mt-3">
-                                                <div class="pagination d-none"></div>
-                                                <div class="col">
-                                                    <p class="mb-0 fs--1">
-                                                        <span class="d-none d-sm-inline-block"
-                                                            data-list-info="data-list-info"></span>
-                                                        <span class="d-none d-sm-inline-block"> &mdash;</span>
-                                                        <a class="fw-semi-bold" href="#!" data-list-view="*">View
-                                                            all<span
-                                                                class="fas fa-angle-right ms-1"
-                                                                data-fa-transform="down-1"></span></a><a
-                                                            class="fw-semi-bold d-none" href="#!"
-                                                            data-list-view="less">View
-                                                            Less<span class="fas fa-angle-right ms-1"
-                                                                data-fa-transform="down-1"></span></a>
-                                                    </p>
+                                    <div class="col-3 px-3">
+                                        <select class="form-select form-select-sm mb-3" id="filter-select-district"
+                                            name="district">
+                                            <option selected="" value="">Select District</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm mb-3" id="filter-select-block"
+                                            name="block">
+                                            <option selected="" value="">Select Block</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fas fa-filter"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-12">
+                                <div id="tableExample"
+                                    data-list='{"valueNames":["user_id", "name", "type", "amount", "staus", "payment_id", "updated_at"],"page":15,"pagination":true,"filter":{"key":"staus"}}'>
+                                    <div class="row justify-content-start g-2">
+                                        <div class="col-auto col-sm-5 mb-3">
+                                            <form>
+                                                <div class="input-group">
+                                                    <input class="form-control form-control-sm shadow-none search"
+                                                        type="search" placeholder="Search..." aria-label="search" />
+                                                    <div class="input-group-text bg-transparent">
+                                                        <span class="fa fa-search fs--1 text-600"></span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-auto d-flex"><button class="btn btn-sm btn-primary"
-                                                        type="button"
-                                                        data-list-pagination="prev"><span>Previous</span></button><button
-                                                        class="btn btn-sm btn-primary px-4 ms-2" type="button"
-                                                        data-list-pagination="next"><span>Next</span></button></div>
-                                            </div>
+                                            </form>
                                         </div>
+                                        <div class="col-auto px-3">
+                                            <select class="form-select form-select-sm mb-3" aria-label="Bulk actions"
+                                                data-list-filter="data-list-filter">
+                                                <option selected="" value="">Select payment status</option>
+                                                <option value="Credit">Credit</option>
+                                                <option value="Failed">Failed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive scrollbar">
+                                        <table class="table table-bordered table-striped fs--1 mb-0">
+                                            <thead class="bg-200 text-900">
+                                                <tr>
+                                                    <!-- <th scope="col"></th> -->
+                                                    <th scope="col" class="sort" data-sort="user_id">ID</th>
+                                                    <th scope="col" class="sort" data-sort="name">User</th>
+                                                    <th scope="col" class="sort" data-sort="type">Type</th>
+                                                    <th scope="col" class="sort" data-sort="amount">Amount</th>
+                                                    <th scope="col" class="sort" data-sort="staus">Status</th>
+                                                    <th scope="col" class="sort" data-sort="payment_id">Payment
+                                                        ID</th>
+                                                    <th scope="col" class="sort" data-sort="updated_at">Date
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody class="list">
+                                                @if ($transaction)
+                                                    @foreach ($transaction as $detail)
+                                                        @php
+                                                            $user = App\Models\User::select('*')
+                                                                ->where('id', $detail->user_id)
+                                                                ->first();
+                                                        @endphp
+                                                        <tr class="align-middle">
+                                                            <td class="user_id">
+                                                                {{ $detail->user_id ? $detail->user_id : '' }}
+                                                            </td>
+                                                            <td class="name">
+                                                                {{ $user->name }}
+                                                            </td>
+                                                            <td class="text-nowrap type">
+                                                                {{ $detail->type ? $detail->type : '--' }}</td>
+
+                                                            <td class="text-nowrap amount">
+                                                                ₹{{ $detail->amount ? $detail->amount : '' }}</td>
+                                                            <td class="staus">
+                                                                @if ($detail->staus == 'Credit')
+                                                                    <span
+                                                                        class="badge badge rounded-pill badge-subtle-success">
+                                                                        {{ $detail->staus }}
+                                                                    </span>
+                                                                @else
+                                                                    <span
+                                                                        class="badge badge rounded-pill badge-subtle-danger">
+                                                                        {{ $detail->staus }}
+                                                                    </span>
+                                                                @endif
+                                                            </td>
+                                                            <td class="payment_id">
+                                                                {{ $detail->payment_id ? $detail->payment_id : '' }}
+                                                            </td>
+                                                            <td class="updated_at">
+                                                                {{ $detail->updated_at ? $detail->updated_at : '' }}
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @endif
+                                            </tbody>
+                                        </table>
 
                                     </div>
-                                    <div class="col-auto ps-0">
-                                        <div class="echart-bar-weekly-sales h-100"></div>
+                                    <div class="row align-items-center mt-3">
+                                        <div class="pagination d-none"></div>
+                                        <div class="col">
+                                            <p class="mb-0 fs--1">
+                                                <span class="d-none d-sm-inline-block"
+                                                    data-list-info="data-list-info"></span>
+                                                <span class="d-none d-sm-inline-block"> &mdash;</span>
+                                                <a class="fw-semi-bold" href="#!" data-list-view="*">View
+                                                    all<span class="fas fa-angle-right ms-1"
+                                                        data-fa-transform="down-1"></span></a><a
+                                                    class="fw-semi-bold d-none" href="#!" data-list-view="less">View
+                                                    Less<span class="fas fa-angle-right ms-1"
+                                                        data-fa-transform="down-1"></span></a>
+                                            </p>
+                                        </div>
+                                        <div class="col-auto d-flex"><button class="btn btn-sm btn-primary"
+                                                type="button"
+                                                data-list-pagination="prev"><span>Previous</span></button><button
+                                                class="btn btn-sm btn-primary px-4 ms-2" type="button"
+                                                data-list-pagination="next"><span>Next</span></button></div>
                                     </div>
                                 </div>
 
-                            @endif
+                            </div>
+                            <div class="col-auto ps-0">
+                                <div class="echart-bar-weekly-sales h-100"></div>
+                            </div>
                         </div>
-                    </div>
+
+                    @endif
                 </div>
             </div>
             @include('admin.partials.footer')

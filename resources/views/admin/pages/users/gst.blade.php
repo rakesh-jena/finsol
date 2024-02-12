@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div id="tableExample"
-                                        data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
+                                        data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
                                         <div class="table-responsive scrollbar">
                                             @if (session('additionalfilenotexist_gst'))
                                                 <div class="alert alert-danger border-2 d-flex align-items-center"

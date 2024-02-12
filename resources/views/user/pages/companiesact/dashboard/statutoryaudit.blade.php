@@ -1,6 +1,5 @@
 @if (count($userStatutoryAuditDetails) > 0)<b> Statutory Audit Details</b>
-    <hr />
-    <table class="table table-condensed table-striped">
+    <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
                 <th scope="col">Name</th>

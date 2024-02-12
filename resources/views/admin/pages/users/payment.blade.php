@@ -26,7 +26,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div id="tableExample"
-                                            data-list='{"valueNames":["type","updated_at","staus", "amount"],"page":5,"pagination":true}'>
+                                            data-list='{"valueNames":["type","updated_at","staus", "amount"],"page":15,"pagination":true}'>
                                             <div class="table-responsive scrollbar">
 
                                                 <table class="table table-bordered table-striped fs--1 mb-0">

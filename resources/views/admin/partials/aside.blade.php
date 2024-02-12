@@ -30,7 +30,7 @@
         <div class="navbar-vertical-content scrollbar">
             <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
                 <li class="nav-item">
-                    <!-- parent pages--><a class="nav-link dropdown-indicator" href="#dashboard" role="button"
+                    <!-- parent pages--><a class="nav-link dropdown-indicator" href="{{ url('admin') }}" role="button"
                         data-bs-toggle="collapse" aria-expanded="true" aria-controls="dashboard">
                         <div class="d-flex align-items-center"><span class="nav-link-icon"><span
                                     class="fas fa-chart-pie"></span></span><span
@@ -57,14 +57,14 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('admin/employee/all') }}">
                                     <div class="d-flex align-items-center"><span class="nav-link-text ps-1">All
-                                            Employee</span>
+                                            Offices</span>
                                     </div>
                                 </a><!-- more inner pages-->
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('admin/users/addform') }}">
                                     <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Add
-                                            Employee</span>
+                                            Office</span>
                                     </div>
                                 </a><!-- more inner pages-->
                             </li>
@@ -421,7 +421,7 @@
         <ul class="navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    id="dashboards">Dashboard13</a>
+                    id="dashboards">Dashboard</a>
 
             </li>
         </ul>
@@ -441,7 +441,7 @@
         <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl">
-                    <img class="rounded-circle" src="{{ asset('../../../assets/img/team/3-thumb.png') }}"
+                    <img class="rounded-circle" src="{{ asset('assets/img/team/3-thumb.png') }}"
                         alt="" />
                 </div>
             </a>
@@ -456,7 +456,7 @@
                     <a class="dropdown-item" href="#!">Feedback</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="pages/user/settings.html">Settings</a>
-                    <a class="dropdown-item" href="pages/authentication/card/logout.html">Logoutss</a>
+                    <a class="dropdown-item" href="pages/authentication/card/logout.html">Logout</a>
                 </div>
             </div>
         </li>

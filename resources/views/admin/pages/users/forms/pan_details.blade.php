@@ -3,7 +3,7 @@
         <h5>PAN Form Details</h5>
         <div class="col-12">
             <div id="tableExample"
-                data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
+                data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
                 <div class="table-responsive scrollbar">
                     @if (session('success'))
                         <div class="alert alert-success border-2 d-flex align-items-center"

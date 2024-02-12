@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Instamojo;
 use App\Models\PaymentValue;
 use App\Models\User;
+use App\Models\State;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -16,15 +17,71 @@ class PaymentController extends Controller
     }
 
     public function userPaymentDetails($userId)
-    {
+    {        
         $data['user'] = User::where('id', $userId)->first();
         $data['transaction'] = Instamojo::select('*')->where('user_id', $userId)->orderBy('updated_at', 'DESC')->get();
+        
         return view('admin.pages.users.payment')->with($data);
     }
 
     public function allTransactions()
     {
-        $data['transaction'] = Instamojo::select('*')->orderBy('updated_at', 'DESC')->get();
+        $data['states'] = State::all();
+        $histories = Instamojo::select('*')->orderBy('updated_at', 'DESC')->get();
+        if(request()->has('state') && request('state') != null)
+        {   
+            if(request()->has('district') && request('district') != null)
+            {
+                if(request()->has('block') && request('block') != null)
+                {
+                    $users = User::select('id')->where('block', request('block'))->get()->toArray();
+                    $transaction = [];
+                    foreach($histories as $history)
+                    {
+                        if(in_array($history->user_id, $users))
+                        {
+                            $transaction[] = $history;
+                        }
+                    }
+                    $data['transaction'] = $transaction;
+                } else {
+                    $users = User::select('id')->where('district', request('district'))->get()->toArray();
+                    $transaction = [];
+                    foreach($histories as $history)
+                    {
+                        if(in_array($history->user_id, $users))
+                        {
+                            $transaction[] = $history;
+                        }
+                    }
+                    $data['transaction'] = $transaction;
+                }
+            } else {
+                $users = User::select('id')->where('state', request('state'))->get()->toArray();
+                $transaction = [];
+                foreach($histories as $history)
+                {
+                    if(in_array($history->user_id, $users))
+                    {
+                        $transaction[] = $history;
+                    }
+                }
+                $data['transaction'] = $transaction;
+            }
+        } else {
+            $data['transaction'] = $histories;
+        }
+        
+        $total = 0;
+        foreach($data['transaction'] as $trans)
+        {
+            if($trans->staus === 'Credit')
+            {
+                $total += (int)$trans->amount;
+            }
+        }
+
+        $data['total'] = $total;
         return view('admin.pages.payment.history.transactions')->with($data);
     }
 

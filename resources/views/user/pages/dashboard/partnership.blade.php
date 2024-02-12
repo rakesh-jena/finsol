@@ -1,6 +1,5 @@
 @if (count($userPartnershipDetails) > 0)<b>PARTNERSHIP Details</b>
-    <hr />
-    <table class="table table-condensed table-striped">
+    <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
                 <th scope="col">Name</th>

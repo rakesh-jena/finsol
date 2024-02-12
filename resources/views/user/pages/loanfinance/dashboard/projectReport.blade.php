@@ -1,6 +1,5 @@
 @if (count($projectReport) > 0)<b>Project Report Details</b>
-    <hr />
-    <table class="table table-condensed table-striped">
+    <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
                 <th scope="col">Name Of Company</th>

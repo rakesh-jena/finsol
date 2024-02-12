@@ -18,7 +18,15 @@
                             <!-- <section> begin ============================-->
                             <section class="text-center">
                                 <div class="card-body">
-
+                                    <div class="row">
+                                        <div class="col">
+                                            <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">Registration<font
+                                                    color="#ec465f">Status
+                                                </font>
+                                            </h1>
+                                            <p class="lead">Things you will get right out of the box with Finsol.</p>
+                                        </div>
+                                    </div>
                                     <div class="row">
 
                                         @if (session('payment_success'))
@@ -31,19 +39,9 @@
                                                 <button class="btn-close" type="button" data-bs-dismiss="alert"
                                                     aria-label="Close"></button>
                                             </div>
-                                        @endif
-                                        <!-- <div class="row">
+                                        @endif                                       
 
-                                        <div class="col">
-                                            <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">Registration<font
-                                                    color="#ec465f">Status
-                                                </font>
-                                            </h1>
-                                            <p class="lead">Things you will get right out of the box with Finsol.</p>
-                                        </div>
-                                    </div>
-
-                                    <!------ GST options drop ------->
+                                        <!------ GST options drop ------->
 
                                         <div class="row mt-2 g-3">
                                             <div class="card-body" bis_skin_checked="1">

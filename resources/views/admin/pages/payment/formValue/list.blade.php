@@ -19,7 +19,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div id="tableExample"
-                                            data-list='{"valueNames":["form_type","updated_at","value"],"page":5,"pagination":true}'>
+                                            data-list='{"valueNames":["form_type","updated_at","value"],"page":15,"pagination":true}'>
                                             <div class="table-responsive scrollbar">
                                                 <table class="table table-bordered table-striped fs--1 mb-0">
                                                     <thead class="bg-200 text-900">

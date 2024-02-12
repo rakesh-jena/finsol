@@ -1,6 +1,5 @@
 @if (count($userCaDetails) > 0)<b>Ca Details</b>
-    <hr />
-    <table class="table table-condensed table-striped">
+    <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
                 <th scope="col">Name</th>

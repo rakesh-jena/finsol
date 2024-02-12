@@ -1,15 +1,14 @@
 @if (count($userEsicDetails) > 0)<b>ESIC Details</b>
-    <hr />
-    <table class="table table-condensed table-striped">
+    <table class="table table-condensed table-striped mt-2 mb-4 w-100">
         <thead>
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Email Id</th>
-                <th scope="col">Mobile Number</th>
+                <th scope="col" class="w-15">Name</th>
+                <th scope="col" class="w-25">Email Id</th>
+                <th scope="col" class="w-15">Mobile Number</th>
 
-                <th scope="col">Type</th>
-                <th scope="col">Payment Status</th>
-                <th scope="col">Status</th>
+                <th scope="col" class="w-15">Type</th>
+                <th scope="col" class="w-15">Payment Status</th>
+                <th scope="col" class="w-15">Status</th>
 
             </tr>
         </thead>

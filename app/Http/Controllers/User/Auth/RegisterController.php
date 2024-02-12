@@ -8,6 +8,7 @@ use App\Models\State;
 use App\Models\OTPCode;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -36,9 +37,10 @@ class RegisterController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'mobile' => ['required', 'numeric', 'unique:users', 'max:10'],
+            'mobile' => ['required', 'numeric', 'unique:users'],
             'password' => ['required', 'string', 'min:6'],
-            //'aadhaar' => ['required', 'unique:users', 'min:12']
+            'aadhaar' => ['required', 'unique:users'],
+            'email' => ['required', 'unique:users']
         ]);
 
         $user = User::create([
@@ -52,35 +54,37 @@ class RegisterController extends Controller
             'aadhaar' => $request['aadhaar'],
         ]);
         session()->flash('message', 'Thank you for registering!');
+        Auth::login($user);
+        return redirect()->to('home');
 
-        $otp = rand(123456, 999999);
-        OTPCode::updateOrCreate([
-            'user_id' => $user->id,
-        ], [
-            'code' => $otp,
-            'expiry' => Carbon::now()->addMinutes(10),
-        ]);
+        // $otp = rand(123456, 999999);
+        // OTPCode::updateOrCreate([
+        //     'user_id' => $user->id,
+        // ], [
+        //     'code' => $otp,
+        //     'expiry' => Carbon::now()->addMinutes(10),
+        // ]);
 
-        // $basic = new \Vonage\Client\Credentials\Basic("26370151", "pp7rNfKvnGp51XIR");
-        // $client = new \Vonage\Client($basic);
-        // $response = $client->sms()->send(new \Vonage\SMS\Message\SMS('91'.$user->mobile, 'FINSOL', 'Your OTP for Finsol is ' . $otp . '.'));
-        // $message = $response->current();
+        // // $basic = new \Vonage\Client\Credentials\Basic("26370151", "pp7rNfKvnGp51XIR");
+        // // $client = new \Vonage\Client($basic);
+        // // $response = $client->sms()->send(new \Vonage\SMS\Message\SMS('91'.$user->mobile, 'FINSOL', 'Your OTP for Finsol is ' . $otp . '.'));
+        // // $message = $response->current();
 
-        // if($message->getStatus() === 0)
-        // {
-        //     return view('user.auth.otp', compact('user'));
-        // }
+        // // if($message->getStatus() === 0)
+        // // {
+        // //     return view('user.auth.otp', compact('user'));
+        // // }
 
-        $response = Http::post('https://control.msg91.com/api/v5/flow/', [
-            'body' => '{"template_id":"65c37c54d6fc0530c10059e2","short_url":"1 (On) or 0 (Off)","recipients":[{"mobiles":"91'.$user->mobile.'","VAR1":"'.$otp.'"}]}',
-            'headers' => [
-              'accept' => 'application/json',
-              'authkey' => '269800AKJ12m4XMp6z65c37b75P1',
-              'content-type' => 'application/json',
-            ],
-          ]);
+        // $response = Http::post('https://control.msg91.com/api/v5/flow/', [
+        //     'body' => '{"template_id":"65c37c54d6fc0530c10059e2","short_url":"1 (On) or 0 (Off)","recipients":[{"mobiles":"91'.$user->mobile.'","VAR1":"'.$otp.'"}]}',
+        //     'headers' => [
+        //       'accept' => 'application/json',
+        //       'authkey' => '269800AKJ12m4XMp6z65c37b75P1',
+        //       'content-type' => 'application/json',
+        //     ],
+        //   ]);
 
-        //echo $response->getBody();
-        return view('user.auth.otp', compact('user'));
+        // //echo $response->getBody();
+        // return view('user.auth.otp', compact('user'));
     }
 }

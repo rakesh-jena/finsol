@@ -35,7 +35,7 @@
                                         <a class="nav-link active fw-semi-bold" href="#bootstrap-wizard-validation-tab1"
                                             data-bs-toggle="tab" data-wizard-step="data-wizard-step">
                                             <input type="radio" name="gstType" value="1">
-                                            <img src="https://kwad.in/finsol/assets/img/team/3-thumb.png" alt="Option 2">
+                                            <img src="{{ asset('assets/img/team/3-thumb.png') }}" alt="Option 2">
                                             <span class="d-none d-md-block mt-1 fs--1">For<br>Individual</span>
                                         </a>
                                     </li>
@@ -43,7 +43,7 @@
                                         <a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab2"
                                             data-bs-toggle="tab" data-wizard-step="data-wizard-step">
                                             <input type="radio" name="gstType" value="1">
-                                            <img src="https://kwad.in/finsol/assets/img/team/3-thumb.png" alt="Option 2">
+                                            <img src="{{ asset('assets/img/team/3-thumb.png') }}" alt="Option 2">
                                             <span class="d-none d-md-block mt-1 fs--1">For<br>Firm</span>
                                         </a>
                                     </li>
@@ -51,7 +51,7 @@
                                         <a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab3"
                                             data-bs-toggle="tab" data-wizard-step="data-wizard-step">
                                             <input type="radio" name="gstType" value="1">
-                                            <img src="https://kwad.in/finsol/assets/img/team/3-thumb.png" alt="Option 2">
+                                            <img src="{{ asset('assets/img/team/3-thumb.png') }}" alt="Option 2">
                                             <span class="d-none d-md-block mt-1 fs--1">For<br>Company</span>
                                         </a>
                                     </li>
