@@ -13,12 +13,26 @@
 
                     <div class="card h-md-100 ecommerce-card-min-width">
                         <div class="card-header pb-0">
-                            <h6 class="mb-0 mt-2 d-flex align-items-center">USER PROFILE </h6>
+                            <h3 class="mb-0 mt-2 d-flex align-items-center">{{ $user->name }}</h3>
                         </div>
                         <div class="card-body d-flex flex-column justify-content-end">
                             <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Mobile: {{ $user->mobile }}</h5>
+                                    <h5>Aadhaar: {{ $user->aadhaar }}</h5>
+                                    <h5>Email: {{ $user->email }}</h5>
+                                    <h5>Date of Birth: {{ $user->birth_year }}</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    @if ($user->image == null)
+                                        <img src="{{ asset('data/avatar.png') }}" alt="Profile Pic" width="100px" class="float-end">
+                                    @else
+                                        <img src="{{ asset($user->image) }}" alt="Profile Pic" width="100px" class="float-end">
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row mt-4">
                                 <div class="col-12">
-
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="card">

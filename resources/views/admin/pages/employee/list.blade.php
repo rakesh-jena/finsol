@@ -13,7 +13,7 @@
 
                     <div class="card h-md-100 ecommerce-card-min-width">
                         <div class="card-header pb-0">
-                            <h6 class="mb-0 mt-2 d-flex align-items-center">List of Offices</h6>
+                            <h4 class="mb-0 mt-2 d-flex align-items-center">List of Offices</h4>
                         </div>
                         <div class="card-body d-flex flex-column justify-content-end">
                             <div class="row">
@@ -24,7 +24,7 @@
                                         </p>
                                     @endif
                                     <div id="tableExample"
-                                        data-list='{"valueNames":["name","email","type_of_user","access_level_id"],"page":15,"pagination":true}'>
+                                        data-list='{"valueNames":["name","email","type_of_user","access_level_id"],"page":15,"pagination":true,"filter":{"key":"type_of_user"}}'>
                                         <div class="row justify-content-start g-2">
                                             <div class="col-auto col-sm-5 mb-3">
                                                 <form>
@@ -36,7 +36,17 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                            </div>
+                                            </div>     
+                                            <div class="col-auto px-3">
+                                                <select class="form-select form-select-sm mb-3" aria-label="Bulk actions"
+                                                    data-list-filter="data-list-filter">
+                                                    <option selected="" value="">Select Office</option>
+                                                    <option value="Head Office">Head Office</option>
+                                                    <option value="State Office">State Office</option>
+                                                    <option value="District Office">District Office</option>
+                                                    <option value="Block Office">Block Office</option>
+                                                </select>
+                                            </div>                                       
                                         </div>
                                         <div class="table-responsive scrollbar">
                                             @if ($errors->any())

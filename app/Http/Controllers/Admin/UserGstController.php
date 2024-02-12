@@ -34,6 +34,7 @@ class UserGstController extends Controller
 
     public function profile($userId)
     {
+        $data['user'] = User::where('id', $userId)->first();
         $data['userId'] = $userId;
         return view('admin.pages.users.profile')->with($data);
     }

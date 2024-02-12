@@ -224,5 +224,4 @@ class UserController extends Controller
         $data['employee'] = Auth::user();
         return view('admin.auth.profile')->with($data);
     }
-
 }
