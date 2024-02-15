@@ -41,7 +41,7 @@ class ISIController extends Controller
     public function storeISI(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/ISI';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ISI');
         $data['user_id'] = $userId;

@@ -45,7 +45,7 @@ class EpfController extends Controller
 
         $userId = auth()->user()->id;
         $dataon = 'epfsignatory';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Epf/Company';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'EPF Company');
         $data['user_id'] = $userId;
@@ -88,7 +88,7 @@ class EpfController extends Controller
     public function storeEpfOthers(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Epf/Others';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, $for_multiple = 'EPF Others');
         $data['user_id'] = $userId;

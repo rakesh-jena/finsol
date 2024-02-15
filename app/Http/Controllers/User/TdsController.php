@@ -42,7 +42,7 @@ class TdsController extends Controller
     public function storeTds(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Tds';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TDS');
         $data['user_id'] = $userId;

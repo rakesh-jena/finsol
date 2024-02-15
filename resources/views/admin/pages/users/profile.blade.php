@@ -19,9 +19,9 @@
                         </div>
                         <div class="col-md-6">
                             @if ($user->image == null)
-                                <img src="{{ asset('data/avatar.png') }}" alt="Profile Pic" width="100px" class="float-end">
+                                <img src="{{ url('images/avatar.png') }}" alt="Profile Pic" width="100px" class="float-end">
                             @else
-                                <img src="{{ asset($user->image) }}" alt="Profile Pic" width="100px" class="float-end">
+                                <img src="{{ url('uploads/users/' . $user->id . '/profile/' . $user->image) }}" alt="Profile Pic" width="100px" class="float-end">
                             @endif
                         </div>
                     </div>

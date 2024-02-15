@@ -66,7 +66,7 @@ class UserGstController extends Controller
 
         $commaValues = explode(",", $files);
         $userDetails = User::find($userId);
-        $useName = trim($userDetails->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = $gst_type . '-' . $useName . '.zip';
         $folderPath = 'public/uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
         $zip = new \ZipArchive();
@@ -199,7 +199,7 @@ class UserGstController extends Controller
         $commaValues = explode(",", $files);
         $userDetails = User::find($userId);
 
-        $useName = trim($userDetails->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = "QueryUpdatedFile-" . $useName . '.zip';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
@@ -233,7 +233,7 @@ class UserGstController extends Controller
         $commaValues = explode(",", $files);
         $userDetails = User::find($userId);
 
-        $useName = trim($userDetails->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = "GstApprovedFile-" . $useName . '.zip';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);

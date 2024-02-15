@@ -66,7 +66,7 @@ class LoanDashboardController extends Controller
         $commaValues = explode(",", $files);
         $formType = $request->input('form_type');
         $userDetails = User::find($userId);
-        $useName = trim($userDetails->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = str_replace('/', '-', $formType) . '-' . $useName . '.zip';
         $folderPath = 'public/uploads/users/' . $useName . '/' . $formType . '/';
         $zip = new \ZipArchive();
@@ -107,7 +107,7 @@ class LoanDashboardController extends Controller
 
         $commaValues = explode(",", $files);
         $userDetails = User::find($userId);
-        $useName = trim($userDetails->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = $gst_type . '-' . $useName . '.zip';
         $folderPath = 'public/uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
         $zip = new \ZipArchive();
@@ -252,7 +252,7 @@ class LoanDashboardController extends Controller
         $userDetails = User::find($userId);
         $formType = $request->form_type;
 
-        $useName = trim($userDetails->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = $formType . "QueryUpdatedFile-" . $useName . '.zip';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
@@ -288,7 +288,7 @@ class LoanDashboardController extends Controller
         $userDetails = User::find($userId);
         $formType = $request->form_type;
 
-        $useName = trim($userDetails->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = $formType . "ApprovedFile-" . $useName . '.zip';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);

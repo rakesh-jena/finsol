@@ -40,7 +40,7 @@ class MgtController extends Controller
     public function storeMgt(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/Mgt';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'MGT');
         $data['user_id'] = $userId;

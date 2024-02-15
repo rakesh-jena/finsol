@@ -41,7 +41,7 @@ class CMAController extends Controller
     public function storeCMA(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/LoanFinance/CMA';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LFCMA');
         $data['user_id'] = $userId;

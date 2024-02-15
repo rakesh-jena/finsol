@@ -53,7 +53,7 @@ class LabourController extends Controller
 
         $userId = auth()->user()->id;
         $dataon = 'laboursignatory';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Labour/Petty';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'PETTY');
         $data['user_id'] = $userId;
@@ -97,7 +97,7 @@ class LabourController extends Controller
     public function storeLabour(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Labour/Labour';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LABOUR');
         $data['user_id'] = $userId;

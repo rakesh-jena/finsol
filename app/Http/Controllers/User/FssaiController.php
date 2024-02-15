@@ -43,7 +43,7 @@ class FssaiController extends Controller
     public function storeFssai(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Fssai';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'FSSAI');
         $data['user_id'] = $userId;

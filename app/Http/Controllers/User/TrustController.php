@@ -43,7 +43,7 @@ class TrustController extends Controller
 
         $userId = auth()->user()->id;
         $dataon = 'trustmember';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Trust';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TRUST');
         $data['user_id'] = $userId;

@@ -41,7 +41,7 @@ class EstimatedController extends Controller
     public function storeEstimated(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/LoanFinance/Estimated';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LF Estimated');
         $data['user_id'] = $userId;

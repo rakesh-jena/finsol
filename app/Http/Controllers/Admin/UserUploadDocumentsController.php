@@ -47,7 +47,7 @@ class UserUploadDocumentsController extends Controller
         $userDetails = User::find($userId);
 
         $doc_type = $request->doc_type;
-        $useName = trim($userDetails->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = $doc_type . '-' . $useName . '.zip';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);

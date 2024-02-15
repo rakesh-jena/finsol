@@ -44,7 +44,7 @@ class UdamyController extends Controller
     public function storeUdamy(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Udamy';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'UDAMY');
         $data['user_id'] = $userId;

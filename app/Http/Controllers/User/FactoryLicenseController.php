@@ -43,7 +43,7 @@ class FactoryLicenseController extends Controller
     public function storeFactoryLicense(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/FactoryLicense';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'FL');
         $data['user_id'] = $userId;

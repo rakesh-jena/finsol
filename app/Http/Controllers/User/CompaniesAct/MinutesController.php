@@ -40,7 +40,7 @@ class MinutesController extends Controller
     public function storeMinutes(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/Minutes';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'MINUTES');
         $data['user_id'] = $userId;

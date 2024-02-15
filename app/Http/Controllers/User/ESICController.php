@@ -50,7 +50,7 @@ class ESICController extends Controller
 
         $userId = auth()->user()->id;
         $dataon = 'esicsignatory';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Esic/Company';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ESIC Company');
         $data['user_id'] = $userId;
@@ -92,7 +92,7 @@ class ESICController extends Controller
     public function storeEsicOthers(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Esic/Others';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ESIC Others');
         $data['user_id'] = $userId;

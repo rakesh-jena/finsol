@@ -40,7 +40,7 @@ class StatutoryAuditController extends Controller
     public function storeAudit(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/StatutoryAudit';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'SA');
         $data['user_id'] = $userId;

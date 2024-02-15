@@ -40,7 +40,7 @@ class DinkycController extends Controller
     public function storeDinkyc(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/Dinkyc';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'DINKYC');
         $data['user_id'] = $userId;

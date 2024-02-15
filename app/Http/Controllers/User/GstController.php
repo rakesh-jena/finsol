@@ -96,7 +96,7 @@ class GstController extends Controller
             'gst_number' => 'required|unique:users_gst_details',
         ], $messages);
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $data['user_id'] = $userId;
         $data['trade_name'] = $request['trade_name'];
         $data['email_id'] = $request['email_id'];
@@ -162,7 +162,7 @@ class GstController extends Controller
     {
         // $this->validateform($request);
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Gst/Individual';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'GST');
         // $data = $this->uploadAllImages($request, $userId, 1, $folderName);
@@ -193,7 +193,7 @@ class GstController extends Controller
         // $this->validateform($request);
         $userId = auth()->user()->id;
         $dataon = 'partners';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Gst/Firm';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'GST Firm');
         // $data =  $this->uploadAllImages($request,$userId,2,$folderName);
@@ -269,7 +269,7 @@ class GstController extends Controller
         $this->validateform($request);
         $userId = auth()->user()->id;
         $dataon = 'directors';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Gst/Company';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'GST Company');
         // $data =  $this->uploadAllImages($request,$userId,2,$folderName);
@@ -321,7 +321,7 @@ class GstController extends Controller
     public function uploadDocumentsCreate(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $gstId = UserGstDetail::where('gst_number', $request->input('gstnumber'))->where('user_id', $userId)->first();
 
         if ($request->input('gstnumber') && $request->input('doc_type') == 'Monthly') {
@@ -341,7 +341,7 @@ class GstController extends Controller
 
         } else if ($request->input('gstnumber') && $request->input('doc_type') == 'Quarterly') {
 
-            $useName = trim(auth()->user()->name) . '-' . $userId;
+            $useName = $userId;
             $folderName = 'public/uploads/users/' . $useName . '/Gst/UploadDocuments/Quarterly';
             $data = Helper::uploadImagesNormal($request, $userId, $folderName, 'documents');
             $data['gst_id'] = $gstId->id;
@@ -470,7 +470,7 @@ class GstController extends Controller
     {
         $userId = auth()->user()->id;
         $gstid = $request->gstid;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Gst/AdditionalImg';
         $name = 'additional_img';
         $img = Helper::uploadImagesNormal($request, $userId, $folderName, $name);
@@ -492,7 +492,7 @@ class GstController extends Controller
         $files = $request->input('files');
         $commaValues = explode(",", $files);
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = 'QueryApprovedFile-' . $useName . '.zip';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
@@ -539,7 +539,7 @@ class GstController extends Controller
         $commaValues = explode(",", $files);
         $userId = auth()->user()->id;
         $doc_type = $request->doc_type;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = $doc_type . '-' . $useName . '.zip';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
@@ -570,7 +570,7 @@ class GstController extends Controller
     {
         $fileName = $request->input('files');
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $filePath = 'public/uploads/users/' . $useName . '/Gst/CopyOfReturns/' . $fileName;
 
         if (File::exists($filePath)) {
@@ -590,7 +590,7 @@ class GstController extends Controller
         $files = $request->input('files');
         $commaValues = explode(",", $files);
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = 'QueryRaisedFile-' . $useName . '.zip';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);

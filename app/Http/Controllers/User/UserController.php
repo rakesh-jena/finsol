@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\UserSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
 {
@@ -33,14 +36,57 @@ class UserController extends Controller
         return view('user.pages.profile.profile', compact('user'));
     }
 
-    public function user_settings()
+    public function save_profile(Request $request)
     {
-        $user = Auth::user();
-        return view('user.pages.profile.settings', compact('user'));
+        $request->validate([
+            'id' => ['required', 'exists:users'],
+            'current_password' => 'required|string',
+            'new_password' => 'required|confirmed|min:8|string'
+        ]);
+
+        $user = User::where('id', $request->input('id'));
+        $auth = Auth::user();
+        if (!Hash::check($request->get('current_password'), $auth->password)) 
+        {
+            return back()->with('error', "Current Password is Invalid");
+        }
+        
+        // Current password and new password same
+        if (strcmp($request->get('current_password'), $request->new_password) == 0) 
+        {
+            return redirect()->back()->with("error", "New Password cannot be same as your current password.");
+        }
+
+        $user->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return redirect('profile');
     }
 
-    public function save_settings(Request $request)
+    public function update_image(Request $request)
     {
-        return redirect('settings');
+        $request->validate([
+            'id' => ['required', 'exists:users'],
+            'image' => ['required'],
+        ]);
+
+        $userFolder = 'public/uploads/users/'.$request->input('id').'/profile';
+
+        if (!File::exists($userFolder)) {
+            File::makeDirectory($userFolder, 0777, true, true);
+        }
+
+        $userFolder = 'public/uploads/users/' . $request->input('id') . '/profile';
+        $image = $request->file('image');
+        $newName = mt_rand(2000, 9000) . $request->input('id') . '.' . $image->getClientOriginalExtension();
+        $path = $image->move($userFolder, $newName);
+
+        $user = User::where('id', $request->input('id'));
+        $user->update([
+            'image' => $newName
+        ]);
+
+        return redirect('profile');
     }
 }

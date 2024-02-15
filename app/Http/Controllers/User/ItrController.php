@@ -43,7 +43,7 @@ class ItrController extends Controller
     public function storeItr(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Itr';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ITR');
         $data['user_id'] = $userId;

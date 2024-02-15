@@ -42,7 +42,7 @@ class TaxauditController extends Controller
     public function storeTaxaudit(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Taxaudit';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TAXAUDIT');
         $data['user_id'] = $userId;

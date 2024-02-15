@@ -50,7 +50,7 @@ class TradeMarkController extends Controller
 
         $userId = auth()->user()->id;
         $dataon = 'trademarksignatory';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Trademark/Company';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TRADEMARK Company');
         $data['user_id'] = $userId;
@@ -94,7 +94,7 @@ class TradeMarkController extends Controller
     public function storeTrademarkOthers(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Trademark/Others';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TRADEMARK Others');
         $data['user_id'] = $userId;

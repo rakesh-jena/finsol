@@ -41,7 +41,7 @@ class ProjectReportController extends Controller
     public function storeProjectReport(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/LoanFinance/ProjectReport';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LFPR');
         $data['user_id'] = $userId;

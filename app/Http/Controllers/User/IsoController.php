@@ -43,7 +43,7 @@ class IsoController extends Controller
     public function storeIso(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Iso';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ISO');
         $data['user_id'] = $userId;

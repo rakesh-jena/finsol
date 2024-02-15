@@ -40,7 +40,7 @@ class CaController extends Controller
     public function storeCa(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Certification/Ca';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'CA');
         $data['user_id'] = $userId;

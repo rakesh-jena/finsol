@@ -52,7 +52,7 @@ class CompanyController extends Controller
 
         $userId = auth()->user()->id;
         $dataon = 'companysignatory';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Company';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'COMPANY');
         $data['user_id'] = $userId;

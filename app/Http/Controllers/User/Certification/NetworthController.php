@@ -40,7 +40,7 @@ class NetworthController extends Controller
     public function storeNetworth(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Certification/Networth';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'NETWORTH');
         $data['user_id'] = $userId;

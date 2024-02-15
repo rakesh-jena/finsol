@@ -43,7 +43,7 @@ class HufController extends Controller
 
         $userId = auth()->user()->id;
         $dataon = 'hufmember';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Huf';
         $data['user_id'] = $userId;
         $data['name_of_huf'] = $request->input('name_of_huf');

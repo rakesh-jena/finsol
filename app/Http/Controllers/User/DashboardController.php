@@ -116,7 +116,7 @@ class DashboardController extends Controller
         $formType = $request->form_type;
         $id = $request->id;
         if ($id) {
-            $useName = trim(auth()->user()->name) . '-' . $userId;
+            $useName = $userId;
             $folderName = 'public/uploads/users/' . $useName . '/' . $formType . '/AdditionalImg';
             $name = 'additional_img';
             $img = Helper::uploadImagesNormal($request, $userId, $folderName, $name);
@@ -327,7 +327,7 @@ class DashboardController extends Controller
         $files = $request->input('files');
         $commaValues = explode(",", $files);
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $formType = $request->form_type;
         $zipName = $formType . 'ApprovedFile-' . $useName . '.zip';
         $zip = new \ZipArchive();
@@ -361,7 +361,7 @@ class DashboardController extends Controller
         $commaValues = explode(",", $files);
         $userId = auth()->user()->id;
         $formType = $request->form_type;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $zipName = $formType . 'QueryRaisedFile-' . $useName . '.zip';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);

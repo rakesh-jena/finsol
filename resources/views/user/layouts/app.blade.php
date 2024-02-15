@@ -82,12 +82,18 @@
                                     </label>
                                 </div>
                             </li>
-
+                            <?php $user = auth()->user();?>
                             <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser"
                                     role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="avatar avatar-xl">
-                                        <img class="rounded-circle" src="{{ asset('assets/img/team/3-thumb.png') }}"
-                                            alt="" />
+                                        @if ($user->image == null)
+                                            <img class="rounded-circle" src="{{ url('images/avatar.png') }}" width="200" alt="avatar"
+                                                data-dz-thumbnail="data-dz-thumbnail" />
+                                        @else
+                                            <img src="{{ url('uploads/users/' . $user->id . '/profile/' . $user->image) }}"
+                                                width="200" alt="avatar" class="rounded-circle"
+                                                data-dz-thumbnail="data-dz-thumbnail" />
+                                        @endif
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"

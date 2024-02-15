@@ -45,7 +45,7 @@ class PartnershipController extends Controller
 
         $userId = auth()->user()->id;
         $dataon = 'partnershippartner';
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Partnership';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'PARTNERSHIP');
         $data['user_id'] = $userId;

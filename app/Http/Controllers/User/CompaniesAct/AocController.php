@@ -40,7 +40,7 @@ class AocController extends Controller
     public function storeAoc(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/Aoc';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'AOC');
         $data['user_id'] = $userId;

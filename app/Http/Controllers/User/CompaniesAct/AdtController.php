@@ -40,7 +40,7 @@ class AdtController extends Controller
     public function storeAdt(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/Adt';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ADT');
         $data['user_id'] = $userId;

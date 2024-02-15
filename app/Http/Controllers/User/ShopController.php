@@ -44,7 +44,7 @@ class ShopController extends Controller
     public function storeShop(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Shop';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'SHOP');
         $data['user_id'] = $userId;

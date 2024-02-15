@@ -40,7 +40,7 @@ class TurnoverController extends Controller
     public function storeTurnover(Request $request)
     {
         $userId = auth()->user()->id;
-        $useName = trim(auth()->user()->name) . '-' . $userId;
+        $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Certification/Turnover';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TURNOVER');
         $data['user_id'] = $userId;
