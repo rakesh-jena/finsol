@@ -50,7 +50,7 @@
                                         <input type="hidden" name="payment_purpose" value="Import">
                                         <input type="hidden" name="email_id" value="{{ $detail->firm_email }}">
                                         <input type="hidden" name="name_of_pan" value="{{ $detail->name_of_firm }}">
-                                        <input type="hidden" name="mobile_number" value="{{ $detail->firm_mobile }}">
+                                        <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}" value="{{ $detail->firm_mobile }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit">
                                             <small>Pay</small>

@@ -44,7 +44,7 @@ class ImportExportController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/ImportExport';
+        $folderName = 'public/uploads/users/' . $useName . '/ImportExport';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'IE');
         $data['user_id'] = $userId;
         $data['name_of_firm'] = $request['name_of_udamy'];

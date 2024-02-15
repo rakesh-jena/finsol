@@ -12,16 +12,12 @@
                     <div class="cover-image">
                         <div class="bg-holder rounded-3 rounded-bottom-0"
                             style="background-image:url({{ url('assets/img/generic/4.jpg') }});"></div>
-                        <!--/.bg-holder-->
-                        <input class="d-none" id="upload-cover-image" type="file" /><label class="cover-image-file-input"
-                            for="upload-cover-image"><span class="fas fa-camera me-2"></span><span>Change cover
-                                photo</span></label>
                     </div>
                     <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
                         <div class="h-100 w-100 rounded-circle overflow-hidden position-relative">
                             <img src="{{ url('assets/img/team/2.jpg') }}" width="200" alt=""
                                 data-dz-thumbnail="data-dz-thumbnail" />
-                            <input class="d-none" id="profile-image" type="file" />
+                            <input class="d-none" id="profile-image" type="file" name="profile-image"/>
                             <label class="mb-0 overlay-icon d-flex flex-center" for="profile-image">
                                 <span class="bg-holder overlay overlay-0"></span>
                                 <span class="z-1 text-white dark__text-white text-center fs--1">

@@ -45,7 +45,7 @@ class TanController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Tan';
+        $folderName = 'public/uploads/users/' . $useName . '/Tan';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TAN');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

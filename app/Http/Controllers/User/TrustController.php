@@ -44,7 +44,7 @@ class TrustController extends Controller
         $userId = auth()->user()->id;
         $dataon = 'trustmember';
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Trust';
+        $folderName = 'public/uploads/users/' . $useName . '/Trust';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TRUST');
         $data['user_id'] = $userId;
         $data['name_of_trust'] = $request->input('name_of_trust');
@@ -69,7 +69,7 @@ class TrustController extends Controller
             $trustmember = $request->input('trustmember');
             UserTrustMember::where(['user_id' => $userId])->delete();
             foreach ($trustmember as $key => $ps) {
-                $folderName = 'uploads/users/' . $useName . '/Trust/Member';
+                $folderName = 'public/uploads/users/' . $useName . '/Trust/Member';
                 $member = Helper::uploadAddMultipleImages($request, $key, $userId, $folderName, $dataon, 'TRUST Member');
                 $member['user_trust_id'] = $lastInsertedId;
                 $member['user_id'] = $userId;

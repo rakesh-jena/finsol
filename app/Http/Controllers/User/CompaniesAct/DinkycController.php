@@ -41,7 +41,7 @@ class DinkycController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/CompaniesAct/Dinkyc';
+        $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/Dinkyc';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'DINKYC');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

@@ -53,7 +53,7 @@ class CompanyController extends Controller
         $userId = auth()->user()->id;
         $dataon = 'companysignatory';
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Company';
+        $folderName = 'public/uploads/users/' . $useName . '/Company';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'COMPANY');
         $data['user_id'] = $userId;
         $data['name_of_company'] = $request->input('name_of_company');
@@ -80,7 +80,7 @@ class CompanyController extends Controller
             $companysignatory = $request->input('companysignatory');
             UserCompanySignatory::where(['user_id' => $userId])->delete();
             foreach ($companysignatory as $key => $ps) {
-                $folderName = 'uploads/users/' . $useName . '/Company/Signatory';
+                $folderName = 'public/uploads/users/' . $useName . '/Company/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'COMPANY Signatory');
                 $partner['user_comp_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;

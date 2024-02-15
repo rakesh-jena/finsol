@@ -49,7 +49,7 @@
                                         <input type="hidden" name="payment_purpose" value="Adt">
                                         <input type="hidden" name="email_id" value="{{ $detail->email_id }}">
                                         <input type="hidden" name="name_of_pan" value="{{ $detail->name_of_pan }}">
-                                        <input type="hidden" name="mobile_number"
+                                        <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}"
                                             value="{{ $detail->mobile_number }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit">

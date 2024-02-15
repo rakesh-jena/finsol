@@ -46,7 +46,7 @@ class PartnershipController extends Controller
         $userId = auth()->user()->id;
         $dataon = 'partnershippartner';
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Partnership';
+        $folderName = 'public/uploads/users/' . $useName . '/Partnership';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'PARTNERSHIP');
         $data['user_id'] = $userId;
         $data['name_of_partnership'] = $request->input('name_of_partnership');
@@ -72,7 +72,7 @@ class PartnershipController extends Controller
             $partnershippartner = $request->input('partnershippartner');
             UserPartnershipPartner::where(['user_id' => $userId])->delete();
             foreach ($partnershippartner as $key => $ps) {
-                $folderName = 'uploads/users/' . $useName . '/Partnership/Partner';
+                $folderName = 'public/uploads/users/' . $useName . '/Partnership/Partner';
                 $partner = Helper::uploadAddMultipleImages($request, $key, $userId, $folderName, $dataon, 'PARTNERSHIP Partner');
                 $partner['user_partnership_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;

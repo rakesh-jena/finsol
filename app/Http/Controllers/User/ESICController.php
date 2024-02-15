@@ -51,7 +51,7 @@ class ESICController extends Controller
         $userId = auth()->user()->id;
         $dataon = 'esicsignatory';
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Esic/Company';
+        $folderName = 'public/uploads/users/' . $useName . '/Esic/Company';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ESIC Company');
         $data['user_id'] = $userId;
         $data['esic_type'] = $request['esic_type'];
@@ -77,7 +77,7 @@ class ESICController extends Controller
             $esicsignatory = $request->input('esicsignatory');
             UserEsicSignatory::where(['user_id' => $userId])->delete();
             foreach ($esicsignatory as $key => $ps) {
-                $folderName = 'uploads/users/' . $useName . '/Esic/Company/Signatory';
+                $folderName = 'public/uploads/users/' . $useName . '/Esic/Company/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'ESIC Signatory');
                 $partner['user_esic_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;
@@ -93,7 +93,7 @@ class ESICController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Esic/Others';
+        $folderName = 'public/uploads/users/' . $useName . '/Esic/Others';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ESIC Others');
         $data['user_id'] = $userId;
         $data['esic_email'] = $request['email_id'];

@@ -53,7 +53,7 @@
                                         <input type="hidden" name="email_id" value="{{ $detail->trademark_email }}">
                                         <input type="hidden" name="name_of_pan"
                                             value="{{ $detail->name_of_trademark }}">
-                                        <input type="hidden" name="mobile_number"
+                                        <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}"
                                             value="{{ $detail->trademark_mobile }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit">

@@ -41,7 +41,7 @@ class AdtController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/CompaniesAct/Adt';
+        $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/Adt';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ADT');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

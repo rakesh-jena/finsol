@@ -44,7 +44,7 @@ class HufController extends Controller
         $userId = auth()->user()->id;
         $dataon = 'hufmember';
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Huf';
+        $folderName = 'public/uploads/users/' . $useName . '/Huf';
         $data['user_id'] = $userId;
         $data['name_of_huf'] = $request->input('name_of_huf');
         $data['name_of_karta'] = $request->input('name_of_karta');
@@ -67,7 +67,7 @@ class HufController extends Controller
             $hufmember = $request->input('hufmember');
             UserHufMember::where(['user_id' => $userId])->delete();
             foreach ($hufmember as $key => $ps) {
-                $folderName = 'uploads/users/' . $useName . '/Huf/Member';
+                $folderName = 'public/uploads/users/' . $useName . '/Huf/Member';
                 $partner = Helper::uploadAddMultipleImages($request, $key, $userId, $folderName, $dataon, 'HUF Member');
                 $partner['user_huf_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;

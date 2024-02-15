@@ -42,7 +42,7 @@ class CMAController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/LoanFinance/CMA';
+        $folderName = 'public/uploads/users/' . $useName . '/LoanFinance/CMA';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LFCMA');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

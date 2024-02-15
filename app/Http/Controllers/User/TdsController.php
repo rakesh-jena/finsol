@@ -43,7 +43,7 @@ class TdsController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Tds';
+        $folderName = 'public/uploads/users/' . $useName . '/Tds';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TDS');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

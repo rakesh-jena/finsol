@@ -46,7 +46,7 @@ class EpfController extends Controller
         $userId = auth()->user()->id;
         $dataon = 'epfsignatory';
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Epf/Company';
+        $folderName = 'public/uploads/users/' . $useName . '/Epf/Company';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'EPF Company');
         $data['user_id'] = $userId;
         $data['epf_type'] = $request['epf_type'];
@@ -73,7 +73,7 @@ class EpfController extends Controller
             $epfsignatory = $request->input('epfsignatory');
             UserEpfSignatory::where(['user_id' => $userId])->delete();
             foreach ($epfsignatory as $key => $ps) {
-                $folderName = 'uploads/users/' . $useName . '/Epf/Company/Signatory';
+                $folderName = 'public/uploads/users/' . $useName . '/Epf/Company/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'EPF Signatory');
                 $partner['user_epf_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;
@@ -89,7 +89,7 @@ class EpfController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Epf/Others';
+        $folderName = 'public/uploads/users/' . $useName . '/Epf/Others';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, $for_multiple = 'EPF Others');
         $data['user_id'] = $userId;
         $data['epf_email'] = $request['email_id'];

@@ -50,7 +50,7 @@
                                         <input type="hidden" name="payment_purpose" value="Esic">
                                         <input type="hidden" name="email_id" value="{{ $detail->esic_email }}">
                                         <input type="hidden" name="name_of_pan" value="{{ $detail->name_of_esic }}">
-                                        <input type="hidden" name="mobile_number" value="{{ $detail->esic_mobile }}">
+                                        <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}" value="{{ $detail->esic_mobile }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit">
                                             <small>Pay</small>

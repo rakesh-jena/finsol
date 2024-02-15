@@ -117,7 +117,7 @@ class DashboardController extends Controller
         $id = $request->id;
         if ($id) {
             $useName = trim(auth()->user()->name) . '-' . $userId;
-            $folderName = 'uploads/users/' . $useName . '/' . $formType . '/AdditionalImg';
+            $folderName = 'public/uploads/users/' . $useName . '/' . $formType . '/AdditionalImg';
             $name = 'additional_img';
             $img = Helper::uploadImagesNormal($request, $userId, $folderName, $name);
             if ($formType == 'Pan') {
@@ -334,18 +334,18 @@ class DashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('/dashboard')->with('approvedfilenotexist', 'File Not Exist!');
                 }
             }
         } else {
-            $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $files;
             if (File::exists($filePath)) {
-                $fileContents = file_get_contents(public_path($filePath));
+                $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
             } else {
                 return redirect('/dashboard')->with('approvedfilenotexist', 'File Not Exist!');
@@ -367,18 +367,18 @@ class DashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'RaisedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'RaisedImg/' . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('/dashboard')->with('raisedfilenotexist', 'File Not Exist!');
                 }
             }
         } else {
-            $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'RaisedImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'RaisedImg/' . $files;
             if (File::exists($filePath)) {
-                $fileContents = file_get_contents(public_path($filePath));
+                $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
             } else {
                 return redirect('/dashboard')->with('raisedfilenotexist', 'File Not Exist!');

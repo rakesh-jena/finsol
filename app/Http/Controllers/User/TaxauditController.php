@@ -43,7 +43,7 @@ class TaxauditController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Taxaudit';
+        $folderName = 'public/uploads/users/' . $useName . '/Taxaudit';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TAXAUDIT');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

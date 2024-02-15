@@ -45,7 +45,7 @@ class ShopController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Shop';
+        $folderName = 'public/uploads/users/' . $useName . '/Shop';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'SHOP');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

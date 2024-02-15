@@ -42,7 +42,7 @@ class ProjectReportController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/LoanFinance/ProjectReport';
+        $folderName = 'public/uploads/users/' . $useName . '/LoanFinance/ProjectReport';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LFPR');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

@@ -41,7 +41,7 @@ class CaController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Certification/Ca';
+        $folderName = 'public/uploads/users/' . $useName . '/Certification/Ca';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'CA');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

@@ -42,7 +42,7 @@ class ISIController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/ISI';
+        $folderName = 'public/uploads/users/' . $useName . '/ISI';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ISI');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

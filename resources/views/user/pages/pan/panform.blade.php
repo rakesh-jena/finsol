@@ -15,8 +15,8 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <!-- <div class="card-header">
-                                     <h6 class="mb-0">Get yourself a New PAN Card</h6>
-                                </div> -->
+                                         <h6 class="mb-0">Get yourself a New PAN Card</h6>
+                                    </div> -->
                 <div class="card-body">
                     @if (session('success'))
                         <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
@@ -37,9 +37,9 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Name for Pan
-                                    </label><input class="form-control" type="text" name="pan_name"
-                                        placeholder="Name for Pan" required="required"
-                                        id="bootstrap-wizard-validation-wizard-email" />
+                                    </label>
+                                    <input class="form-control" type="text" name="pan_name" placeholder="Name for Pan"
+                                        required="required" id="bootstrap-wizard-validation-wizard-email" />
                                     <div class="invalid-feedback">You must add Pan Name</div>
                                 </div>
                             </div>
@@ -58,8 +58,9 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
-                                        Number linked with Aadhar</label><input class="form-control" required=""
-                                        type="text" name="mobile_number" maxlength="10" placeholder="Enter Mobile Number"
+                                        Number linked with Aadhar</label>
+                                    <input class="form-control" required="" type="text" name="mobile_number"
+                                        value="{{ Auth::user()->mobile }}" maxlength="10" placeholder="Enter Mobile Number"
                                         id="form-wizard-progress-wizard-addregnum" />
                                     <div class="invalid-feedback">Please provide Mobile
                                         number</div>

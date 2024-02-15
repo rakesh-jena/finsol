@@ -44,7 +44,7 @@ class ItrController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Itr';
+        $folderName = 'public/uploads/users/' . $useName . '/Itr';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'ITR');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

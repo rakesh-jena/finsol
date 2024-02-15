@@ -53,18 +53,18 @@ class UserUploadDocumentsController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'uploads/users/' . $useName . '/Gst/UploadDocuments/' . $doc_type . '/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/Gst/UploadDocuments/' . $doc_type . '/' . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('user/gst/uploaddocuments/' . $userId)->with('danger', 'File Not Exist!');
                 }
             }
         } else {
-            $filePath = 'uploads/users/' . $useName . '/Gst/UploadDocuments/' . $doc_type . '/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '/Gst/UploadDocuments/' . $doc_type . '/' . $files;
             if (File::exists($filePath)) {
-                $fileContents = file_get_contents(public_path($filePath));
+                $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
             } else {
                 return redirect('user/gst/uploaddocuments/' . $userId)->with('filenotexist', 'File Not Exist!');

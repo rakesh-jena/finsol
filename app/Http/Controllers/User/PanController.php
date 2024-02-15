@@ -42,7 +42,7 @@ class PanController extends Controller
 
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Pan';
+        $folderName = 'public/uploads/users/' . $useName . '/Pan';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'PAN');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

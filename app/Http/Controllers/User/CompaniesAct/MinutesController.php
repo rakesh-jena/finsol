@@ -41,7 +41,7 @@ class MinutesController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/CompaniesAct/Minutes';
+        $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/Minutes';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'MINUTES');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

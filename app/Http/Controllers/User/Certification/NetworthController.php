@@ -41,7 +41,7 @@ class NetworthController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Certification/Networth';
+        $folderName = 'public/uploads/users/' . $useName . '/Certification/Networth';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'NETWORTH');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

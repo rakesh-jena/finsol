@@ -68,14 +68,14 @@ class LoanDashboardController extends Controller
         $userDetails = User::find($userId);
         $useName = trim($userDetails->name) . '-' . $userId;
         $zipName = str_replace('/', '-', $formType) . '-' . $useName . '.zip';
-        $folderPath = 'uploads/users/' . $useName . '/' . $formType . '/';
+        $folderPath = 'public/uploads/users/' . $useName . '/' . $formType . '/';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
                 $filePath = $folderPath . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('/admin/user/loan-finance/details/' . $id)->with('filenotexist', 'File Not Exist!');
@@ -85,7 +85,7 @@ class LoanDashboardController extends Controller
             if (!empty($files)) {
                 $filePath = $folderPath . $files;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($files), $fileContents);
                 } else {
                     return redirect('/admin/user/loan-finance/details/' . $id)->with('filenotexist', 'File Not Exist!');
@@ -109,14 +109,14 @@ class LoanDashboardController extends Controller
         $userDetails = User::find($userId);
         $useName = trim($userDetails->name) . '-' . $userId;
         $zipName = $gst_type . '-' . $useName . '.zip';
-        $folderPath = 'uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
+        $folderPath = 'public/uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
                 $filePath = $folderPath . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
@@ -126,7 +126,7 @@ class LoanDashboardController extends Controller
             if (!empty($files)) {
                 $filePath = $folderPath . $files;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($files), $fileContents);
                 } else {
                     return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
@@ -224,7 +224,7 @@ class LoanDashboardController extends Controller
             default:break;
         }
         $folderNameChange = ($request->type == 'approve') ? '/' . $fName . '/ApprovedImg' : '/' . $fName . '/RaisedImg';
-        $folderName = 'uploads/users/' . $useName . $folderNameChange;
+        $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
         // $panid = $request->id;
         // $datas = UserPanDetail::find($panid);
         $status = ($request->type == 'approve') ? 4 : 2;
@@ -258,18 +258,18 @@ class LoanDashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('admin/user/loan-finance/dashboard/details/' . $userId)->with('additionalfilenotexist', 'File Not Exist!');
                 }
             }
         } else {
-            $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $files;
             if (File::exists($filePath)) {
-                $fileContents = file_get_contents(public_path($filePath));
+                $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
             } else {
                 return redirect('admin/user/loan-finance/dashboard/details/' . $userId)->with('additionalfilenotexist', 'File Not Exist!');
@@ -294,18 +294,18 @@ class LoanDashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('admin/user/loan-finance/dashboard/details/' . $userId)->with('approvedfilenotexist', 'File Not Exist!');
                 }
             }
         } else {
-            $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $files;
             if (File::exists($filePath)) {
-                $fileContents = file_get_contents(public_path($filePath));
+                $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
             } else {
                 return redirect('admin/user/loan-finance/dashboard/details/' . $userId)->with('approvedfilenotexist', 'File Not Exist!');

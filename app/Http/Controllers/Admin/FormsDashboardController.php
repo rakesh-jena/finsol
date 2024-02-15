@@ -211,14 +211,14 @@ class FormsDashboardController extends Controller
         $userDetails = User::find($userId);
         $useName = trim($userDetails->name) . '-' . $userId;
         $zipName = str_replace('/', '-', $formType) . '-' . $useName . '.zip';
-        $folderPath = 'uploads/users/' . $useName . '/' . $formType . '/';
+        $folderPath = 'public/uploads/users/' . $useName . '/' . $formType . '/';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
                 $filePath = $folderPath . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('/admin/user/forms/details/' . $id)->with('filenotexist', 'File Not Exist!');
@@ -228,7 +228,7 @@ class FormsDashboardController extends Controller
             if (!empty($files)) {
                 $filePath = $folderPath . $files;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($files), $fileContents);
                 } else {
                     return redirect('/admin/user/forms/details/' . $id)->with('filenotexist', 'File Not Exist!');
@@ -252,14 +252,14 @@ class FormsDashboardController extends Controller
         $userDetails = User::find($userId);
         $useName = trim($userDetails->name) . '-' . $userId;
         $zipName = $gst_type . '-' . $useName . '.zip';
-        $folderPath = 'uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
+        $folderPath = 'public/uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
                 $filePath = $folderPath . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
@@ -269,7 +269,7 @@ class FormsDashboardController extends Controller
             if (!empty($files)) {
                 $filePath = $folderPath . $files;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($files), $fileContents);
                 } else {
                     return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
@@ -536,7 +536,7 @@ class FormsDashboardController extends Controller
         switch ($route) {
             case "pan":
                 $folderNameChange = ($request->type == 'approve') ? '/Pan/ApprovedImg' : '/Pan/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $panid = $request->id;
                 $datas = UserPanDetail::find($panid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -556,7 +556,7 @@ class FormsDashboardController extends Controller
                 break;
             case "tan":
                 $folderNameChange = ($request->type == 'approve') ? '/Tan/ApprovedImg' : '/Tan/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $tanid = $request->id;
                 $datas = UserTanDetail::find($tanid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -577,7 +577,7 @@ class FormsDashboardController extends Controller
 
             case "epf":
                 $folderNameChange = ($request->type == 'approve') ? '/Epf/ApprovedImg' : '/Epf/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $epfid = $request->id;
                 $datas = UserEpfDetail::find($epfid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -598,7 +598,7 @@ class FormsDashboardController extends Controller
 
             case "esic":
                 $folderNameChange = ($request->type == 'approve') ? '/Esic/ApprovedImg' : '/Esic/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $esicid = $request->id;
                 $datas = UserEsicDetail::find($esicid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -619,7 +619,7 @@ class FormsDashboardController extends Controller
 
             case "trademark":
                 $folderNameChange = ($request->type == 'approve') ? '/Trademark/ApprovedImg' : '/Trademark/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $trademarkid = $request->id;
                 $datas = UserTrademarkDetail::find($trademarkid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -640,7 +640,7 @@ class FormsDashboardController extends Controller
 
             case "company":
                 $folderNameChange = ($request->type == 'approve') ? '/Company/ApprovedImg' : '/Company/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $companyid = $request->id;
                 $datas = UserCompanyDetail::find($companyid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -661,7 +661,7 @@ class FormsDashboardController extends Controller
 
             case "partnership":
                 $folderNameChange = ($request->type == 'approve') ? '/Partnership/ApprovedImg' : '/Partnership/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $pid = $request->id;
                 $datas = UserPartnershipDetail::find($pid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -682,7 +682,7 @@ class FormsDashboardController extends Controller
 
             case "huf":
                 $folderNameChange = ($request->type == 'approve') ? '/Huf/ApprovedImg' : '/Huf/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $hid = $request->id;
                 $datas = UserHufDetail::find($hid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -703,7 +703,7 @@ class FormsDashboardController extends Controller
 
             case "trust":
                 $folderNameChange = ($request->type == 'approve') ? '/Trust/ApprovedImg' : '/Trust/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $tid = $request->id;
                 $datas = UserTrustDetail::find($tid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -724,7 +724,7 @@ class FormsDashboardController extends Controller
 
             case "udamy":
                 $folderNameChange = ($request->type == 'approve') ? '/Udamy/ApprovedImg' : '/Udamy/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $uid = $request->id;
                 $datas = UserUdamyDetail::find($uid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -745,7 +745,7 @@ class FormsDashboardController extends Controller
 
             case "importexport":
                 $folderNameChange = ($request->type == 'approve') ? '/ImportExport/ApprovedImg' : '/ImportExport/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $ieid = $request->id;
                 $datas = UserImportExportDetail::find($ieid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -766,7 +766,7 @@ class FormsDashboardController extends Controller
 
             case "labour":
                 $folderNameChange = ($request->type == 'approve') ? '/Labour/ApprovedImg' : '/Labour/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $labourid = $request->id;
                 $datas = UserLabourDetail::find($labourid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -787,7 +787,7 @@ class FormsDashboardController extends Controller
 
             case "shop":
                 $folderNameChange = ($request->type == 'approve') ? '/Shop/ApprovedImg' : '/Shop/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $shopid = $request->id;
                 $datas = UserShopDetail::find($shopid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -808,7 +808,7 @@ class FormsDashboardController extends Controller
 
             case "iso":
                 $folderNameChange = ($request->type == 'approve') ? '/Iso/ApprovedImg' : '/Iso/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $isoid = $request->id;
                 $datas = UserIsoDetail::find($isoid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -829,7 +829,7 @@ class FormsDashboardController extends Controller
 
             case "fssai":
                 $folderNameChange = ($request->type == 'approve') ? '/Fssai/ApprovedImg' : '/Fssai/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $fssaiid = $request->id;
                 $datas = UserFssaiDetail::find($fssaiid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -850,7 +850,7 @@ class FormsDashboardController extends Controller
 
             case "itr":
                 $folderNameChange = ($request->type == 'approve') ? '/Itr/ApprovedImg' : '/Itr/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $itrid = $request->id;
                 $datas = UserItrDetail::find($itrid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -871,7 +871,7 @@ class FormsDashboardController extends Controller
 
             case "taxaudit":
                 $folderNameChange = ($request->type == 'approve') ? '/Taxaudit/ApprovedImg' : '/Taxaudit/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $taxauditid = $request->id;
                 $datas = UserTaxauditDetail::find($taxauditid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -892,7 +892,7 @@ class FormsDashboardController extends Controller
 
             case "tds":
                 $folderNameChange = ($request->type == 'approve') ? '/Tds/ApprovedImg' : '/Tds/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $tdsid = $request->id;
                 $datas = UserTdsDetail::find($tdsid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -913,7 +913,7 @@ class FormsDashboardController extends Controller
 
             case "factorylicense":
                 $folderNameChange = ($request->type == 'approve') ? '/FactoryLicense/ApprovedImg' : '/FactoryLicense/RaisedImg';
-                $folderName = 'uploads/users/' . $useName . $folderNameChange;
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
                 $flid = $request->id;
                 $datas = UserFactoryLicenseDetail::find($flid);
                 $status = ($request->type == 'approve') ? 4 : 2;
@@ -951,18 +951,18 @@ class FormsDashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('admin/user/forms/dashboard/details/' . $userId)->with('additionalfilenotexist', 'File Not Exist!');
                 }
             }
         } else {
-            $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $files;
             if (File::exists($filePath)) {
-                $fileContents = file_get_contents(public_path($filePath));
+                $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
             } else {
                 return redirect('admin/user/forms/dashboard/details/' . $userId)->with('additionalfilenotexist', 'File Not Exist!');
@@ -987,18 +987,18 @@ class FormsDashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('admin/user/forms/dashboard/details/' . $userId)->with('approvedfilenotexist', 'File Not Exist!');
                 }
             }
         } else {
-            $filePath = 'uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $files;
             if (File::exists($filePath)) {
-                $fileContents = file_get_contents(public_path($filePath));
+                $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
             } else {
                 return redirect('admin/user/forms/dashboard/details/' . $userId)->with('approvedfilenotexist', 'File Not Exist!');

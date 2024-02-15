@@ -51,7 +51,7 @@ class TradeMarkController extends Controller
         $userId = auth()->user()->id;
         $dataon = 'trademarksignatory';
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Trademark/Company';
+        $folderName = 'public/uploads/users/' . $useName . '/Trademark/Company';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TRADEMARK Company');
         $data['user_id'] = $userId;
         $data['trademark_type'] = $request['trademark_type'];
@@ -79,7 +79,7 @@ class TradeMarkController extends Controller
             $trademarksignatory = $request->input('trademarksignatory');
             UserTrademarkSignatory::where(['user_id' => $userId])->delete();
             foreach ($trademarksignatory as $key => $ps) {
-                $folderName = 'uploads/users/' . $useName . '/Trademark/Company/Signatory';
+                $folderName = 'public/uploads/users/' . $useName . '/Trademark/Company/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'TRADEMARK Signatory');
                 $partner['user_trademark_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;
@@ -95,7 +95,7 @@ class TradeMarkController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Trademark/Others';
+        $folderName = 'public/uploads/users/' . $useName . '/Trademark/Others';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'TRADEMARK Others');
         $data['user_id'] = $userId;
         $data['trademark_email'] = $request['email_id'];

@@ -52,7 +52,7 @@
                                         <input type="hidden" name="email_id" value="{{ $detail->partnership_email }}">
                                         <input type="hidden" name="name_of_pan"
                                             value="{{ $detail->name_of_partnership }}">
-                                        <input type="hidden" name="mobile_number"
+                                        <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}"
                                             value="{{ $detail->partnership_mobile }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit">

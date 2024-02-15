@@ -68,14 +68,14 @@ class UserGstController extends Controller
         $userDetails = User::find($userId);
         $useName = trim($userDetails->name) . '-' . $userId;
         $zipName = $gst_type . '-' . $useName . '.zip';
-        $folderPath = 'uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
+        $folderPath = 'public/uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
         $zip = new \ZipArchive();
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
                 $filePath = $folderPath . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
@@ -85,7 +85,7 @@ class UserGstController extends Controller
             if (!empty($files)) {
                 $filePath = $folderPath . $files;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($files), $fileContents);
                 } else {
                     return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
@@ -168,7 +168,7 @@ class UserGstController extends Controller
                 'gst_number' => 'required',
             ]);
 
-            $folderName = 'uploads/users/' . $useName . '/Gst/ApprovedImg';
+            $folderName = 'public/uploads/users/' . $useName . '/Gst/ApprovedImg';
             $img = Helper::uploadImagesNormal($request, $userId, $folderName, 'approved_img');
 
             $datas = UserGstDetail::find($gstid);
@@ -180,7 +180,7 @@ class UserGstController extends Controller
             $datas->save();
         } else {
 
-            $folderName = 'uploads/users/' . $useName . '/Gst/RaisedImg';
+            $folderName = 'public/uploads/users/' . $useName . '/Gst/RaisedImg';
             $img = Helper::uploadImagesNormal($request, $userId, $folderName, 'raised_img');
 
             $datas = UserGstDetail::find($gstid);
@@ -205,18 +205,18 @@ class UserGstController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'uploads/users/' . $useName . '/Gst/AdditionalImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/Gst/AdditionalImg/' . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('admin/user/gst/details/' . $userId)->with('additionalfilenotexist_gst', 'File Not Exist!');
                 }
             }
         } else {
-            $filePath = 'uploads/users/' . $useName . '/Gst/AdditionalImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '/Gst/AdditionalImg/' . $files;
             if (File::exists($filePath)) {
-                $fileContents = file_get_contents(public_path($filePath));
+                $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
             } else {
                 return redirect('admin/user/gst/details/' . $userId)->with('additionalfilenotexist_gst', 'File Not Exist!');
@@ -240,18 +240,18 @@ class UserGstController extends Controller
 
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'uploads/users/' . $useName . '/Gst/ApprovedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/Gst/ApprovedImg/' . $file;
                 if (File::exists($filePath)) {
-                    $fileContents = file_get_contents(public_path($filePath));
+                    $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
                 } else {
                     return redirect('admin/user/gst/details/' . $userId)->with('approvedfilenotexist_gst', 'File Not Exist!');
                 }
             }
         } else {
-            $filePath = 'uploads/users/' . $useName . '/Gst/ApprovedImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '/Gst/ApprovedImg/' . $files;
             if (File::exists($filePath)) {
-                $fileContents = file_get_contents(public_path($filePath));
+                $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
             } else {
                 return redirect('admin/user/gst/details/' . $userId)->with('approvedfilenotexist_gst', 'File Not Exist!');

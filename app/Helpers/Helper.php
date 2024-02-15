@@ -81,7 +81,6 @@ class Helper
         return $data;
     }
 
-
     public static function uploadImagesNew($request, $userId, $folderName, $for_multiple)
     {
         $userFolder = $folderName;
@@ -90,28 +89,17 @@ class Helper
         }
         $where = [];
 
-        // if($for_multiple!=null){
         $where = ['for_multiple' => $for_multiple];
-        // } else {
-        //     $where = ['gst_type_val'=>$gst_type_val];
-        // }
 
         $allimages = Documents::where($where)->get();
         $data = [];
         foreach ($allimages as $img) {
             $keyname = $img['doc_key_name'];
-            // $imgName = str_replace(' ', '', $img['filename']);
             if ($request->hasFile($keyname)) {
                 $images = $request->file($keyname);
 
                 $related_imgs = [];
                 foreach ($images as $index => $image) {
-                    //$maxSize = 2 * 1024 * 1024; // 2MB
-                    // if ($image && $image->getSize() > $maxSize) {
-                    //     // File size exceeds the limit
-                    //     return back()->withErrors('The selected file exceeds the maximum allowed size (2MB).');
-                    // }
-
                     $newName = ($index + 1) . '_' . mt_rand(2000, 9000) . $userId . '.' . $image->getClientOriginalExtension();
                     $path = $image->move($userFolder, $newName);
                     $related_imgs[] = $newName;

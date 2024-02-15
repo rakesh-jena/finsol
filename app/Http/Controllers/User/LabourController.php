@@ -54,7 +54,7 @@ class LabourController extends Controller
         $userId = auth()->user()->id;
         $dataon = 'laboursignatory';
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Labour/Petty';
+        $folderName = 'public/uploads/users/' . $useName . '/Labour/Petty';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'PETTY');
         $data['user_id'] = $userId;
         $data['labour_type'] = $request['labour_type'];
@@ -82,7 +82,7 @@ class LabourController extends Controller
             $laboursignatory = $request->input('laboursignatory');
             UserLabourSignatory::where(['user_id' => $userId])->delete();
             foreach ($laboursignatory as $key => $ps) {
-                $folderName = 'uploads/users/' . $useName . '/Labour/Petty/Signatory';
+                $folderName = 'public/uploads/users/' . $useName . '/Labour/Petty/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'PETTY Signatory');
                 $partner['user_labour_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;
@@ -98,7 +98,7 @@ class LabourController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/Labour/Labour';
+        $folderName = 'public/uploads/users/' . $useName . '/Labour/Labour';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LABOUR');
         $data['user_id'] = $userId;
         $data['labour_email'] = $request['email_id'];

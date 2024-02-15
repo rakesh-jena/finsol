@@ -41,7 +41,7 @@ class AocController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = trim(auth()->user()->name) . '-' . $userId;
-        $folderName = 'uploads/users/' . $useName . '/CompaniesAct/Aoc';
+        $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/Aoc';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'AOC');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];
