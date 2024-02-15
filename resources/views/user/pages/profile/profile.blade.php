@@ -11,7 +11,7 @@
                 <div class="card-header position-relative min-vh-25 mb-8">
                     <div class="cover-image">
                         <div class="bg-holder rounded-3 rounded-bottom-0"
-                            style="background-image:url({{ url('assets/img/generic/4.jpg') }});"></div>
+                            style="background-image:url({{ url('images/4.jpg') }});"></div>
                     </div>
                     <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
                         <div class="h-100 w-100 rounded-circle overflow-hidden position-relative">
@@ -84,18 +84,34 @@
                                 value="{{ $state }}" readonly="readonly" />
                         </div>
                         <h5>Change Password</h5>
+                        @if ($errors->any())
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+
+                        @if (session()->has('message'))
+                            <p class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('message') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </p>
+                        @endif
                         <div class="col-lg-6">
                             <label class="form-label" for="current_password">Current Password</label>
-                            <input class="form-control" id="current_password" type="password" name="current_password"/>
+                            <input class="form-control" id="current_password" type="password" name="current_password" />
                         </div>
                         <div class="col-lg-6">
                             <label class="form-label" for="new_password">New Password</label>
-                            <input class="form-control" id="new_password" type="password" name="new_password"/>
+                            <input class="form-control" id="new_password" type="password" name="new_password" />
                         </div>
                         <div class="col-lg-6">
                             <label class="form-label" for="new_password_confirmation">Retype New Password</label>
                             <input class="form-control" id="new_password_confirmation" type="password"
-                                name="new_password_confirmation"/>
+                                name="new_password_confirmation" />
                         </div>
                         <input type="hidden" name="id" value="{{ $user->id }}">
                         <div class="col-12 d-flex justify-content-end">
