@@ -284,5 +284,8 @@ Route::get('register/get-blocks/{districtId}', [DropdownController::class, 'getB
 Route::get('payments', 'PaymentsController@index')->name('form_payment');
 
 Route::get('profile', 'UserController@profile')->name('user_profile');
+Route::get('profile/edit', 'UserController@profileEdit')->name('user_profile_edit');
+Route::get('change-password', 'UserController@editPassword')->name('user_password_change_form');
+Route::post('password-update', 'UserController@updatePassword')->name('user_password_update');
 Route::put('profile-info-update', 'UserController@save_profile')->name('user_save_profile');
 Route::post('update_image', 'UserController@update_image')->name('user_image_update');

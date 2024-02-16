@@ -36,7 +36,35 @@ class UserController extends Controller
         return view('user.pages.profile.profile', compact('user'));
     }
 
+    public function profileEdit()
+    {
+        $user = auth()->user();
+        return view('user.pages.profile.edit', compact('user'));
+    }
+
+    public function editPassword()
+    {
+        $user = auth()->user();
+        return view('user.pages.profile.password', compact('user'));
+    }
+
     public function save_profile(Request $request)
+    {
+        $request->validate([
+            'id' => ['required', 'exists:users'],
+        ]);
+
+        $user = User::where('id', $request->input('id'));
+
+        $user->update([
+            'email' => $request->input('email'),
+            'aadhaar' => $request->input('aadhaar')
+        ]);
+
+        return redirect('profile');
+    }
+
+    public function updatePassword(Request $request)
     {
         $request->validate([
             'id' => ['required', 'exists:users'],

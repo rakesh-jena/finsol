@@ -20,7 +20,10 @@
                         </div>
                     @endif
                     @if (Auth::user()->type_of_user === 'Head Office')
-                        <h6 class="mb-1">Filter</h6>
+                        <div class="d-flex align-items-center">
+                            <h6 class="mb-1">Filter</h6>
+                            <a href="{{ url()->current() }}" class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
+                        </div>
                         <form action="" class="row">
                             <input type="hidden" name="form_type" value="{{ request('form_type') }}">
                             <div class="col-md-3 col-12">

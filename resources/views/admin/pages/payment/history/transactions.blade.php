@@ -32,7 +32,10 @@
             @if ($transaction)
                 <div class="row">
                     <div class="col-12">
-                        <h6 class="mb-1">Filter</h6>
+                        <div class="d-flex align-items-center">
+                            <h6 class="mb-1">Filter</h6>
+                            <a href="{{ url()->current() }}" class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
+                        </div>
                         <form action="" class="row">
                             <div class="col-md-3 col-12 mb-sm-2">
                                 <select class="form-select form-select-sm mb-3" id="filter-select-state" name="state">
