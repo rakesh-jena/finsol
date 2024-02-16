@@ -79,8 +79,8 @@
                                             @endif
 
                                             @if (session()->has('message'))
-                                                <p class="alert alert-success alert-dismissible fade show"
-                                                    role="alert">{{ session('message') }}
+                                                <p class="alert alert-success alert-dismissible fade show" role="alert">
+                                                    {{ session('message') }}
                                                     <button type="button" class="close" data-dismiss="alert"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -91,20 +91,25 @@
                                                 <label class="form-label" for="card-mobile">Mobile</label>
                                                 <input class="form-control" maxlength="10" required="required"
                                                     id="card-mobile" type="text" value="{{ old('mobile') }}"
-                                                    name="mobile" autofocus pattern="^$|^[0-9]{10}$"/>
+                                                    name="mobile"
+                                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
                                                 @error('mobile')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                                <div class="invalid-feedback">Please Provide Mobile Number
+                                                <div class="invalid-feedback">Please enter your Mobile Number
                                                 </div>
                                             </div>
                                             <div class="mb-3">
                                                 <div class="d-flex justify-content-between"><label class="form-label"
-                                                        for="card-password">Password</label></div><input
-                                                    class="form-control @error('password') is-invalid @enderror"
-                                                    id="card-password" required="" name="password" type="password" />
+                                                        for="card-password">Password</label></div>
+                                                <div class="position-relative">
+                                                    <input class="form-control @error('password') is-invalid @enderror"
+                                                        id="card-password" required="" name="password" type="password" />
+                                                    <i class="far fa-eye show password-eye"></i>
+                                                    <i class="far fa-eye-slash password-eye-slash"></i>
+                                                </div>
                                                 @error('password')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>

@@ -39,6 +39,20 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="{{ asset('assets/js/config.js') }}"></script>
+    <style>
+        .password-eye,
+        .password-eye-slash {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            cursor: pointer;
+        }
+
+        .show {
+            display: block
+        }
+    </style>
 </head>
 
 <body>
@@ -65,6 +79,17 @@
                     $(this).remove();
                 });
             }, 3000);
+
+            $(document).on('click', '.password-eye', function(e) {
+                $('.password-eye').removeClass('show')
+                $('.password-eye-slash').addClass('show')
+                $('input[name="password"]').attr('type', 'text')
+            })
+            $(document).on('click', '.password-eye-slash', function(e) {
+                $('.password-eye-slash').removeClass('show')
+                $('.password-eye').addClass('show')
+                $('input[name="password"]').attr('type', 'password')
+            })
         });
     </script>
     @yield('js')

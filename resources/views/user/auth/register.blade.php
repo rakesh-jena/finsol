@@ -62,35 +62,60 @@
                                                 <div class="mb-3">
                                                     <label class="form-label" for="">Name</label>
                                                     <input class="form-control" type="text" name="name"
-                                                        autocomplete="on" required="" id="" />
+                                                        placeholder="Enter your name" autocomplete="on" required=""
+                                                        id="" />
                                                     <div class="invalid-feedback">Please Provide Name</div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="">Mobile No.</label>
                                                     <input class="form-control" type="number" name="mobile"
-                                                        autocomplete="on" required="" id="" maxlength="10"
+                                                        autocomplete="on" required="required" maxlength="10"
+                                                        placeholder="Enter your mobile number"
+                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                         pattern="^$|^[0-9]{10}$" />
                                                     <div class="invalid-feedback">Please Provide Mobile No.</div>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" for="">Email</label>
                                                     <input class="form-control" type="email" name="email"
-                                                        autocomplete="on" id="" />
+                                                        placeholder="Enter an email" />
                                                     <div class="invalid-feedback">Please Provide Email</div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="">Password</label>
-                                                    <input class="form-control" type="password" name="password"
-                                                        autocomplete="on" required="" id="" />
-                                                    <div class="invalid-feedback">Please Provide Password</div>
+                                                    <div class="position-relative">
+                                                        <input class="form-control" type="password" name="password"
+                                                        oninput="checkPassword(this.value)" autocomplete="on" minlength="8"
+                                                        placeholder="Min 8 character" />
+                                                        <i class="far fa-eye show password-eye"></i>
+                                                        <i class="far fa-eye-slash password-eye-slash"></i>
+                                                    </div>                                                    
+                                                    <div class="invalid-feedback password">Please Provide Password</div>
                                                 </div>
+                                                <script>
+                                                    function checkPassword(pass) {
+                                                        let regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+                                                        if (pass.length < 8){
+                                                            $("input[name='password']").addClass('is-invalid')
+                                                            document.querySelector(".invalid-feedback.password").style.display = "block";
+                                                            document.querySelector(".invalid-feedback.password").innerHTML = "Please enter atleast 8 character";
+                                                        } else if(!regex.test(pass)) {
+                                                            document.querySelector(".invalid-feedback.password").innerHTML =
+                                                                "Please enter atleast one uppercase, lowercase, numeric and special character";
+                                                        } else {
+                                                            $("input[name='password']").removeClass('is-invalid')
+                                                            document.querySelector(".invalid-feedback.password").style.display = "none";
+                                                        }
+                                                    }
+                                                </script>
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="">Adhaar No.</label>
                                                     <input class="form-control" type="number" maxlength="12" name="aadhaar"
-                                                        autocomplete="on" id=""
+                                                        placeholder="Enter your Aadhar number"
+                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                         pattern="^$|^[0-9]{12}$" />
                                                     <div class="invalid-feedback">Please provide correct Aadhaar Number
                                                     </div>
@@ -98,33 +123,37 @@
 
                                                 <div class="mb-3">
                                                     <label for="stateSelect" class="form-label">Select State:</label>
-                                                    <select class="form-select" name="state" id="stateSelect">
+                                                    <select class="form-select" name="state" id="stateSelect" required>
                                                         <option value="">Select State</option>
                                                         @foreach ($states as $state)
                                                             <option value="{{ $state->id }}">{{ $state->name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
+                                                    <div class="invalid-feedback">Please select a state</div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="districtSelect" class="form-label">Select
                                                         District:</label>
-                                                    <select class="form-select" name="district" id="districtSelect">
+                                                    <select class="form-select" name="district" id="districtSelect"
+                                                        required>
                                                         <option value="">Select District</option>
                                                     </select>
+                                                    <div class="invalid-feedback">Please select a district</div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="blockSelect" class="form-label">Select Block:</label>
-                                                    <select class="form-select" name="block" id="blockSelect">
+                                                    <select class="form-select" name="block" id="blockSelect" required>
                                                         <option value="">Select Block</option>
                                                     </select>
+                                                    <div class="invalid-feedback">Please select a block</div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <button class="btn btn-primary d-block w-100 mt-3" type="submit"
-                                                        name="submit">Create User</button>
+                                                        name="submit">Create</button>
                                                 </div>
                                             </div>
                                         </form>
