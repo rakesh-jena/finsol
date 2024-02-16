@@ -3,18 +3,19 @@
         <div class="card-header">
             <h5 class="mb-0">EPF Details</h5>
         </div>
-        <div class="card-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Epf :
-                </label>{{ $epfDetails->name_of_epf }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">EPF Number :
-                </label>{{ $epfDetails->epf_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $epfDetails->epf_mobile }}
+        <div class="card-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Epf :
+                    </label>{{ $epfDetails->name_of_epf }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">EPF Number :
+                    </label>{{ $epfDetails->epf_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $epfDetails->epf_mobile }}
+                </div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $epfDetails->epf_email }}
+                </div>
             </div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $epfDetails->epf_email }}
-            </div>
-
         </div>
     </div>
     @if (session('filenotexistsection1'))

@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\PaymentDetail;
+use App\Models\Instamojo;
 use Illuminate\Http\Request;
 
 class PaymentsController extends Controller
@@ -13,9 +13,9 @@ class PaymentsController extends Controller
         $this->payment_type = '';
         $this->middleware('auth');
     }
-    public function index(Request $request)
+    public function index()
     {
-        $data['payment_history'] = PaymentDetail::orderBy('id', 'DESC')->get();
+        $data['payment_history'] = Instamojo::where('user_id', auth()->user()->id)->orderBy('updated_at', 'DESC')->get();
 
         return view('user.pages.payments.history')->with($data);
     }

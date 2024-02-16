@@ -1,4 +1,4 @@
-@if (count($userImportExportDetails) > 0)<b>IMPORTEXPORT Details</b>
+@if (count($userImportExportDetails) > 0)<h4>IMPORTEXPORT Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>

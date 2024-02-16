@@ -3,16 +3,17 @@
         <div class="card-header">
             <h5 class="mb-0">IMPORTEXPORT Details</h5>
         </div>
-        <div class="card-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Firm :
-                </label>{{ $importexportDetails->name_of_firm }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="importexport-number">Firm Number :
-                </label>{{ $importexportDetails->firm_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $importexportDetails->mobile_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $importexportDetails->email_id }}</div>
-
+        <div class="card-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Firm :
+                    </label>{{ $importexportDetails->name_of_firm }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="importexport-number">Firm Number :
+                    </label>{{ $importexportDetails->firm_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $importexportDetails->mobile_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $importexportDetails->email_id }}</div>
+            </div>
         </div>
     </div>
     @if (session('filenotexistsection1'))

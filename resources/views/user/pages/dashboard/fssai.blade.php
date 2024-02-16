@@ -1,4 +1,4 @@
-@if (count($userFssaiDetails) > 0)<b>FSSAI Details</b>
+@if (count($userFssaiDetails) > 0)<h4>FSSAI Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4 w-100">
         <thead>
             <tr>

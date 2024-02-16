@@ -3,16 +3,17 @@
         <div class="card-header">
             <h5 class="mb-0">FACTORY LICENSE Details</h5>
         </div>
-        <div class="card-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Firm :
-                </label>{{ $factorylicenseDetails->name_of_facl }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="factorylicense-number">Firm Number :
-                </label>{{ $factorylicenseDetails->facl_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $factorylicenseDetails->mobile_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $factorylicenseDetails->email_id }}</div>
-
+        <div class="card-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Firm :
+                    </label>{{ $factorylicenseDetails->name_of_facl }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="factorylicense-number">Firm Number :
+                    </label>{{ $factorylicenseDetails->facl_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $factorylicenseDetails->mobile_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $factorylicenseDetails->email_id }}</div>
+            </div>
         </div>
     </div>
     @if (session('filenotexistsection1'))

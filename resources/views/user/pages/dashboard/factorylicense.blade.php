@@ -1,4 +1,4 @@
-@if (count($userFactoryLicenseDetails) > 0)<b>FACTORY LICENSE Details</b>
+@if (count($userFactoryLicenseDetails) > 0)<h4>FACTORY LICENSE Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>

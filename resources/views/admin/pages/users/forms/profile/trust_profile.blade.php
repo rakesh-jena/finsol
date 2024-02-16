@@ -4,20 +4,21 @@
         <div class="card-header">
             <h5 class="mb-0">TRUST Details</h5>
         </div>
-        <div class="card-body bg-light row">
-            <div class="col-lg-6 mb-3">
-                <label class="form-label" for="gst-type">Name of Trust : </label>{{ $trustDetails->name_of_trust }}
+        <div class="card-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3">
+                    <label class="form-label" for="gst-type">Name of Trust : </label>{{ $trustDetails->name_of_trust }}
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <label class="form-label" for="pan-number">TRUST Number : </label>{{ $trustDetails->trust_number }}
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <label class="form-label" for="mobile">Mobile : </label>{{ $trustDetails->trust_mobile }}
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <label class="form-label" for="email1">Email : </label>{{ $trustDetails->trust_email }}
+                </div>
             </div>
-            <div class="col-lg-6 mb-3">
-                <label class="form-label" for="pan-number">TRUST Number : </label>{{ $trustDetails->trust_number }}
-            </div>
-            <div class="col-lg-6 mb-3">
-                <label class="form-label" for="mobile">Mobile : </label>{{ $trustDetails->trust_mobile }}
-            </div>
-            <div class="col-lg-6 mb-3">
-                <label class="form-label" for="email1">Email : </label>{{ $trustDetails->trust_email }}
-            </div>
-
         </div>
     </div>
     @if (session('filenotexistsection1'))

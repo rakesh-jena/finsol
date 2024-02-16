@@ -1,4 +1,4 @@
-@if (count($userEpfDetails) > 0)<b>EPF Details</b>
+@if (count($userEpfDetails) > 0)<h4>EPF Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4 w-100">
         <thead>
             <tr>

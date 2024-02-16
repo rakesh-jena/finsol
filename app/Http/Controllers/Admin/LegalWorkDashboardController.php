@@ -174,7 +174,7 @@ class LegalWorkDashboardController extends Controller
 
         $userId = $request->userid;
         $userDetails = User::find($userId);
-        $useName = $userDetails->name . '-' . $userId;
+        $useName = $userId;
         $route = $request->routeis;
         $panid = $request->id;
         $datas = LegalWork::find($panid);

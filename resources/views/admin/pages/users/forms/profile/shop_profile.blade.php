@@ -4,16 +4,17 @@
         <div class="card-header">
             <h5 class="mb-0">SHOP Details</h5>
         </div>
-        <div class="card-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Shop :
-                </label>{{ $shopDetails->name_of_shop }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">SHOP Number :
-                </label>{{ $shopDetails->shop_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $shopDetails->mobile_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $shopDetails->email_id }}</div>
-
+        <div class="card-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Shop :
+                    </label>{{ $shopDetails->name_of_shop }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">SHOP Number :
+                    </label>{{ $shopDetails->shop_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $shopDetails->mobile_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $shopDetails->email_id }}</div>
+            </div>
         </div>
     </div>
     @if (session('filenotexistsection1'))

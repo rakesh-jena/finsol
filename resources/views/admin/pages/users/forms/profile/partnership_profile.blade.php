@@ -3,16 +3,17 @@
         <div class="card-header">
             <h5 class="mb-0">PARTNERSHIP Details</h5>
         </div>
-        <div class="card-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Partnership :
-                </label>{{ $partnershipDetails->name_of_partnership }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">PARTNERSHIP Number :
-                </label>{{ $partnershipDetails->partnership_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $partnershipDetails->partnership_mobile }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $partnershipDetails->partnership_email }}</div>
-
+        <div class="card-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Partnership :
+                    </label>{{ $partnershipDetails->name_of_partnership }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">PARTNERSHIP Number :
+                    </label>{{ $partnershipDetails->partnership_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $partnershipDetails->partnership_mobile }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $partnershipDetails->partnership_email }}</div>
+            </div>
         </div>
     </div>
     @if (session('filenotexistsection1'))

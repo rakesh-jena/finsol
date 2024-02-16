@@ -4,16 +4,17 @@
         <div class="card-header">
             <h5 class="mb-0">FSSAI Details</h5>
         </div>
-        <div class="card-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Fssai :
-                </label>{{ $fssaiDetails->name_of_fssai }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">FSSAI Number :
-                </label>{{ $fssaiDetails->fssai_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $fssaiDetails->mobile_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $fssaiDetails->email_id }}</div>
-
+        <div class="card-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Fssai :
+                    </label>{{ $fssaiDetails->name_of_fssai }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">FSSAI Number :
+                    </label>{{ $fssaiDetails->fssai_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $fssaiDetails->mobile_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $fssaiDetails->email_id }}</div>
+            </div>
         </div>
     </div>
     @if (session('filenotexistsection1'))

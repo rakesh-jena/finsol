@@ -126,7 +126,7 @@
                                         <p class="mb-0 fs--1">
                                             <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                                             <span class="d-none d-sm-inline-block"> &mdash;</span>
-                                            <a class="fw-semi-bold" href="#!" data-list-view="*">View all<span
+                                            <a class="fw-semi-bold" href="#!" data-list-view="*" data-btn="show-more">View all<span
                                                     class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
                                                 class="fw-semi-bold d-none" href="#!" data-list-view="less">View
                                                 Less<span class="fas fa-angle-right ms-1"
@@ -154,7 +154,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
 
 <script>
-    var urlpath = "{{ url('admin') }}";
+    var adminUrl = "{{ url('admin') }}";
 
     function changeApprove(itemId) {
         // Make an AJAX GET request to fetch the item details

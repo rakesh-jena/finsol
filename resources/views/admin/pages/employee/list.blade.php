@@ -7,8 +7,11 @@
         <div class="col-md-12 col-xxl-3">
 
             <div class="card h-md-100 ecommerce-card-min-width">
-                <div class="card-header pb-0">
+                <div class="card-header pb-0 d-flex align-items-center">
                     <h4 class="mb-0 mt-2 d-flex align-items-center">List of Offices</h4>
+                    <button id="btnExport" type="button" class="btn btn-success btn-sm ms-auto">
+                        <i class="fa fa-file-csv"></i> Export to CSV
+                    </button>
                 </div>
                 <div class="card-body d-flex flex-column justify-content-end">
                     <div class="row">
@@ -85,7 +88,7 @@
                                         <p class="mb-0 fs--1">
                                             <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                                             <span class="d-none d-sm-inline-block"> &mdash;</span>
-                                            <a class="fw-semi-bold" href="#!" data-list-view="*">View all<span
+                                            <a class="fw-semi-bold" href="#!" data-list-view="*" data-btn="show-more">View all<span
                                                     class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
                                                 class="fw-semi-bold d-none" href="#!" data-list-view="less">View
                                                 Less<span class="fas fa-angle-right ms-1"

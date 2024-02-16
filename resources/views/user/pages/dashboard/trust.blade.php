@@ -1,4 +1,4 @@
-@if (count($userTrustDetails) > 0)<b>TRUST Details</b>
+@if (count($userTrustDetails) > 0)<h4>TRUST Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>

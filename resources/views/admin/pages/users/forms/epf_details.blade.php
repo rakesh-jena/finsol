@@ -1,17 +1,15 @@
 @if ($usersEpf)
-    <div class="row">
+    <div class="row mb-4">
         <h5>EPF Form Details</h5>
         <div class="col-12">
-            <div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
+            <div id="tableExample" data-list='{"valueNames":["name","type"],"page":15,"pagination":true}'>
                 <div class="table-responsive scrollbar">
 
                     <table class="table table-bordered table-striped fs--1 mb-0">
                         <thead class="bg-200 text-900">
                             <tr>
-                                <!-- <th scope="col"></th> -->
-
-                                <th scope="col">Name</th>
-                                <th scope="col">Type</th>
+                                <th scope="col" class="sort" data-sort="name">Name</th>
+                                <th scope="col" class="sort" data-sort="type">Type</th>
                                 <th scope="col">Admin Note</th>
                                 <th scope="col">User Note</th>
                                 <th scope="col">Details</th>
@@ -142,7 +140,7 @@
                         <p class="mb-0 fs--1">
                             <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                             <span class="d-none d-sm-inline-block"> &mdash;</span>
-                            <a class="fw-semi-bold" href="#!" data-list-view="*">View all<span
+                            <a class="fw-semi-bold" href="#!" data-list-view="*" data-btn="show-more">View all<span
                                     class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
                                 class="fw-semi-bold d-none" href="#!" data-list-view="less">View
                                 Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
@@ -164,12 +162,12 @@
 @endif
 
 <script>
-    var urlpath = "{{ url('admin') }}";
+    var adminUrl = "{{ url('admin') }}";
 
     function openEpfNoteModal(itemId) {
         // Make an AJAX GET request to fetch the item details
         $.ajax({
-            url: urlpath + '/user/forms/statusview' + '?for=note&formtype=epf&id=' + itemId,
+            url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=epf&id=' + itemId,
             type: 'GET',
             success: function(data) {
                 $('#myCommonNoteModal').modal('show');
@@ -186,7 +184,7 @@
     function openEpfApproveModal(itemId) {
         // Make an AJAX GET request to fetch the item details
         $.ajax({
-            url: urlpath + '/user/forms/statusview' + '?for=approve&formtype=epf&id=' + itemId,
+            url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=epf&id=' + itemId,
             type: 'GET',
             success: function(data) {
 

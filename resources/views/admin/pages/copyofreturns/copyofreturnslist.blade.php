@@ -5,12 +5,13 @@
 
 @section('content')
     <div class="row g-3 mb-3">
-
         <div class="col-md-12 col-xxl-3">
-
             <div class="card h-md-100 ecommerce-card-min-width">
-                <div class="card-header pb-0">
+                <div class="card-header pb-0 d-flex align-items-center">
                     <h6 class="mb-0 mt-2 d-flex align-items-center">Add / List of Copy Of Returns</h6>
+                    <button id="btnExport" type="button" class="btn btn-success btn-sm ms-auto">
+                        <i class="fa fa-file-csv"></i> Export to CSV
+                    </button>
                 </div>
 
                 <div class="card-body d-flex flex-column justify-content-end">

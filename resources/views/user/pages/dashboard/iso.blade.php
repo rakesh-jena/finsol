@@ -1,4 +1,4 @@
-@if (count($userIsoDetails) > 0)<b>ISO Details</b>
+@if (count($userIsoDetails) > 0)<h4>ISO Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4 w-100">
         <thead>
             <tr>

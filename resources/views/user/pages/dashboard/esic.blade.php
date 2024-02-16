@@ -1,4 +1,4 @@
-@if (count($userEsicDetails) > 0)<b>ESIC Details</b>
+@if (count($userEsicDetails) > 0)<h4>ESIC Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4 w-100">
         <thead>
             <tr>

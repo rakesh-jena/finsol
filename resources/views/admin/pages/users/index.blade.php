@@ -18,7 +18,12 @@
                             @if (Auth::user()->type_of_user === 'Head Office')
                                 <div class="d-flex align-items-center">
                                     <h6 class="mb-1">Filter</h6>
-                                    <a href="{{ url()->current() }}" class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
+                                    <a href="{{ url()->current() }}"
+                                        class="btn btn-primary btn-sm ms-auto">Reset Filter
+                                    </a>
+                                    <button id="btnExport" type="button" class="btn btn-success btn-sm ms-2">
+                                        <i class="fa fa-file-csv"></i> Export to CSV
+                                    </button>
                                 </div>
                                 <form action="" class="row">
                                     <div class="col-md-3 col-12">
@@ -121,7 +126,7 @@
                                         <p class="mb-0 fs--1">
                                             <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                                             <span class="d-none d-sm-inline-block"> &mdash;</span>
-                                            <a class="fw-semi-bold" href="#!" data-list-view="*">View all<span
+                                            <a class="fw-semi-bold" href="#!" data-list-view="*" data-btn="show-more">View all<span
                                                     class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
                                                 class="fw-semi-bold d-none" href="#!" data-list-view="less">View
                                                 Less<span class="fas fa-angle-right ms-1"

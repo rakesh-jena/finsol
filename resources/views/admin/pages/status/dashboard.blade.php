@@ -21,6 +21,9 @@
                         <div class="d-flex align-items-center">
                             <h6 class="mb-1">Filter</h6>
                             <a href="{{ url()->current() }}" class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
+                            <button id="btnExport" type="button" class="btn btn-success btn-sm ms-2">
+                                <i class="fa fa-file-csv"></i> Export to CSV
+                            </button>
                         </div>
                         <form action="" class="row">
                             <div class="col-md-3 col-12">

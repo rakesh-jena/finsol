@@ -160,7 +160,7 @@ class UserGstController extends Controller
     {
         $userId = $request->userid;
         $userDetails = User::find($userId);
-        $useName = $userDetails->name . '-' . $userId;
+        $useName = $userId;
         $gstid = $request->gstid;
         if ($request->type == 'approve') {
 

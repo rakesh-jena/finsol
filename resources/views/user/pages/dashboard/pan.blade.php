@@ -1,15 +1,13 @@
-@if (count($userPanDetails) > 0)<b>PAN Details</b>
+@if (count($userPanDetails) > 0)<h4>PAN Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4 w-100">
         <thead>
             <tr>
                 <th scope="col" class="w-15">Name</th>
                 <th scope="col" class="w-25">Email Id</th>
                 <th scope="col" class="w-15">Mobile Number</th>
-
                 <th scope="col" class="w-15">Type</th>
                 <th scope="col" class="w-15">Payment Status</th>
                 <th scope="col" class="w-15">Status</th>
-
             </tr>
         </thead>
 
@@ -116,7 +114,6 @@
                                 @endif
                             @endif
                         </td>
-
                     </tr>
                     @if ($detail->status == 2)
                         <tr>
@@ -165,12 +162,10 @@
                                     <br />
                                 </div>
                             </td>
-
                         </tr>
                     @endif
                 @endforeach
             @endif
         </tbody>
     </table>
-
 @endif

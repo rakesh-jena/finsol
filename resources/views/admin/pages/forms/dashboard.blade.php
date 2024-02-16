@@ -22,7 +22,10 @@
                     @if (Auth::user()->type_of_user === 'Head Office')
                         <div class="d-flex align-items-center">
                             <h6 class="mb-1">Filter</h6>
-                            <a href="{{ url()->current() }}" class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
+                            <a href="{{ url()->current() }}?form_type={{ request('form_type') }}" class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
+                            <button id="btnExport" type="button" class="btn btn-success btn-sm ms-2">
+                                <i class="fa fa-file-csv"></i> Export to CSV
+                            </button>
                         </div>
                         <form action="" class="row">
                             <input type="hidden" name="form_type" value="{{ request('form_type') }}">

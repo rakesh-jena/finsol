@@ -1,4 +1,4 @@
-@if (count($userLabourDetails) > 0)<b>LABOUR Details</b>
+@if (count($userLabourDetails) > 0)<h4>LABOUR Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>

@@ -1,4 +1,4 @@
-@if (count($userHufDetails) > 0)<b>HUF Details</b>
+@if (count($userHufDetails) > 0)<h4>HUF Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
