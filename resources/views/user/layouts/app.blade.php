@@ -26,6 +26,8 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="{{ asset('vendors/dropzone/dropzone.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/prism/prism-okaidia.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
@@ -82,12 +84,14 @@
                                     </label>
                                 </div>
                             </li>
-                            <?php $user = auth()->user();?>
+                            <?php $user = auth()->user(); ?>
                             <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser"
-                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
                                     <div class="avatar avatar-xl">
                                         @if ($user->image == null)
-                                            <img class="rounded-circle" src="{{ url('images/avatar.png') }}" width="200" alt="avatar"
+                                            <img class="rounded-circle" src="{{ url('images/avatar.png') }}"
+                                                width="200" alt="avatar"
                                                 data-dz-thumbnail="data-dz-thumbnail" />
                                         @else
                                             <img src="{{ url('uploads/users/' . $user->id . '/profile/' . $user->image) }}"
@@ -146,6 +150,12 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="{{ asset('vendors/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('vendors/popper/popper.min.js') }}"></script>
     <script src="{{ asset('vendors/bootstrap/bootstrap.min.js') }}"></script>

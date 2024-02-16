@@ -10,13 +10,11 @@
                 <th scope="col" class="w-15">Status</th>
             </tr>
         </thead>
-
         <tbody>
             @if ($userPanDetails)
                 @foreach ($userPanDetails as $key => $detail)
                     <tr class="align-middle" data-toggle="collapse" data-target="#{{ $detail->type . $key }}"
                         class="accordion-toggle">
-
                         <td class="text-nowrap">{{ isset($detail->name_of_pan) ? $detail->name_of_pan : '-' }}</td>
 
                         <td class="text-nowrap">
