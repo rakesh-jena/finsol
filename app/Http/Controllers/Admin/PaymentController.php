@@ -49,7 +49,7 @@ class PaymentController extends Controller
 
         if(request()->has('from') && request()->has('to'))
         {
-            $data['transaction'] = Instamojo::whereBetween('created_at', [request('from'), request('to')])->orderBy('updated_at', 'DESC')->get();
+            $data['transaction'] = $data['transaction']->intersect(Instamojo::whereBetween('created_at', [request('from'), request('to')])->orderBy('updated_at', 'DESC')->get());
         }
         
         $total = 0;

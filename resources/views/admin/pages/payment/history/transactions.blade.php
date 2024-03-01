@@ -31,62 +31,60 @@
         <div class="card-body d-flex flex-column justify-content-end">
             @if ($transaction)
                 <div class="row">
-                    <div class="col-12">
-                        <div class="d-flex align-items-center">
-                            <h6 class="mb-1">Filter</h6>
-                            <a href="{{ url()->current() }}" class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
-                            <button id="btnExport" type="button" class="btn btn-success btn-sm ms-2">
-                                <i class="fa fa-file-csv"></i> Export to CSV
-                            </button>
-                        </div>
-                        <form action="" class="row">
-                            <div class="col-md-3 col-12 mb-sm-2">
-                                <select class="form-select form-select-sm mb-3" id="filter-select-state" name="state">
-                                    <option selected="" value="">Select State</option>
-                                    @foreach ($states as $state)
-                                        <option value="{{ $state->id }}">{{ $state->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
+                    <form action="">
+                        <div class="col-12">
+                            <div class="d-flex align-items-center">
+                                <h6 class="mb-1">Filter</h6>
+                                <a href="{{ url()->current() }}" class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
+                                <button id="btnExport" type="button" class="btn btn-success btn-sm ms-2">
+                                    <i class="fa fa-file-csv"></i> Export to CSV
+                                </button>
                             </div>
+                            <div class="row">
+                                <div class="col-md-3 col-12 mb-sm-2">
+                                    <select class="form-select form-select-sm mb-3" id="filter-select-state" name="state">
+                                        <option selected="" value="">Select State</option>
+                                        @foreach ($states as $state)
+                                            <option value="{{ $state->id }}">{{ $state->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                            <div class="col-md-3 col-12 px-3">
-                                <select class="form-select form-select-sm mb-3" id="filter-select-district" name="district">
-                                    <option selected="" value="">Select District</option>
-                                </select>
+                                <div class="col-md-3 col-12 px-3">
+                                    <select class="form-select form-select-sm mb-3" id="filter-select-district"
+                                        name="district">
+                                        <option selected="" value="">Select District</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <select class="form-select form-select-sm mb-3" id="filter-select-block" name="block">
+                                        <option selected="" value="">Select Block</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col-md-3 col-12">
-                                <select class="form-select form-select-sm mb-3" id="filter-select-block" name="block">
-                                    <option selected="" value="">Select Block</option>
-                                </select>
+                        </div>
+                        <div class="col-12">
+                            <h6 class="mb-1">Between Date</h6>
+                            <div class="row">
+                                <div class="col-md-3 col-12 mb-2">
+                                    <input class="form-control form-control-sm" type="date" name="from" id="from"
+                                        placeholder="From date..."
+                                        value="@if(request('from'))<?= date_format(date_create(request('from')), 'Y-m-d') ?>@endif">
+                                </div>
+                                <div class="col-md-3 col-12 mb-2">
+                                    <input class="form-control form-control-sm" type="date" name="to" id="to"
+                                        placeholder="To date..."
+                                        value="@if(request('to'))<?= date_format(date_create(request('to')), 'Y-m-d') ?>@endif">
+                                </div>
+                                <div class="col-md-3 col-12 mb-2">
+                                    <button class="btn btn-primary btn-sm" type="submit">
+                                        <i class="fas fa-filter"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="col-md-3 col-12">
-                                <button class="btn btn-primary btn-sm" type="submit">
-                                    <i class="fas fa-filter"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-12">
-                        <h6 class="mb-1">Between Date</h6>
-                        <form action="" class="row">
-                            <div class="col-md-3 col-12 mb-2">
-                                <input class="form-control form-control-sm" type="date" name="from" id="from"
-                                    placeholder="From date..."
-                                    value="@if (request('from')) <?= date_format(date_create(request('from')), 'Y-m-d') ?> @endif">
-                            </div>
-                            <div class="col-md-3 col-12 mb-2">
-                                <input class="form-control form-control-sm" type="date" name="to" id="to"
-                                    placeholder="To date..."
-                                    value="@if (request('to')) <?= date_format(date_create(request('to')), 'Y-m-d') ?> @endif">
-                            </div>
-                            <div class="col-md-3 col-12 mb-2">
-                                <button class="btn btn-primary btn-sm" type="submit">
-                                    <i class="fas fa-filter"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                     <div class="col-12">
                         <div id="tableExample"
                             data-list='{"valueNames":["user_id", "name", "type", "amount", "staus", "payment_id", "updated_at"],"page":15,"pagination":true,"filter":{"key":"staus"}}'>
@@ -178,7 +176,8 @@
                                     <p class="mb-0 fs--1">
                                         <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                                         <span class="d-none d-sm-inline-block"> &mdash;</span>
-                                        <a class="fw-semi-bold" href="#!" data-list-view="*" data-btn="show-more">View
+                                        <a class="fw-semi-bold" href="#!" data-list-view="*"
+                                            data-btn="show-more">View
                                             all<span class="fas fa-angle-right ms-1"
                                                 data-fa-transform="down-1"></span></a><a class="fw-semi-bold d-none"
                                             href="#!" data-list-view="less">View
