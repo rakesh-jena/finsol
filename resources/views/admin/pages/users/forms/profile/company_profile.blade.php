@@ -25,7 +25,7 @@
             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    @if ($companyDetails->type == 'New COMPANY Registration')
+    @if ($companyDetails->type == 'New Company Registration')
         <div class="card mb-3">
 
             <div class="card-header">
