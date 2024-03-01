@@ -1,4 +1,5 @@
-@if (count($userFactoryLicenseDetails) > 0)<h4>FACTORY LICENSE Details</h4>
+@if (count($userFactoryLicenseDetails) > 0)
+    <h4>FACTORY LICENSE Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
@@ -50,7 +51,8 @@
                                         <input type="hidden" name="payment_purpose" value="Factory">
                                         <input type="hidden" name="email_id" value="{{ $detail->facl_email }}">
                                         <input type="hidden" name="name_of_pan" value="{{ $detail->name_of_facl }}">
-                                        <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}" value="{{ $detail->facl_mobile }}">
+                                        <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}"
+                                            value="{{ $detail->facl_mobile }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit">
                                             <small>Pay</small>

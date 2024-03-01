@@ -1,4 +1,5 @@
-@if (count($userTrademarkDetails) > 0)<h4>TRADEMARK Details</h4>
+@if (count($userTrademarkDetails) > 0)
+    <h4>TRADEMARK Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>

@@ -160,11 +160,20 @@
                                                     <td class="text-nowrap">{{ $item->month }}</td>
                                                     <td class="text-nowrap">{{ $item->quarter }}</td>
                                                     @php
-                                                        if ($item->form_type == 'GSTR1' || $item->form_type == 'GSTR2A') {
+                                                        if (
+                                                            $item->form_type == 'GSTR1' ||
+                                                            $item->form_type == 'GSTR2A'
+                                                        ) {
                                                             $css = 'badge-subtle-success';
-                                                        } elseif ($item->form_type == 'GSTR2B' || $item->form_type == 'GSTR2X') {
+                                                        } elseif (
+                                                            $item->form_type == 'GSTR2B' ||
+                                                            $item->form_type == 'GSTR2X'
+                                                        ) {
                                                             $css = 'badge-subtle-warning';
-                                                        } elseif ($item->form_type == 'GSTR9' || $item->form_type == 'GSTR9C') {
+                                                        } elseif (
+                                                            $item->form_type == 'GSTR9' ||
+                                                            $item->form_type == 'GSTR9C'
+                                                        ) {
                                                             $css = 'badge-subtle-info';
                                                         }
 

@@ -1,4 +1,5 @@
-@if (count($userUdamyDetails) > 0)<h4>UDAMY Details</h4>
+@if (count($userUdamyDetails) > 0)
+    <h4>UDAMY Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
@@ -50,7 +51,8 @@
                                         <input type="hidden" name="payment_purpose" value="Udamy">
                                         <input type="hidden" name="email_id" value="{{ $detail->udamy_email }}">
                                         <input type="hidden" name="name_of_pan" value="{{ $detail->name_of_udamy }}">
-                                        <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}" value="{{ $detail->udamy_mobile }}">
+                                        <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}"
+                                            value="{{ $detail->udamy_mobile }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit">
                                             <small>Pay</small>

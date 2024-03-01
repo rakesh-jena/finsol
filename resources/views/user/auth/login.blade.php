@@ -68,7 +68,8 @@
                                                 </div>
                                             </div>
                                         </form> --}}
-                                        <form method="POST" action="{{ route('login') }}">
+                                        <form class="needs-validation" novalidate="" method="POST"
+                                            action="{{ route('login') }}">
                                             @csrf
                                             @if ($errors->any())
                                                 <ul>
@@ -88,18 +89,13 @@
                                                 </p>
                                             @endif
                                             <div class="mb-3">
-                                                <label class="form-label" for="card-mobile">Mobile</label>
-                                                <input class="form-control" maxlength="10" required="required"
-                                                    id="card-mobile" type="text" value="{{ old('mobile') }}"
-                                                    name="mobile"
-                                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
-                                                @error('mobile')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                                <div class="invalid-feedback">Please enter your Mobile Number
-                                                </div>
+                                                <label class="form-label" for="">Mobile No.</label>
+                                                <input class="form-control" type="text" name="mobile" autocomplete="on"
+                                                    required="required" maxlength="10"
+                                                    placeholder="Enter your mobile number" onkeypress='validate(event)'
+                                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                    pattern="^$|^[0-9]{10}$" />
+                                                <div class="invalid-feedback">Please type valid Mobile No.</div>
                                             </div>
                                             <div class="mb-3">
                                                 <div class="d-flex justify-content-between"><label class="form-label"
@@ -110,11 +106,6 @@
                                                     <i class="far fa-eye show password-eye"></i>
                                                     <i class="far fa-eye-slash password-eye-slash"></i>
                                                 </div>
-                                                @error('password')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
                                                 <div class="invalid-feedback">Please enter a valid Password</div>
                                             </div>
                                             <div class="row flex-between-center">
@@ -133,8 +124,10 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3"
-                                                    type="submit" name="submit">Log in</button></div>
+                                            <div class="mb-3">
+                                                <button class="btn btn-primary d-block w-100 mt-3" type="submit"
+                                                    name="submit">Log in</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

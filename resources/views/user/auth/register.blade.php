@@ -69,9 +69,9 @@
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="">Mobile No.</label>
-                                                    <input class="form-control" type="number" name="mobile"
+                                                    <input class="form-control" type="text" name="mobile"
                                                         autocomplete="on" required="required" maxlength="10"
-                                                        placeholder="Enter your mobile number"
+                                                        placeholder="Enter your mobile number" onkeypress='validate(event)'
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                         pattern="^$|^[0-9]{10}$" />
                                                     <div class="invalid-feedback">Please Provide Mobile No.</div>
@@ -171,53 +171,3 @@
     <!-- ===============================================-->
 
 @endsection
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    var urlpath = "{{ url('/register') }}";
-
-    $(document).ready(function() {
-        $('#stateSelect').change(function() {
-            var stateId = $(this).val();
-            console.log(urlpath);
-            if (stateId) {
-                $.ajax({
-                    url: urlpath + '/get-districts/' + stateId,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        $('#districtSelect').empty().append(
-                            '<option value="">Select District</option>');
-                        $.each(data, function(key, value) {
-                            $('#districtSelect').append('<option value="' + value
-                                .d_code + '">' + value.name + '</option>');
-                        });
-                    }
-                });
-            } else {
-                $('#districtSelect').empty().append('<option value="">Select District</option>');
-                $('#blockSelect').empty().append('<option value="">Select Block</option>');
-            }
-        });
-
-        $('#districtSelect').change(function() {
-            var districtId = $(this).val();
-            if (districtId) {
-                $.ajax({
-                    url: urlpath + '/get-blocks/' + districtId,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        $('#blockSelect').empty().append(
-                            '<option value="">Select Block</option>');
-                        $.each(data, function(key, value) {
-                            $('#blockSelect').append('<option value="' + value.id +
-                                '">' + value.name + '</option>');
-                        });
-                    }
-                });
-            } else {
-                $('#blockSelect').empty().append('<option value="">Select Block</option>');
-            }
-        });
-    });
-</script>

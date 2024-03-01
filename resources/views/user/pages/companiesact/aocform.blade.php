@@ -15,8 +15,8 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <!-- <div class="card-header">
-                                     <h6 class="mb-0">Get yourself a New PAN Card</h6>
-                                </div> -->
+                                         <h6 class="mb-0">Get yourself a New PAN Card</h6>
+                                    </div> -->
                 <div class="card-body">
                     @if (session('success'))
                         <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
@@ -60,15 +60,17 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                                         Number linked with Aadhar</label><input class="form-control" required=""
-                                        type="text" name="mobile_number" value="{{ Auth::user()->mobile }}" maxlength="10" placeholder="Enter Mobile Number"
+                                        name="mobile_number" onkeypress='validate(event)' type="text"
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        value="{{ Auth::user()->mobile }}" maxlength="10" placeholder="Enter Mobile Number"
                                         id="form-wizard-progress-wizard-addregnum" />
                                     <div class="invalid-feedback">Please provide Mobile
                                         number</div>
                                 </div>
                             </div>
                             <!-- <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
-                                                <h6 class="detailspadding mb-0">Upload documents required for Minutes </h6>
-                                            </div> -->
+                                                    <h6 class="detailspadding mb-0">Upload documents required for Minutes </h6>
+                                                </div> -->
                             <div class="row g-2 ">
                                 @foreach ($aocimages as $keyname => $image)
                                     <div class="col-6 mb-3">

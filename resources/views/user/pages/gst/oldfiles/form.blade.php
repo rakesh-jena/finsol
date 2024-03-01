@@ -62,28 +62,28 @@
                 </div>
 
                 <!-- <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-secondary active">
-                                        <input type="radio" name="options" id="option1" checked> Tab 1
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" name="options" id="option2"> Tab 2
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" name="options" id="option3"> Tab 3
-                                    </label>
-                                </div>
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="option1" checked> Tab 1
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2"> Tab 2
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option3"> Tab 3
+                                        </label>
+                                    </div>
 
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="tab1">
-                                        This is the content for Tab 1.
-                                    </div>
-                                    <div class="tab-pane" id="tab2">
-                                        This is the content for Tab 2.
-                                    </div>
-                                    <div class="tab-pane" id="tab3">
-                                        This is the content for Tab 3.
-                                    </div>
-                                </div> -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tab1">
+                                            This is the content for Tab 1.
+                                        </div>
+                                        <div class="tab-pane" id="tab2">
+                                            This is the content for Tab 2.
+                                        </div>
+                                        <div class="tab-pane" id="tab3">
+                                            This is the content for Tab 3.
+                                        </div>
+                                    </div> -->
 
             </div>
         </div>

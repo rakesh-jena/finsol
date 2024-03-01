@@ -76,8 +76,8 @@
                                                                         data-target="#{{ $detail->gst_type }}"
                                                                         class="accordion-toggle">
                                                                         <!-- <td><button class="btn btn-default btn-xs"><span
-                                                                                            class="glyphicon glyphicon-eye-open"></span></button>
-                                                                                </td> -->
+                                                                                                class="glyphicon glyphicon-eye-open"></span></button>
+                                                                                    </td> -->
                                                                         <td class="text-nowrap">
                                                                             <div class="align-items-center">
 
@@ -326,8 +326,8 @@
                                                                 @endphp
                                                                 <tr class="align-justify">
                                                                     <!-- <td><button class="btn btn-default btn-xs"><span
-                                                                                            class="glyphicon glyphicon-eye-open"></span></button>
-                                                                                </td> -->
+                                                                                                class="glyphicon glyphicon-eye-open"></span></button>
+                                                                                    </td> -->
                                                                     <td class="text-nowrap">
                                                                         {{ isset($gstDetail->gst_number) ? $gstDetail->gst_number : '-' }}
                                                                     </td>
@@ -349,14 +349,14 @@
                                                                         </< /td>
 
                                                                         <!-- <td colspan=7>
-                                                                                <form action="{{ route('uploadDocumentFile') }}" method="POST">
-                                                                                                @csrf
-                                                                                                
-                                                                                                  <input type="hidden" name="files" value="{{ $doc->documents }}">
-                                                                                                  <input type="hidden" name="doc_type" value="{{ $doc->doc_type }}">
-                                                                                                  <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit"><small>Download File</small>&nbsp;&nbsp;<span  class="text-500 fas fa-download"></span></button>
-                                                                                            </form>
-                                                                                </td> -->
+                                                                                    <form action="{{ route('uploadDocumentFile') }}" method="POST">
+                                                                                                    @csrf
+                                                                                                    
+                                                                                                      <input type="hidden" name="files" value="{{ $doc->documents }}">
+                                                                                                      <input type="hidden" name="doc_type" value="{{ $doc->doc_type }}">
+                                                                                                      <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit"><small>Download File</small>&nbsp;&nbsp;<span  class="text-500 fas fa-download"></span></button>
+                                                                                                </form>
+                                                                                    </td> -->
 
                                                                     <td class="text-nowrap">
                                                                         @if ($doc->status == 1)

@@ -62,6 +62,7 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('vendors/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('vendors/popper/popper.min.js') }}"></script>
     <script src="{{ asset('vendors/bootstrap/bootstrap.min.js') }}"></script>
@@ -91,6 +92,72 @@
                 $('input[name="password"]').attr('type', 'password')
             })
         });
+
+        var urlpath = "{{ url('/register') }}";
+
+        $(document).ready(function() {
+            $('#stateSelect').change(function() {
+                var stateId = $(this).val();
+                console.log(urlpath);
+                if (stateId) {
+                    $.ajax({
+                        url: urlpath + '/get-districts/' + stateId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#districtSelect').empty().append(
+                                '<option value="">Select District</option>');
+                            $.each(data, function(key, value) {
+                                $('#districtSelect').append('<option value="' + value
+                                    .d_code + '">' + value.name + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#districtSelect').empty().append('<option value="">Select District</option>');
+                    $('#blockSelect').empty().append('<option value="">Select Block</option>');
+                }
+            });
+
+            $('#districtSelect').change(function() {
+                var districtId = $(this).val();
+                if (districtId) {
+                    $.ajax({
+                        url: urlpath + '/get-blocks/' + districtId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#blockSelect').empty().append(
+                                '<option value="">Select Block</option>');
+                            $.each(data, function(key, value) {
+                                $('#blockSelect').append('<option value="' + value.id +
+                                    '">' + value.name + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#blockSelect').empty().append('<option value="">Select Block</option>');
+                }
+            });
+        });
+
+        function validate(evt) {
+            var theEvent = evt || window.event;
+
+            // Handle paste
+            if (theEvent.type === 'paste') {
+                key = event.clipboardData.getData('text/plain');
+            } else {
+                // Handle key press
+                var key = theEvent.keyCode || theEvent.which;
+                key = String.fromCharCode(key);
+            }
+            var regex = /[0-9]|\./;
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
     </script>
     @yield('js')
 </body>

@@ -1,4 +1,5 @@
-@if (count($userTdsDetails) > 0)<h4>TDS Details</h4>
+@if (count($userTdsDetails) > 0)
+    <h4>TDS Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
