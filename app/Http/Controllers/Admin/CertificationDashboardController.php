@@ -98,48 +98,6 @@ class CertificationDashboardController extends Controller
         return response()->download($zipName)->deleteFileAfterSend(true);
     }
 
-    public function downloadGstFile(Request $request, $userId)
-    {
-        $files = $request->input('files');
-
-        $gstId = $request->input('gst_id');
-        $gst_type = $request->input('gst_type');
-
-        $commaValues = explode(",", $files);
-        $userDetails = User::find($userId);
-        $useName = $userId;
-        $zipName = $gst_type . '-' . $useName . '.zip';
-        $folderPath = 'public/uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
-        $zip = new \ZipArchive();
-        $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
-        if (count($commaValues) > 1) {
-            foreach ($commaValues as $file) {
-                $filePath = $folderPath . $file;
-                if (File::exists($filePath)) {
-                    $fileContents = file_get_contents($filePath);
-                    $zip->addFromString(basename($file), $fileContents);
-                } else {
-                    return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
-                }
-            }
-        } else {
-            if (!empty($files)) {
-                $filePath = $folderPath . $files;
-                if (File::exists($filePath)) {
-                    $fileContents = file_get_contents($filePath);
-                    $zip->addFromString(basename($files), $fileContents);
-                } else {
-                    return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
-                }
-            } else {
-                return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
-            }
-
-        }
-        $zip->close();
-        return response()->download($zipName)->deleteFileAfterSend(true);
-    }
-
     public function statusview(Request $request)
     {
         $for = $request['for'];
@@ -153,9 +111,7 @@ class CertificationDashboardController extends Controller
             if ($formtype) {
 
                 if ($formtype == "ca") {
-
                     $details = UserCaDetail::find($id);
-
                 } else if ($formtype == "networth") {
                     $details = UserNetworthDetail::find($id);
                 }
@@ -163,24 +119,25 @@ class CertificationDashboardController extends Controller
                     $details = UserTurnoverDetail::find($id);
                 }
 
-                $content = '<label>Number</label>
-            <input type="text" class="form-control" name="company_number"  required="required" value=""  placeholder="Enter the  Number" />
-            <label>Name of Company</label>
-            <input type="text"  required="required" class="form-control" id="nameoftan" name="name" value="' . $details->name . '"  placeholder="Name" />';
+                $content = 
+                '<label>Number</label>
+                <input type="text" class="form-control" name="company_number"  required="required" value=""  placeholder="Enter the  Number" />
+                <label>Name of Company</label>
+                <input type="text"  required="required" class="form-control" id="nameoftan" name="name" value="' . $details->name . '"  placeholder="Name" />';
 
                 if (isset($details)) {
                     if ($for === 'note') {
                         $modalBody =
                         '<input type="hidden" name="userid" id="userid" value="' . $details->user_id . '" />
-                <input type="hidden" id="id" name="id" value="' . $details->id . '" />
-                <input type="hidden" name="routeis" id="routeis" value="' . $formtype . '" />
-                <input type="hidden" name="type" value="note" />';
+                        <input type="hidden" id="id" name="id" value="' . $details->id . '" />
+                        <input type="hidden" name="routeis" id="routeis" value="' . $formtype . '" />
+                        <input type="hidden" name="type" value="note" />';
                     } else {
                         $modalBody =
                         '<input type="hidden" name="userid" id="userid" value="' . $details->user_id . '" />
-                 <input type="hidden" id="id" name="id" value="' . $details->id . '" />
-                 <input type="hidden" name="routeis" value="' . $formtype . '" />
-                 <input type="hidden" name="type" value="approve" />';
+                        <input type="hidden" id="id" name="id" value="' . $details->id . '" />
+                        <input type="hidden" name="routeis" value="' . $formtype . '" />
+                        <input type="hidden" name="type" value="approve" />';
 
                         $modalBody .= $content;
                     }

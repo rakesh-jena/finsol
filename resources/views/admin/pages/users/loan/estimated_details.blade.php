@@ -31,7 +31,7 @@
                                         <td>{{ $detail->admin_note ? $detail->admin_note : '' }}</td>
                                         <td>{{ $detail->user_note ? $detail->user_note : '' }}</td>
                                         <td><a
-                                                href="{{ url('admin/user/loan-finance/details/networth/' . $detail->id) }}">Details</a>
+                                                href="{{ url('admin/user/loan-finance/details/estimated/' . $detail->id) }}">Details</a>
                                         </td>
                                         <td>
                                             @if ($detail->status == 2)
@@ -52,7 +52,8 @@
                                                                 action="{{ url('admin/user/loan-finance/additional/file/' . $detail->user_id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                <input type="hidden" name="form_type" value="Networth">
+                                                                <input type="hidden" name="form_type"
+                                                                    value="LFEstimated">
                                                                 <input type="hidden" name="files"
                                                                     value="{{ $detail->additional_img }}">
 
@@ -76,7 +77,8 @@
                                                                 action="{{ url('admin/user/loan-finance/approved/file/' . $detail->user_id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                <input type="hidden" name="form_type" value="Networth">
+                                                                <input type="hidden" name="form_type"
+                                                                    value="LFEstimated">
                                                                 <input type="hidden" name="files"
                                                                     value="{{ $detail->approved_img }}">
 
@@ -100,15 +102,16 @@
                                         @if ($detail->status == 1 || $detail->status == 3)
                                             <td colspan=6 style="display:flex;">
                                                 <span class="btn btn-info ml-1 mb-1 btn-sm" title="Add Note"
-                                                    type="button" onclick="openNetworthNoteModal({{ $detail->id }})"
-                                                    href="{{ url('loan-finance/statusview/' . $detail->id) }}"
+                                                    type="button"
+                                                    onclick="openEstimatedNoteModal({{ $detail->id }})"
+                                                    href="{{ url('admin/user/loan-finance/statusview/' . $detail->id) }}"
                                                     data-target="#myNetworthNoteModal">
                                                     Note<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
 
                                                 <span class="btn btn-success ml-1 mb-1 btn-sm  " title="Change Status"
                                                     type="button" data-toggle="modal"
-                                                    onclick="openNetworthApproveModal({{ $detail->id }})"
+                                                    onclick="openEstimatedApproveModal({{ $detail->id }})"
                                                     data-target="#myNetworthApprovedModal">
                                                     Approve<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
@@ -157,18 +160,15 @@
 <script>
     var adminUrl = "{{ url('admin') }}";
 
-    function openNetworthNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+    function openEstimatedNoteModal(itemId) {
+
         $.ajax({
-            //url: urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/loan-finance/statusview' + '?for=note&formtype=LFEstimated&id=' + itemId,
+            //url: adminUrl+'/user/forms/statusview' +'?pan=' + itemId,
+            url: adminUrl + '/user/loan-finance/statusview' + '?for=note&formtype=LFEstimated&id=' + itemId,
             type: 'GET',
             success: function(data) {
-                $('#myCerCommonNoteModal').modal('show');
-                $('#cer-note-modal-body-div').html(data.modalBody);
-                // $('#myNetworthNoteModal #userid').val(data.user_id);
-                // $('#myNetworthNoteModal #panid').val(data.id);
-                // $('#myNetworthNoteModal #routeis').val('pan');
+                $('#myLoanCommonNoteModal').modal('show');
+                $('#loan-note-modal-body-div').html(data.modalBody);
             },
             error: function(xhr) {
                 // Handle error cases
@@ -178,20 +178,16 @@
     }
 
 
-    function openNetworthApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+    function openEstimatedApproveModal(itemId) {
+
         $.ajax({
-            // url:  urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/loan-finance/statusview' + '?for=approve&formtype=LFEstimated&id=' + itemId,
+
+            url: adminUrl + '/user/loan-finance/statusview' + '?for=approve&formtype=LFEstimated&id=' + itemId,
             type: 'GET',
             success: function(data) {
 
-                $('#myCerCommonApprovedModal').modal('show');
-                $('#cer-approve-modal-body-div').html(data.modalBody);
-                // $('#myNetworthApprovedModal #userid').val(data.user_id);
-                // $('#myNetworthApprovedModal #panid').val(data.id);
-                // $('#myNetworthApprovedModal #nameofpan').val(data.name_of_pan);
-                // $('#myNetworthApprovedModal #type').val('approve');
+                $('#myLoanCommonApprovedModal').modal('show');
+                $('#loan-approve-modal-body-div').html(data.modalBody);
             },
             error: function(xhr) {
                 // Handle error cases

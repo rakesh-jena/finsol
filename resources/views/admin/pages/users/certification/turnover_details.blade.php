@@ -101,7 +101,7 @@
                                             <td colspan=6 style="display:flex;">
                                                 <span class="btn btn-info ml-1 mb-1 btn-sm" title="Add Note"
                                                     type="button" onclick="openTurnoverNoteModal({{ $detail->id }})"
-                                                    href="{{ url('certification/statusview/' . $detail->id) }}"
+                                                    href="{{ url('admin/user/certification/statusview/' . $detail->id) }}"
                                                     data-target="#myTurnoverNoteModal">
                                                     Note<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
@@ -158,10 +158,10 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openTurnoverNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
-            //url: urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/certification/statusview' + '?for=note&formtype=turnover&id=' + itemId,
+            //url: adminUrl+'/user/forms/statusview' +'?pan=' + itemId,
+            url: adminUrl + '/user/certification/statusview' + '?for=note&formtype=turnover&id=' + itemId,
             type: 'GET',
             success: function(data) {
                 $('#myCerCommonNoteModal').modal('show');
@@ -179,10 +179,10 @@
 
 
     function openTurnoverApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
-            // url:  urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/certification/statusview' + '?for=approve&formtype=turnover&id=' + itemId,
+
+            url: adminUrl + '/user/certification/statusview' + '?for=approve&formtype=turnover&id=' + itemId,
             type: 'GET',
             success: function(data) {
 

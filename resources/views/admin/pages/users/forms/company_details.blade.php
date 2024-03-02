@@ -159,7 +159,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openCompanyNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=company&id=' + itemId,
             type: 'GET',
@@ -174,9 +174,8 @@
         });
     }
 
-
     function openCompanyApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=company&id=' + itemId,
             type: 'GET',

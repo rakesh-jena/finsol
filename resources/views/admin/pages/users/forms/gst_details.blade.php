@@ -167,7 +167,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/gst/statusview/' + itemId,
             type: 'GET',
@@ -190,7 +190,7 @@
 
 
     function openApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/gst/statusview/' + itemId,
             type: 'GET',

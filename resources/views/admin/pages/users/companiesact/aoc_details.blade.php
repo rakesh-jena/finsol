@@ -101,7 +101,7 @@
                                             <td colspan=6 style="display:flex;">
                                                 <span class="btn btn-info ml-1 mb-1 btn-sm" title="Add Note"
                                                     type="button" onclick="openAocNoteModal({{ $detail->id }})"
-                                                    href="{{ url('companiesact/statusview/' . $detail->id) }}"
+                                                    href="{{ url('admin/user/companiesact/statusview/' . $detail->id) }}"
                                                     data-target="#myAocNoteModal">
                                                     Note<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
@@ -158,10 +158,10 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openAocNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
-            //url: urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/companiesact/statusview' + '?for=note&formtype=aoc&id=' + itemId,
+            //url: adminUrl+'/user/forms/statusview' +'?pan=' + itemId,
+            url: adminUrl + '/user/companiesact/statusview' + '?for=note&formtype=aoc&id=' + itemId,
             type: 'GET',
             success: function(data) {
                 $('#myCaCommonNoteModal').modal('show');
@@ -176,10 +176,10 @@
 
 
     function openAocApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
-            // url:  urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/companiesact/statusview' + '?for=approve&formtype=aoc&id=' + itemId,
+
+            url: adminUrl + '/user/companiesact/statusview' + '?for=approve&formtype=aoc&id=' + itemId,
             type: 'GET',
             success: function(data) {
 

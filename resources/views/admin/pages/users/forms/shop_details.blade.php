@@ -176,7 +176,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openShopNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=shop&id=' + itemId,
             type: 'GET',
@@ -193,7 +193,7 @@
 
 
     function openShopApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=shop&id=' + itemId,
             type: 'GET',

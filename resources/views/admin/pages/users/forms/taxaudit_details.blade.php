@@ -176,7 +176,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openTaxauditNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=taxaudit&id=' + itemId,
             type: 'GET',
@@ -193,7 +193,7 @@
 
 
     function openTaxauditApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=taxaudit&id=' + itemId,
             type: 'GET',

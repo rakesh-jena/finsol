@@ -13,6 +13,7 @@ class UserIsoDetail extends Authenticatable
 
     protected $fillable = [
         'user_id',
+        'payment_unique_id',
         'email_id',
         'name_of_iso',
         'iso_number',

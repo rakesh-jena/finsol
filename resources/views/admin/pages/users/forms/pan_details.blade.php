@@ -171,8 +171,8 @@
                         <p class="mb-0 fs--1">
                             <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                             <span class="d-none d-sm-inline-block"> &mdash;</span>
-                            <a class="fw-semi-bold" href="#!" data-list-view="*" data-btn="show-more">View all<span
-                                    class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
+                            <a class="fw-semi-bold" href="#!" data-list-view="*" data-btn="show-more">View
+                                all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
                                 class="fw-semi-bold d-none" href="#!" data-list-view="less">View
                                 Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
                         </p>
@@ -196,17 +196,12 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openPanNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
         $.ajax({
-            //url: adminUrl+'/user/forms/statusview' +'?pan=' + itemId,
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=pan&id=' + itemId,
             type: 'GET',
             success: function(data) {
                 $('#myCommonNoteModal').modal('show');
                 $('#note-modal-body-div').html(data.modalBody);
-                // $('#myPanNoteModal #userid').val(data.user_id);
-                // $('#myPanNoteModal #panid').val(data.id);
-                // $('#myPanNoteModal #routeis').val('pan');
             },
             error: function(xhr) {
                 // Handle error cases
@@ -214,9 +209,9 @@
             }
         });
     }
-    
+
     function openPanApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             // url:  adminUrl+'/user/forms/statusview' +'?pan=' + itemId,
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=pan&id=' + itemId,

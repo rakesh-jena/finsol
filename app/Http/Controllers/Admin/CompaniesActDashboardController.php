@@ -120,48 +120,6 @@ class CompaniesActDashboardController extends Controller
         return response()->download($zipName)->deleteFileAfterSend(true);
     }
 
-    public function downloadGstFile(Request $request, $userId)
-    {
-        $files = $request->input('files');
-
-        $gstId = $request->input('gst_id');
-        $gst_type = $request->input('gst_type');
-
-        $commaValues = explode(",", $files);
-        $userDetails = User::find($userId);
-        $useName = $userId;
-        $zipName = $gst_type . '-' . $useName . '.zip';
-        $folderPath = 'public/uploads/users/' . $useName . '/Gst/' . $gst_type . '/';
-        $zip = new \ZipArchive();
-        $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
-        if (count($commaValues) > 1) {
-            foreach ($commaValues as $file) {
-                $filePath = $folderPath . $file;
-                if (File::exists($filePath)) {
-                    $fileContents = file_get_contents($filePath);
-                    $zip->addFromString(basename($file), $fileContents);
-                } else {
-                    return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
-                }
-            }
-        } else {
-            if (!empty($files)) {
-                $filePath = $folderPath . $files;
-                if (File::exists($filePath)) {
-                    $fileContents = file_get_contents($filePath);
-                    $zip->addFromString(basename($files), $fileContents);
-                } else {
-                    return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
-                }
-            } else {
-                return redirect('/admin/user/gsttype/details/' . $gstId)->with('filenotexistsection1', 'File Not Exist!');
-            }
-
-        }
-        $zip->close();
-        return response()->download($zipName)->deleteFileAfterSend(true);
-    }
-
     public function statusview(Request $request)
     {
         $for = $request['for'];

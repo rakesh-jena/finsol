@@ -3,17 +3,18 @@
         <div class="turnoverrd-header">
             <h5 class="mb-0">TURNOVER Details</h5>
         </div>
-        <div class="turnoverrd-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
-                </label>{{ $turnoverDetails->name_of_company }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
-                </label>{{ $turnoverDetails->company_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $turnoverDetails->mobile_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $turnoverDetails->email_id }}
+        <div class="turnoverrd-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
+                    </label>{{ $turnoverDetails->name_of_company }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
+                    </label>{{ $turnoverDetails->company_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $turnoverDetails->mobile_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $turnoverDetails->email_id }}
+                </div>
             </div>
-
         </div>
     </div>
     @if (session('filenotexistsection1'))

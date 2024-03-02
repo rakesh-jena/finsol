@@ -2,16 +2,19 @@
     <div class="card-header">
         <h5 class="mb-0">GST Details: {{ $user->name }}</h5>
     </div>
-    <div class="card-body bg-light row">
-        <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">GST Type : </label>{{ $gstDetails->gst_type }}
+    <div class="card-body bg-light">
+        <div class="row">
+            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">GST Type :
+                </label>{{ $gstDetails->gst_type }}
+            </div>
+            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-number">GST Number :
+                </label>{{ $gstDetails->gst_number }}</div>
+            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                </label>{{ $gstDetails->mobile_linked_aadhar }}</div>
+            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                </label>{{ $gstDetails->email_id }}
+            </div>
         </div>
-        <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-number">GST Number :
-            </label>{{ $gstDetails->gst_number }}</div>
-        <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-            </label>{{ $gstDetails->mobile_linked_aadhar }}</div>
-        <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email : </label>{{ $gstDetails->email_id }}
-        </div>
-
     </div>
 </div>
 @if (session('filenotexistsection1'))

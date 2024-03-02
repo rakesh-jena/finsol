@@ -103,7 +103,7 @@
                                                 <span class="btn btn-info ml-1 mb-1 btn-sm" title="Add Note"
                                                     type="button"
                                                     onclick="openStatutoryauditNoteModal({{ $detail->id }})"
-                                                    href="{{ url('companiesact/statusview/' . $detail->id) }}"
+                                                    href="{{ url('admin/user/companiesact/statusview/' . $detail->id) }}"
                                                     data-target="#myStatutoryauditNoteModal">
                                                     Note<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
@@ -160,10 +160,10 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openStatutoryauditNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
-            //url: urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/companiesact/statusview' + '?for=note&formtype=statutoryaudit&id=' + itemId,
+            //url: adminUrl+'/user/forms/statusview' +'?pan=' + itemId,
+            url: adminUrl + '/user/companiesact/statusview' + '?for=note&formtype=statutoryaudit&id=' + itemId,
             type: 'GET',
             success: function(data) {
                 $('#myCaCommonNoteModal').modal('show');
@@ -181,10 +181,10 @@
 
 
     function openStatutoryauditApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
-            // url:  urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/companiesact/statusview' + '?for=approve&formtype=statutoryaudit&id=' +
+
+            url: adminUrl + '/user/companiesact/statusview' + '?for=approve&formtype=statutoryaudit&id=' +
                 itemId,
             type: 'GET',
             success: function(data) {

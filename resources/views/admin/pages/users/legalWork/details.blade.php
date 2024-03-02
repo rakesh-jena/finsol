@@ -49,10 +49,10 @@
                                                                 data-fa-transform="shrink-2"></span></span>
                                                         @if ($detail->additional_img != '')
                                                             <form
-                                                                action="{{ url('admin/user/certification/additional/file/' . $detail->user_id) }}"
+                                                                action="{{ url('admin/user/legal-work/additional/file/' . $detail->user_id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                <input type="hidden" name="form_type" value="Ca">
+                                                                <input type="hidden" name="form_type" value="legal">
                                                                 <input type="hidden" name="files"
                                                                     value="{{ $detail->additional_img }}">
 
@@ -73,10 +73,10 @@
 
                                                         @if ($detail->approved_img != '')
                                                             <form
-                                                                action="{{ url('admin/user/certification/approved/file/' . $detail->user_id) }}"
+                                                                action="{{ url('admin/user/legal-work/approved/file/' . $detail->user_id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                <input type="hidden" name="form_type" value="Ca">
+                                                                <input type="hidden" name="form_type" value="legal">
                                                                 <input type="hidden" name="files"
                                                                     value="{{ $detail->approved_img }}">
 
@@ -100,16 +100,16 @@
                                         @if ($detail->status == 1 || $detail->status == 3)
                                             <td colspan=6 style="display:flex;">
                                                 <span class="btn btn-info ml-1 mb-1 btn-sm" title="Add Note"
-                                                    type="button" onclick="openCaNoteModal({{ $detail->id }})"
-                                                    href="{{ url('certification/statusview/' . $detail->id) }}"
-                                                    data-target="#myCaNoteModal">
+                                                    type="button" onclick="openLegalNoteModal({{ $detail->id }})"
+                                                    href="{{ url('admin/user/legal-work/statusview/' . $detail->id) }}"
+                                                    data-target="#myLegalNoteModal">
                                                     Note<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
 
                                                 <span class="btn btn-success ml-1 mb-1 btn-sm  " title="Change Status"
                                                     type="button" data-toggle="modal"
-                                                    onclick="openCaApproveModal({{ $detail->id }})"
-                                                    data-target="#myCaApprovedModal">
+                                                    onclick="openLegalApproveModal({{ $detail->id }})"
+                                                    data-target="#myLegalApprovedModal">
                                                     Approve<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
                                             @else
@@ -157,44 +157,32 @@
 <script>
     var adminUrl = "{{ url('admin') }}";
 
-    function openCaNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+    function openLegalNoteModal(itemId) {
+
         $.ajax({
-            //url: urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/certification/statusview' + '?for=note&formtype=ca&id=' + itemId,
+            url: adminUrl + '/user/legal-work/statusview' + '?for=note&formtype=legal&id=' + itemId,
             type: 'GET',
             success: function(data) {
-                $('#myCerCommonNoteModal').modal('show');
-                $('#cer-note-modal-body-div').html(data.modalBody);
-                // $('#myCaNoteModal #userid').val(data.user_id);
-                // $('#myCaNoteModal #panid').val(data.id);
-                // $('#myCaNoteModal #routeis').val('pan');
+                $('#myLegalCommonNoteModal').modal('show');
+                $('#legal-note-modal-body-div').html(data.modalBody);
             },
             error: function(xhr) {
-                // Handle error cases
                 console.log(xhr.responseText);
             }
         });
     }
 
+    function openLegalApproveModal(itemId) {
 
-    function openCaApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
         $.ajax({
-            // url:  urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/certification/statusview' + '?for=approve&formtype=ca&id=' + itemId,
+
+            url: adminUrl + '/user/legal-work/statusview' + '?for=approve&formtype=legal&id=' + itemId,
             type: 'GET',
             success: function(data) {
-
-                $('#myCerCommonApprovedModal').modal('show');
-                $('#cer-approve-modal-body-div').html(data.modalBody);
-                // $('#myCaApprovedModal #userid').val(data.user_id);
-                // $('#myCaApprovedModal #panid').val(data.id);
-                // $('#myCaApprovedModal #nameofpan').val(data.name_of_pan);
-                // $('#myCaApprovedModal #type').val('approve');
+                $('#myLegalCommonApprovedModal').modal('show');
+                $('#legal-approve-modal-body-div').html(data.modalBody);
             },
             error: function(xhr) {
-                // Handle error cases
                 console.log(xhr.responseText);
             }
         });

@@ -3,17 +3,18 @@
         <div class="networthrd-header">
             <h5 class="mb-0">Estimated Details</h5>
         </div>
-        <div class="networthrd-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
-                </label>{{ $estimatedDetails->name_of_company }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
-                </label>{{ $estimatedDetails->company_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $estimatedDetails->mobile_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $estimatedDetails->email_id }}
+        <div class="networthrd-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
+                    </label>{{ $estimatedDetails->name_of_company }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
+                    </label>{{ $estimatedDetails->company_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $estimatedDetails->mobile_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $estimatedDetails->email_id }}
+                </div>
             </div>
-
         </div>
     </div>
     @if (session('filenotexistsection1'))

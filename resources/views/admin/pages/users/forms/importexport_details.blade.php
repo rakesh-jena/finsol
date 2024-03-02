@@ -166,7 +166,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openImportExportNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=importexport&id=' + itemId,
             type: 'GET',
@@ -183,7 +183,7 @@
 
 
     function openImportExportApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=importexport&id=' + itemId,
             type: 'GET',

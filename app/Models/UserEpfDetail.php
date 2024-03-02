@@ -14,6 +14,7 @@ class UserEpfDetail extends Authenticatable
     protected $fillable = [
         'user_id',
         'epf_email',
+        'payment_unique_id',
         'name_of_epf',
         'epf_number',
         'epf_mobile',

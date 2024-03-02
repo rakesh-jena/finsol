@@ -13,6 +13,7 @@ class UserHufDetail extends Authenticatable
 
     protected $fillable = [
         'user_id',
+        'payment_unique_id',
         'name_of_huf',
         'huf_number',
         'huf_email',

@@ -176,7 +176,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openFssaiNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=fssai&id=' + itemId,
             type: 'GET',
@@ -193,7 +193,7 @@
 
 
     function openFssaiApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=fssai&id=' + itemId,
             type: 'GET',

@@ -165,7 +165,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openEpfNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=epf&id=' + itemId,
             type: 'GET',
@@ -182,7 +182,7 @@
 
 
     function openEpfApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=epf&id=' + itemId,
             type: 'GET',

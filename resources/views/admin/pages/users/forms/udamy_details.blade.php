@@ -162,7 +162,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openUdamyNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=udamy&id=' + itemId,
             type: 'GET',
@@ -176,9 +176,9 @@
             }
         });
     }
-    
+
     function openUdamyApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=udamy&id=' + itemId,
             type: 'GET',

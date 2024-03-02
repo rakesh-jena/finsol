@@ -180,7 +180,7 @@
 
 
     function openTrademarkApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=trademark&id=' + itemId,
             type: 'GET',

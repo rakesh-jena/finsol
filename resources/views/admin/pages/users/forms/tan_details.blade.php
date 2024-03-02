@@ -176,7 +176,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openTanNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=tan&id=' + itemId,
             type: 'GET',
@@ -193,7 +193,7 @@
 
 
     function openTanApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=tan&id=' + itemId,
             type: 'GET',

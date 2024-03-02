@@ -101,7 +101,7 @@
                                             <td colspan=6 style="display:flex;">
                                                 <span class="btn btn-info ml-1 mb-1 btn-sm" title="Add Note"
                                                     type="button" onclick="openCaNoteModal({{ $detail->id }})"
-                                                    href="{{ url('certification/statusview/' . $detail->id) }}"
+                                                    href="{{ url('admin/user/certification/statusview/' . $detail->id) }}"
                                                     data-target="#myCaNoteModal">
                                                     Note<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
@@ -158,40 +158,29 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openCaNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
         $.ajax({
-            //url: urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/certification/statusview' + '?for=note&formtype=ca&id=' + itemId,
+            url: adminUrl + '/user/certification/statusview' + '?for=note&formtype=ca&id=' + itemId,
             type: 'GET',
             success: function(data) {
                 $('#myCerCommonNoteModal').modal('show');
                 $('#cer-note-modal-body-div').html(data.modalBody);
-                // $('#myCaNoteModal #userid').val(data.user_id);
-                // $('#myCaNoteModal #panid').val(data.id);
-                // $('#myCaNoteModal #routeis').val('pan');
             },
             error: function(xhr) {
-                // Handle error cases
                 console.log(xhr.responseText);
             }
         });
     }
 
-
     function openCaApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
-            // url:  urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/certification/statusview' + '?for=approve&formtype=ca&id=' + itemId,
+
+            url: adminUrl + '/user/certification/statusview' + '?for=approve&formtype=ca&id=' + itemId,
             type: 'GET',
             success: function(data) {
 
                 $('#myCerCommonApprovedModal').modal('show');
                 $('#cer-approve-modal-body-div').html(data.modalBody);
-                // $('#myCaApprovedModal #userid').val(data.user_id);
-                // $('#myCaApprovedModal #panid').val(data.id);
-                // $('#myCaApprovedModal #nameofpan').val(data.name_of_pan);
-                // $('#myCaApprovedModal #type').val('approve');
             },
             error: function(xhr) {
                 // Handle error cases

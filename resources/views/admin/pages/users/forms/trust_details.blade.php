@@ -158,7 +158,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openTrustNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=trust&id=' + itemId,
             type: 'GET',
@@ -175,7 +175,7 @@
 
 
     function openTrustApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=trust&id=' + itemId,
             type: 'GET',

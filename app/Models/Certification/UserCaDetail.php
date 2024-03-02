@@ -14,6 +14,7 @@ class UserCaDetail extends Authenticatable
     protected $fillable = [
         'user_id',
         'email_id',
+        'payment_unique_id',
         'name',
         'company_number',
         'mobile_number',

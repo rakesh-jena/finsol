@@ -3,17 +3,18 @@
         <div class="projectReportrd-header">
             <h5 class="mb-0">Project Report Details</h5>
         </div>
-        <div class="projectReportrd-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
-                </label>{{ $projectReportDetails->name_of_company }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
-                </label>{{ $projectReportDetails->company_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $projectReportDetails->mobile_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $projectReportDetails->email_id }}
+        <div class="projectReportrd-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
+                    </label>{{ $projectReportDetails->name_of_company }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
+                    </label>{{ $projectReportDetails->company_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $projectReportDetails->mobile_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $projectReportDetails->email_id }}
+                </div>
             </div>
-
         </div>
     </div>
     @if (session('filenotexistsection1'))

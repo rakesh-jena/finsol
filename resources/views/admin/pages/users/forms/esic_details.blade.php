@@ -169,7 +169,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openEsicNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=esic&id=' + itemId,
             type: 'GET',
@@ -186,7 +186,7 @@
 
 
     function openEsicApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=esic&id=' + itemId,
             type: 'GET',

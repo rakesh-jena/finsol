@@ -13,6 +13,7 @@ class UserCompanyDetail extends Authenticatable
 
     protected $fillable = [
         'user_id',
+        'payment_unique_id',
         'name_of_company',
         'company_number',
         'company_email',

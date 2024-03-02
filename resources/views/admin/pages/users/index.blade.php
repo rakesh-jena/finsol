@@ -18,8 +18,7 @@
                             @if (Auth::user()->type_of_user === 'Head Office')
                                 <div class="d-flex align-items-center">
                                     <h6 class="mb-1">Filter</h6>
-                                    <a href="{{ url()->current() }}"
-                                        class="btn btn-primary btn-sm ms-auto">Reset Filter
+                                    <a href="{{ url()->current() }}" class="btn btn-primary btn-sm ms-auto">Reset Filter
                                     </a>
                                     <button id="btnExport" type="button" class="btn btn-success btn-sm ms-2">
                                         <i class="fa fa-file-csv"></i> Export to CSV
@@ -126,15 +125,17 @@
                                         <p class="mb-0 fs--1">
                                             <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                                             <span class="d-none d-sm-inline-block"> &mdash;</span>
-                                            <a class="fw-semi-bold" href="#!" data-list-view="*" data-btn="show-more">View all<span
-                                                    class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
-                                                class="fw-semi-bold d-none" href="#!" data-list-view="less">View
+                                            <a class="fw-semi-bold" href="#!" data-list-view="*"
+                                                data-btn="show-more">View all<span class="fas fa-angle-right ms-1"
+                                                    data-fa-transform="down-1"></span></a><a class="fw-semi-bold d-none"
+                                                href="#!" data-list-view="less">View
                                                 Less<span class="fas fa-angle-right ms-1"
                                                     data-fa-transform="down-1"></span></a>
                                         </p>
                                     </div>
                                     <div class="col-auto d-flex">
-                                        <button class="btn btn-sm btn-primary" type="button" data-list-pagination="prev">
+                                        <button class="btn btn-sm btn-primary" type="button"
+                                            data-list-pagination="prev">
                                             <span>Previous</span>
                                         </button>
                                         <button class="btn btn-sm btn-primary px-4 ms-2" type="button"

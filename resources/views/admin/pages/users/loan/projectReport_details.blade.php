@@ -1,6 +1,6 @@
 @if ($projectReport)
     <div class="row">
-        <h5>Turnover Details</h5>
+        <h5>Project Reports</h5>
         <div class="col-12">
             <div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
                 <div class="table-responsive scrollbar">
@@ -31,7 +31,7 @@
                                         <td>{{ $detail->admin_note ? $detail->admin_note : '' }}</td>
                                         <td>{{ $detail->user_note ? $detail->user_note : '' }}</td>
                                         <td><a
-                                                href="{{ url('admin/user/loan-finance/details/turnover/' . $detail->id) }}">Details</a>
+                                                href="{{ url('admin/user/loan-finance/details/projectReport/' . $detail->id) }}">Details</a>
                                         </td>
                                         <td>
                                             @if ($detail->status == 2)
@@ -52,7 +52,8 @@
                                                                 action="{{ url('admin/user/loan-finance/additional/file/' . $detail->user_id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                <input type="hidden" name="form_type" value="Turnover">
+                                                                <input type="hidden" name="form_type"
+                                                                    value="LFProjectReport">
                                                                 <input type="hidden" name="files"
                                                                     value="{{ $detail->additional_img }}">
 
@@ -62,7 +63,6 @@
                                                                         class="text-500 fas fa-download"></span></button>
                                                             </form>
                                                         @endif
-
                                                     </div>
                                                 @else
                                                     @if ($detail->status == 4)
@@ -76,7 +76,8 @@
                                                                 action="{{ url('admin/user/loan-finance/approved/file/' . $detail->user_id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                <input type="hidden" name="form_type" value="Turnover">
+                                                                <input type="hidden" name="form_type"
+                                                                    value="LFProjectReport">
                                                                 <input type="hidden" name="files"
                                                                     value="{{ $detail->approved_img }}">
 
@@ -100,15 +101,15 @@
                                         @if ($detail->status == 1 || $detail->status == 3)
                                             <td colspan=6 style="display:flex;">
                                                 <span class="btn btn-info ml-1 mb-1 btn-sm" title="Add Note"
-                                                    type="button" onclick="openTurnoverNoteModal({{ $detail->id }})"
-                                                    href="{{ url('loan-finance/statusview/' . $detail->id) }}"
+                                                    type="button" onclick="openPRNoteModal({{ $detail->id }})"
+                                                    href="{{ url('admin/user/loan-finance/statusview/' . $detail->id) }}"
                                                     data-target="#myTurnoverNoteModal">
                                                     Note<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
 
                                                 <span class="btn btn-success ml-1 mb-1 btn-sm  " title="Change Status"
                                                     type="button" data-toggle="modal"
-                                                    onclick="openTurnoverApproveModal({{ $detail->id }})"
+                                                    onclick="openPRApproveModal({{ $detail->id }})"
                                                     data-target="#myTurnoverApprovedModal">
                                                     Approve<span class="glyphicon glyphicon-eye-open ms-1"></span>
                                                 </span>
@@ -157,18 +158,13 @@
 <script>
     var adminUrl = "{{ url('admin') }}";
 
-    function openTurnoverNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+    function openPRNoteModal(itemId) {
         $.ajax({
-            //url: urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/loan-finance/statusview' + '?for=note&formtype=LFProjectReport&id=' + itemId,
+            url: adminUrl + '/user/loan-finance/statusview' + '?for=note&formtype=LFProjectReport&id=' + itemId,
             type: 'GET',
             success: function(data) {
-                $('#myCerCommonNoteModal').modal('show');
-                $('#cer-note-modal-body-div').html(data.modalBody);
-                // $('#myTurnoverNoteModal #userid').val(data.user_id);
-                // $('#myTurnoverNoteModal #panid').val(data.id);
-                // $('#myTurnoverNoteModal #routeis').val('pan');
+                $('#myLoanCommonNoteModal').modal('show');
+                $('#loan-note-modal-body-div').html(data.modalBody);
             },
             error: function(xhr) {
                 // Handle error cases
@@ -178,21 +174,17 @@
     }
 
 
-    function openTurnoverApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+    function openPRApproveModal(itemId) {
+
         $.ajax({
-            // url:  urlpath+'/user/forms/statusview' +'?pan=' + itemId,
-            url: urlpath + '/user/loan-finance/statusview' + '?for=approve&formtype=LFProjectReport&id=' +
+
+            url: adminUrl + '/user/loan-finance/statusview' + '?for=approve&formtype=LFProjectReport&id=' +
                 itemId,
             type: 'GET',
             success: function(data) {
 
-                $('#myCerCommonApprovedModal').modal('show');
-                $('#cer-approve-modal-body-div').html(data.modalBody);
-                // $('#myTurnoverApprovedModal #userid').val(data.user_id);
-                // $('#myTurnoverApprovedModal #panid').val(data.id);
-                // $('#myTurnoverApprovedModal #nameofpan').val(data.name_of_pan);
-                // $('#myTurnoverApprovedModal #type').val('approve');
+                $('#myLoanCommonApprovedModal').modal('show');
+                $('#loan-approve-modal-body-div').html(data.modalBody);
             },
             error: function(xhr) {
                 // Handle error cases

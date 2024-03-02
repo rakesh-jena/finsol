@@ -69,9 +69,9 @@
                                         data-fa-transform="shrink-2"></span>
                                 </span>
                                 @if ($detail->raised_img != '')
-                                    <form action="{{ route('companiesact_web_raisedFile') }}" method="POST">
+                                    <form action="{{ route('loan_web_raisedFile') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="form_type" value="Adt">
+                                        <input type="hidden" name="form_type" value="LFProjectReport">
                                         <input type="hidden" name="files" value="{{ $detail->raised_img }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn"
@@ -93,9 +93,9 @@
                                                 class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
 
                                         @if ($detail->approved_img != '')
-                                            <form action="{{ route('companiesact_web_approvedFile') }}" method="POST">
+                                            <form action="{{ route('loan_web_approvedFile') }}" method="POST">
                                                 @csrf
-                                                <input type="hidden" name="form_type" value="Adt">
+                                                <input type="hidden" name="form_type" value="LFProjectReport">
                                                 <input type="hidden" name="files"
                                                     value="{{ $detail->approved_img }}">
 
@@ -126,7 +126,7 @@
                                     <br /><br />
                                     <div class="col">
                                         <form class="needs-validation" novalidate="novalidate"
-                                            action="{{ route('companiesact_query_raised') }}" method="post"
+                                            action="{{ route('loan_query_raised') }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <span
@@ -143,7 +143,7 @@
                                             <label>Enter Your Suggestion:</label>
                                             <textarea name="user_note" style="height:90px;width:100%"></textarea>
 
-                                            <input type="hidden" name="form_type" value="Adt" />
+                                            <input type="hidden" name="form_type" value="LFProjectReport" />
 
                                             <input type="hidden" name="id" value="{{ $detail->id }}" />
                                             <div class="mt-3">

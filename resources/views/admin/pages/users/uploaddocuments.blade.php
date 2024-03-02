@@ -49,8 +49,8 @@
                                                     <tr class="align-middle" data-toggle="collapse"
                                                         data-target="#{{ $gstDetail->gst_type }}" class="accordion-toggle">
                                                         <!-- <td><button class="btn btn-default btn-xs"><span
-                                                                                            class="glyphicon glyphicon-eye-open"></span></button>
-                                                                                </td> -->
+                                                                                                class="glyphicon glyphicon-eye-open"></span></button>
+                                                                                    </td> -->
                                                         <td class="text-nowrap">
                                                             {{ $gstDetail->gst_number ? $gstDetail->gst_number : 'NA' }}
                                                         </td>
@@ -126,9 +126,10 @@
                                         <p class="mb-0 fs--1">
                                             <span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
                                             <span class="d-none d-sm-inline-block"> &mdash;</span>
-                                            <a class="fw-semi-bold" href="#!" data-list-view="*" data-btn="show-more">View all<span
-                                                    class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
-                                                class="fw-semi-bold d-none" href="#!" data-list-view="less">View
+                                            <a class="fw-semi-bold" href="#!" data-list-view="*"
+                                                data-btn="show-more">View all<span class="fas fa-angle-right ms-1"
+                                                    data-fa-transform="down-1"></span></a><a class="fw-semi-bold d-none"
+                                                href="#!" data-list-view="less">View
                                                 Less<span class="fas fa-angle-right ms-1"
                                                     data-fa-transform="down-1"></span></a>
                                         </p>
@@ -157,9 +158,9 @@
     var adminUrl = "{{ url('admin') }}";
 
     function changeApprove(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
-            url: urlpath + '/user/gst/change_approve/' + itemId,
+            url: adminUrl + '/user/gst/change_approve/' + itemId,
             type: 'GET',
             success: function(data) {
                 if (data == 1) {

@@ -442,15 +442,15 @@ class FormsDashboardController extends Controller
                     if ($for === 'note') {
                         $modalBody =
                         '<input type="hidden" name="userid" id="userid" value="' . $details->user_id . '" />
-                <input type="hidden" id="id" name="id" value="' . $details->id . '" />
-                <input type="hidden" name="routeis" id="routeis" value="' . $formtype . '" />
-                <input type="hidden" name="type" value="note" />';
+                        <input type="hidden" id="id" name="id" value="' . $details->id . '" />
+                        <input type="hidden" name="routeis" id="routeis" value="' . $formtype . '" />
+                        <input type="hidden" name="type" value="note" />';
                     } else {
                         $modalBody =
                         '<input type="hidden" name="userid" id="userid" value="' . $details->user_id . '" />
-                 <input type="hidden" id="id" name="id" value="' . $details->id . '" />
-                 <input type="hidden" name="routeis" value="' . $formtype . '" />
-                 <input type="hidden" name="type" value="approve" />';
+                        <input type="hidden" id="id" name="id" value="' . $details->id . '" />
+                        <input type="hidden" name="routeis" value="' . $formtype . '" />
+                        <input type="hidden" name="type" value="approve" />';
 
                         $modalBody .= $content;
                     }

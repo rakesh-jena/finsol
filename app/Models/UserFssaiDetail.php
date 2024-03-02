@@ -13,6 +13,7 @@ class UserFssaiDetail extends Authenticatable
 
     protected $fillable = [
         'user_id',
+        'payment_unique_id',
         'email_id',
         'name_of_fssai',
         'fssai_number',

@@ -162,7 +162,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openHufNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=huf&id=' + itemId,
             type: 'GET',
@@ -179,7 +179,7 @@
 
 
     function openHufApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=huf&id=' + itemId,
             type: 'GET',

@@ -279,16 +279,151 @@
 </div>
 
 <!-- Legal Note Modal -->
+<div id="myLegalCommonNoteModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <form action="{{ url('admin/user/legal-work/change_status') }}" method="post"
+                enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                    <p>
+                    <div id="legal-note-modal-body-div">
+
+                    </div>
+                    <div class="mb-3">
+                        <label>Enter Your Query:</label>
+                        <textarea name="admin_note" required="required" style="height:90px;width:100%"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label>Upload Doc:</label>
+                        <input type="file" name="raised_img[]" id="image-upload" class="myfrm form-control"
+                            multiple />
+                    </div>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary me-1 mb-1" type="submit">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"
+                        onclick="closeModal2()">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
 <!-- Legal Approve Modal -->
+<div id="myLegalCommonApprovedModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="{{ url('admin/user/legal-work/change_status') }}" method="post"
+                enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                    <p>
+                    <div id="legal-approve-modal-body-div">
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Upload Doc:</label>
+                        <input type="file" name="approved_img[]" id="image-upload" class="myfrm form-control" />
+                    </div>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary me-1 mb-1" type="submit">Submit</button>
+                    <button type="button" class="btn btn-default close " data-dismiss="modal"
+                        onclick="closeModal1()">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
 
 <!-- Loan Note Modal -->
+<div id="myLoanCommonNoteModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <form action="{{ url('admin/user/loan-finance/change_status') }}" method="post"
+                enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                    <p>
+                    <div id="loan-note-modal-body-div">
+
+                    </div>
+                    <div class="mb-3">
+                        <label>Enter Your Query:</label>
+                        <textarea name="admin_note" required="required" style="height:90px;width:100%"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label>Upload Doc:</label>
+                        <input type="file" name="raised_img[]" id="image-upload" class="myfrm form-control"
+                            multiple />
+                    </div>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary me-1 mb-1" type="submit">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"
+                        onclick="closeModal2()">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
 <!-- Loan Approve Modal -->
+<div id="myLoanCommonApprovedModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="{{ url('admin/user/loan-finance/change_status') }}" method="post"
+                enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                    <p>
+                    <div id="loan-approve-modal-body-div">
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Upload Doc:</label>
+                        <input type="file" name="approved_img[]" id="image-upload" class="myfrm form-control" />
+                    </div>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary me-1 mb-1" type="submit">Submit</button>
+                    <button type="button" class="btn btn-default close " data-dismiss="modal"
+                        onclick="closeModal1()">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
 <script>
     function closeModal1() {
         $('#myApprovedModal').modal('hide');
         $('#myCommonApprovedModal').modal('hide');
         $('#myCaCommonApprovedModal').modal('hide');
         $('#myCerCommonApprovedModal').modal('hide');
+        $('#myLoanCommonApprovedModal').modal('hide');
+        $('#myLegalCommonApprovedModal').modal('hide');
     }
 
     function closeModal2() {
@@ -296,5 +431,7 @@
         $('#myCommonNoteModal').modal('hide');
         $('#myCaCommonNoteModal').modal('hide');
         $('#myCerCommonNoteModal').modal('hide');
+        $('#myLoanCommonNoteModal').modal('hide');
+        $('#myLegalCommonNoteModal').modal('hide');
     }
 </script>

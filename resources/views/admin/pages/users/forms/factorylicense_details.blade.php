@@ -167,7 +167,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openFactoryLicenseNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=factorylicense&id=' + itemId,
             type: 'GET',
@@ -184,7 +184,7 @@
 
 
     function openFactoryLicenseApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=factorylicense&id=' + itemId,
             type: 'GET',

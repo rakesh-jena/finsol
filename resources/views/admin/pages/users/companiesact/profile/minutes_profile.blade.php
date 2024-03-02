@@ -3,17 +3,18 @@
         <div class="card-header">
             <h5 class="mb-0">Minutes Details</h5>
         </div>
-        <div class="card-body bg-light row">
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
-                </label>{{ $minutesDetails->name_of_company }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
-                </label>{{ $minutesDetails->company_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                </label>{{ $minutesDetails->mobile_number }}</div>
-            <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                </label>{{ $minutesDetails->email_id }}
+        <div class="card-body bg-light">
+            <div class="row">
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
+                    </label>{{ $minutesDetails->name_of_company }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
+                    </label>{{ $minutesDetails->company_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
+                    </label>{{ $minutesDetails->mobile_number }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
+                    </label>{{ $minutesDetails->email_id }}
+                </div>
             </div>
-
         </div>
     </div>
     @if (session('filenotexistsection1'))

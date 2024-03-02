@@ -162,7 +162,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openLabourNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=labour&id=' + itemId,
             type: 'GET',
@@ -179,7 +179,7 @@
 
 
     function openLabourApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=labour&id=' + itemId,
             type: 'GET',

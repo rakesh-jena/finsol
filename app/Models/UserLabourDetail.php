@@ -13,6 +13,7 @@ class UserLabourDetail extends Authenticatable
  
     protected $fillable = [
         'user_id',
+        'payment_unique_id',
         'labour_number',
         'name_of_business',
         'name_of_labour',

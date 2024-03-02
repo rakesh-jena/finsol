@@ -176,7 +176,7 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openTdsNoteModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=note&formtype=tds&id=' + itemId,
             type: 'GET',
@@ -193,7 +193,7 @@
 
 
     function openTdsApproveModal(itemId) {
-        // Make an AJAX GET request to fetch the item details
+
         $.ajax({
             url: adminUrl + '/user/forms/statusview' + '?for=approve&formtype=tds&id=' + itemId,
             type: 'GET',
