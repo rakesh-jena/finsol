@@ -1,11 +1,6 @@
 @extends('admin.layouts.admin')
-
-{{-- @push('custom_styles') --}}
-{{-- @endpush --}}
-
 @section('content')
     <div class="row g-3 mb-3">
-
         <div class="col-md-12 col-xxl-3">
             <div class="card h-md-100 ecommerce-card-min-width">
 

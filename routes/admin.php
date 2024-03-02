@@ -161,31 +161,5 @@ Route::group(
             });
             // Route::get('gst/statusview/{id}', 'UserGstController@statusview')->name('gstStatusView');
         });
-
-        // for moderators
-        Route::group(
-            [
-                'middleware' => ['role:administrator|moderator'],
-            ],
-            function () {
-                // users
-                Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
-                    Route::get('all', 'UserController@index')->name('users-all');
-                });
-            },
-        );
-
-        // for managers
-        Route::group(['middleware' => ['role:administrator|moderator|manager']], function () {
-            // products
-            Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
-                Route::get('all', 'ProductController@index')->name('index');
-                Route::get('ajax', 'ProductController@ajax')->name('ajax');
-                Route::get('create', 'ProductController@create')->name('create');
-                Route::get('show/{id}', 'ProductController@show')->name('show'); // ->where('id', '[0-9]+');
-                Route::get('edit/{id}', 'ProductController@edit')->name('edit'); // ->where('id', '[0-9]+');
-                Route::post('change_status', 'ProductController@change_status')->name('change_status');
-            });
-        });
     },
 );

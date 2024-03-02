@@ -22,6 +22,8 @@
     <link rel="manifest" href="{{ asset('assets/img/favicons/manifest.json') }}">
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/mstile-150x150.png') }}">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    crossorigin="anonymous">
     <link href="{{ asset('vendors/datatables.net-bs5/dataTables.bootstrap5.min.css') }}" rel="stylesheet">
     <script src="{{ asset('assets/js/config.js') }}"></script>
     <script src="{{ asset('vendors/simplebar/simplebar.min.js') }}"></script>
@@ -583,7 +585,7 @@
         </main><!-- ===============================================-->
         <!--    End of Main Content-->
         <!-- ===============================================-->
-
+        @include('admin.pages.users.modal')
     </div>
     <!-- ===============================================-->
     <!--    JavaScripts-->
@@ -599,7 +601,6 @@
     <script src="{{ asset('vendors/lodash/lodash.min.js') }}"></script>
     <script src="{{ asset('vendors/list.js/list.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.js') }}"></script>
-    <script src="{{ mix('js/dashboard.js') }}"></script>
     <script>
         var urlpath = "{{ url('/register') }}";
 

@@ -3,7 +3,6 @@
 @section('content')
 
     <div class="row g-3 mb-3">
-
         <div class="col-md-12 col-xxl-3">
             <div class="card h-md-100 ecommerce-card-min-width">
                 <div class="card-header pb-0">
@@ -22,7 +21,8 @@
                     @if (Auth::user()->type_of_user === 'Head Office')
                         <div class="d-flex align-items-center">
                             <h6 class="mb-1">Filter</h6>
-                            <a href="{{ url()->current() }}?form_type={{ request('form_type') }}" class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
+                            <a href="{{ url()->current() }}?form_type={{ request('form_type') }}"
+                                class="btn btn-primary btn-sm ms-auto">Reset Filter</a>
                             <button id="btnExport" type="button" class="btn btn-success btn-sm ms-2">
                                 <i class="fa fa-file-csv"></i> Export to CSV
                             </button>
@@ -64,10 +64,3 @@
     </div>
 
 @endsection
-
-@include('admin.pages.users.modal')
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    crossorigin="anonymous">
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>

@@ -27,12 +27,12 @@
                             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
-                    <form class="needs-validation" novalidate="novalidate" action="{{ route('estimated.register') }}"
+                    <form class="needs-validation" novalidate="novalidate" action="{{ route('cma.register') }}"
                         method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
-                            <h6 class="detailspadding mb-0">Estimation Details</h6>
+                            <h6 class="detailspadding mb-0">CMA Details</h6>
                         </div>
                         <div class="mt-1 row g-2">
                             <div class="col-4">

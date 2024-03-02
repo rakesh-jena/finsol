@@ -34,8 +34,8 @@
                 </li>
                 <li class="nav-item">
                     <!-- parent pages-->
-                    <a class="nav-link dropdown-indicator" href="#registration" role="button" data-bs-toggle="collapse"
-                        aria-expanded="true" aria-controls="registration">
+                    <a class="nav-link dropdown-indicator collapsed" href="#registration" role="button" data-bs-toggle="collapse"
+                        aria-expanded="false" aria-controls="registration">
                         <div class="d-flex align-items-center">
                             <span class="nav-link-icon">
                                 <span class="fas fa-chart-pie"></span>
@@ -43,7 +43,7 @@
                             <span class="nav-link-text ps-1">Registration</span>
                         </div>
                     </a>
-                    <ul class="nav collapse show" id="registration">
+                    <ul class="nav collapse" id="registration">
                         <?php $rowcount = App\Models\User::getAnyoftheformshasrecord(); ?>
                         @if (isset($rowcount) && $rowcount > 0)
                             <li class="nav-item">

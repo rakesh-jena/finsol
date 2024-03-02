@@ -1,4 +1,4 @@
-<!-- myApprovedModal -->
+<!-- GST Approve Modal -->
 <div id="myApprovedModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -35,6 +35,7 @@
     </div>
 </div>
 
+<!-- GST Note Modal -->
 <div id="myNoteModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -72,6 +73,7 @@
     </div>
 </div>
 
+<!-- Forms Note Modal -->
 <div id="myCommonNoteModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -107,6 +109,7 @@
     </div>
 </div>
 
+<!-- Forms Approve Modal -->
 <div id="myCommonApprovedModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -137,6 +140,7 @@
     </div>
 </div>
 
+<!-- Companies Act Note Modal -->
 <div id="myCaCommonNoteModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -173,6 +177,7 @@
     </div>
 </div>
 
+<!-- Companies Act Approve Modal -->
 <div id="myCaCommonApprovedModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -204,6 +209,7 @@
     </div>
 </div>
 
+<!-- Certificate Note Modal -->
 <div id="myCerCommonNoteModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -240,6 +246,7 @@
     </div>
 </div>
 
+<!-- Certificate Approve Modal -->
 <div id="myCerCommonApprovedModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -271,6 +278,11 @@
     </div>
 </div>
 
+<!-- Legal Note Modal -->
+<!-- Legal Approve Modal -->
+
+<!-- Loan Note Modal -->
+<!-- Loan Approve Modal -->
 <script>
     function closeModal1() {
         $('#myApprovedModal').modal('hide');

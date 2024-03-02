@@ -25,58 +25,44 @@
                             <div class="card-body" bis_skin_checked="1">
 
                                 <div class="table-responsive scrollbar">
-                                    <div class="container">
-                                        <div class="col-md-12">
-                                            <div class="panel panel-default">
-                                                <div class="panel-body">
-                                                    @if (session('success'))
-                                                        <div class="alert alert-success border-2 d-flex align-items-center"
-                                                            role="alert">
-                                                            <div class="bg-success me-3 icon-item"><span
-                                                                    class="fas fa-check-circle text-white fs-3"></span>
-                                                            </div>
-                                                            <p class="mb-0 flex-1">{{ session('success') }}</p>
-                                                            <button class="btn-close" type="button" data-bs-dismiss="alert"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                    @endif
-
-                                                    @if (session('raisedfilenotexist'))
-                                                        <div class="alert alert-danger border-2 d-flex align-items-center"
-                                                            role="alert">
-                                                            <div class="bg-danger me-3 icon-item"><span
-                                                                    class="fas fa-check-circle text-white fs-3"></span>
-                                                            </div>
-                                                            <p class="mb-0 flex-1">
-                                                                {{ session('raisedfilenotexist') }}</p>
-                                                            <button class="btn-close" type="button" data-bs-dismiss="alert"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                    @endif
-
-                                                    @if (session('approvedfilenotexist'))
-                                                        <div class="alert alert-danger border-2 d-flex align-items-center"
-                                                            role="alert">
-                                                            <div class="bg-danger me-3 icon-item"><span
-                                                                    class="fas fa-check-circle text-white fs-3"></span>
-                                                            </div>
-                                                            <p class="mb-0 flex-1">
-                                                                {{ session('approvedfilenotexist') }}</p>
-                                                            <button class="btn-close" type="button" data-bs-dismiss="alert"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                    @endif
-
-                                                    @include('user.pages.it-act.dashboard.itr')
-                                                    @include('user.pages.it-act.dashboard.tds')
-                                                    @include('user.pages.it-act.dashboard.tax')
-
-                                                </div>
-
+                                    @if (session('success'))
+                                        <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
+                                            <div class="bg-success me-3 icon-item"><span
+                                                    class="fas fa-check-circle text-white fs-3"></span>
                                             </div>
-
+                                            <p class="mb-0 flex-1">{{ session('success') }}</p>
+                                            <button class="btn-close" type="button" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
                                         </div>
-                                    </div>
+                                    @endif
+
+                                    @if (session('raisedfilenotexist'))
+                                        <div class="alert alert-danger border-2 d-flex align-items-center" role="alert">
+                                            <div class="bg-danger me-3 icon-item"><span
+                                                    class="fas fa-check-circle text-white fs-3"></span>
+                                            </div>
+                                            <p class="mb-0 flex-1">
+                                                {{ session('raisedfilenotexist') }}</p>
+                                            <button class="btn-close" type="button" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
+                                    @endif
+
+                                    @if (session('approvedfilenotexist'))
+                                        <div class="alert alert-danger border-2 d-flex align-items-center" role="alert">
+                                            <div class="bg-danger me-3 icon-item"><span
+                                                    class="fas fa-check-circle text-white fs-3"></span>
+                                            </div>
+                                            <p class="mb-0 flex-1">
+                                                {{ session('approvedfilenotexist') }}</p>
+                                            <button class="btn-close" type="button" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
+                                    @endif
+
+                                    @include('user.pages.it-act.dashboard.itr')
+                                    @include('user.pages.it-act.dashboard.tds')
+                                    @include('user.pages.it-act.dashboard.tax')
                                 </div>
                             </div>
                         </div>

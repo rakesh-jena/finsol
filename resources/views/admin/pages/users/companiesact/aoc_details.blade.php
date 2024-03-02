@@ -166,9 +166,6 @@
             success: function(data) {
                 $('#myCaCommonNoteModal').modal('show');
                 $('#ca-note-modal-body-div').html(data.modalBody);
-                // $('#myAocNoteModal #userid').val(data.user_id);
-                // $('#myAocNoteModal #panid').val(data.id);
-                // $('#myAocNoteModal #routeis').val('pan');
             },
             error: function(xhr) {
                 // Handle error cases

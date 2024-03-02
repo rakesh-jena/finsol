@@ -4,10 +4,11 @@
         <span class="fa-stack me-2 ms-n1"><i class="fas fa-circle fa-stack-2x text-300"></i><i
                 class="fa-inverse fa-stack-1x text-primary fas fa-check-double"></i></span>
         <div class="col">
-            <h5 class="mb-0 text-primary position-relative"><span class="bg-200 dark__bg-1100 pe-3">New
-                    Estimated/Projected
-                    Registration</span><span
-                    class="border position-absolute top-50 translate-middle-y w-100 start-0 z-n1"></span>
+            <h5 class="mb-0 text-primary position-relative">
+                <span class="bg-200 dark__bg-1100 pe-3">
+                    New Project Report Registration
+                </span>
+                <span class="border position-absolute top-50 translate-middle-y w-100 start-0 z-n1"></span>
             </h5>
             <p class="mb-0">You can easily show your stats content by using these cards.</p>
         </div>
@@ -15,9 +16,6 @@
     <div class="row g-0">
         <div class="col-xl-12">
             <div class="card mb-3">
-                <!-- <div class="card-header">
-                                             <h6 class="mb-0">Get yourself a New PAN Card</h6>
-                                        </div> -->
                 <div class="card-body">
                     @if (session('success'))
                         <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
@@ -27,12 +25,12 @@
                             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
-                    <form class="needs-validation" novalidate="novalidate" action="{{ route('estimated.register') }}"
+                    <form class="needs-validation" novalidate="novalidate" action="{{ route('projectReport.register') }}"
                         method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
-                            <h6 class="detailspadding mb-0">Estimation Details</h6>
+                            <h6 class="detailspadding mb-0">Project Report Details</h6>
                         </div>
                         <div class="mt-1 row g-2">
                             <div class="col-4">
@@ -88,8 +86,8 @@
                                 </div>
                             </div>
                             <!-- <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
-                                                        <h6 class="detailspadding mb-0">Upload documents required for Minutes </h6>
-                                                    </div> -->
+                                                            <h6 class="detailspadding mb-0">Upload documents required for Minutes </h6>
+                                                        </div> -->
                             <div class="row g-2 ">
                                 @foreach ($projectReportImages as $keyname => $image)
                                     <div class="col-4 mb-3">

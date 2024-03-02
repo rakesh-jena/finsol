@@ -176,8 +176,7 @@
             }
         });
     }
-
-
+    
     function openUdamyApproveModal(itemId) {
         // Make an AJAX GET request to fetch the item details
         $.ajax({
