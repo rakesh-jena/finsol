@@ -66,18 +66,7 @@ class LabourController extends Controller
         $data['name_of_business'] = $request['name_of_business'];
 
         $lastInsertedId = UserLabourDetail::updateOrCreate($data)->id;
-
-        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
-            $data['insert_id'] = $lastInsertedId;
-            $data['payment_purpose'] = 'Payment for Labour Register';
-            $data['name_of_pan'] = $data['name_of_labour'];
-            $data['email_id'] = $data['labour_email'];
-            $data['mobile_number'] = $data['labour_mobile'];
-            $data['payment_amount'] = PaymentValue::where('id', 16)->first()->value;
-            $data['type'] = 'Labour';
-            $data['route'] = 'labour.register_form';
-            $payment_Req = Helper::createInstaMojoOrder($data);
-        }
+        
         if ($request->has('laboursignatory')) {
             $laboursignatory = $request->input('laboursignatory');
             UserLabourSignatory::where(['user_id' => $userId])->delete();
@@ -91,6 +80,19 @@ class LabourController extends Controller
                 UserLabourSignatory::Create($partner);
             }
         }
+
+        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
+            $data['insert_id'] = $lastInsertedId;
+            $data['payment_purpose'] = 'Payment for Labour Register';
+            $data['name_of_pan'] = $data['name_of_labour'];
+            $data['email_id'] = $data['labour_email'];
+            $data['mobile_number'] = $data['labour_mobile'];
+            $data['payment_amount'] = PaymentValue::where('id', 16)->first()->value;
+            $data['type'] = 'Labour';
+            $data['route'] = 'labour.register_form';
+            $payment_Req = Helper::createInstaMojoOrder($data);
+        }
+        
         return redirect('/labour/register')->with('success', 'Registered Petty Contractor successfully!');
     }
 

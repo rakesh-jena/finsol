@@ -42,7 +42,6 @@ class EpfController extends Controller
 
     public function storeEpfCompany(Request $request)
     {
-
         $userId = auth()->user()->id;
         $dataon = 'epfsignatory';
         $useName = $userId;
@@ -57,7 +56,20 @@ class EpfController extends Controller
         // $matchthese = ['user_id'=>$userId, 'epf_type'=>'Company'];
         // UserEpfDetail::where($matchthese)->delete();
         $lastInsertedId = UserEpfDetail::Create($data)->id;
-
+        
+        if ($request->has('epfsignatory')) {
+            $epfsignatory = $request->input('epfsignatory');
+            UserEpfSignatory::where('user_id', $userId)->delete();
+            foreach ($epfsignatory as $key => $ps) {
+                $folderName = 'public/uploads/users/' . $useName . '/Epf/Company/Signatory';
+                $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'EPF Signatory');
+                $partner['user_epf_id'] = $lastInsertedId;
+                $partner['user_id'] = $userId;
+                $partner['epf_sign_email'] = $ps['email'];
+                $partner['epf_sign_mobile'] = $ps['mobile'];
+                UserEpfSignatory::Create($partner);
+            }
+        }
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {
             $data['insert_id'] = $lastInsertedId;
             $data['payment_purpose'] = 'Payment for Epf Register';
@@ -68,19 +80,6 @@ class EpfController extends Controller
             $data['type'] = 'Epf';
             $data['route'] = 'epf.register_form';
             $payment_Req = Helper::createInstaMojoOrder($data);
-        }
-        if ($request->has('epfsignatory')) {
-            $epfsignatory = $request->input('epfsignatory');
-            UserEpfSignatory::where(['user_id' => $userId])->delete();
-            foreach ($epfsignatory as $key => $ps) {
-                $folderName = 'public/uploads/users/' . $useName . '/Epf/Company/Signatory';
-                $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'EPF Signatory');
-                $partner['user_epf_id'] = $lastInsertedId;
-                $partner['user_id'] = $userId;
-                $partner['epf_sign_email'] = $ps['email'];
-                $partner['epf_sign_mobile'] = $ps['mobile'];
-                UserEpfSignatory::Create($partner);
-            }
         }
         return redirect('/epf/register')->with('success', 'Registered EPF successfully!');
     }
@@ -96,10 +95,9 @@ class EpfController extends Controller
         $data['epf_mobile'] = $request['mobile_number'];
         $data['epf_type'] = $request['epf_type'];
         $data['name_of_epf'] = $request['epf_name'];
-        // var_dump($data); exit;
-        // $matchthese = ['user_id' => $userId, 'epf_type' => 'Others'];
-        // UserEpfDetail::where($matchthese)->delete();
+
         $lastInsertedId = UserEpfDetail::Create($data)->id;
+        
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {
             $data['insert_id'] = $lastInsertedId;
             $data['payment_purpose'] = 'Payment for Epf Register';

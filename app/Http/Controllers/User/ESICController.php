@@ -62,17 +62,6 @@ class ESICController extends Controller
         // UserEsicDetail::where($matchthese)->delete();
         $lastInsertedId = UserEsicDetail::Create($data)->id;
 
-        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
-            $data['insert_id'] = $lastInsertedId;
-            $data['payment_purpose'] = 'Payment for Esic Register';
-            $data['name_of_pan'] = $data['name_of_esic'];
-            $data['email_id'] = $data['esic_email'];
-            $data['mobile_number'] = $data['esic_mobile'];
-            $data['payment_amount'] = PaymentValue::where('id', 7)->first()->value;
-            $data['type'] = 'Esic';
-            $data['route'] = 'esic.register_form';
-            $payment_Req = Helper::createInstaMojoOrder($data);
-        }
         if ($request->has('esicsignatory')) {
             $esicsignatory = $request->input('esicsignatory');
             UserEsicSignatory::where(['user_id' => $userId])->delete();
@@ -85,6 +74,18 @@ class ESICController extends Controller
                 $partner['esic_sign_mobile'] = $ps['mobile'];
                 UserEsicSignatory::Create($partner);
             }
+        }
+        
+        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
+            $data['insert_id'] = $lastInsertedId;
+            $data['payment_purpose'] = 'Payment for Esic Register';
+            $data['name_of_pan'] = $data['name_of_esic'];
+            $data['email_id'] = $data['esic_email'];
+            $data['mobile_number'] = $data['esic_mobile'];
+            $data['payment_amount'] = PaymentValue::where('id', 7)->first()->value;
+            $data['type'] = 'Esic';
+            $data['route'] = 'esic.register_form';
+            $payment_Req = Helper::createInstaMojoOrder($data);
         }
         return redirect('/esic/register')->with('success', 'Registered ESIC successfully!');
     }

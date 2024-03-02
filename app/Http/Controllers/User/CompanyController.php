@@ -61,19 +61,7 @@ class CompanyController extends Controller
         $data['company_mobile'] = $request->input('company_mobile');
         // $matchthese = ['user_id'=>$userId];
         // UserCompanyDetail::where($matchthese)->delete();
-        $lastInsertedId = UserCompanyDetail::Create($data)->id;
-
-        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
-            $data['insert_id'] = $lastInsertedId;
-            $data['payment_purpose'] = 'Payment for Company Register';
-            $data['name_of_pan'] = $data['name_of_company'];
-            $data['email_id'] = $data['company_email'];
-            $data['mobile_number'] = $data['company_mobile'];
-            $data['payment_amount'] = PaymentValue::where('id', 9)->first()->value;
-            $data['type'] = 'Company';
-            $data['route'] = 'company.pamentregister';
-            $payment_Req = Helper::createInstaMojoOrder($data);
-        }
+        $lastInsertedId = UserCompanyDetail::Create($data)->id;        
 
         if ($request->has('companysignatory')) {
 
@@ -88,6 +76,18 @@ class CompanyController extends Controller
                 $partner['comp_sign_mobile'] = $ps['mobile'];
                 UserCompanySignatory::Create($partner);
             }
+        }
+        
+        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
+            $data['insert_id'] = $lastInsertedId;
+            $data['payment_purpose'] = 'Payment for Company Register';
+            $data['name_of_pan'] = $data['name_of_company'];
+            $data['email_id'] = $data['company_email'];
+            $data['mobile_number'] = $data['company_mobile'];
+            $data['payment_amount'] = PaymentValue::where('id', 9)->first()->value;
+            $data['type'] = 'Company';
+            $data['route'] = 'company.pamentregister';
+            $payment_Req = Helper::createInstaMojoOrder($data);
         }
         return redirect('/company/register')->with('success', 'Registered Company successfully!');
     }

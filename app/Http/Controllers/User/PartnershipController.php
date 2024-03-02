@@ -56,18 +56,6 @@ class PartnershipController extends Controller
         // UserPartnershipDetail::where($matchthese)->delete();
         $lastInsertedId = UserPartnershipDetail::Create($data)->id;
 
-        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
-            $data['insert_id'] = $lastInsertedId;
-            $data['payment_purpose'] = 'Payment for Partnership Registration';
-            $data['name_of_pan'] = $data['name_of_partnership'];
-            $data['email_id'] = $data['partnership_email'];
-            $data['mobile_number'] = $data['partnership_mobile'];
-            $data['payment_amount'] = PaymentValue::where('id', 10)->first()->value;
-            $data['type'] = 'Partnership';
-            $data['route'] = 'partnership.paymentregister';
-            $payment_Req = Helper::createInstaMojoOrder($data);
-        }
-
         if ($request->has('partnershippartner')) {
             $partnershippartner = $request->input('partnershippartner');
             UserPartnershipPartner::where(['user_id' => $userId])->delete();
@@ -80,6 +68,18 @@ class PartnershipController extends Controller
                 $partner['partner_mobile'] = $ps['partner_mobile'];
                 UserPartnershipPartner::Create($partner);
             }
+        }
+        
+        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
+            $data['insert_id'] = $lastInsertedId;
+            $data['payment_purpose'] = 'Payment for Partnership Registration';
+            $data['name_of_pan'] = $data['name_of_partnership'];
+            $data['email_id'] = $data['partnership_email'];
+            $data['mobile_number'] = $data['partnership_mobile'];
+            $data['payment_amount'] = PaymentValue::where('id', 10)->first()->value;
+            $data['type'] = 'Partnership';
+            $data['route'] = 'partnership.paymentregister';
+            $payment_Req = Helper::createInstaMojoOrder($data);
         }
 
         return redirect('/partnership/register')->with('success', 'Registered Partnership Form successfully!');

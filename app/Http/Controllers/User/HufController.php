@@ -51,18 +51,7 @@ class HufController extends Controller
         $data['huf_email'] = $request->input('huf_email');
         $data['huf_mobile'] = $request->input('huf_mobile');
         $lastInsertedId = UserHufDetail::Create($data)->id;
-
-        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
-            $data['insert_id'] = $lastInsertedId;
-            $data['payment_purpose'] = 'Payment for Huf Register';
-            $data['name_of_pan'] = $data['name_of_huf'];
-            $data['email_id'] = $data['huf_email'];
-            $data['mobile_number'] = $data['huf_mobile'];
-            $data['payment_amount'] = PaymentValue::where('id', 11)->first()->value;
-            $data['type'] = 'Huf';
-            $data['route'] = 'huf.paymentregister';
-            $payment_Req = Helper::createInstaMojoOrder($data);
-        }
+        
         if ($request->has('hufmember')) {
             $hufmember = $request->input('hufmember');
             UserHufMember::where(['user_id' => $userId])->delete();
@@ -75,6 +64,19 @@ class HufController extends Controller
                 UserHufMember::Create($partner);
             }
         }
+
+        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
+            $data['insert_id'] = $lastInsertedId;
+            $data['payment_purpose'] = 'Payment for Huf Register';
+            $data['name_of_pan'] = $data['name_of_huf'];
+            $data['email_id'] = $data['huf_email'];
+            $data['mobile_number'] = $data['huf_mobile'];
+            $data['payment_amount'] = PaymentValue::where('id', 11)->first()->value;
+            $data['type'] = 'Huf';
+            $data['route'] = 'huf.paymentregister';
+            $payment_Req = Helper::createInstaMojoOrder($data);
+        }
+        
         return redirect('/huf/register')->with('success', 'Registered Huf successfully!');
     }
 

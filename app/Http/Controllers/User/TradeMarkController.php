@@ -63,18 +63,7 @@ class TradeMarkController extends Controller
         $data['name_of_business'] = $request['name_of_business'];
 
         $lastInsertedId = UserTrademarkDetail::updateOrCreate($data)->id;
-
-        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
-            $data['insert_id'] = $lastInsertedId;
-            $data['payment_purpose'] = 'Payment for Trademark Register';
-            $data['name_of_pan'] = $data['name_of_trademark'];
-            $data['email_id'] = $data['trademark_email'];
-            $data['mobile_number'] = $data['trademark_mobile'];
-            $data['payment_amount'] = PaymentValue::where('id', 8)->first()->value;
-            $data['type'] = 'Trademark';
-            $data['route'] = 'trademark.register_form';
-            $payment_Req = Helper::createInstaMojoOrder($data);
-        }
+        
         if ($request->has('trademarksignatory')) {
             $trademarksignatory = $request->input('trademarksignatory');
             UserTrademarkSignatory::where(['user_id' => $userId])->delete();
@@ -88,6 +77,19 @@ class TradeMarkController extends Controller
                 UserTrademarkSignatory::Create($partner);
             }
         }
+
+        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
+            $data['insert_id'] = $lastInsertedId;
+            $data['payment_purpose'] = 'Payment for Trademark Register';
+            $data['name_of_pan'] = $data['name_of_trademark'];
+            $data['email_id'] = $data['trademark_email'];
+            $data['mobile_number'] = $data['trademark_mobile'];
+            $data['payment_amount'] = PaymentValue::where('id', 8)->first()->value;
+            $data['type'] = 'Trademark';
+            $data['route'] = 'trademark.register_form';
+            $payment_Req = Helper::createInstaMojoOrder($data);
+        }
+        
         return redirect('/trademark/register')->with('success', 'Registered TRADEMARK successfully!');
     }
 

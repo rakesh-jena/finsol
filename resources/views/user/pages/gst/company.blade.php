@@ -74,7 +74,7 @@
                     <label class="form-label" for="form-wizard-progress-wizard-addregnum">Directors
                         Mobile number
                         registered with aadhar</label><input class="form-control" type="text"
-                        name="directors[0][mobile]" required="required" placeholder="Enter Registration No"
+                        name="directors[0][mobile]" maxlength="10" onkeypress="validate(event)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required="required" placeholder="Enter Registration No"
                         id="form-wizard-progress-wizard-addregnum" />
                     <div class="invalid-feedback">Please provide Mobile
                         number</div>
@@ -118,7 +118,7 @@
             directorIndex +
             '][email]" placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$" id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true"> <div class="invalid-feedback">You must add email</div> </div> </div> <div class="col-6"> <div class="mb-3"> <label class="form-label" for="form-wizard-progress-wizard-addregnum">Directors Mobile number registered with aadhar</label><input class="form-control" type="text" name="directors[' +
             directorIndex +
-            '][mobile]" placeholder="Enter Registration No" id="form-wizard-progress-wizard-addregnum"> <div class="invalid-feedback">Please provide Mobile number</div> </div> </div> <div class="col-6 mb-3"> <div class="mb-3"> <label>Upload PAN Card  :</label> <!-- required="required"  --> <input type="file" name="directors[' +
+            '][mobile]" maxlength="10" onkeypress="validate(event)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Enter Registration No" id="form-wizard-progress-wizard-addregnum"> <div class="invalid-feedback">Please provide Mobile number</div> </div> </div> <div class="col-6 mb-3"> <div class="mb-3"> <label>Upload PAN Card  :</label> <!-- required="required"  --> <input type="file" name="directors[' +
             directorIndex +
             '][d_pancard_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div> <div class="col-6 mb-3"> <div class="mb-3"> <label>Upload Aadhar Card  :</label> <!-- required="required"  --> <input type="file" name="directors[' +
             directorIndex +

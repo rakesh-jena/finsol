@@ -53,18 +53,6 @@ class TrustController extends Controller
         $data['trust_mobile'] = $request->input('trust_mobile');
         $lastInsertedId = UserTrustDetail::Create($data)->id;
 
-        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
-            $data['insert_id'] = $lastInsertedId;
-            $data['payment_purpose'] = 'Payment for Trust/NGO Register';
-            $data['name_of_pan'] = $data['name_of_trust'];
-            $data['email_id'] = $data['trust_email'];
-            $data['mobile_number'] = $data['trust_mobile'];
-            $data['payment_amount'] = PaymentValue::where('id', 12)->first()->value;
-            $data['type'] = 'Trust';
-            $data['route'] = 'trust.paymentregister';
-            $payment_Req = Helper::createInstaMojoOrder($data);
-        }
-
         if ($request->has('trustmember')) {
             $trustmember = $request->input('trustmember');
             UserTrustMember::where(['user_id' => $userId])->delete();
@@ -76,6 +64,18 @@ class TrustController extends Controller
                 $member['name_of_member'] = $ps['name_of_member'];
                 UserTrustMember::Create($member);
             }
+        }
+        
+        if (isset($lastInsertedId) && !empty($lastInsertedId)) {
+            $data['insert_id'] = $lastInsertedId;
+            $data['payment_purpose'] = 'Payment for Trust/NGO Register';
+            $data['name_of_pan'] = $data['name_of_trust'];
+            $data['email_id'] = $data['trust_email'];
+            $data['mobile_number'] = $data['trust_mobile'];
+            $data['payment_amount'] = PaymentValue::where('id', 12)->first()->value;
+            $data['type'] = 'Trust';
+            $data['route'] = 'trust.paymentregister';
+            $payment_Req = Helper::createInstaMojoOrder($data);
         }
         return redirect('/trust/register')->with('success', 'Registered Trust successfully!');
     }
