@@ -143,7 +143,6 @@ Route::post('trust/register', 'TrustController@register_form')->name('trust.paym
 //Udamy Registration DETAILS
 Route::get('udamy/register', 'UdamyController@register_form')->name('udamy.register_form');
 Route::post('udamy/register', 'UdamyController@storeUdamy')->name('udamy.register');
-// Route::post('udamy/register', 'UdamyController@register_form')->name('udamy.paymentregister');
 
 //Import Export Code registration DETAILS
 Route::get('importexport/register', 'ImportExportController@register_form')->name('importexport.register_form');

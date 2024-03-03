@@ -26,7 +26,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of
                                     Business
-                                </label><input class="form-control" type="text" name="name_of_udamy"
+                                </label><input class="form-control" type="text" pattern="[a-zA-Z]+" name="name_of_udamy"
                                     placeholder="Name of Business" required="required" />
                                 <div class="invalid-feedback">Please provide name of Business</div>
                             </div>
@@ -48,27 +48,27 @@
                                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                                     Number linked with Aadhar</label><input class="form-control" required=""
                                     type="text" name="udamy_mobile" placeholder="Mobile No"
-                                    id="form-wizard-progress-wizard-addregnum" />
+                                    onkeypress='validate(event)'
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    maxlength="10" id="form-wizard-progress-wizard-addregnum" />
                                 <div class="invalid-feedback">Please provide Mobile
                                     number</div>
                             </div>
                         </div>
                         <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
-                            <h6 class="detailspadding mb-0">Upload documents required for Udamy Registration
+                            <h6 class="detailspadding mb-0">Upload documents required for Udyam Registration
                             </h6>
                         </div>
                         <div class="row g-2 ">
-
                             @foreach ($udamy_images as $keyname => $image)
                                 <div class="col-6 mb-3">
                                     <div class="mb-3">
                                         <label>{{ $image['doc_name'] }} :</label>
-                                        <input type="file" name="trustmember[0][{{ $image['doc_key_name'] }}][]"
-                                            id="image-upload" class="myfrm form-control" multiple />
+                                        <input type="file" name="{{ $image['doc_key_name'] }}[]" id="image-upload"
+                                            class="myfrm form-control" multiple />
                                     </div>
                                 </div>
                             @endforeach
-
                         </div>
                         <div class="col-4">
                             <div class="mb-3">

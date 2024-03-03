@@ -1,6 +1,6 @@
 @if ($usersUdamy)
     <div class="row">
-        <h5>UDAMY Form Details</h5>
+        <h5>UDYAM Form Details</h5>
         <div class="col-12">
             <div id="tableExample" data-list='{"valueNames":["name","type"],"page":15,"pagination":true}'>
                 <div class="table-responsive scrollbar">

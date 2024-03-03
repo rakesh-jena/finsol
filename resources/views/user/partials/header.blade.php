@@ -122,7 +122,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('udamy.register_form') }}">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Udamy</span>
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Udyam</span>
                                 </div>
                             </a>
                             <!-- more inner pages-->

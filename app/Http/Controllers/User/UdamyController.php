@@ -66,5 +66,4 @@ class UdamyController extends Controller
         }
         return redirect('/udamy/register')->with('success', 'Registered Udamy successfully!');
     }
-
 }

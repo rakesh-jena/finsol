@@ -1,5 +1,5 @@
 @if (count($userUdamyDetails) > 0)
-    <h4>UDAMY Details</h4>
+    <h4>UDYAM Details</h4>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>

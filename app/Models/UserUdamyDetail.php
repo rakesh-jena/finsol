@@ -20,6 +20,8 @@ class UserUdamyDetail extends Authenticatable
         'udamy_email',
         'udamy_mobile',
         'docs_img',
+        'pan_img',
+        'aadhar_img',
         'status',
         'last_updated_by',
         'last_update_by_id',

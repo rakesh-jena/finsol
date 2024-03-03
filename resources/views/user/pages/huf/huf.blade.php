@@ -9,7 +9,7 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of HUF
-                </label><input class="form-control" type="text" name="name_of_huf" placeholder="Name of Huf"
+                </label><input class="form-control" type="text" pattern="[a-zA-Z]+" name="name_of_huf" placeholder="Name of Huf"
                     required="required" />
                 <div class="invalid-feedback">Please provide name of HUF</div>
             </div>
@@ -26,7 +26,7 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Karta
-                </label><input class="form-control" type="text" name="name_of_karta" placeholder="Name of Karta"
+                </label><input class="form-control" type="text" pattern="[a-zA-Z]+" name="name_of_karta" placeholder="Name of Karta"
                     required="required" />
                 <div class="invalid-feedback">Please provide name of Karta</div>
             </div>
@@ -35,8 +35,10 @@
             <div class="mb-3">
                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">
                     Mobile number
-                </label><input class="form-control" type="text" name="huf_mobile" required="required" maxlength="10"
-                    placeholder="Enter Mobile No" id="form-wizard-progress-wizard-addregnum" />
+                </label><input class="form-control" type="text" name="huf_mobile" onkeypress='validate(event)'
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="10" required="required" maxlength="10" placeholder="Enter Mobile No"
+                    id="form-wizard-progress-wizard-addregnum" />
                 <div class="invalid-feedback">Please provide Mobile
                     number</div>
             </div>

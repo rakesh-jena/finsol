@@ -60,8 +60,9 @@
                                                     <label class="form-label"
                                                         for="bootstrap-wizard-validation-wizard-company">
                                                         ESIC Number
-                                                    </label><input class="form-control" type="text"
-                                                        name="name_of_esic" placeholder="ESIC Number"
+                                                    </label>
+                                                    <input class="form-control" type="text"
+                                                        pattern="[0-9]+" name="name_of_esic" placeholder="ESIC Number"
                                                         required="required" />
                                                     <div class="invalid-feedback">Please provide ESIC Number</div>
                                                 </div>

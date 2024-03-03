@@ -1,13 +1,13 @@
 @if ($udamyDetails)
     <div class="card mb-3">
         <div class="card-header">
-            <h5 class="mb-0">UDAMY Details</h5>
+            <h5 class="mb-0">Udyam Details</h5>
         </div>
         <div class="card-body bg-light">
             <div class="row">
-                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Udamy :
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Udyam :
                     </label>{{ $udamyDetails->name_of_udamy }}</div>
-                <div class="col-lg-6 mb-3"> <label class="form-label" for="udamy-number">UDAMY Number :
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="udamy-number">Udyam Number :
                     </label>{{ $udamyDetails->udamy_number }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
                     </label>{{ $udamyDetails->mobile_number }}</div>
@@ -30,7 +30,7 @@
         <div class="card mb-3">
 
             <div class="card-header">
-                <h5 class="mb-0">UDAMY Documents</h5>
+                <h5 class="mb-0">Udyam Documents</h5>
             </div>
             <div class="card-body bg-light">
 
