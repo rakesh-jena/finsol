@@ -14,9 +14,6 @@
     <div class="row g-0">
         <div class="col-xl-12">
             <div class="card mb-3">
-                <!--  <div class="card-header">
-                                         <h6 class="mb-0">Select the Registration type</h6>
-                                    </div> -->
                 <div class="card-body">
                     @if (session('success'))
                         <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
@@ -68,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
-                                <h6 class="detailspadding mb-0">Upload documents required for Pan </h6>
+                                <h6 class="detailspadding mb-0">Upload documents required for TAN </h6>
                             </div>
                             <div class="row g-2 ">
                                 @foreach ($tanimages as $keyname => $image)

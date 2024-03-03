@@ -9,7 +9,7 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of HUF
-                </label><input class="form-control" type="text" pattern="[a-zA-Z]+" name="name_of_huf" placeholder="Name of Huf"
+                </label><input class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name_of_huf" placeholder="Name of Huf"
                     required="required" />
                 <div class="invalid-feedback">Please provide name of HUF</div>
             </div>
@@ -26,7 +26,7 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Karta
-                </label><input class="form-control" type="text" pattern="[a-zA-Z]+" name="name_of_karta" placeholder="Name of Karta"
+                </label><input class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name_of_karta" placeholder="Name of Karta"
                     required="required" />
                 <div class="invalid-feedback">Please provide name of Karta</div>
             </div>

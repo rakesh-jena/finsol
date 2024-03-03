@@ -9,8 +9,8 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Trust/NGO
-                </label><input class="form-control" type="text" pattern="[a-zA-Z]+" name="name_of_trust" placeholder="Name of Trust"
-                    required="required" />
+                </label><input class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name_of_trust"
+                    placeholder="Name of Trust" required="required" />
                 <div class="invalid-feedback">Please provide name of TRUST</div>
             </div>
         </div>
@@ -36,7 +36,8 @@
             <div class="mb-3">
                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">
                     Mobile number
-                </label><input class="form-control" type="text" name="trust_mobile" onkeypress='validate(event)'
+                </label>
+                <input class="form-control" type="text" name="trust_mobile" onkeypress='validate(event)'
                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                     maxlength="10" required="required" maxlength="10" placeholder="Enter Mobile No"
                     id="form-wizard-progress-wizard-addregnum" />
@@ -79,7 +80,7 @@
             <div class="col-4 mb-3">
                 <div class="mb-3">
                     <label>{{ $image['doc_name'] }} :</label>
-                    <input type="file" name="trustmember[0][{{ $image['doc_key_name'] }}][]" id="image-upload"
+                    <input type="file" name="trustmember[0][{{ $image['doc_key_name'] }}]" id="image-upload"
                         class="myfrm form-control" multiple />
                 </div>
             </div>
@@ -113,6 +114,10 @@
             '][name_of_member]" placeholder="Name of Member" required="required"> <div class="invalid-feedback">Please provide name of Member</div></div></div><div class="col-4 mb-3"> <div class="mb-3"> <label>Photo of Trustee/Member :</label> <input type="file" name="trustmember[' +
             trustmemberIndex +
             '][trust_of_member_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div></div>';
+        html +=
+            '<div class="col-4 mb-3"><div class="mb-3"><label>Upload Other Documents :</label><input type="file" name="trustmember[' +
+            trustmemberIndex +
+            '][docs_img][]" class="myfrm form-control" multiple=""></div></div>';
         html +=
             '<div class="mt-1 row g-2"><button class="deletetrustmember btn btn-outline-primary me-1 mb-1" type="button"><span class="fas fa-trash me-1" data-fa-transform="shrink-3"></span> Delete Member</button> </div></div>';
         $(this).before(html);

@@ -10,7 +10,7 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of Factory License
-                </label><input class="form-control" type="text" pattern="[a-zA-Z]+" name="name_of_facl"
+                </label><input class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name_of_facl"
                     placeholder="Name of Factory License" required="required" />
                 <div class="invalid-feedback">Please provide name of Factory License</div>
             </div>

@@ -12,7 +12,7 @@
                       <label class="form-label" for="form-wizard-progress-wizard-legalnamename">Trade
                           Name of
                           the
-                          Business</label><input required="" class="form-control" type="text" pattern="[a-zA-Z]+" name="name"
+                          Business</label><input required="" class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name"
                           placeholder="Trade Name of Business" id="form-wizard-progress-wizard-legalname"
                           data-wizard-validate-legal-name="true" />
                       <div class="invalid-feedback">Please provide Trade Name
@@ -34,7 +34,7 @@
                   <div class="mb-3">
                       <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                           number
-                          of company</label><input class="form-control" required="" type="text" pattern="[a-zA-Z]+" name="name"
+                          of company</label><input class="form-control" required="" type="text" pattern="[a-zA-Z\s]+" name="name"
                           placeholder="Enter Registration No" id="form-wizard-progress-wizard-addregnum" />
                       <div class="invalid-feedback">Please provide Mobile
                           number</div>

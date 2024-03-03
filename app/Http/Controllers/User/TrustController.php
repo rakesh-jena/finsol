@@ -40,7 +40,8 @@ class TrustController extends Controller
 
     public function storeTrust(Request $request)
     {
-
+        var_dump($request->input('trustmember'));
+        die();
         $userId = auth()->user()->id;
         $dataon = 'trustmember';
         $useName = $userId;

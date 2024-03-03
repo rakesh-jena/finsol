@@ -37,7 +37,7 @@
                             <div class="col-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Name
-                                    </label><input class="form-control" type="text" pattern="[a-zA-Z]+" name="name" placeholder="FullName"
+                                    </label><input class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name" placeholder="FullName"
                                         required="required" id="bootstrap-wizard-validation-wizard-email" />
                                     <div class="invalid-feedback">You must add Name</div>
                                 </div>

@@ -25,6 +25,7 @@ class UserTrustDetail extends Authenticatable
         'last_updated_by',
         'last_update_by_id',
         'additional_img',
+        'address_proof_img',
         'approved_img',
         'raised_img',
         'admin_note',

@@ -139,7 +139,6 @@ class Helper
         return $data;
     }
 
-
     public static function uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, $for_multiple)
     {
 
