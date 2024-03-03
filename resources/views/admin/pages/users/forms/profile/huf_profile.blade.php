@@ -31,31 +31,24 @@
         @endif
     </div>
 
-    <?php   if($hufMember) { 
-  foreach($hufMember  as $index => $dir) {
-                   ?>
-
-    <div class="card mb-3">
-        <div class="card-header">
-            <h5 class="mb-0">Member {{ $index + 1 }} Details / Documents </h5>
-            <h6><span>Member Name :{{ $dir->name_of_member }}</span>&nbsp;&nbsp;&nbsp;
-                </span></h6>
-        </div>
-        <div class="card-body bg-light">
-
-            @include('admin.pages.users.forms.profile.common', [
-                'documents' => $hufMemberDocuments,
-                'form_type' => 'Huf',
-                'details' => $hufDetails,
-            ])
-
-        </div>
-
-    </div>
-
-    </div>
-    </div>
-    <?php  
-                } } ?>
-
+    @if ($hufMember)
+        @foreach ($hufMember as $index => $dir)
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5 class="mb-0">Member {{ $index + 1 }} Details / Documents </h5>
+                    <h6><span>Member Name :{{ $dir->name_of_member }}</span>&nbsp;&nbsp;&nbsp;
+                        </span></h6>
+                </div>
+                <div class="card-body bg-light">
+                    @include('admin.pages.users.forms.profile.common', [
+                        'documents' => $hufMemberDocuments,
+                        'form_type' => 'Huf',
+                        'details' => $dir,
+                    ])
+                </div>
+            </div>
+            </div>
+            </div>
+        @endforeach
+    @endif
 @endif

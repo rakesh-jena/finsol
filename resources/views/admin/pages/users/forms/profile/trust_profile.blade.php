@@ -47,31 +47,24 @@
     @endif
     </div>
 
-    <?php   if($trustMember) { 
-  foreach($trustMember  as $index => $dir) {
-                   ?>
-
-    <div class="card mb-3">
-        <div class="card-header">
-            <h5 class="mb-0">Member {{ $index + 1 }} Details / Documents </h5>
-            <h6><span>Member Name :{{ $dir->name_of_member }}</span>&nbsp;&nbsp;&nbsp;
-            </h6>
-        </div>
-        <div class="card-body bg-light">
-
-            @include('admin.pages.users.forms.profile.common', [
-                'documents' => $trustMemberDocuments,
-                'form_type' => 'Trust',
-                'details' => $trustDetails,
-            ])
-
-        </div>
-
-    </div>
-
-    </div>
-    </div>
-    <?php  
-                } } ?>
-
+    @if ($trustMember)
+        @foreach ($trustMember as $index => $dir)
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5 class="mb-0">Member {{ $index + 1 }} Details / Documents </h5>
+                    <h6><span>Member Name :{{ $dir->name_of_member }}</span>&nbsp;&nbsp;&nbsp;
+                    </h6>
+                </div>
+                <div class="card-body bg-light">
+                    @include('admin.pages.users.forms.profile.common', [
+                        'documents' => $trustMemberDocuments,
+                        'form_type' => 'Trust',
+                        'details' => $trustDetails,
+                    ])
+                </div>
+            </div>
+            </div>
+            </div>
+        @endforeach
+    @endif
 @endif

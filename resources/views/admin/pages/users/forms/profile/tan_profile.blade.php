@@ -38,9 +38,7 @@
                     'form_type' => 'Tan',
                     'details' => $tanDetails,
                 ])
-
             </div>
-
         </div>
     @endif
     </div>

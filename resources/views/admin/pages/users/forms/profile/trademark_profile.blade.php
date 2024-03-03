@@ -44,30 +44,24 @@
     @endif
     </div>
 
-    <?php if($trademarkSignatory) { 
-  foreach($trademarkSignatory  as $index => $sign) {
-                   ?>
-
-    <div class="card mb-3">
-        <div class="card-header">
-            <h5 class="mb-0">Signatory {{ $index + 1 }} Details / Documents </h5>
-            <h6><span>Signatory Email :{{ $sign->trademark_sign_email }}</span>&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;<span>Signatory Mobile :{{ $sign->trademark_sign_mobile }}</span></h6>
-        </div>
-        <div class="card-body bg-light">
-
-            @include('admin.pages.users.forms.profile.common', [
-                'documents' => $trademarkSignatoryDocuments,
-                'form_type' => 'Trademark',
-                'details' => $trademarkDetails,
-            ])
-
-        </div>
-
-    </div>
-
-    </div>
-    </div>
-    <?php  
-                } } ?>
+    @if ($trademarkSignatory)
+        @foreach ($trademarkSignatory as $index => $sign)
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5 class="mb-0">Signatory {{ $index + 1 }} Details / Documents </h5>
+                    <h6><span>Signatory Email :{{ $sign->trademark_sign_email }}</span>&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;<span>Signatory Mobile :{{ $sign->trademark_sign_mobile }}</span></h6>
+                </div>
+                <div class="card-body bg-light">
+                    @include('admin.pages.users.forms.profile.common', [
+                        'documents' => $trademarkSignatoryDocuments,
+                        'form_type' => 'Trademark',
+                        'details' => $sign,
+                    ])
+                </div>
+            </div>
+            </div>
+            </div>
+        @endforeach
+    @endif
 @endif

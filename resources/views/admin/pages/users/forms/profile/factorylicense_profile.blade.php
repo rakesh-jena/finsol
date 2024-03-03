@@ -38,9 +38,7 @@
                     'form_type' => 'FactoryLicense',
                     'details' => $factorylicenseDetails,
                 ])
-
             </div>
-
         </div>
     @endif
     </div>

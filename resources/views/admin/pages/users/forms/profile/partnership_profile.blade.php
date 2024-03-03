@@ -44,30 +44,24 @@
     @endif
     </div>
 
-    <?php   if($partnershipPartner) { 
-  foreach($partnershipPartner  as $index => $dir) {
-                   ?>
-
-    <div class="card mb-3">
-        <div class="card-header">
-            <h5 class="mb-0">Partner {{ $index + 1 }} Details / Documents </h5>
-            <h6><span>Partner Email :{{ $dir->partner_email }}</span>&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;<span>Partner Mobile :{{ $dir->partner_mobile }}</span></h6>
-        </div>
-        <div class="card-body bg-light">
-
-            @include('admin.pages.users.forms.profile.common', [
-                'documents' => $partnershipPartnerDocuments,
-                'form_type' => 'Partnership',
-                'details' => $partnershipDetails,
-            ])
-
-        </div>
-
-    </div>
-
-    </div>
-    </div>
-    <?php  
-                } } ?>
+    @if ($partnershipPartner)
+        @foreach ($partnershipPartner as $index => $dir)
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5 class="mb-0">Partner {{ $index + 1 }} Details / Documents </h5>
+                    <h6><span>Partner Email :{{ $dir->partner_email }}</span>&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;<span>Partner Mobile :{{ $dir->partner_mobile }}</span></h6>
+                </div>
+                <div class="card-body bg-light">
+                    @include('admin.pages.users.forms.profile.common', [
+                        'documents' => $partnershipPartnerDocuments,
+                        'form_type' => 'Partnership',
+                        'details' => $dir,
+                    ])
+                </div>
+            </div>
+            </div>
+            </div>
+        @endforeach
+    @endif
 @endif

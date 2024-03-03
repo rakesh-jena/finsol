@@ -45,29 +45,24 @@
     @endif
     </div>
 
-    <?php if($esicSignatory) { 
-  foreach($esicSignatory  as $index => $sign) {
-                   ?>
-
-    <div class="card mb-3">
-        <div class="card-header">
-            <h5 class="mb-0">Signatory {{ $index + 1 }} Details / Documents </h5>
-            <h6><span>Signatory Email :{{ $sign->esic_sign_email }}</span>&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;<span>Signatory Mobile :{{ $sign->esic_sign_mobile }}</span></h6>
-        </div>
-        <div class="card-body bg-light">
-            @include('admin.pages.users.forms.profile.common', [
-                'documents' => $esicSignatoryDocuments,
-                'form_type' => 'Esic',
-                'details' => $esicDetails,
-            ])
-
-        </div>
-
-    </div>
-
-    </div>
-    </div>
-    <?php  
-                } } ?>
+    @if ($esicSignatory)
+        @foreach ($esicSignatory as $index => $sign)
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5 class="mb-0">Signatory {{ $index + 1 }} Details / Documents </h5>
+                    <h6><span>Signatory Email :{{ $sign->esic_sign_email }}</span>&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;<span>Signatory Mobile :{{ $sign->esic_sign_mobile }}</span></h6>
+                </div>
+                <div class="card-body bg-light">
+                    @include('admin.pages.users.forms.profile.common', [
+                        'documents' => $esicSignatoryDocuments,
+                        'form_type' => 'Esic',
+                        'details' => $sign,
+                    ])
+                </div>
+            </div>
+            </div>
+            </div>
+        @endforeach
+    @endif
 @endif
