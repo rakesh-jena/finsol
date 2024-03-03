@@ -11,8 +11,8 @@
         <div class="col-6">
             <div class="mb-3">
                 <label class="form-label" for="bootstrap-wizard-validation-wizard-partnership">Name of Firm
-                </label><input class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name_of_partnership" placeholder="Name of Firm"
-                    required="required" />
+                </label><input class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name_of_partnership"
+                    placeholder="Name of Firm" required="required" />
                 <div class="invalid-feedback">Please provide name of Firm</div>
             </div>
         </div>
@@ -128,8 +128,6 @@
             '][partner_declare_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div> <div class="col-4 mb-3"> <div class="mb-3"> <label> Attorney and affidavit (Formet Attached)  :</label> <!-- required="required" --> <input type="file" name="partnershippartner[' +
             partnershippartnerIndex +
             '][partner_declare_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div> <div class="mt-1 row g-2"> <button class="deletepartnershippartner btn btn-outline-primary me-1 mb-1" type="button"><span class="fas fa-trash me-1" data-fa-transform="shrink-3"></span> Delete Partner </button> </div></div>'
-
-
         );
     });
 

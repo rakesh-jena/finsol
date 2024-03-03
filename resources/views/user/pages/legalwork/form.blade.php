@@ -60,7 +60,7 @@
                                         Number</label><input class="form-control" required="" type="text"
                                         name="mobile_number" onkeypress='validate(event)'
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                        value="{{ Auth::user()->mobile }}" maxlength="10" placeholder="Enter Mobile Number"
+                                        value="{{ Auth::user()->mobile }}" maxlength="10" maxlength="10" placeholder="Enter Mobile Number"
                                         id="form-wizard-progress-wizard-addregnum" />
                                     <div class="invalid-feedback">Please provide Mobile
                                         number</div>

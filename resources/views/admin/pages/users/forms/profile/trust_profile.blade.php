@@ -59,7 +59,7 @@
                     @include('admin.pages.users.forms.profile.common', [
                         'documents' => $trustMemberDocuments,
                         'form_type' => 'Trust',
-                        'details' => $trustDetails,
+                        'details' => $dir,
                     ])
                 </div>
             </div>

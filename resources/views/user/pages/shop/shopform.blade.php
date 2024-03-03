@@ -61,7 +61,7 @@
                                         Number linked with Aadhar</label><input class="form-control" required=""
                                         name="mobile_number" type="text" onkeypress='validate(event)'
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                        value="{{ Auth::user()->mobile }}" placeholder="Enter Mobile No"
+                                        value="{{ Auth::user()->mobile }}" maxlength="10" placeholder="Enter Mobile No"
                                         id="form-wizard-progress-wizard-addregnum" />
                                     <div class="invalid-feedback">Please provide Mobile
                                         number</div>

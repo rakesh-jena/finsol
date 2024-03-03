@@ -60,8 +60,6 @@
 
     </div>
 
-    </div>
-
     <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
         <h6 class="detailspadding mb-0">Upload documents of Trustee/Member</h6>
     </div>
@@ -80,7 +78,7 @@
             <div class="col-4 mb-3">
                 <div class="mb-3">
                     <label>{{ $image['doc_name'] }} :</label>
-                    <input type="file" name="trustmember[0][{{ $image['doc_key_name'] }}]" id="image-upload"
+                    <input type="file" name="trustmember[0][{{ $image['doc_key_name'] }}][]" id="image-upload"
                         class="myfrm form-control" multiple />
                 </div>
             </div>
