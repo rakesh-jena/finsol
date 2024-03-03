@@ -13,6 +13,7 @@ class UserUdamyDetail extends Authenticatable
 
     protected $fillable = [
         'user_id',
+        'payment_status',
         'payment_unique_id',
         'name_of_udamy',
         'udamy_number',

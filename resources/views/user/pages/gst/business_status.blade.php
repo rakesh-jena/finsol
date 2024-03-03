@@ -12,9 +12,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">GST Registration <font
-                                        color="#ec465f">Status
-                                    </font>
+                                <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">GST Registration <span
+                                    style="color:#ec465f">Status
+                                    </span>
                                 </h1>
                                 <p class="lead">Things you will get right out of the box with Finsol.</p>
                             </div>
@@ -264,8 +264,8 @@
                         <div class="row">
                             <div class="col">
                                 <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">Upload Documents
-                                    <font color="#ec465f">Status
-                                    </font>
+                                    <span style="color:#ec465f">Status
+                                    </span>
                                 </h1>
                                 <p class="lead">Things you will get right out of the box with Finsol.</p>
                             </div>
@@ -439,12 +439,6 @@
             padding: 0 !important;
         }
     </style>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script>
         window.onload = function() {
             var errorMessage = document.querySelector('.alert-danger');

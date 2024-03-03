@@ -14,6 +14,7 @@ class UserGstDetail extends Authenticatable
     protected $fillable = [
         'user_id',
         'email_id',
+        'payment_status',
         'payment_unique_id',
         'gst_type',
         'mobile_linked_aadhar',

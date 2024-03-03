@@ -16,6 +16,7 @@ class LegalWork extends Authenticatable
         'name',
         'mobile_number',
         'email_id',
+        'payment_status',
         'payment_unique_id',
         'company_mobile',
         'form_type',

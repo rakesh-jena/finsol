@@ -17,6 +17,7 @@ class UserPanDetail extends Authenticatable
         'name_of_pan',
         'pan_number',
         'mobile_number',
+        'payment_status',
         'payment_unique_id',
         'pan_aadhar_voterid_passport_img',
         'pan_driving_license',

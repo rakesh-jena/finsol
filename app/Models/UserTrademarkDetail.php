@@ -13,6 +13,7 @@ class UserTrademarkDetail extends Authenticatable
 
     protected $fillable = [
         'user_id',
+        'payment_status',
         'payment_unique_id',
         'trademark_number',
         'name_of_business',

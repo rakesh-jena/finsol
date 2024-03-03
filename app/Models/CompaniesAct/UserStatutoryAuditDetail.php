@@ -14,6 +14,7 @@ class UserStatutoryAuditDetail extends Authenticatable
     protected $fillable = [
         'user_id',
         'email_id',
+        'payment_status',
         'payment_unique_id',
         'name_of_company',
         'company_number',

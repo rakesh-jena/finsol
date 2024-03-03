@@ -14,6 +14,7 @@
         <tbody>
             @if ($legalworks)
                 @foreach ($legalworks as $key => $detail)
+                {{$detail}}
                     <tr class="align-middle" data-toggle="collapse" data-target="#{{ $detail->type . $key }}"
                         class="accordion-toggle">
 
@@ -37,18 +38,20 @@
                                     Paid
                                     <span class="ms-1 fas fa-check" data-fa-transform="shrink-2">
                                     </span>
-                                @else
-                                    <form action="{{ route('dashboard.register') }}" method="POST">
+                                </span>
+                            @else
+                                <span>
+                                    <form action="{{ route('legalwork.register') }}" method="POST">
                                         @csrf
 
                                         <input type="hidden" name="form_type" value="Legal">
                                         <input type="hidden" name="insert_id" value="{{ $detail->id }}">
                                         <input type="hidden" name="payment_amount"
                                             value="{{ $legal_instamojo_amount }}">
-                                        <input type="hidden" name="route" value="form_dashboard">
+                                        <input type="hidden" name="route" value="legalwork.dashboard">
                                         <input type="hidden" name="payment_purpose" value="LEGALWORK">
                                         <input type="hidden" name="email_id" value="{{ $detail->email_id }}">
-                                        <input type="hidden" name="name_of_pan" value="{{ $detail->name_of_pan }}">
+                                        <input type="hidden" name="name_of_pan" value="{{ $detail->name }}">
                                         <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}"
                                             value="{{ $detail->mobile_number }}">
 

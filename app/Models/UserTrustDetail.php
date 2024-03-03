@@ -13,6 +13,7 @@ class UserTrustDetail extends Authenticatable
 
     protected $fillable = [
         'user_id',
+        'payment_status',
         'payment_unique_id',
         'name_of_trust',
         'trust_number',

@@ -19,6 +19,9 @@ class DashboardController extends Controller
 
     public function index(Request $request)
     {
+        if (isset($request->payment_id) && !empty($request->payment_request_id)) {
+            $this->storePaymentData($request);
+        }
         $userId = auth()->user()->id;
         $data['userCaDetails'] = UserCaDetail::whereIn('status', [1, 2, 3, 4])->where('user_id', $userId)->orderBy('id', 'DESC')->get();
         $data['userNetworthDetails'] = UserNetworthDetail::whereIn('status', [1, 2, 3, 4])->where('user_id', $userId)->orderBy('id', 'DESC')->get();
@@ -127,4 +130,49 @@ class DashboardController extends Controller
         return response()->download($zipName)->deleteFileAfterSend(true);
     }
 
+    public function createInstaMojoOrder(Request $request)
+    {
+        // Session::put('form_type', $request->form_type);
+        $request->session()->put('form_type', $request->form_type);
+
+        $this->payment_type = $request->form_type;
+        $userId = auth()->user()->id;
+        $data['insert_id'] = $request->insert_id;
+        $data['payment_purpose'] = 'Payment for ' . $request->payment_purpose . ' Register';
+        $data['payment_amount'] = $request->payment_amount;
+        $data['type'] = $request->form_type;
+        $data['route'] = $request->route;
+        $data['user_id'] = $userId;
+        $data['email_id'] = $request['email_id'];
+        $data['name_of_pan'] = $request['name_of_pan'];
+        $data['mobile_number'] = $request['mobile_number'];
+
+        $payment_Req = Helper::createInstaMojoOrder($data);
+    }
+
+    public function storePaymentData($data)
+    {
+        $form_type = session()->get('form_type');
+
+        if ($form_type == 'Ca') {
+            UserCaDetail::where('payment_unique_id', '=', $data->payment_request_id)->update(array('payment_status' => $data->payment_status));
+        } else if ($form_type == 'Networth') {
+            UserNetworthDetail::where('payment_unique_id', '=', $data->payment_request_id)->update(array('payment_status' => $data->payment_status));
+        } else if ($form_type == 'Turnover') {
+            UserTurnoverDetail::where('payment_unique_id', '=', $data->payment_request_id)->update(array('payment_status' => $data->payment_status));
+        }
+
+        $response = $data->toArray();
+        $response['userid'] = auth()->user()->id;
+        $response['type'] = $form_type;
+
+        Helper::storePaymentResponse($response);
+
+        if ($data->payment_status == 'Credit') {
+            $msg = 'Payment received successfully!';
+        } else {
+            $msg = 'We are unable to complete payment transaction. Please contact to Administrator.';
+        }
+        return redirect('certification/dashboard')->with('payment_success', $msg);
+    }
 }

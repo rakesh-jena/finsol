@@ -129,6 +129,7 @@ Route::post('company/register', 'CompanyController@register_form')->name('compan
 Route::get('partnership/register', 'PartnershipController@register_form')->name('partnership.register_form');
 Route::post('partnership', 'PartnershipController@storePartnership')->name('partnership.register');
 Route::post('partnership/register', 'PartnershipController@register_form')->name('partnership.paymentregister');
+
 //HUF Regitration DETAILS
 Route::get('huf/register', 'HufController@register_form')->name('huf.register_form');
 Route::post('huf', 'HufController@storeHuf')->name('huf.register');
@@ -190,6 +191,10 @@ Route::post('factorylicense/register', 'FactoryLicenseController@storeFactoryLic
 Route::get('isi/register', 'ISIController@register_form')->name('isi.register_form');
 Route::post('isi/register', 'ISIController@storeISI')->name('isi.register');
 
+//IT ACT Payment Routes
+Route::post('it-act/payment-register', 'ITActController@createInstaMojoOrder')->name('itAct.register');
+Route::get('it-act/store_payment_data', 'ITActController@storePaymentData')->name('itAct.storedata');
+
 Route::group(
     [
         'namespace' => 'CompaniesAct',
@@ -219,6 +224,10 @@ Route::group(
         Route::post('companiesact/download/raised/file', 'DashboardController@raisedFile')->name('companiesact_web_raisedFile');
         Route::post('companiesact/download/approved/file', 'DashboardController@approvedFile')->name('companiesact_web_approvedFile');
         Route::post('companiesact/queryraised', 'DashboardController@queryRaised')->name('companiesact_query_raised');
+        
+        //Companies Act Payment Routes
+        Route::post('companiesact/payment-register', 'DashboardController@createInstaMojoOrder')->name('companiesact.register');
+        Route::get('companiesact/store_payment_data', 'DashboardController@storePaymentData')->name('companiesact.storedata');
     },
 );
 
@@ -243,6 +252,10 @@ Route::group(
         Route::post('certification/download/raised/file', 'DashboardController@raisedFile')->name('certification_web_raisedFile');
         Route::post('certification/download/approved/file', 'DashboardController@approvedFile')->name('certification_web_approvedFile');
         Route::post('certification/queryraised', 'DashboardController@queryRaised')->name('certification_query_raised');
+        
+        //Certification Payment Routes
+        Route::post('certification/payment-register', 'DashboardController@createInstaMojoOrder')->name('certification.register');
+        Route::get('certification/store_payment_data', 'DashboardController@storePaymentData')->name('certification.storedata');
     },
 );
 
@@ -263,6 +276,10 @@ Route::group(
         Route::post('loan-finance/download/raised/file', 'DashboardController@raisedFile')->name('loan_web_raisedFile');
         Route::post('loan-finance/download/approved/file', 'DashboardController@approvedFile')->name('loan_web_approvedFile');
         Route::post('loan-finance/queryraised', 'DashboardController@queryRaised')->name('loan_query_raised');
+        
+        //Loan & Finance Payment Routes
+        Route::post('loan-finance/payment-register', 'DashboardController@createInstaMojoOrder')->name('loan.register');
+        Route::get('loan-finance/store_payment_data', 'DashboardController@storePaymentData')->name('loan.storedata');
     }
 );
 
@@ -272,11 +289,15 @@ Route::group(
         Route::get('legal-work/register', 'LegalController@register_form')->name('legalwork.register_form');
         Route::post('legal-work/register', 'LegalController@storeLegalWork')->name('legalwork.register');
 
-        //Loan & Finance Dashboard
+        //LegalWork Dashboard
         Route::get('legal-work/dashboard', 'DashboardController@index')->name('legalwork.dashboard');
         Route::post('legal-work/download/raised/file', 'DashboardController@raisedFile')->name('legalwork_web_raisedFile');
         Route::post('legal-work/download/approved/file', 'DashboardController@approvedFile')->name('legalwork_web_approvedFile');
         Route::post('legal-work/queryraised', 'DashboardController@queryRaised')->name('legalwork_query_raised');
+        
+        //LegalWork Payment Routes
+        Route::post('legal-work/payment-register', 'DashboardController@createInstaMojoOrder')->name('legalwork.register');
+        Route::get('legal-work/store_payment_data', 'DashboardController@storePaymentData')->name('legalwork.storedata');
     }
 );
 Route::get('register/get-districts/{stateId}', [DropdownController::class, 'getDistricts']);

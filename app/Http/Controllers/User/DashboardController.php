@@ -406,7 +406,6 @@ class DashboardController extends Controller
         $data['mobile_number'] = $request['mobile_number'];
 
         $payment_Req = Helper::createInstaMojoOrder($data);
-
     }
 
     public function storePaymentData($data)
@@ -464,5 +463,4 @@ class DashboardController extends Controller
         }
         return redirect('/dashboard')->with('payment_success', $msg);
     }
-
 }

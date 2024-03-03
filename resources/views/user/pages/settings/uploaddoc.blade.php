@@ -8,8 +8,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">User <font color="#ec465f">Settings
-                                    </font>
+                                <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">User <span style="color:#ec465f">Settings
+                                    </span>
                                 </h1>
 
                             </div>

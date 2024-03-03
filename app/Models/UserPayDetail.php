@@ -18,6 +18,7 @@ class UserPayDetail extends Authenticatable
         'mobile_number',
         'payment_for',
         'amount',
+        'payment_status',
         'payment_unique_id',
     ];
 

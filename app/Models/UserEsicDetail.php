@@ -13,6 +13,7 @@ class UserEsicDetail extends Authenticatable
 
     protected $fillable = [
         'user_id',
+        'payment_status',
         'payment_unique_id',
         'esic_email',
         'name_of_esic',

@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col">
                                 <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">
-                                    <font color="#ec465f">Copy Of Returns</font>
+                                    <span style="color:#ec465f">Copy Of Returns</span>
                                 </h1>
                                 <p class="lead">Things you will get right out of the box with Finsol.</p>
                             </div>

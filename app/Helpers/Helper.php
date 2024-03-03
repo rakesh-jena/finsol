@@ -41,6 +41,8 @@ use App\Models\LoanFinance\Estimated;
 use App\Models\LoanFinance\ProjectReport;
 use App\Models\UserISIDetail;
 use Illuminate\Support\Facades\Session;
+use App\Models\LegalWork;
+
 class Helper
 {
     public static function shout(string $string)
@@ -166,8 +168,6 @@ class Helper
         return $data;
     }
 
-
-
     public static function uploadAddMultipleImages($request, $key, $userId, $folderName, $dataon, $for_multiple)
     {
 
@@ -196,7 +196,6 @@ class Helper
         }
         return $data;
     }
-
 
     public static function getBaseUrl($request)
     {
@@ -229,9 +228,7 @@ class Helper
             env('INSTAMOJO_TEST_AUTH_TOKEN'),
             env('INSTAMOJO_TEST_URL'),
         );
-        // Session::forget('form_type');
-        // Session::flush();
-        // session('form_type', $data["type"]);
+
         session()->put('form_type', $data["type"]);
         session()->put('payment_amount', $data["payment_amount"]);
         session()->save();
@@ -243,7 +240,6 @@ class Helper
             "phone" => $data["mobile_number"],
             "redirect_url" => route($data['route']),
         ]);
-
  
         if(isset($response['id']) && !empty($response['id'])){
             if($data["type"] == 'TAN'){
@@ -255,22 +251,22 @@ class Helper
             else if($data["type"] == 'StatutoryAudit'){
                 UserStatutoryAuditDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-            else if($data["type"] == 'ADT'){
+            else if($data["type"] == 'Adt'){
                 UserAdtDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-            else if($data["type"] == 'AOC'){
+            else if($data["type"] == 'Aoc'){
                 UserAocDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-            else if($data["type"] == 'DINKYC'){
+            else if($data["type"] == 'Dinkyc'){
                 UserDinkycDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-            else if($data["type"] == 'MGT'){
+            else if($data["type"] == 'Mgt'){
                 UserMgtDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
             else if($data["type"] == 'Minutes'){
                 UserMinutesDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-            else if($data["type"] == 'CA'){
+            else if($data["type"] == 'Ca'){
                 UserCaDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
             else if($data["type"] == 'Networth'){
@@ -303,14 +299,12 @@ class Helper
             else if($data["type"] == 'Trust'){
                 UserTrustDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-
             else if($data["type"] == 'Udamy'){
                 UserUdamyDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
             else if($data["type"] == 'Import'){
                 UserImportExportDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-
             else if($data["type"] == 'Shop'){
                 UserShopDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
@@ -344,14 +338,18 @@ class Helper
             else if($data["type"] == 'Tds'){
                 UserTdsDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-            else if($data["type"] == 'Taxaudit'){
+            else if($data["type"] == 'Tax Audit'){
                 UserTaxauditDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
             else if($data["type"] == 'Custom'){
                 UserPayDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-            
+            else if($data["type"] == 'Legal'){
+                LegalWork::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
+            }
         }
+
+        //var_dump($response);die();
 
         header('Location: ' . $response['longurl']."?form_type=".$data["type"]);
         exit();

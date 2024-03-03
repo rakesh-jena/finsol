@@ -11,7 +11,7 @@
                             <div class="col">
                                 <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">Hello
                                     {{ Auth::user()->name }}, Welcome to
-                                    <font color="#ec465f">Finsol GST</font>
+                                    <span style="color:#ec465f">Finsol GST</span>
                                 </h1>
                                 <p class="lead">Things you will get right out of the box with Finsol.</p>
                             </div>

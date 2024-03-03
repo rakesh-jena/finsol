@@ -59,7 +59,6 @@ class LegalController extends Controller
             $data['route'] = 'legalwork.register';
             $payment_Req = Helper::createInstaMojoOrder($data);
         }
-
         return redirect('/legal-work/register')->with('success', 'Registered LegalWork successfully!');
     }
 }

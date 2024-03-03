@@ -39,16 +39,16 @@
                                     <span class="ms-1 fas fa-check" data-fa-transform="shrink-2">
                                     </span>
                                 @else
-                                    <form action="{{ route('dashboard.register') }}" method="POST">
+                                    <form action="{{ route('itAct.register') }}" method="POST">
                                         @csrf
 
                                         <input type="hidden" name="form_type" value="Tax Audit">
                                         <input type="hidden" name="insert_id" value="{{ $detail->id }}">
                                         <input type="hidden" name="payment_amount" value="{{ $tax_instamojo_amount }}">
-                                        <input type="hidden" name="route" value="form_dashboard">
+                                        <input type="hidden" name="route" value="it_act.dashboard">
                                         <input type="hidden" name="payment_purpose" value="Tax Audit">
                                         <input type="hidden" name="email_id" value="{{ $detail->email_id }}">
-                                        <input type="hidden" name="name_of_pan" value="{{ $detail->name_of_pan }}">
+                                        <input type="hidden" name="name_of_pan" value="{{ $detail->name_of_taxaudit }}">
                                         <input type="hidden" name="mobile_number" value="{{ Auth::user()->mobile }}"
                                             value="{{ $detail->mobile_number }}">
 

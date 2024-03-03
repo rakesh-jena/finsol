@@ -14,6 +14,7 @@ class UserImportExportDetail extends Authenticatable
     protected $fillable = [
         'user_id',
         'name_of_firm',
+        'payment_status',
         'payment_unique_id',
         'firm_number',
         'firm_email',

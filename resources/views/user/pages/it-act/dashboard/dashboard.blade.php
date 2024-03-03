@@ -12,13 +12,23 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">IT Act<font color="#ec465f">Status
-                                    </font>
+                                <h1 style="color: #2a3468;" class="fs-2 fs-sm-4 fs-md-5">IT Act<span
+                                        style="color:#ec465f">Status
+                                    </span>
                                 </h1>
                                 <p class="lead">Things you will get right out of the box with Finsol.</p>
                             </div>
                         </div>
-
+                        @if (session('payment_success'))
+                            <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
+                                <div class="bg-success me-3 icon-item"><span
+                                        class="fas fa-check-circle text-white fs-3"></span>
+                                </div>
+                                <p class="mb-0 flex-1">{{ session('payment_success') }}</p>
+                                <button class="btn-close" type="button" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
                         <!------ GST options drop ------->
 
                         <div class="row mt-2 g-3">
@@ -88,15 +98,3 @@
         padding: 0 !important;
     }
 </style>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-<script>
-    // window.onload = function() {
-    //     var errorMessage = document.querySelector('.alert-danger');
-    //     errorMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // };
-</script>
