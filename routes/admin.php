@@ -84,7 +84,7 @@ Route::group(
                 Route::post('companiesact/additional/file/{id}', 'CompaniesActDashboardController@additionalFile')->name('companiesact_additionalFile');
                 Route::post('companiesact/approved/file/{id}', 'CompaniesActDashboardController@approvedFile')->name('companiesact_approvedFile');
                 Route::get('companiesact/details/{name}/{id1}', 'CompaniesActDashboardController@allProfile')->name('companiesact_allformProfile');
-                Route::post('cafiles/{id}', 'CompaniesActDashboardController@allProfileDocDownload')->name('companiesact_allprofiledocdownload');
+                Route::post('companiesact/{id}', 'CompaniesActDashboardController@allProfileDocDownload')->name('companiesact_allprofiledocdownload');
 
                 // Display all form related to this user on Certification
                 Route::get('certification/dashboard/details/{id}', 'CertificationDashboardController@index')->name('certification_dashboard');
@@ -93,7 +93,7 @@ Route::group(
                 Route::post('certification/additional/file/{id}', 'CertificationDashboardController@additionalFile')->name('certification_additionalFile');
                 Route::post('certification/approved/file/{id}', 'CertificationDashboardController@approvedFile')->name('certification_approvedFile');
                 Route::get('certification/details/{name}/{id1}', 'CertificationDashboardController@allProfile')->name('certification_allformProfile');
-                Route::post('cafiles/{id}', 'CertificationDashboardController@allProfileDocDownload')->name('certification_allprofiledocdownload');
+                Route::post('certification/{id}', 'CertificationDashboardController@allProfileDocDownload')->name('certification_allprofiledocdownload');
 
                 // Display all form related to this user on Legal Work
                 Route::get('legal-work/dashboard/details/{id}', 'LegalWorkDashboardController@index')->name('legal_dashboard');
@@ -102,6 +102,7 @@ Route::group(
                 Route::post('legal-work/additional/file/{id}', 'LegalWorkDashboardController@additionalFile')->name('legal_additionalFile');
                 Route::post('legal-work/approved/file/{id}', 'LegalWorkDashboardController@approvedFile')->name('legal_approvedFile');
                 Route::get('legal-work/details/{id1}', 'LegalWorkDashboardController@allProfile')->name('legal_allformProfile');
+                Route::post('legal-work/{id}', 'LegalWorkDashboardController@allProfileDocDownload')->name('companiesact_allprofiledocdownload');
 
                 // Display all form related to this user on Legal Work
                 Route::get('loan-finance/dashboard/details/{id}', 'LoanDashboardController@index')->name('loan_dashboard');
@@ -110,6 +111,7 @@ Route::group(
                 Route::post('loan-finance/additional/file/{id}', 'LoanDashboardController@additionalFile')->name('loan_additionalFile');
                 Route::post('loan-finance/approved/file/{id}', 'LoanDashboardController@approvedFile')->name('loan_approvedFile');
                 Route::get('loan-finance/details/{name}/{id}', 'LoanDashboardController@allProfile')->name('loan_allformProfile');
+                Route::post('loan-finance/{id}', 'LoanDashboardController@allProfileDocDownload')->name('companiesact_allprofiledocdownload');
 
                 //User Payments
                 Route::get('payments/{userId}', 'PaymentController@userPaymentDetails');

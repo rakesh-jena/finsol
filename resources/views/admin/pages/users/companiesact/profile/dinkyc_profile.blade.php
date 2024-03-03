@@ -35,7 +35,7 @@
 
                 @include('admin.pages.users.companiesact.profile.common', [
                     'documents' => $dinkycDocuments,
-                    'form_type' => 'Mgt',
+                    'form_type' => 'Dinkyc',
                     'details' => $dinkycDetails,
                 ])
             </div>

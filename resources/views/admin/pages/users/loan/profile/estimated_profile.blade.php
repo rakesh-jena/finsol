@@ -25,7 +25,7 @@
             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    @if ($estimatedDetails->type == 'New Networth Registration')
+    @if ($estimatedDetails->type == 'New Loan Estimated Registration')
         <div class="networthrd mb-3">
 
             <div class="networthrd-header">
@@ -35,7 +35,7 @@
 
                 @include('admin.pages.users.loan.profile.common', [
                     'documents' => $estimatedDocuments,
-                    'form_type' => 'LFEstimated',
+                    'form_type' => 'Estimated',
                     'details' => $estimatedDetails,
                 ])
             </div>

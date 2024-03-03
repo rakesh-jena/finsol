@@ -25,7 +25,7 @@
             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    @if ($projectReportDetails->type == 'New Project Report Registration')
+    @if ($projectReportDetails->type == 'New ProjectReport Registration')
         <div class="projectReportrd mb-3">
 
             <div class="projectReportrd-header">
@@ -35,7 +35,7 @@
 
                 @include('admin.pages.users.loan.profile.common', [
                     'documents' => $projectReportDocuments,
-                    'form_type' => 'LFProjectReport',
+                    'form_type' => 'ProjectReport',
                     'details' => $projectReportDetails,
                 ])
             </div>

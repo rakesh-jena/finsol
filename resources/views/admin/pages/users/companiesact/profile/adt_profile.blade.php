@@ -25,7 +25,7 @@
             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    @if ($adtDetails->type == 'New Mgt Registration')
+    @if ($adtDetails->type == 'New Adt Registration')
         <div class="card mb-3">
 
             <div class="card-header">
@@ -35,7 +35,7 @@
 
                 @include('admin.pages.users.companiesact.profile.common', [
                     'documents' => $adtDocuments,
-                    'form_type' => 'Mgt',
+                    'form_type' => 'Adt',
                     'details' => $adtDetails,
                 ])
             </div>

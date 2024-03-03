@@ -35,7 +35,7 @@
 
                 @include('admin.pages.users.companiesact.profile.common', [
                     'documents' => $statutoryauditDocuments,
-                    'form_type' => 'Mgt',
+                    'form_type' => 'StatutoryAudit',
                     'details' => $statutoryauditDetails,
                 ])
             </div>

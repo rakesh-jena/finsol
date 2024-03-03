@@ -16,11 +16,11 @@ foreach ($documents as $row){
                 $keyname = $row->doc_key_name;
             @endphp
             @if ($details[$keyname])
-                <form action="{{ url('admin/user/cafiles/' . $details->user_id) }}" method="POST">
+                <form action="{{ url('admin/user/certification/' . $details->user_id) }}" method="POST">
                     @csrf
                     <input type="hidden" name="files" value="{{ $details[$keyname] }}">
                     <input type="hidden" name="id" value="{{ $details->id }}">
-                    <input type="hidden" name="form_type" value="{{ 'CompaniesAct/' . $form_type }}">
+                    <input type="hidden" name="form_type" value="{{ 'Certification/' . $form_type }}">
 
                     <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit"><small>Download
                             File</small>&nbsp;&nbsp;<span class="text-500 fas fa-download"></span></button>

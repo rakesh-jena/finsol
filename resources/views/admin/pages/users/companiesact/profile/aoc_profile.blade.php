@@ -1,7 +1,7 @@
 @if ($aocDetails)
     <div class="card mb-3">
         <div class="card-header">
-            <h5 class="mb-0">MGT Details</h5>
+            <h5 class="mb-0">AOC Details</h5>
         </div>
         <div class="card-body bg-light">
             <div class="row">
@@ -35,7 +35,7 @@
 
                 @include('admin.pages.users.companiesact.profile.common', [
                     'documents' => $aocDocuments,
-                    'form_type' => 'Mgt',
+                    'form_type' => 'Aoc',
                     'details' => $aocDetails,
                 ])
             </div>

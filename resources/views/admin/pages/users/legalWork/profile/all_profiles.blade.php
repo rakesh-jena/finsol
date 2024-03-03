@@ -65,7 +65,7 @@
                                             </div>
                                         @endif
 
-                                        @if ($details->type == 'New CA Registration')
+                                        @if ($details->type == 'New LegalWork Registration')
                                             <div class="card mb-3">
 
                                                 <div class="card-header">
@@ -75,7 +75,7 @@
 
                                                     @include('admin.pages.users.legalWork.profile.common', [
                                                         'documents' => $documents,
-                                                        'form_type' => 'Legal',
+                                                        'form_type' => 'LegalWork',
                                                         'details' => $details,
                                                     ])
                                                 </div>

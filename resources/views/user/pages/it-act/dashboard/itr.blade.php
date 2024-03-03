@@ -1,4 +1,4 @@
-@if (count($userItrDetails) > 0)<b>Adt Details</b>
+@if (count($userItrDetails) > 0)<b>ITR Details</b>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>

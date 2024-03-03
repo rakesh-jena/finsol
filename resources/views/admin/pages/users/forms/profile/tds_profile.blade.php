@@ -25,6 +25,7 @@
             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+    
     @if ($tdsDetails->type == 'New TDS Registration')
         <div class="card mb-3">
 

@@ -1,4 +1,4 @@
-@if (count($userTaxauditDetails) > 0)<b>Adt Details</b>
+@if (count($userTaxauditDetails) > 0)<b>Tax Audit Details</b>
     <table class="table table-condensed table-striped mt-2 mb-4">
         <thead>
             <tr>
