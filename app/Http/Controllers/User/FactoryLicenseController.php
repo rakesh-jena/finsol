@@ -47,7 +47,7 @@ class FactoryLicenseController extends Controller
         $folderName = 'public/uploads/users/' . $useName . '/FactoryLicense';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'FL');
         $data['user_id'] = $userId;
-        $data['name_of_facl'] = $request['name_of_udamy'];
+        $data['name_of_facl'] = $request['name_of_facl'];
         $data['facl_email'] = $request['facl_email'];
         $data['facl_mobile'] = $request['facl_mobile'];
         $lastInsertedId = UserFactoryLicenseDetail::Create($data)->id;

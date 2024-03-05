@@ -34,6 +34,7 @@ use App\Models\UserTrademarkSignatory;
 use App\Models\UserTrustDetail;
 use App\Models\UserTrustMember;
 use App\Models\UserUdamyDetail;
+use App\Models\UserISIDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
@@ -65,6 +66,7 @@ class FormsDashboardController extends Controller
         $data['usersLabour'] = UserLabourDetail::select('*')->where('user_id', $userId)->orderBy('id', 'DESC')->get();
         $data['usersShop'] = UserShopDetail::select('*')->where('user_id', $userId)->orderBy('id', 'DESC')->get();
         $data['usersIso'] = UserIsoDetail::select('*')->where('user_id', $userId)->orderBy('id', 'DESC')->get();
+        $data['usersIsi'] = UserISIDetail::select('*')->where('user_id', $userId)->orderBy('id', 'DESC')->get();
         $data['usersFssai'] = UserFssaiDetail::select('*')->where('user_id', $userId)->orderBy('id', 'DESC')->get();
         $data['usersItr'] = UserItrDetail::select('*')->where('user_id', $userId)->orderBy('id', 'DESC')->get();
         $data['usersTaxaudit'] = UserTaxauditDetail::select('*')->where('user_id', $userId)->orderBy('id', 'DESC')->get();
@@ -94,6 +96,7 @@ class FormsDashboardController extends Controller
         if ($name == 'epf') {
             $data['epfDetails'] = UserEpfDetail::find($Id);
             $data['epfDocuments'] = Documents::where(['for_multiple' => 'EPF Company'])->get();
+            $data['epfOtherDocuments'] = Documents::where(['for_multiple' => 'EPF Others'])->get();
             $data['epfSignatory'] = UserEpfSignatory::where(['user_epf_id' => $Id])->get();
             $data['epfSignatoryDocuments'] = Documents::where(['for_multiple' => 'EPF Signatory'])->get();
         }
@@ -158,7 +161,6 @@ class FormsDashboardController extends Controller
             $data['labourDocuments'] = Documents::where(['for_multiple' => 'Petty Contract'])->get();
             $data['labourSignatory'] = UserLabourSignatory::where(['user_labour_id' => $Id])->get();
             $data['labourSignatoryDocuments'] = Documents::where(['for_multiple' => 'Petty Contract Signatory'])->get();
-            // $data['labourOthers'] = UserLabourSignatory :: where(['user_labour_id' => $Id])->get();
             $data['labourOthersDocuments'] = Documents::where(['for_multiple' => 'Labour Contract'])->get();
         }
 
@@ -170,6 +172,11 @@ class FormsDashboardController extends Controller
         if ($name == 'iso') {
             $data['isoDetails'] = UserIsoDetail::find($Id);
             $data['isoDocuments'] = Documents::where(['for_multiple' => 'ISO'])->get();
+        }
+
+        if ($name == 'isi') {
+            $data['isiDetails'] = UserISIDetail::find($Id);
+            $data['isiDocuments'] = Documents::where(['for_multiple' => 'ISI'])->get();
         }
 
         if ($name == 'fssai') {
@@ -402,6 +409,13 @@ class FormsDashboardController extends Controller
                                                         <input type="text" class="form-control"  required="required" name="iso_number"   placeholder="Enter the Iso Number" />
                                                         <label>Name of ISO</label>
                                                         <input type="text"  required="required" class="form-control" id="nameofiso" name="name_of_iso" value="' . $details->name_of_iso . '"  placeholder="Name of Iso" />';
+                } else if ($formtype == "isi") {
+
+                    $details = UserISIDetail::find($id);
+                    $content = '<label>ISI Number</label>
+                    <input type="text" class="form-control"  required="required" name="isi_number"   placeholder="Enter the ISI Number" />
+                    <label>Name of ISI</label>
+                    <input type="text"  required="required" class="form-control" id="nameofiso" name="name_of_iso" value="' . $details->name_of_company . '"  placeholder="Name of ISI" />';
                 } else if ($formtype == "fssai") {
 
                     $details = UserFssaiDetail::find($id);
@@ -460,19 +474,6 @@ class FormsDashboardController extends Controller
         } catch (\Exception $e) {
             // Log::error('An error occurred: ' . $e->getMessage());
             return redirect()->back()->with('error', 'An error occurred. Please try again later.');
-        }
-    }
-
-    // get information based on all forms
-    public function statusviewold(Request $request)
-    {
-        $queryParam = $request->all();
-        $param = key($queryParam);
-        switch ($param) {
-            case "pan":$panId = $queryParam[$param];
-                return UserPanDetail::find($panId);
-                break;
-            default:break;
         }
     }
 
@@ -827,6 +828,27 @@ class FormsDashboardController extends Controller
                 $datas->save();
                 break;
 
+            case "isi":
+                $folderNameChange = ($request->type == 'approve') ? '/ISI/ApprovedImg' : '/ISI/RaisedImg';
+                $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
+                $isi_id = $request->id;
+                $datas = UserISIDetail::find($isi_id);
+                $status = ($request->type == 'approve') ? 4 : 2;
+                $datas->last_update_by = 'admin';
+                $datas->status = $status; // Approved
+                if ($request->type == 'approve') {
+                    $img = Helper::uploadImagesNormal($request, $userId, $folderName, 'approved_img');
+                    $datas->name_of_company = $request->name_of_company;
+                    $datas->isi_number = $request->isi_number;
+                    $datas->approved_img = $img['approved_img'];
+                } else {
+                    $img = Helper::uploadImagesNormal($request, $userId, $folderName, 'raised_img');
+                    $datas->admin_note = $request->admin_note;
+                    $datas->raised_img = $img['raised_img'];
+                }
+                $datas->save();
+                break;
+
             case "fssai":
                 $folderNameChange = ($request->type == 'approve') ? '/Fssai/ApprovedImg' : '/Fssai/RaisedImg';
                 $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
@@ -975,7 +997,6 @@ class FormsDashboardController extends Controller
     // download approved file for admin
     public function approvedFile(Request $request, $userId)
     {
-
         $files = $request->input('files');
         $commaValues = explode(",", $files);
         $userDetails = User::find($userId);

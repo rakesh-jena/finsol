@@ -14,6 +14,9 @@
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
                     </label>{{ $esicDetails->esic_email }}
                 </div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="epf_type">ESIC Type :
+                    </label>{{ $esicDetails->epf_type }}
+                </div>
             </div>
         </div>
     </div>
@@ -34,7 +37,7 @@
             <div class="card-body bg-light">
 
                 @include('admin.pages.users.forms.profile.common', [
-                    'documents' => $esicDocuments,
+                    'documents' => $esicDetails->esic_type == 'Company' ? $esicDocuments : $esicOthersDocuments,
                     'form_type' => 'Esic',
                     'details' => $esicDetails,
                 ])

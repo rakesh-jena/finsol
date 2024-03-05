@@ -22,6 +22,7 @@ class UserAdtDetail extends Authenticatable
         'res_img',
         'app_img',
         'letter_img',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',

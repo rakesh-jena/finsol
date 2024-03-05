@@ -10,9 +10,9 @@
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="factorylicense-number">Firm Number :
                     </label>{{ $factorylicenseDetails->facl_number }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                    </label>{{ $factorylicenseDetails->mobile_number }}</div>
+                    </label>{{ $factorylicenseDetails->facl_mobile }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                    </label>{{ $factorylicenseDetails->email_id }}</div>
+                    </label>{{ $factorylicenseDetails->facl_email }}</div>
             </div>
         </div>
     </div>

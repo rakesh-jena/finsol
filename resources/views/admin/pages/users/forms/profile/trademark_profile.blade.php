@@ -13,6 +13,8 @@
                     </label>{{ $trademarkDetails->trademark_mobile }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
                     </label>{{ $trademarkDetails->trademark_email }}</div>
+                    <div class="col-lg-6 mb-3"> <label class="form-label" for="type">Type :
+                    </label>{{ $trademarkDetails->trademark_type }}</div>
             </div>
         </div>
     </div>
@@ -33,7 +35,7 @@
             <div class="card-body bg-light">
 
                 @include('admin.pages.users.forms.profile.common', [
-                    'documents' => $trademarkDocuments,
+                    'documents' => $trademarkDetails->trademark_type == 'Company' ? $trademarkDocuments : $trademarkOthersDocuments,
                     'form_type' => 'Trademark',
                     'details' => $trademarkDetails,
                 ])

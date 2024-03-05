@@ -1,20 +1,12 @@
 @extends('admin.layouts.admin')
-
-{{-- @push('custom_styles') --}}
-{{-- @endpush --}}
-
 @section('content')
-
     <div class="row g-3 mb-3">
-
         <div class="col-md-12 col-xxl-3">
             <div class="card h-md-100 ecommerce-card-min-width">
-
                 <div class="card-body d-flex flex-column justify-content-end">
                     <div class="row">
                         <div class="col-12">
                             <div class="row">
-
                                 <!------------------section 1----------------->
                                 <div class="col-lg-12 pe-lg-2">
                                     @if (session('filenotexist'))
@@ -36,20 +28,24 @@
                                             <div class="card-body bg-light">
                                                 <div class="row">
                                                     <div class="col-lg-6 mb-3"> <label class="form-label"
-                                                            for="gst-type">Name of
-                                                            Compaany :
-                                                        </label>{{ $details->name_of_company }}</div>
+                                                            for="gst-type">Name :
+                                                        </label>{{ $details->name }}</div>
                                                     <div class="col-lg-6 mb-3"> <label class="form-label"
-                                                            for="pan-number">Company Number :
-                                                        </label>{{ $details->company_number }}</div>
-                                                    <div class="col-lg-6 mb-3"> <label class="form-label"
-                                                            for="mobile">Mobile
-                                                            :
+                                                            for="mobile">Mobile :
                                                         </label>{{ $details->mobile_number }}</div>
                                                     <div class="col-lg-6 mb-3"> <label class="form-label"
                                                             for="email1">Email :
                                                         </label>{{ $details->email_id }}
-                                                    </div>
+                                                    </div>                                                    
+                                                    <div class="col-lg-6 mb-3"> <label class="form-label"
+                                                        for="form_type">Registration Type :
+                                                    </label>{{ $details->form_type }}</div>
+                                                    <div class="col-lg-6 mb-3"> <label class="form-label"
+                                                        for="subject">Subject :
+                                                    </label>{{ $details->subject }}</div>
+                                                    <div class="col-lg-6 mb-3"> <label class="form-label"
+                                                        for="description">Description :
+                                                    </label>{{ $details->description }}</div>
                                                 </div>
                                             </div>
                                         </div>

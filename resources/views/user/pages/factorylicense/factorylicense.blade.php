@@ -5,7 +5,6 @@
     <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
         <h6 class="detailspadding mb-0">Details of your Factory License</h6>
     </div>
-
     <div class="mt-1 row g-2">
         <div class="col-6">
             <div class="mb-3">
@@ -47,7 +46,7 @@
             <div class="col-6 mb-3">
                 <div class="mb-3">
                     <label>{{ $image['doc_name'] }} :</label>
-                    <input type="file" name="trustmember[0][{{ $image['doc_key_name'] }}][]" id="image-upload"
+                    <input type="file" name="{{ $image['doc_key_name'] }}[]" id="image-upload"
                         class="myfrm form-control" multiple />
                 </div>
             </div>

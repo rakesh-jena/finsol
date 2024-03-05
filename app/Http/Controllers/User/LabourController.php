@@ -15,17 +15,9 @@ class LabourController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
-    {
-        echo "Detail page";
-        // $data['epf_company_images'] = Documents::where(['gst_type_val' => '6', 'for_multiple' => null])->get();
-        // $data['epf_company_signatory_images'] = Documents::where(['gst_type_val' => '6', 'for_multiple' => 'EPF Signatory'])->get();
-        // return view('user.pages.epf.epfform')->with($data);
-    }
 
     public function register_form()
     {
-
         if (isset($_REQUEST["payment_id"]) && !empty($_REQUEST["payment_request_id"])) {
             UserLabourDetail::where('payment_unique_id', '=', $_REQUEST["payment_request_id"])->update(array('payment_status' => $_REQUEST["payment_status"]));
             $response = $_REQUEST;
@@ -55,11 +47,9 @@ class LabourController extends Controller
         $dataon = 'laboursignatory';
         $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Labour/Petty';
-        $data = Helper::uploadImagesNew($request, $userId, $folderName, 'PETTY');
+        $data = Helper::uploadImagesNew($request, $userId, $folderName, 'Petty Contract');
         $data['user_id'] = $userId;
         $data['labour_type'] = $request['labour_type'];
-        // $matchthese = ['user_id'=>$userId, 'labour_type'=>'Company'];
-        // UserLabourDetail::where($matchthese)->delete();
         $data['name_of_labour'] = $request['name_of_labour'];
         $data['labour_email'] = $request['email_id'];
         $data['labour_mobile'] = $request['mobile_number'];
@@ -72,7 +62,7 @@ class LabourController extends Controller
             UserLabourSignatory::where(['user_id' => $userId])->delete();
             foreach ($laboursignatory as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Labour/Petty/Signatory';
-                $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'PETTY Signatory');
+                $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'Petty Contract Signatory');
                 $partner['user_labour_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;
                 $partner['labour_sign_email'] = $ps['email'];
@@ -101,15 +91,13 @@ class LabourController extends Controller
         $userId = auth()->user()->id;
         $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Labour/Labour';
-        $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LABOUR');
+        $data = Helper::uploadImagesNew($request, $userId, $folderName, 'Labour Contract');
         $data['user_id'] = $userId;
         $data['labour_email'] = $request['email_id'];
         $data['labour_mobile'] = $request['mobile_number'];
         $data['labour_type'] = $request['labour_type'];
         $data['name_of_labour'] = $request['name_of_labour'];
         $data['name_of_business'] = $request['name_of_business'];
-        // $matchthese = ['user_id' => $userId, 'labour_type' => 'Others'];
-        // UserLabourDetail::where($matchthese)->delete();
         $lastInsertedId = UserLabourDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

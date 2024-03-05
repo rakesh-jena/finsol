@@ -15,6 +15,9 @@
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
                     </label>{{ $epfDetails->epf_email }}
                 </div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="epf_type">EPF Type :
+                    </label>{{ $epfDetails->epf_type }}
+                </div>
             </div>
         </div>
     </div>
@@ -34,7 +37,7 @@
             </div>
             <div class="card-body bg-light">
                 @include('admin.pages.users.forms.profile.common', [
-                    'documents' => $epfDocuments,
+                    'documents' => $epfDetails->epf_type == 'Company' ? $epfDocuments : $epfOtherDocuments,
                     'form_type' => 'Epf/' . $epfDetails['epf_type'],
                     'details' => $epfDetails,
                 ])

@@ -37,11 +37,8 @@
                     'form_type' => 'Fssai',
                     'details' => $fssaiDetails,
                 ])
-
             </div>
-
         </div>
     @endif
     </div>
-
 @endif

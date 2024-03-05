@@ -5,8 +5,6 @@
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Email Id</th>
-                <!-- <th scope="col">Mobile Number</th> -->
-
                 <th scope="col">Type</th>
                 <th scope="col">Payment Status</th>
                 <th scope="col">Status</th>
@@ -17,9 +15,7 @@
         <tbody>
             @if ($userTrademarkDetails)
                 @foreach ($userTrademarkDetails as $key => $detail)
-                    <tr class="align-middle" data-toggle="collapse" data-target="#{{ $detail->type . $key }}"
-                        class="accordion-toggle">
-
+                    <tr>
                         <td class="text-nowrap">
                             {{ isset($detail->name_of_trademark) ? $detail->name_of_trademark : '-' }}
                         </td>
@@ -33,7 +29,8 @@
                         </td>
 
                         <!-- <td class="text-nowrap">{{ isset($detail->trademark_mobile) ? $detail->trademark_mobile : '-' }}</td> -->
-                        <td class="text-nowrap">{{ isset($detail->type) ? $detail->type : '-' }}</td>
+                        <td class="text-nowrap">{{ isset($detail->trademark_type) ? $detail->trademark_type : '-' }}
+                        </td>
                         <td class="text-nowrap">
 
                             @if ($detail->payment_status == 'Credit')
@@ -116,7 +113,6 @@
                                 @endif
                             @endif
                         </td>
-
                     </tr>
                     @if ($detail->status == 2)
                         <tr>

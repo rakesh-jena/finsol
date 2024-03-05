@@ -1,7 +1,6 @@
 <!-- GST Approve Modal -->
 <div id="myApprovedModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
         <div class="modal-content">
             <form action="{{ url('admin/user/gst/change_status') }}" method="post" enctype="multipart/form-data">
                 @csrf

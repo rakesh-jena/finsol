@@ -14,6 +14,14 @@
                     </label>{{ $tdsDetails->mobile_number }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
                     </label>{{ $tdsDetails->email_id }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Section :
+                    </label>{{ $tdsDetails->section }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">TDS Date :
+                    </label>{{ $tdsDetails->tds_date }}</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">TDS Rate :
+                    </label>{{ $tdsDetails->tds_rate }}%</div>
+                <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">TDS Amount :
+                    </label>{{ $tdsDetails->tds_amount }}</div>
             </div>
         </div>
     </div>
@@ -25,7 +33,7 @@
             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    
+
     @if ($tdsDetails->type == 'New TDS Registration')
         <div class="card mb-3">
 

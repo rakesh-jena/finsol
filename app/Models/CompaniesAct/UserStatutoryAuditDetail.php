@@ -22,6 +22,7 @@ class UserStatutoryAuditDetail extends Authenticatable
         'pan_img',
         'aadhar_img',
         'bank_img',
+        'docs_img',
         'deduct_img',
         'expense_img',
         'asset_img',

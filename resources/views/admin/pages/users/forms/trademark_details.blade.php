@@ -26,7 +26,7 @@
 
                                         <td class="text-nowrap">
                                             {{ $detail->name_of_trademark ? $detail->name_of_trademark : '--' }}</td>
-                                        <td class="text-nowrap">{{ $detail->type ? $detail->type : '--' }}</td>
+                                        <td class="text-nowrap">{{ $detail->trademark_type ? $detail->trademark_type : '--' }}</td>
                                         <td>{{ $detail->admin_note ? $detail->admin_note : '--' }}</td>
                                         <td>{{ $detail->user_note ? $detail->user_note : '--' }}</td>
                                         <td><a

@@ -23,6 +23,8 @@ class UserDinkycDetail extends Authenticatable
         'pan_img',
         'aadhar_img',
         'pass_img',
+        'docs_img',
+        'pres_img',
         'status',
         'last_updated_by',
         'last_update_by_id',

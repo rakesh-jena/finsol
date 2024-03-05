@@ -9,7 +9,8 @@
                         <thead class="bg-200 text-900">
                             <tr>
                                 <th scope="col" class="sort" data-sort="name">Name</th>
-                                <th scope="col" class="sort" data-sort="type">Type</th>
+                                <th scope="col" class="sort" data-sort="type">EPF Type</th>
+                                <th scope="col">EPF Number</th>
                                 <th scope="col">Admin Note</th>
                                 <th scope="col">User Note</th>
                                 <th scope="col">Details</th>
@@ -27,7 +28,8 @@
                                         <td class="text-nowrap">{{ $detail->name_of_epf ? $detail->name_of_epf : '--' }}
                                         </td>
 
-                                        <td class="text-nowrap">{{ $detail->type ? $detail->type : '--' }}</td>
+                                        <td class="text-nowrap">{{ $detail->epf_type ? $detail->epf_type : '--' }}</td>
+                                        <td>{{ $detail->epf_number ? $detail->epf_number : '--' }}</td>
                                         <td>{{ $detail->admin_note ? $detail->admin_note : '--' }}</td>
                                         <td>{{ $detail->user_note ? $detail->user_note : '--' }}</td>
                                         <td><a

@@ -6,8 +6,8 @@
                 <th scope="col" class="w-15">Name</th>
                 <th scope="col" class="w-25">Email Id</th>
                 <th scope="col" class="w-15">Mobile Number</th>
-
-                <th scope="col" class="w-15">Type</th>
+                <th scope="col" class="w-15">EPF Number</th>
+                <th scope="col" class="w-15">EPF Type</th>
                 <th scope="col" class="w-15">Payment Status</th>
                 <th scope="col" class="w-15">Status</th>
 
@@ -31,9 +31,9 @@
                         </td>
 
                         <td class="text-nowrap">{{ isset($detail->epf_mobile) ? $detail->epf_mobile : '-' }}</td>
-                        <td class="text-nowrap">{{ isset($detail->type) ? $detail->type : '-' }}</td>
+                        <td class="text-nowrap">{{ isset($detail->epf_number) ? $detail->epf_number : '-' }}</td>
+                        <td class="text-nowrap">{{ isset($detail->epf_type) ? $detail->epf_type : '-' }}</td>
                         <td class="text-nowrap">
-
                             @if ($detail->payment_status == 'Credit')
                                 <span class="badge badge rounded-pill d-block p-2 badge-subtle-success">
                                     Paid

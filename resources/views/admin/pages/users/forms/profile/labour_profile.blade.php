@@ -27,75 +27,38 @@
     @endif
     @if ($labourDetails->type == 'New Labour Registration')
         <div class="card mb-3">
-
             <div class="card-header">
                 <h5 class="mb-0">LABOUR Documents</h5>
             </div>
             <div class="card-body bg-light">
                 @include('admin.pages.users.forms.profile.common', [
-                    'documents' => $labourDocuments,
-                    'form_type' => 'Labour',
+                    'documents' =>
+                        $labourDetails->labour_type == 'Company' ? $labourDocuments : $labourOthersDocuments,
+                    'form_type' => $labourDetails->labour_type == 'Company' ? 'Labour/Petty' : 'Labour/Labour',
                     'details' => $labourDetails,
                 ])
-
             </div>
-
         </div>
     @endif
     </div>
 
-    <?php if($labourSignatory) { 
-  foreach($labourSignatory  as $index => $sign) {
-                   ?>
-
-    <div class="card mb-3">
-        <div class="card-header">
-            <h5 class="mb-0">Signatory {{ $index + 1 }} Details / Documents </h5>
-            <h6><span>Signatory Email :{{ $sign->labour_sign_email }}</span>&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;<span>Signatory Mobile :{{ $sign->labour_sign_mobile }}</span></h6>
-        </div>
-        <div class="card-body bg-light">
-
-            <?php
-            //Columns must be a factor of 12 (1,2,3,4,6,12)
-            $numOfCols1 = 3;
-            $rowCount1 = 0;
-            $bootstrapColWidth1 = 12 / $numOfCols1;
-            ?>
-            <div class="row">
-                <?php
-foreach ($labourSignatoryDocuments as $row){
-?>
-                <div class="col-md-<?php echo $bootstrapColWidth1; ?>">
-                    <h6>{{ $row->doc_name }}</h6>
-                    @php
-                        $keyname = $row->doc_key_name;
-                    @endphp
-
-                    <form action="{{ url('admin/user/files/' . $labourDetails->user_id) }}" method="POST">
-                        @csrf
-
-                        <input type="hidden" name="files" value="{{ $labourDetails[$keyname] }}">
-                        <input type="hidden" name="id" value="{{ $labourDetails->id }}">
-                        <input type="hidden" name="form_type" value="Labour">
-
-                        <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn" type="submit"><small>Download
-                                File</small>&nbsp;&nbsp;<span class="text-500 fas fa-download"></span></button>
-                    </form>
-                    <br />
+    @if ($labourSignatory)
+        @foreach ($labourSignatory as $index => $sign)
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5 class="mb-0">Signatory {{ $index + 1 }} Details / Documents </h5>
+                    <h6><span>Signatory Email :{{ $sign->labour_sign_email }}</span>&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;<span>Signatory Mobile :{{ $sign->labour_sign_mobile }}</span></h6>
                 </div>
-                <?php
-    $rowCount1++;
-    if($rowCount1 % $numOfCols1 == 0) echo '</div><div class="row">';
-}
-?>
+                <div class="card-body bg-light">
+                    @include('admin.pages.users.forms.profile.common', [
+                        'documents' => $labourSignatoryDocuments,
+                        'form_type' => 'Labour/Petty/Signatory',
+                        'details' => $sign,
+                    ])
+                </div>
             </div>
-
-        </div>
-
-    </div>
-    </div>
-    <?php  
-                } } ?>
-
+            </div>
+        @endforeach
+    @endif
 @endif

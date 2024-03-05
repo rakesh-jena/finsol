@@ -14,7 +14,6 @@
         <tbody>
             @if ($legalworks)
                 @foreach ($legalworks as $key => $detail)
-                {{$detail}}
                     <tr class="align-middle" data-toggle="collapse" data-target="#{{ $detail->type . $key }}"
                         class="accordion-toggle">
 
@@ -62,7 +61,6 @@
                                 </span>
                             @endif
                         </td>
-
                         <td colspan=7>
                             @if ($detail->status == 2)
                                 <span class="badge badge rounded-pill d-block p-2 badge-subtle-warning accordion-toggle"
@@ -71,9 +69,9 @@
                                         data-fa-transform="shrink-2"></span>
                                 </span>
                                 @if ($detail->raised_img != '')
-                                    <form action="{{ route('certification_web_raisedFile') }}" method="POST">
+                                    <form action="{{ route('legalwork_web_raisedFile') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="form_type" value="Ca">
+                                        <input type="hidden" name="form_type" value="Legal">
                                         <input type="hidden" name="files" value="{{ $detail->raised_img }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn"
@@ -95,17 +93,18 @@
                                                 class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
 
                                         @if ($detail->approved_img != '')
-                                            <form action="{{ route('certification_web_approvedFile') }}"
+                                            <form action="{{ route('legalwork_web_approvedFile') }}"
                                                 method="POST">
                                                 @csrf
-                                                <input type="hidden" name="form_type" value="Ca">
+                                                <input type="hidden" name="form_type" value="Legal">
                                                 <input type="hidden" name="files"
                                                     value="{{ $detail->approved_img }}">
 
                                                 <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn"
                                                     type="submit"><small>Download
                                                         File</small>&nbsp;&nbsp;<span
-                                                        class="text-500 fas fa-download"></span></button>
+                                                        class="text-500 fas fa-download"></span>
+                                                    </button>
                                             </form>
                                         @endif
                                     @else
@@ -129,7 +128,7 @@
                                     <br /><br />
                                     <div class="col">
                                         <form class="needs-validation" novalidate="novalidate"
-                                            action="{{ route('certification_query_raised') }}" method="post"
+                                            action="{{ route('legalwork_query_raised') }}" method="post"
                                             enctype="multipart/form-data">
                                             @csrf
                                             <span
@@ -146,7 +145,7 @@
                                             <label>Enter Your Suggestion:</label>
                                             <textarea name="user_note" style="height:90px;width:100%"></textarea>
 
-                                            <input type="hidden" name="form_type" value="Ca" />
+                                            <input type="hidden" name="form_type" value="Legal" />
 
                                             <input type="hidden" name="id" value="{{ $detail->id }}" />
                                             <div class="mt-3">
@@ -167,7 +166,6 @@
                                     <br />
                                 </div>
                             </td>
-
                         </tr>
                     @endif
                 @endforeach

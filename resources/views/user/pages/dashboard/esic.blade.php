@@ -6,8 +6,8 @@
                 <th scope="col" class="w-15">Name</th>
                 <th scope="col" class="w-25">Email Id</th>
                 <th scope="col" class="w-15">Mobile Number</th>
-
-                <th scope="col" class="w-15">Type</th>
+                <th scope="col" class="w-15">ESIC Number</th>
+                <th scope="col" class="w-15">ESIC Type</th>
                 <th scope="col" class="w-15">Payment Status</th>
                 <th scope="col" class="w-15">Status</th>
 
@@ -31,7 +31,8 @@
                         </td>
 
                         <td class="text-nowrap">{{ isset($detail->esic_mobile) ? $detail->esic_mobile : '-' }}</td>
-                        <td class="text-nowrap">{{ isset($detail->type) ? $detail->type : '-' }}</td>
+                        <td class="text-nowrap">{{ isset($detail->esic_number) ? $detail->esic_number : '-' }}</td>
+                        <td class="text-nowrap">{{ isset($detail->esic_type) ? $detail->esic_type : '-' }}</td>
                         <td class="text-nowrap">
 
                             @if ($detail->payment_status == 'Credit')

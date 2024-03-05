@@ -50,6 +50,8 @@
                                         @include('admin.pages.users.forms.profile.shop_profile')
                                     @elseif($profilePage == 'iso')
                                         @include('admin.pages.users.forms.profile.iso_profile')
+                                    @elseif($profilePage == 'isi')
+                                        @include('admin.pages.users.forms.profile.isi_profile')
                                     @elseif($profilePage == 'fssai')
                                         @include('admin.pages.users.forms.profile.fssai_profile')
                                     @elseif($profilePage == 'itr')
