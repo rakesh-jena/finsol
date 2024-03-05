@@ -15,7 +15,7 @@
                     </label>{{ $esicDetails->esic_email }}
                 </div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="epf_type">ESIC Type :
-                    </label>{{ $esicDetails->epf_type }}
+                    </label>{{ $esicDetails->esic_type }}
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
 
                 @include('admin.pages.users.forms.profile.common', [
                     'documents' => $esicDetails->esic_type == 'Company' ? $esicDocuments : $esicOthersDocuments,
-                    'form_type' => 'Esic',
+                    'form_type' => $esicDetails->esic_type == 'Company' ? 'Esic/Company' : 'Esic/Others',
                     'details' => $esicDetails,
                 ])
 
@@ -59,7 +59,7 @@
                 <div class="card-body bg-light">
                     @include('admin.pages.users.forms.profile.common', [
                         'documents' => $esicSignatoryDocuments,
-                        'form_type' => 'Esic',
+                        'form_type' => 'Esic/Company/Signatory',
                         'details' => $sign,
                     ])
                 </div>

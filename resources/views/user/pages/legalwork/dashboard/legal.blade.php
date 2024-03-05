@@ -40,9 +40,8 @@
                                 </span>
                             @else
                                 <span>
-                                    <form action="{{ route('legalwork.register') }}" method="POST">
+                                    <form action="{{ route('legalwork.payment_register') }}" method="POST">
                                         @csrf
-
                                         <input type="hidden" name="form_type" value="Legal">
                                         <input type="hidden" name="insert_id" value="{{ $detail->id }}">
                                         <input type="hidden" name="payment_amount"

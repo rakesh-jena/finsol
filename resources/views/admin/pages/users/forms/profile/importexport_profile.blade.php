@@ -10,9 +10,9 @@
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="importexport-number">Firm Number :
                     </label>{{ $importexportDetails->firm_number }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
-                    </label>{{ $importexportDetails->mobile_number }}</div>
+                    </label>{{ $importexportDetails->firm_mobile }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
-                    </label>{{ $importexportDetails->email_id }}</div>
+                    </label>{{ $importexportDetails->firm_email }}</div>
             </div>
         </div>
     </div>

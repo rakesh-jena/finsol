@@ -14,11 +14,7 @@ class ImportExportController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
-    {
-        echo "asdads";
-        //  return view('user.pages.gst.details');
-    }
+
     public function register_form()
     {
         if (isset($_REQUEST["payment_id"]) && !empty($_REQUEST["payment_request_id"])) {
@@ -47,7 +43,7 @@ class ImportExportController extends Controller
         $folderName = 'public/uploads/users/' . $useName . '/ImportExport';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'IE');
         $data['user_id'] = $userId;
-        $data['name_of_firm'] = $request['name_of_udamy'];
+        $data['name_of_firm'] = $request['name_of_firm'];
         $data['firm_email'] = $request['firm_email'];
         $data['firm_mobile'] = $request['firm_mobile'];
         $lastInsertedId = UserImportExportDetail::Create($data)->id;

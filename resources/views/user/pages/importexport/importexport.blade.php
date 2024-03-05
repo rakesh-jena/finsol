@@ -30,7 +30,7 @@
             <div class="mb-3">
                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                     number
-                    registered with aadhar</label><input class="form-control" required="" type="text"
+                    registered with aadhar</label><input class="form-control" required="required" type="text"
                     name="firm_mobile" onkeypress='validate(event)'
                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                     maxlength="10" placeholder="Enter Mobile No" maxlength="10"
@@ -47,7 +47,7 @@
             <div class="col-6 mb-3">
                 <div class="mb-3">
                     <label>{{ $image['doc_name'] }} :</label>
-                    <input type="file" name="trustmember[0][{{ $image['doc_key_name'] }}][]" id="image-upload"
+                    <input type="file" name="{{ $image['doc_key_name'] }}[]" id="image-upload"
                         class="myfrm form-control" multiple />
                 </div>
             </div>

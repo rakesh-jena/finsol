@@ -295,7 +295,7 @@ Route::group(
         Route::post('legal-work/queryraised', 'DashboardController@queryRaised')->name('legalwork_query_raised');
         
         //LegalWork Payment Routes
-        Route::post('legal-work/payment-register', 'DashboardController@createInstaMojoOrder')->name('legalwork.register');
+        Route::post('legal-work/payment-register', 'DashboardController@createInstaMojoOrder')->name('legalwork.payment_register');
         Route::get('legal-work/store_payment_data', 'DashboardController@storePaymentData')->name('legalwork.storedata');
     }
 );

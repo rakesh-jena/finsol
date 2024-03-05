@@ -8,12 +8,16 @@
             <div class="row">
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Labour :
                     </label>{{ $labourDetails->name_of_labour }}</div>
+                    <div class="col-lg-6 mb-3"> <label class="form-label" for="business">Name of Individual/Business :
+                    </label>{{ $labourDetails->name_of_business }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">LABOUR Number :
                     </label>{{ $labourDetails->labour_number }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :
                     </label>{{ $labourDetails->labour_mobile }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="email1">Email :
                     </label>{{ $labourDetails->labour_email }}</div>
+                    <div class="col-lg-6 mb-3"> <label class="form-label" for="type">Type :
+                    </label>{{ $labourDetails->labour_type == 'Company' ? 'Petty Contractor' : 'Labour Contract' }}</div>
             </div>
         </div>
     </div>

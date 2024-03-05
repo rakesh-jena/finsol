@@ -22,7 +22,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-company">Name of
                         Individual/Business
-                    </label><input class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name_of_labour"
+                    </label><input class="form-control" type="text" pattern="[a-zA-Z\s]+" name="name_of_business"
                         placeholder="Name of Individual/Business" required="required" />
                     <div class="invalid-feedback">Please provide name of Individual/Business</div>
                 </div>

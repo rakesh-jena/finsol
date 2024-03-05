@@ -36,7 +36,7 @@
 
                 @include('admin.pages.users.forms.profile.common', [
                     'documents' => $trademarkDetails->trademark_type == 'Company' ? $trademarkDocuments : $trademarkOthersDocuments,
-                    'form_type' => 'Trademark',
+                    'form_type' => $trademarkDetails->trademark_type == 'Company' ? 'Trademark/Company' : 'Trademark/Others',
                     'details' => $trademarkDetails,
                 ])
 

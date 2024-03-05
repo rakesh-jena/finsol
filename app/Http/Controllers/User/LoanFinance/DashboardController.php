@@ -131,7 +131,6 @@ class DashboardController extends Controller
 
     public function createInstaMojoOrder(Request $request)
     {
-        // Session::put('form_type', $request->form_type);
         $request->session()->put('form_type', $request->form_type);
 
         $this->payment_type = $request->form_type;

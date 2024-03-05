@@ -63,7 +63,7 @@
                     <label class="form-label" for="bootstrap-wizard-validation-wizard-email">
                         Email</label><input class="form-control" type="email" name="esicsignatory[0][email]"
                         placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$"
-                        id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
+                        id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" required/>
                     <div class="invalid-feedback">You must add email</div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                         Mobile number
                         registered with aadhar</label><input class="form-control" type="text"
                         name="esicsignatory[0][mobile]" maxlength="10" onkeypress="validate(event)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" placeholder="Enter Mobile No"
-                        id="form-wizard-progress-wizard-addregnum" />
+                        id="form-wizard-progress-wizard-addregnum" required/>
                     <div class="invalid-feedback">Please provide Mobile
                         number</div>
                 </div>
