@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="canonical" href="{{ url()->current() }}">
+    <meta name="description"
+        content="Our mission is to provide exceptional tax consultation services to individuals and businesses, ensuring their financial success and peace of mind. We strive to be a trusted partner, delivering expert guidance, innovative solutions, and personalized attention to every client.">
+        <meta name="keywords" content="Finsol, SSK, Sampurna Suvidha Kendra">
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
@@ -15,6 +19,36 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MB388PL5');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3LT0G4S1L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-S3LT0G4S1L');
+    </script>
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicons/favicon-16x16.png') }}">
@@ -44,6 +78,10 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB388PL5" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="app">
         <!-- ===============================================-->
         <!--    Main Content-->
@@ -174,6 +212,7 @@
                 });
             }, 3000);
         });
+
         function validate(evt) {
             var theEvent = evt || window.event;
 

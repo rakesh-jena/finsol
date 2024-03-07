@@ -1,5 +1,7 @@
 @extends('user.layouts.blank')
-
+@section('seo')
+<title>Register | Sampurna Suvidha Kendra</title>
+@endsection
 @section('content')
     <!-- ===============================================-->
     <!--    Main Content-->
