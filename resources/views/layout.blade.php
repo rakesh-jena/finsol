@@ -127,7 +127,7 @@
                             data-fa-transform="rotate-45"></span></a>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-md-4">
                         <h5 class="text-uppercase text-white opacity-85 mb-3">Our Mission</h5>
                         <p class="text-600">Our mission is to provide exceptional tax consultation services to
                             individuals and
@@ -136,9 +136,9 @@
                             delivering expert guidance, innovative solutions, and personalized attention to every
                             client. </p>
                     </div>
-                    <div class="col ps-lg-6 ps-xl-8">
+                    <div class="col-md-8">
                         <div class="row mt-5 mt-lg-0">
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <h5 class="text-uppercase text-white opacity-85 mb-3">Read About</h5>
                                 <ul class="list-unstyled">
 
@@ -152,7 +152,7 @@
 
                                 </ul>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <h5 class="text-uppercase text-white opacity-85 mb-3">Contact</h5>
                                 <ul class="list-unstyled">
                                     <li class="mb-1">
@@ -168,7 +168,6 @@
 
                                 </ul>
                             </div>
-
                         </div>
                     </div>
                 </div>
