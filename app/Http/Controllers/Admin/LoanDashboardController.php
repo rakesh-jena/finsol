@@ -60,7 +60,6 @@ class LoanDashboardController extends Controller
 
     public function allProfileDocDownload(Request $request, $userId)
     {
-
         $files = $request->input('files');
         $id = $request->input('id');
         $commaValues = explode(",", $files);
@@ -167,18 +166,18 @@ class LoanDashboardController extends Controller
             case "LFEstimated":
                 $panid = $request->id;
                 $datas = Estimated::find($panid);
-                $fName = "Estimated";
+                $fName = "LFEstimated";
                 break;
 
             case "LFProjectReport":
                 $panid = $request->id;
                 $datas = ProjectReport::find($panid);
-                $fName = "ProjectReport";
+                $fName = "LFProjectReport";
                 break;
 
             default:break;
         }
-        $folderNameChange = ($request->type == 'approve') ? '/' . $fName . '/ApprovedImg' : '/' . $fName . '/RaisedImg';
+        $folderNameChange = ($request->type == 'approve') ? '//LoanFinance/' . $fName . '/ApprovedImg' : '//LoanFinance/' . $fName . '/RaisedImg';
         $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
         // $panid = $request->id;
         // $datas = UserPanDetail::find($panid);
@@ -213,7 +212,7 @@ class LoanDashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '//LoanFinance/' . $formType . '/' . 'AdditionalImg/' . $file;
                 if (File::exists($filePath)) {
                     $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
@@ -222,7 +221,7 @@ class LoanDashboardController extends Controller
                 }
             }
         } else {
-            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '//LoanFinance/' . $formType . '/' . 'AdditionalImg/' . $files;
             if (File::exists($filePath)) {
                 $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
@@ -249,7 +248,7 @@ class LoanDashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '//LoanFinance/' . $formType . '/' . 'ApprovedImg/' . $file;
                 if (File::exists($filePath)) {
                     $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
@@ -258,7 +257,7 @@ class LoanDashboardController extends Controller
                 }
             }
         } else {
-            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '//LoanFinance/' . $formType . '/' . 'ApprovedImg/' . $files;
             if (File::exists($filePath)) {
                 $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);

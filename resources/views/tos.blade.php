@@ -272,7 +272,8 @@
                 <div data-custom-class="body_text" class="lh-15"><span style="line-height:115%;">If you wish to make any
                         use
                         of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal
-                        Terms, please address your request to: contact@sampurnasuvidhakendra.com. If we ever grant you the
+                        Terms, please address your request to: <a href="mailto:contact@sampurnasuvidhakendra.com"
+                            data-custom-class="link">contact@sampurnasuvidhakendra.com</a>. If we ever grant you the
                         permission to post, reproduce, or publicly display any part of our Services or Content, you must
                         identify us as the owners or licensors of the Services, Content, or Marks and ensure that any
                         copyright
@@ -427,7 +428,9 @@
                 <div class="lh-15"><br></div>
 
                 <div data-custom-class="body_text" class="lh-15">
-                    If you are unsatisfied with our Services, please email us at contact@sampurnasuvidhakendra.com.</span>
+                    If you are unsatisfied with our Services, please email us at <a
+                        href="mailto:contact@sampurnasuvidhakendra.com"
+                        data-custom-class="link">contact@sampurnasuvidhakendra.com</a>.</span>
                 </div>
 
                 <div class="lh-15"><br></div>
@@ -1116,7 +1119,10 @@
             <div class="lh-15"><br></div>
             <div data-custom-class="body_text" class="lh-15">In order to resolve a complaint regarding the Services or to
                 receive further information regarding use of the Services, please contact us at:</div>
-            <div class="lh-15"><br></div>
+            <div class="lh-1"><br></div>
+            <div data-custom-class="heading_2" class="lh-15">
+                <strong>Headquater</strong>
+            </div>
             <div data-custom-class="body_text" class="lh-15"><strong>FINSOL & LEGAL (OPC) PRIVATE LIMITED</strong></div>
             <div data-custom-class="body_text" class="lh-15">101, RAJ KRISHNA APARTMENT, B.C. Road,</div>
             <div data-custom-class="body_text" class="lh-15">Puhlwari, Patna, Bihar 800001</div>
@@ -1124,9 +1130,15 @@
             <div data-custom-class="body_text" class="lh-15">
                 <strong>India</strong>
             </div>
-            <div data-custom-class="body_text" class="lh-15">
+            <div data-custom-class="link" class="lh-15">
                 <strong><a href="mailto:contact@sampurnasuvidhakendra.com">contact@sampurnasuvidhakendra.com</a></strong>
             </div>
+            <div class="lh-1"><br></div>
+            <div data-custom-class="heading_2" class="lh-15">
+                <strong>Corporate</strong>
+            </div>
+            <div data-custom-class="body_text" class="lh-15">Crystel Apartment, 3rd Floor, C/19/3,</div>
+            <div data-custom-class="body_text" class="lh-15">Nawada Extension, Utam Nagar, New Delhi 110059</div>
         </div>
     </div>
     <style>

@@ -42,7 +42,7 @@ class EstimatedController extends Controller
     {
         $userId = auth()->user()->id;
         $useName = $userId;
-        $folderName = 'public/uploads/users/' . $useName . '/LoanFinance/Estimated';
+        $folderName = 'public/uploads/users/' . $useName . '/LoanFinance/LFEstimated';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LF Estimated');
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];

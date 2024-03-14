@@ -49,7 +49,7 @@ class DashboardController extends Controller
         $id = $request->id;
         if ($id) {
             $useName = $userId;
-            $folderName = 'public/uploads/users/' . $useName . '/' . $formType . '/AdditionalImg';
+            $folderName = 'public/uploads/users/' . $useName . '/CompaniesAct/' . $formType . '/AdditionalImg';
             $name = 'additional_img';
             $img = Helper::uploadImagesNormal($request, $userId, $folderName, $name);
             if ($formType == 'Mgt') {
@@ -93,7 +93,7 @@ class DashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/CompaniesAct/' . $formType . '/' . 'ApprovedImg/' . $file;
                 if (File::exists($filePath)) {
                     $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
@@ -126,7 +126,7 @@ class DashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'RaisedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '/CompaniesAct/' . $formType . '/' . 'RaisedImg/' . $file;
                 if (File::exists($filePath)) {
                     $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);

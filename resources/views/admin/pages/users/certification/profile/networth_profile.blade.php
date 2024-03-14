@@ -6,7 +6,7 @@
         <div class="networthrd-body bg-light">
             <div class="row">
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
-                    </label>{{ $networthDetails->name_of_company }}</div>
+                    </label>{{ $networthDetails->name }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
                     </label>{{ $networthDetails->company_number }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :

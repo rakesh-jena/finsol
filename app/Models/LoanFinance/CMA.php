@@ -24,6 +24,7 @@ class CMA extends Authenticatable
         'provisional_img',
         'schedule_img',
         'proposal_img',
+        'docs_img',
         'status',
         'last_updated_by',
         'last_update_by_id',

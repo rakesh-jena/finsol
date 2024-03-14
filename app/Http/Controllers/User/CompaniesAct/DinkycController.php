@@ -21,7 +21,7 @@ class DinkycController extends Controller
             UserDinkycDetail::where('payment_unique_id', '=', $_REQUEST["payment_request_id"])->update(array('payment_status' => $_REQUEST["payment_status"]));
             $response = $_REQUEST;
             $response['userid'] = auth()->user()->id;
-            $response['type'] = 'DINKYC';
+            $response['type'] = 'Dinkyc';
             Helper::storePaymentResponse($response);
 
             if ($_REQUEST["payment_status"] == 'Credit') {

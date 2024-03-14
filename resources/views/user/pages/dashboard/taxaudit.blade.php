@@ -43,7 +43,7 @@
                                     <form action="{{ route('dashboard.register') }}" method="POST">
                                         @csrf
 
-                                        <input type="hidden" name="form_type" value="TAX AUDIT">
+                                        <input type="hidden" name="form_type" value="Taxaudit">
                                         <input type="hidden" name="insert_id" value="{{ $detail->id }}">
                                         <input type="hidden" name="payment_amount"
                                             value="{{ $taxAudit_instamojo_amount }}">

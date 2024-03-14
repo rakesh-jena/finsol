@@ -1,6 +1,6 @@
 @extends('layout')
 @section('seo')
-    <title>Privacy Policy | Sampurna Suvidha Kendra</title>    
+    <title>Privacy Policy | Sampurna Suvidha Kendra</title>
 @endsection
 @section('content')
     <style>
@@ -107,7 +107,8 @@
                 <strong>Questions or concerns? </strong>Reading this privacy notice will help you understand your privacy
                 rights and choices. If you do not agree with our policies and practices, please do not use our Services. If
                 you still have any questions or concerns, please contact us at
-                <strong>contact@sampurnasuvidhakendra.com</strong>.
+                <a href="mailto:contact@sampurnasuvidhakendra.com"
+                    data-custom-class="link"><strong>contact@sampurnasuvidhakendra.com</strong></a>.
             </span>
         </div>
         <div class="lh-15"><br></div>
@@ -260,7 +261,8 @@
             <a data-custom-class="link" href="#contact">10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a>
         </div>
         <div class="lh-15">
-            <a data-custom-class="link" href="#request">11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</a>
+            <a data-custom-class="link" href="#request">11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM
+                YOU?</a>
         </div>
         <div class="lh-15"><br></div>
         <div class="lh-15"><br></div>
@@ -275,9 +277,13 @@
             <strong><em>In Short:</em></strong> <em>We collect personal information that you provide to us.</em>
         </div>
         <div class="lh-15"><br></div>
-        <div class="lh-15">We collect personal information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</div>
+        <div class="lh-15">We collect personal information that you voluntarily provide to us when you register on the
+            Services, express an interest in obtaining information about us or our products and Services, when you
+            participate in activities on the Services, or otherwise when you contact us.</div>
         <div class="lh-15"><br></div>
-        <div class="lh-15"><strong>Personal Information Provided by You.</strong> The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:</div>
+        <div class="lh-15"><strong>Personal Information Provided by You.</strong> The personal information that we collect
+            depends on the context of your interactions with us and the Services, the choices you make, and the products and
+            features you use. The personal information we collect may include the following:</div>
         <ul>
             <li class="lh-15"><strong>email addresses</strong></li>
             <li class="lh-15"><strong>phone numbers</strong></li>
@@ -285,17 +291,28 @@
             <li class="lh-15"><strong>passwords</strong></li>
         </ul>
         <div class="lh-15"><br></div>
-        <div id="sensitiveinfo" class="lh-15"><strong>Sensitive Information.</strong> We do not process sensitive information.</div>
+        <div id="sensitiveinfo" class="lh-15"><strong>Sensitive Information.</strong> We do not process sensitive
+            information.</div>
         <div class="lh-15"><br></div>
-        <div class="lh-15"><strong>Payment Data.</strong> We may collect data necessary to process your payment if you make purchases, such as your payment instrument number, and the security code associated with your payment instrument. All payment data is stored by <strong>Instamojo.com</strong>. You may find their privacy notice link(s) here: <strong><a href="https://www.instamojo.com/company/privacy/" target="_blank" data-custom-class="link">https://www.instamojo.com/company/privacy/</a></strong>.</div>
+        <div class="lh-15"><strong>Payment Data.</strong> We may collect data necessary to process your payment if you
+            make purchases, such as your payment instrument number, and the security code associated with your payment
+            instrument. All payment data is stored by <strong>Instamojo.com</strong>. You may find their privacy notice
+            link(s) here: <strong><a href="https://www.instamojo.com/company/privacy/" target="_blank"
+                    data-custom-class="link">https://www.instamojo.com/company/privacy/</a></strong>.</div>
         <div class="lh-15"><br></div>
-        <div class="lh-15"><span data-custom-class="body_text">All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</span></div>
+        <div class="lh-15"><span data-custom-class="body_text">All personal information that you provide to us must be
+                true, complete, and accurate, and you must notify us of any changes to such personal information.</span>
+        </div>
         <div class="lh-15"><br></div>
-        <div id="infouse" class="lh-15"><strong><span data-custom-class="heading_1">2. HOW DO WE PROCESS YOUR INFORMATION?</span></strong></div>
-        <div class="lh-15"><strong><em>In Short: </em></strong><em>We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.</em></div>
+        <div id="infouse" class="lh-15"><strong><span data-custom-class="heading_1">2. HOW DO WE PROCESS YOUR
+                    INFORMATION?</span></strong></div>
+        <div class="lh-15"><strong><em>In Short: </em></strong><em>We process your information to provide, improve, and
+                administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We
+                may also process your information for other purposes with your consent.</em></div>
         <div class="lh-15"><br></div>
-        <div class="lh-15"><strong>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</strong></div>
-        
+        <div class="lh-15"><strong>We process your personal information for a variety of reasons, depending on how you
+                interact with our Services, including:</strong></div>
+
         <ul>
             <li class="lh-15"><strong>To facilitate account creation and authentication and otherwise manage user
                     accounts. </strong>We may process your information so you can create and log in to your account, as well
@@ -352,11 +369,11 @@
 
         <div class="lh-15"><br></div>
         <div id="inforetain" class="lh-15">
-                        <span id="control" style="color: rgb(0, 0, 0);">
-                            <strong>
-                                <span data-custom-class="heading_1">4. HOW LONG DO WE KEEP YOUR INFORMATION?</span>
-                            </strong>
-                        </span>
+            <span id="control" style="color: rgb(0, 0, 0);">
+                <strong>
+                    <span data-custom-class="heading_1">4. HOW LONG DO WE KEEP YOUR INFORMATION?</span>
+                </strong>
+            </span>
         </div>
 
         <div class="lh-15">
@@ -468,7 +485,8 @@
                 such minor dependent’s use of the Services. If we learn that personal information from users less than 18
                 years of age has been collected, we will deactivate the account and take reasonable measures to promptly
                 delete such data from our records. If you become aware of any data we may have collected from children under
-                age 18, please contact us at <bdt class="block-component">contact@sampurnasuvidhakendra.com</bdt>.
+                age 18, please contact us at <a href="mailto:contact@sampurnasuvidhakendra.com"
+                    data-custom-class="link">contact@sampurnasuvidhakendra.com</a>.
             </span>
         </div>
 
@@ -556,7 +574,8 @@
         <div class="lh-15">
             <span data-custom-class="body_text">
                 If you have questions or comments about your privacy rights, you may email us at
-                <bdt class="question">contact@sampurnasuvidhakendra.com</bdt>.
+                <a href="mailto:contact@sampurnasuvidhakendra.com"
+                    data-custom-class="link">contact@sampurnasuvidhakendra.com</a>.
             </span>
         </div>
 
@@ -564,7 +583,7 @@
             <br>
         </div>
 
-        <div id="DNT" class="lh-15">
+        <div id="DNT" class="lh-15" data-custom-class="heading_1">
             <span id="control" style="color: rgb(0, 0, 0);">
                 <strong><span data-custom-class="heading_1">8. CONTROLS FOR DO-NOT-TRACK FEATURES</span></strong>
             </span>
@@ -590,7 +609,7 @@
             <br>
         </div>
 
-        <div id="policyupdates">
+        <div id="policyupdates" data-custom-class="heading_1">
             <strong>9. DO WE MAKE UPDATES TO THIS NOTICE?</strong>
         </div>
         <div>
@@ -610,34 +629,42 @@
             directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of
             how we are protecting your information.
         </div>
-        <div id="contact">
+        <div id="contact" data-custom-class="heading_1">
             <strong>10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</strong>
         </div>
         <div>
             <br>
         </div>
-        <div>
+        <div data-custom-class="body_text">
             If you have questions or comments about this notice, you may email us at <a
-                href="mailto:contact@sampurnasuvidhakendra.com">contact@sampurnasuvidhakendra.com</a> or contact us by post
+                href="mailto:contact@sampurnasuvidhakendra.com"
+                data-custom-class="link">contact@sampurnasuvidhakendra.com</a> or contact us by post
             at:
         </div>
-        <div>
-            <span>FINSOL & LEGAL (OPC) PRIVATE LIMITED</span>
+        <div class="lh-1"><br></div>
+        <div data-custom-class="heading_2" class="lh-15">
+            <strong>Headquater</strong>
         </div>
-        <div>
-            <span>101,RAJ KRISHNA APARTMENT,B.C. Road,</span>
-        </div>
-        <div>
-            <span>Phulwari, Patna, Bihar, 800001</span>
-        </div>
+        <div data-custom-class="body_text" class="lh-15"><strong>FINSOL & LEGAL (OPC) PRIVATE LIMITED</strong></div>
+        <div data-custom-class="body_text" class="lh-15">101, RAJ KRISHNA APARTMENT, B.C. Road,</div>
+        <div data-custom-class="body_text" class="lh-15">Puhlwari, Patna, Bihar 800001</div>
 
-        <div class="lh-15">
-            <span><span data-custom-class="body_text">India</span></span>
+        <div data-custom-class="body_text" class="lh-15">
+            <strong>India</strong>
         </div>
+        <div data-custom-class="link" class="lh-15">
+            <strong><a href="mailto:contact@sampurnasuvidhakendra.com">contact@sampurnasuvidhakendra.com</a></strong>
+        </div>
+        <div class="lh-1"><br></div>
+        <div data-custom-class="heading_2" class="lh-15">
+            <strong>Corporate</strong>
+        </div>
+        <div data-custom-class="body_text" class="lh-15">Crystel Apartment, 3rd Floor, C/19/3,</div>
+        <div data-custom-class="body_text" class="lh-15">Nawada Extension, Utam Nagar, New Delhi 110059</div>
         <div class="lh-15">
             <br>
         </div>
-        <div id="request" class="lh-15">
+        <div id="request" class="lh-15" data-custom-class="heading_1">
             <strong>11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</strong>
         </div>
         <div class="lh-15">

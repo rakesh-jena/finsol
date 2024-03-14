@@ -230,7 +230,7 @@ class CompaniesActDashboardController extends Controller
                 break;
             default:break;
         }
-        $folderNameChange = ($request->type == 'approve') ? '/' . $fName . '/ApprovedImg' : '/' . $fName . '/RaisedImg';
+        $folderNameChange = ($request->type == 'approve') ? '//CompaniesAct/' . $fName . '/ApprovedImg' : '//CompaniesAct/' . $fName . '/RaisedImg';
         $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
         // $panid = $request->id;
         // $datas = UserPanDetail::find($panid);
@@ -265,7 +265,7 @@ class CompaniesActDashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '//CompaniesAct/' . $formType . '/' . 'AdditionalImg/' . $file;
                 if (File::exists($filePath)) {
                     $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
@@ -274,7 +274,7 @@ class CompaniesActDashboardController extends Controller
                 }
             }
         } else {
-            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'AdditionalImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '//CompaniesAct/' . $formType . '/' . 'AdditionalImg/' . $files;
             if (File::exists($filePath)) {
                 $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
@@ -301,7 +301,7 @@ class CompaniesActDashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '//CompaniesAct/' . $formType . '/' . 'ApprovedImg/' . $file;
                 if (File::exists($filePath)) {
                     $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
@@ -310,7 +310,7 @@ class CompaniesActDashboardController extends Controller
                 }
             }
         } else {
-            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '//CompaniesAct/' . $formType . '/' . 'ApprovedImg/' . $files;
             if (File::exists($filePath)) {
                 $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);

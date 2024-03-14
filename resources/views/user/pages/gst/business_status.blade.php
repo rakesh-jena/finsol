@@ -98,7 +98,7 @@
                                                                             {{ isset($detail->type) ? $detail->type : '-' }}
                                                                         </td>
 
-                                                                        <td colspan=7>
+                                                                        <td >
                                                                             @if ($detail->status == 2)
                                                                                 <span
                                                                                     class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
@@ -348,7 +348,7 @@
                                                                         {{ $doc->quarter ? $doc->quarter : '-' }}
                                                                         </< /td>
 
-                                                                        <!-- <td colspan=7>
+                                                                        <!-- <td >
                                                                                     <form action="{{ route('uploadDocumentFile') }}" method="POST">
                                                                                                     @csrf
                                                                                                     

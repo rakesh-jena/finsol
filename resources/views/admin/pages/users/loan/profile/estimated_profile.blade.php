@@ -35,7 +35,7 @@
 
                 @include('admin.pages.users.loan.profile.common', [
                     'documents' => $estimatedDocuments,
-                    'form_type' => 'Estimated',
+                    'form_type' => 'LFEstimated',
                     'details' => $estimatedDetails,
                 ])
             </div>

@@ -61,7 +61,7 @@
                             @endif
                         </td>
 
-                        <td colspan=7>
+                        <td >
                             @if ($detail->status == 2)
                                 <span class="badge badge rounded-pill d-block p-2 badge-subtle-warning accordion-toggle"
                                     data-bs-toggle="collapse" data-bs-target="#collapseContent1">Query

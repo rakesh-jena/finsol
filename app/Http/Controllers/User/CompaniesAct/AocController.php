@@ -21,7 +21,7 @@ class AocController extends Controller
             UserAocDetail::where('payment_unique_id', '=', $_REQUEST["payment_request_id"])->update(array('payment_status' => $_REQUEST["payment_status"]));
             $response = $_REQUEST;
             $response['userid'] = auth()->user()->id;
-            $response['type'] = 'AOC';
+            $response['type'] = 'Aoc';
             Helper::storePaymentResponse($response);
 
             if ($_REQUEST["payment_status"] == 'Credit') {
@@ -54,7 +54,7 @@ class AocController extends Controller
             $data['payment_purpose'] = 'Payment for AOC Register';
             $data['payment_amount'] = PaymentValue::where('id', 28)->first()->value;
             $data['name_of_pan'] = $data['name_of_company'];
-            $data['type'] = 'AOC';
+            $data['type'] = 'Aoc';
             $data['route'] = 'aoc.register';
             $payment_Req = Helper::createInstaMojoOrder($data);
         }

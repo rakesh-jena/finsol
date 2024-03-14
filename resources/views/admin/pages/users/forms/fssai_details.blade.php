@@ -2,7 +2,7 @@
     <div class="row mb-4">
         <h5>FSSAI Form Details</h5>
         <div class="col-12">
-            <div id="tableExample" data-list='{"valueNames":["type","email"],"page":15,"pagination":true}'>
+            <div id="tableExample" data-list='{"valueNames":["name","type","email"],"page":15,"pagination":true}'>
                 <div class="table-responsive scrollbar">
                     @if (session('additionalfilenotexist_fssai'))
                         <div class="alert alert-danger border-2 d-flex align-items-center" role="alert">
@@ -18,8 +18,7 @@
                     <table class="table table-bordered table-striped fs--1 mb-0">
                         <thead class="bg-200 text-900">
                             <tr>
-                                <!-- <th scope="col"></th> -->
-
+                                <th scope="col" class="sort" data-sort="name">Name</th>
                                 <th scope="col" class="sort" data-sort="email">Email Id</th>
                                 <th scope="col" class="sort" data-sort="type">Type</th>
                                 <th scope="col">Admin Note</th>
@@ -35,7 +34,7 @@
                             @if ($usersFssai)
                                 @foreach ($usersFssai as $detail)
                                     <tr class="align-middle" data-toggle="collapse" class="accordion-toggle">
-
+                                        <td class="text-nowrap">{{ $detail->name_of_fssai ? $detail->name_of_fssai : '--' }}</td>
                                         <td class="text-nowrap">{{ $detail->email_id ? $detail->email_id : '--' }}</td>
 
                                         <td class="text-nowrap">{{ $detail->type ? $detail->type : '--' }}</td>
@@ -73,7 +72,7 @@
 
                                                                 <input type="hidden" name="files"
                                                                     value="{{ $detail->additional_img }}">
-
+                                                                <input type="hidden" name="form_type" value="Fssai">
                                                                 <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn"
                                                                     type="submit"><small>Download
                                                                         File</small>&nbsp;&nbsp;<span

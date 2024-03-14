@@ -45,7 +45,7 @@ class ITActController extends Controller
             $folderName = 'public/uploads/users/' . $useName . '/' . $formType . '/AdditionalImg';
             $name = 'additional_img';
             $img = Helper::uploadImagesNormal($request, $userId, $folderName, $name);
-            if ($formType == 'TaxAudit') {
+            if ($formType == 'Taxaudit') {
                 $datas = UserTaxauditDetail::find($id);
             }
             if ($formType == 'ITR') {
@@ -154,10 +154,9 @@ class ITActController extends Controller
     public function storePaymentData($data)
     {
         $form_type = session()->get('form_type');
-
         if ($form_type == 'Itr') {
             UserItrDetail::where('payment_unique_id', '=', $data->payment_request_id)->update(array('payment_status' => $data->payment_status));
-        } else if ($form_type == 'Tax Audit') {
+        } else if ($form_type == 'Taxaudit') {
             UserTaxauditDetail::where('payment_unique_id', '=', $data->payment_request_id)->update(array('payment_status' => $data->payment_status));
         } else if ($form_type == 'Tds') {
             UserTdsDetail::where('payment_unique_id', '=', $data->payment_request_id)->update(array('payment_status' => $data->payment_status));

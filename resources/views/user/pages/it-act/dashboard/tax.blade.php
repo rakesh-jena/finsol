@@ -42,7 +42,7 @@
                                     <form action="{{ route('itAct.register') }}" method="POST">
                                         @csrf
 
-                                        <input type="hidden" name="form_type" value="Tax Audit">
+                                        <input type="hidden" name="form_type" value="Taxaudit">
                                         <input type="hidden" name="insert_id" value="{{ $detail->id }}">
                                         <input type="hidden" name="payment_amount" value="{{ $tax_instamojo_amount }}">
                                         <input type="hidden" name="route" value="it_act.dashboard">
@@ -60,7 +60,7 @@
                             @endif
                         </td>
 
-                        <td colspan=7>
+                        <td >
                             @if ($detail->status == 2)
                                 <span class="badge badge rounded-pill d-block p-2 badge-subtle-warning accordion-toggle"
                                     data-bs-toggle="collapse" data-bs-target="#collapseContent1">Query

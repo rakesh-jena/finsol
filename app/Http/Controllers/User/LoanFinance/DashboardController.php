@@ -9,6 +9,7 @@ use App\Models\LoanFinance\ProjectReport;
 use App\Models\PaymentValue;
 use Illuminate\Http\Request;
 use App\Helpers\Helper as Helper;
+use Illuminate\Support\Facades\File;
 
 class DashboardController extends Controller
 {
@@ -40,7 +41,7 @@ class DashboardController extends Controller
         $id = $request->id;
         if ($id) {
             $useName = $userId;
-            $folderName = 'public/uploads/users/' . $useName . '/' . $formType . '/AdditionalImg';
+            $folderName = 'public/uploads/users/' . $useName . '//LoanFinance/' . $formType . '/AdditionalImg';
             $name = 'additional_img';
             $img = Helper::uploadImagesNormal($request, $userId, $folderName, $name);
             if ($formType == 'CMA') {
@@ -64,7 +65,6 @@ class DashboardController extends Controller
 
     public function approvedFile(Request $request)
     {
-
         $files = $request->input('files');
         $commaValues = explode(",", $files);
         $userId = auth()->user()->id;
@@ -75,7 +75,7 @@ class DashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '//LoanFinance/' . $formType . '/' . 'ApprovedImg/' . $file;
                 if (File::exists($filePath)) {
                     $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
@@ -84,7 +84,7 @@ class DashboardController extends Controller
                 }
             }
         } else {
-            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'ApprovedImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '//LoanFinance/' . $formType . '/' . 'ApprovedImg/' . $files;
             if (File::exists($filePath)) {
                 $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);
@@ -108,7 +108,7 @@ class DashboardController extends Controller
         $zip->open($zipName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
         if (count($commaValues) > 1) {
             foreach ($commaValues as $file) {
-                $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'RaisedImg/' . $file;
+                $filePath = 'public/uploads/users/' . $useName . '//LoanFinance/' . $formType . '/' . 'RaisedImg/' . $file;
                 if (File::exists($filePath)) {
                     $fileContents = file_get_contents($filePath);
                     $zip->addFromString(basename($file), $fileContents);
@@ -117,7 +117,7 @@ class DashboardController extends Controller
                 }
             }
         } else {
-            $filePath = 'public/uploads/users/' . $useName . '/' . $formType . '/' . 'RaisedImg/' . $files;
+            $filePath = 'public/uploads/users/' . $useName . '//LoanFinance/' . $formType . '/' . 'RaisedImg/' . $files;
             if (File::exists($filePath)) {
                 $fileContents = file_get_contents($filePath);
                 $zip->addFromString(basename($files), $fileContents);

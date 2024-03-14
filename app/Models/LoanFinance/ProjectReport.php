@@ -14,6 +14,7 @@ class ProjectReport extends Authenticatable
     protected $fillable = [
         'user_id',
         'email_id',
+        'name',
         'payment_status',
         'payment_unique_id',
         'name_of_company',

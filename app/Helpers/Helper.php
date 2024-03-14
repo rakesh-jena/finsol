@@ -337,7 +337,7 @@ class Helper
             else if($data["type"] == 'Tds'){
                 UserTdsDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
-            else if($data["type"] == 'Tax Audit'){
+            else if($data["type"] == 'Taxaudit'){
                 UserTaxauditDetail::where('id', '=', $data["insert_id"])->update(array('payment_unique_id' => $response['id']));
             }
             else if($data["type"] == 'Custom'){

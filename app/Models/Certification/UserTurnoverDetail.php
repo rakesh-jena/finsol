@@ -31,6 +31,7 @@ class UserTurnoverDetail extends Authenticatable
         'admin_note',
         'user_note',
         'type',
+        'docs_img',
     ];
 
 }

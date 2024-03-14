@@ -301,7 +301,6 @@ class FormsDashboardController extends Controller
 
         try {
             if ($formtype) {
-
                 if ($formtype == "tan") {
 
                     $details = UserTanDetail::find($id);
@@ -415,7 +414,7 @@ class FormsDashboardController extends Controller
                     $content = '<label>ISI Number</label>
                     <input type="text" class="form-control"  required="required" name="isi_number"   placeholder="Enter the ISI Number" />
                     <label>Name of ISI</label>
-                    <input type="text"  required="required" class="form-control" id="nameofiso" name="name_of_iso" value="' . $details->name_of_company . '"  placeholder="Name of ISI" />';
+                    <input type="text"  required="required" class="form-control" id="nameofiso" name="name_of_company" value="' . $details->name_of_company . '"  placeholder="Name of ISI" />';
                 } else if ($formtype == "fssai") {
 
                     $details = UserFssaiDetail::find($id);

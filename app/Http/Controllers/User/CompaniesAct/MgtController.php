@@ -21,7 +21,7 @@ class MgtController extends Controller
             UserMgtDetail::where('payment_unique_id', '=', $_REQUEST["payment_request_id"])->update(array('payment_status' => $_REQUEST["payment_status"]));
             $response = $_REQUEST;
             $response['userid'] = auth()->user()->id;
-            $response['type'] = 'MGT';
+            $response['type'] = 'Mgt';
             Helper::storePaymentResponse($response);
 
             if ($_REQUEST["payment_status"] == 'Credit') {
@@ -54,7 +54,7 @@ class MgtController extends Controller
             $data['payment_purpose'] = 'Payment for MGT Register';
             $data['name_of_pan'] = $data['name_of_company'];
             $data['payment_amount'] = PaymentValue::where('id', 26)->first()->value;
-            $data['type'] = 'MGT';
+            $data['type'] = 'Mgt';
             $data['route'] = 'mgt.register';
             $payment_Req = Helper::createInstaMojoOrder($data);
         }

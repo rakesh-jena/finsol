@@ -6,7 +6,7 @@
         <div class="turnoverrd-body bg-light">
             <div class="row">
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="gst-type">Name of Compaany :
-                    </label>{{ $turnoverDetails->name_of_company }}</div>
+                    </label>{{ $turnoverDetails->name }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="pan-number">Company Number :
                     </label>{{ $turnoverDetails->company_number }}</div>
                 <div class="col-lg-6 mb-3"> <label class="form-label" for="mobile">Mobile :

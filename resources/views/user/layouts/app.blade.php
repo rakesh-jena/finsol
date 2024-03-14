@@ -10,7 +10,7 @@
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="description"
         content="Our mission is to provide exceptional tax consultation services to individuals and businesses, ensuring their financial success and peace of mind. We strive to be a trusted partner, delivering expert guidance, innovative solutions, and personalized attention to every client.">
-        <meta name="keywords" content="Finsol, SSK, Sampurna Suvidha Kendra">
+    <meta name="keywords" content="Finsol, SSK, Sampurna Suvidha Kendra">
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
@@ -34,8 +34,9 @@
             j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MB388PL5');
+        })(window, document, 'script', 'dataLayer', 'GTM-KL5VM9HK');
     </script>
+
     <!-- End Google Tag Manager -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3LT0G4S1L"></script>
@@ -79,7 +80,7 @@
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB388PL5" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL5VM9HK" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="app">

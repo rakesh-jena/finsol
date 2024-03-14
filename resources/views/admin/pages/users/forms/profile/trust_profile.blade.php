@@ -58,7 +58,7 @@
                 <div class="card-body bg-light">
                     @include('admin.pages.users.forms.profile.common', [
                         'documents' => $trustMemberDocuments,
-                        'form_type' => 'Trust',
+                        'form_type' => 'Trust/Member',
                         'details' => $dir,
                     ])
                 </div>

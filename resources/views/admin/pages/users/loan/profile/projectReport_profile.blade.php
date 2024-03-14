@@ -35,7 +35,7 @@
 
                 @include('admin.pages.users.loan.profile.common', [
                     'documents' => $projectReportDocuments,
-                    'form_type' => 'ProjectReport',
+                    'form_type' => 'LFProjectReport',
                     'details' => $projectReportDetails,
                 ])
             </div>

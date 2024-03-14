@@ -21,7 +21,7 @@ class AdtController extends Controller
             UserAdtDetail::where('payment_unique_id', '=', $_REQUEST["payment_request_id"])->update(array('payment_status' => $_REQUEST["payment_status"]));
             $response = $_REQUEST;
             $response['userid'] = auth()->user()->id;
-            $response['type'] = 'ADT';
+            $response['type'] = 'Adt';
             Helper::storePaymentResponse($response);
 
             if ($_REQUEST["payment_status"] == 'Credit') {
@@ -54,7 +54,7 @@ class AdtController extends Controller
             $data['payment_purpose'] = 'Payment for ADT Register';
             $data['payment_amount'] = PaymentValue::where('id', 27)->first()->value;
             $data['name_of_pan'] = $data['name_of_company'];
-            $data['type'] = 'ADT';
+            $data['type'] = 'Adt';
             $data['route'] = 'adt.register';
             $payment_Req = Helper::createInstaMojoOrder($data);
         }
