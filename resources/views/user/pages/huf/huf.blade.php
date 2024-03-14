@@ -35,7 +35,7 @@
             <div class="mb-3">
                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">
                     Mobile number
-                </label><input class="form-control" type="text" name="huf_mobile" onkeypress='validate(event)'
+                </label><input class="form-control" type="text" name="huf_mobile" onkeypress="validate(event)"
                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                     maxlength="10" required="required" maxlength="10" placeholder="Enter Mobile No"
                     id="form-wizard-progress-wizard-addregnum" />

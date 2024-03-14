@@ -30,7 +30,7 @@
                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                     number
                     registered with aadhar</label><input class="form-control" required="" type="text"
-                    name="facl_mobile" onkeypress='validate(event)'
+                    name="facl_mobile" onkeypress="validate(event)"
                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                     maxlength="10" maxlength="10" placeholder="Enter Mobile No"
                     id="form-wizard-progress-wizard-addregnum" />

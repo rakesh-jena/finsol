@@ -34,7 +34,7 @@
                         <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                             number
                             registered with aadhar</label><input class="form-control" required="" type="text"
-                            name="mobile_number" onkeypress='validate(event)'
+                            name="mobile_number" onkeypress="validate(event)"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                             value="{{ Auth::user()->mobile }}" maxlength="10" maxlength="10" placeholder="Enter Mobile No"
                             id="form-wizard-progress-wizard-addregnum" required="required"/>

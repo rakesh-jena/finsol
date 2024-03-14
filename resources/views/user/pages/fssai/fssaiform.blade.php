@@ -60,7 +60,7 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="form-wizard-progress-wizard-addregnum">Mobile
                                         Number linked with Aadhar</label><input class="form-control" required=""
-                                        name="mobile_number" onkeypress='validate(event)' type="text"
+                                        name="mobile_number" onkeypress="validate(event)" type="text"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                         value="{{ Auth::user()->mobile }}" maxlength="10" maxlength="10" placeholder="Enter Mobile No"
                                         id="form-wizard-progress-wizard-addregnum" />
