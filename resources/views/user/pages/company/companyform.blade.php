@@ -15,7 +15,6 @@
     <div class="row g-0">
         <div class="col-xl-12">
             <div class="card">
-
                 <div class="card-body">
                     @if (session('success'))
                         <div class="alert alert-success border-2 d-flex align-items-center" role="alert">

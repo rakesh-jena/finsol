@@ -55,12 +55,10 @@
                 <div class="card-body bg-light">
                     @include('admin.pages.users.forms.profile.common', [
                         'documents' => $companyDirectorDocuments,
-                        'form_type' => 'Company',
+                        'form_type' => 'Company/Signatory',
                         'details' => $dir,
                     ])
-
                 </div>
-
             </div>
             </div>
         @endforeach

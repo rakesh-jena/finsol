@@ -15,14 +15,14 @@
         <tbody>
             @if ($userTrademarkDetails)
                 @foreach ($userTrademarkDetails as $key => $detail)
-                    <tr>
+                    <tr class="align-middle" data-toggle="collapse" data-target="#{{ $detail->type . $key }}"
+                        class="accordion-toggle">
                         <td class="text-nowrap">
                             {{ isset($detail->name_of_trademark) ? $detail->name_of_trademark : '-' }}
                         </td>
 
                         <td class="text-nowrap">
                             <div class="align-items-center">
-
                                 <div class="ms-2">{{ $detail->trademark_email }}
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
 
                             </span>
                         </td>
-                        <td colspan=7>
+                        <td>
                             @if ($detail->status == 2)
                                 <span class="badge badge rounded-pill d-block p-2 badge-subtle-warning"
                                     data-bs-target="#collapseContent2">Query
@@ -156,7 +156,6 @@
                                     <br />
                                 </div>
                             </td>
-
                         </tr>
                     @endif
                 @endforeach

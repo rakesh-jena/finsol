@@ -42,7 +42,7 @@
                 <div class="card-body bg-light">
                     @include('admin.pages.users.forms.profile.common', [
                         'documents' => $hufMemberDocuments,
-                        'form_type' => 'Huf',
+                        'form_type' => 'Huf/Member',
                         'details' => $dir,
                     ])
                 </div>

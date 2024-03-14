@@ -57,7 +57,7 @@
                 <div class="card-body bg-light">
                     @include('admin.pages.users.forms.profile.common', [
                         'documents' => $trademarkSignatoryDocuments,
-                        'form_type' => 'Trademark',
+                        'form_type' => 'Trademark/Company/Signatory',
                         'details' => $sign,
                     ])
                 </div>

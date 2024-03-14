@@ -118,7 +118,7 @@
 
 <script>
     var trademarksignatoryIndex = 0;
-    $('.addtrademarksignatory').click(function() {
+    $('.addtrademarksignatory').one('click',function() {
         trademarksignatoryIndex++;
         $(this).before(
             '<div class="mt-1 row g-2" id="trademarksignatoryGroup"> <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2"> <h6 class="detailspadding mb-0">Upload documents of Add Signatory</h6> </div> <div class="col-6"> <div class="mb-3"> <label class="form-label" for="bootstrap-wizard-validation-wizard-email"> Email</label><input class="form-control" type="email" name="trademarksignatory[' +
@@ -135,9 +135,9 @@
             trademarksignatoryIndex +
             '][trademark_sign_spaceman_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div> <div class="col-4 mb-3"> <div class="mb-3"> <label> Declaration :</label> <!-- required="required" --> <input type="file" name="trademarksignatory[' +
             trademarksignatoryIndex +
-            '][trademark_sign_declare_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="mt-1 row g-2"> <button class="deletetrademarksignatory btn btn-outline-primary me-1 mb-1" type="button"><span class="fas fa-trash me-1" data-fa-transform="shrink-3"></span> Delete Signatory </button> </div></div>'
-
-
+            '][trademark_sign_declare_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="col-4 mb-3"> <div class="mb-3"> <label>Upload Other Documents :</label> <!-- required="required" --> <input type="file" name="trademarksignatory[' +
+            trademarksignatoryIndex +
+            '][docs_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="mt-1 row g-2"> <button class="deletetrademarksignatory btn btn-outline-primary me-1 mb-1" type="button"><span class="fas fa-trash me-1" data-fa-transform="shrink-3"></span> Delete Signatory </button> </div></div>'
         );
     });
 

@@ -55,7 +55,7 @@
                 <div class="card-body bg-light">
                     @include('admin.pages.users.forms.profile.common', [
                         'documents' => $partnershipPartnerDocuments,
-                        'form_type' => 'Partnership',
+                        'form_type' => 'Partnership/Partner',
                         'details' => $dir,
                     ])
                 </div>

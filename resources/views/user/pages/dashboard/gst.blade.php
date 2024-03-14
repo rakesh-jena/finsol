@@ -65,7 +65,7 @@
 
                             </span>
                         </td>
-                        <td colspan=7>
+                        <td>
                             @if ($detail->status == 2)
                                 <span class="badge badge rounded-pill d-block p-2 badge-subtle-warning">Query
                                     Raised - Click here <span class="ms-1 fas fa-stream"

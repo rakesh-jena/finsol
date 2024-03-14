@@ -106,7 +106,9 @@
                                                         for="form-wizard-progress-wizard-addregnum">
                                                         Mobile number
                                                         registered with aadhar</label><input class="form-control"
-                                                        type="text" name="epfsignatory[0][mobile]" maxlength="10" onkeypress="validate(event)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                        type="text" name="epfsignatory[0][mobile]" maxlength="10"
+                                                        onkeypress="validate(event)"
+                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                                         required="required" placeholder="Enter Mobile No"
                                                         id="form-wizard-progress-wizard-addregnum" />
                                                     <div class="invalid-feedback">Please provide Mobile
@@ -163,9 +165,9 @@
                                             epfsignatoryIndex +
                                             '][epf_sign_spaceman_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div> <div class="col-4 mb-3"> <div class="mb-3"> <label>Upload Declaration :</label> <!-- required="required" --> <input type="file" name="epfsignatory[' +
                                             epfsignatoryIndex +
-                                            '][epf_sign_declare_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="mt-1 row g-2"> <button class="deleteepfsignatory btn btn-outline-primary me-1 mb-1" type="button"><span class="fas fa-trash me-1" data-fa-transform="shrink-3"></span> Delete Signatory </button> </div></div>'
-
-
+                                            '][epf_sign_declare_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="col-4 mb-3"> <div class="mb-3"> <label>Upload Other Documents :</label> <!-- required="required" --> <input type="file" name="epfsignatory[' +
+                                            epfsignatoryIndex +
+                                            '][docs_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="mt-1 row g-2"> <button class="deleteepfsignatory btn btn-outline-primary me-1 mb-1" type="button"><span class="fas fa-trash me-1" data-fa-transform="shrink-3"></span> Delete Signatory </button> </div></div>'
                                         );
                                     });
 

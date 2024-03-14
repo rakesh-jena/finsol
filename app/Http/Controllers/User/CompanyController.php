@@ -49,7 +49,6 @@ class CompanyController extends Controller
 
     public function storeCompany(Request $request)
     {
-
         $userId = auth()->user()->id;
         $dataon = 'companysignatory';
         $useName = $userId;
@@ -64,7 +63,6 @@ class CompanyController extends Controller
         $lastInsertedId = UserCompanyDetail::Create($data)->id;        
 
         if ($request->has('companysignatory')) {
-
             $companysignatory = $request->input('companysignatory');
             UserCompanySignatory::where(['user_id' => $userId])->delete();
             foreach ($companysignatory as $key => $ps) {
