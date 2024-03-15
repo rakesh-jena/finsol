@@ -138,7 +138,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="row mt-5 mt-lg-0">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <h5 class="text-uppercase text-white opacity-85 mb-3">Read About</h5>
                                 <ul class="list-unstyled">
 
@@ -152,20 +152,37 @@
 
                                 </ul>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 <h5 class="text-uppercase text-white opacity-85 mb-3">Contact</h5>
-                                <ul class="list-unstyled">
-                                    <li class="mb-1">
-                                        <a class="link-600" href="mailto:contact@sampurnasuvidhakendra.com">
-                                            contact@sampurnasuvidhakendra.com
-                                        </a>
-                                    </li>
-                                    <li class="mb-1"><a class="link-600" href="#!">+91 - 6203324932</a></li>
-                                    <li class="mb-1"><a class="link-600" href="#!">+91 - 8709476161</a></li>
-                                    <li class="mb-1"><a class="link-600" href="#!">101, Raj Krishna Apartment,
-                                            East Boring canal road, Near Raja Pul( near PNB ), Patna 800001</a></li>
-
-                                </ul>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h6 class="text-white opacity-85 mb-3">Headquater</h6>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-1">
+                                                <a class="link-600" href="mailto:contact@sampurnasuvidhakendra.com">
+                                                    contact@sampurnasuvidhakendra.com
+                                                </a>
+                                            </li>
+                                            <li class="mb-1"><a class="link-600" href="#!">+91 - 6203324932</a></li>
+                                            <li class="mb-1"><a class="link-600" href="#!">+91 - 8709476161</a></li>
+                                            <li class="mb-1"><a class="link-600" href="#!">101, Raj Krishna Apartment,
+                                                    East Boring canal road, Near Raja Pul( near PNB ), Patna 800001</a></li>
+        
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="text-white opacity-85 mb-3">Corporate</h6>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-1">
+                                                <a class="link-600" href="#!">
+                                                    Crystel Apartment, 3rd Floor, C/19/3,
+                                                    Nawada Extension, Utam Nagar, New Delhi 110059
+                                                </a>
+                                            </li>        
+                                        </ul>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
