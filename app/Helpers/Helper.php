@@ -141,7 +141,6 @@ class Helper
 
     public static function uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, $for_multiple)
     {
-
         $userFolder = $folderName;
         if (!File::exists($userFolder)) {
             File::makeDirectory($userFolder, 0777, true, true);
@@ -169,7 +168,6 @@ class Helper
 
     public static function uploadAddMultipleImages($request, $key, $userId, $folderName, $dataon, $for_multiple)
     {
-
         $userFolder = $folderName;
         if (!File::exists($userFolder)) {
             File::makeDirectory($userFolder, 0777, true, true);
@@ -221,7 +219,6 @@ class Helper
 
     public static function createInstaMojoOrder($data)
     {
-
         $api = new \Instamojo\Instamojo(
             env('INSTAMOJO_TEST_API_KEY'),
             env('INSTAMOJO_TEST_AUTH_TOKEN'),

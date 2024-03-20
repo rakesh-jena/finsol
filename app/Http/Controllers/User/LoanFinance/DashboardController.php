@@ -20,7 +20,7 @@ class DashboardController extends Controller
 
     public function index(Request $request)
     {
-        if (isset($request->payment_id) && !empty($request->payment_request_id)) {
+        if (isset ($request->payment_id) && !empty ($request->payment_request_id)) {
             $this->storePaymentData($request);
         }
         $userId = auth()->user()->id;

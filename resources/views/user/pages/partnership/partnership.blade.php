@@ -34,8 +34,7 @@
                     registered with aadhar</label><input class="form-control" required="" type="text"
                     name="partnership_mobile" onkeypress="validate(event)"
                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                    maxlength="10" placeholder="Enter Mobile No"
-                    id="form-wizard-progress-wizard-addregnum" />
+                    maxlength="10" placeholder="Enter Mobile No" id="form-wizard-progress-wizard-addregnum" />
                 <div class="invalid-feedback">Please provide Mobile
                     number</div>
             </div>
@@ -73,8 +72,9 @@
                 <label class="form-label" for="form-wizard-progress-wizard-addregnum">
                     Mobile number
                     registered with aadhar</label><input class="form-control" type="text"
-                    name="partnershippartner[0][partner_mobile]" placeholder="Enter Mobile No"
-                    id="form-wizard-progress-wizard-addregnum" />
+                    name="partnershippartner[0][partner_mobile]" onkeypress="validate(event)"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="10" placeholder="Enter Mobile No" id="form-wizard-progress-wizard-addregnum" />
                 <div class="invalid-feedback">Please provide Mobile
                     number</div>
             </div>

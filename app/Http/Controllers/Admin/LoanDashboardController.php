@@ -11,8 +11,6 @@ use App\Models\LoanFinance\ProjectReport;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\View;
-
 class LoanDashboardController extends Controller
 {
     public function __construct()
@@ -64,7 +62,6 @@ class LoanDashboardController extends Controller
         $id = $request->input('id');
         $commaValues = explode(",", $files);
         $formType = $request->input('form_type');
-        $userDetails = User::find($userId);
         $useName = $userId;
         $zipName = str_replace('/', '-', $formType) . '-' . $useName . '.zip';
         $folderPath = 'public/uploads/users/' . $useName . '/' . $formType . '/';
@@ -81,7 +78,7 @@ class LoanDashboardController extends Controller
                 }
             }
         } else {
-            if (!empty($files)) {
+            if (!empty ($files)) {
                 $filePath = $folderPath . $files;
                 if (File::exists($filePath)) {
                     $fileContents = file_get_contents($filePath);
@@ -99,9 +96,9 @@ class LoanDashboardController extends Controller
 
     public function statusview(Request $request)
     {
-        $for = $request['for'];
-        $formtype = $request['formtype'];
-        $id = $request['id'];
+        $for = $request->input('for');
+        $formtype = $request->input('formtype');
+        $id = $request->input('id');
         $details = "";
         $modalBody = "";
         $content = "";
@@ -123,16 +120,16 @@ class LoanDashboardController extends Controller
                 <label>Name of Company</label>
                 <input type="text"  required="required" class="form-control" id="nameoftan" name="name" value="' . $details->name . '"  placeholder="Name" />';
 
-                if (isset($details)) {
+                if (isset ($details)) {
                     if ($for === 'note') {
                         $modalBody =
-                        '<input type="hidden" name="userid" id="userid" value="' . $details->user_id . '" />
+                            '<input type="hidden" name="userid" id="userid" value="' . $details->user_id . '" />
                         <input type="hidden" id="id" name="id" value="' . $details->id . '" />
                         <input type="hidden" name="routeis" id="routeis" value="' . $formtype . '" />
                         <input type="hidden" name="type" value="note" />';
                     } else {
                         $modalBody =
-                        '<input type="hidden" name="userid" id="userid" value="' . $details->user_id . '" />
+                            '<input type="hidden" name="userid" id="userid" value="' . $details->user_id . '" />
                         <input type="hidden" id="id" name="id" value="' . $details->id . '" />
                         <input type="hidden" name="routeis" value="' . $formtype . '" />
                         <input type="hidden" name="type" value="approve" />';
@@ -175,7 +172,8 @@ class LoanDashboardController extends Controller
                 $fName = "LFProjectReport";
                 break;
 
-            default:break;
+            default:
+                break;
         }
         $folderNameChange = ($request->type == 'approve') ? '//LoanFinance/' . $fName . '/ApprovedImg' : '//LoanFinance/' . $fName . '/RaisedImg';
         $folderName = 'public/uploads/users/' . $useName . $folderNameChange;

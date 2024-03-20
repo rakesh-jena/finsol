@@ -215,7 +215,6 @@ class FormsDashboardController extends Controller
         $id = $request->input('id');
         $commaValues = explode(",", $files);
         $formType = $request->input('form_type');
-        $userDetails = User::find($userId);
         $useName = $userId;
         $zipName = str_replace('/', '-', $formType) . '-' . $useName . '.zip';
         $folderPath = 'public/uploads/users/' . $useName . '/' . $formType . '/';
@@ -292,9 +291,9 @@ class FormsDashboardController extends Controller
 
     public function statusview(Request $request)
     {
-        $for = $request['for'];
-        $formtype = $request['formtype'];
-        $id = $request['id'];
+        $for = $request->input('for');
+        $formtype = $request->input('formtype');
+        $id = $request->input('id');
         $details = "";
         $modalBody = "";
         $content = "";

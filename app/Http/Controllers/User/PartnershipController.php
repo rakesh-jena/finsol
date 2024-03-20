@@ -18,7 +18,6 @@ class PartnershipController extends Controller
 
     public function register_form()
     {
-
         if (isset($_REQUEST["payment_id"]) && !empty($_REQUEST["payment_request_id"])) {
             UserPartnershipDetail::where('payment_unique_id', '=', $_REQUEST["payment_request_id"])->update(array('payment_status' => $_REQUEST["payment_status"]));
             $response = $_REQUEST;
@@ -42,7 +41,6 @@ class PartnershipController extends Controller
 
     public function storePartnership(Request $request)
     {
-
         $userId = auth()->user()->id;
         $dataon = 'partnershippartner';
         $useName = $userId;
