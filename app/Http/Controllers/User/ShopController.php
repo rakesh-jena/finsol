@@ -51,8 +51,6 @@ class ShopController extends Controller
         $data['email_id'] = $request['email_id'];
         $data['name_of_shop'] = $request['shop_name'];
         $data['mobile_number'] = $request['mobile_number'];
-        $matchthese = ['user_id' => $userId];
-        // UserShopDetail::where($matchthese)->delete();
         $lastInsertedId = UserShopDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

@@ -165,14 +165,12 @@ class GstController extends Controller
         $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Gst/Individual';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'GST');
-        // $data = $this->uploadAllImages($request, $userId, 1, $folderName);
         $data['user_id'] = $userId;
         $data['email_id'] = $request['email_id'];
         $data['gst_type'] = $request['gst_type'];
         $data['trade_name'] = $request['trade_name'];
         $data['status'] = 1; //1- Under Process/2- Query Raised/ 3- Query Updated, 4-Approved
         $matchthese = ['user_id' => $userId, 'gst_type' => 'Individual'];
-        UserGstDetail::where($matchthese)->delete();
         $lastInsertedId = UserGstDetail::updateOrCreate($matchthese, $data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {
@@ -203,12 +201,10 @@ class GstController extends Controller
         $data['trade_name'] = $request['trade_name'];
         $data['status'] = 1;
         $matchthese = ['user_id' => $userId, 'gst_type' => 'Firm'];
-        UserGstDetail::where($matchthese)->delete();
         $lastInsertedId = UserGstDetail::updateOrCreate($matchthese, $data)->id;
         
         if ($request->has('partners')) {
             $partners = $request->input('partners');
-            UserPartner::where(['user_id' => $userId])->delete();
             foreach ($partners as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Gst/Firm/Partners';
 
@@ -281,12 +277,10 @@ class GstController extends Controller
         $data['trade_name'] = $request['trade_name'];
         $data['status'] = 1;
         $matchthese = ['user_id' => $userId, 'gst_type' => 'Company'];
-        UserGstDetail::where($matchthese)->delete();
         $lastInsertedId = UserGstDetail::updateOrCreate($matchthese, $data)->id;
         
         if ($request->has('directors')) {
             $directors = $request->input('directors');
-            UserDirector::where(['user_id' => $userId])->delete();
             foreach ($directors as $key => $ds) {
                 $folderName = 'public/uploads/users/' . $useName . '/Gst/Company/Directors';
                 $director = Helper::uploadAddMultipleImages($request, $key, $userId, $folderName, $dataon, 'GST Company Director');

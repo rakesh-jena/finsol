@@ -54,7 +54,6 @@ class HufController extends Controller
         
         if ($request->has('hufmember')) {
             $hufmember = $request->input('hufmember');
-            UserHufMember::where(['user_id' => $userId])->delete();
             foreach ($hufmember as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Huf/Member';
                 $partner = Helper::uploadAddMultipleImages($request, $key, $userId, $folderName, $dataon, 'HUF Member');

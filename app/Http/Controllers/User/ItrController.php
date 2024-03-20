@@ -51,8 +51,6 @@ class ItrController extends Controller
         $data['name_of_itr'] = $request['itr_name'];
         $data['mobile_number'] = $request['mobile_number'];
         $data['pan_number'] = $request['pan_number'];
-        $matchthese = ['user_id' => $userId];
-        // UserItrDetail::where($matchthese)->delete();
         $lastInsertedId = UserItrDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

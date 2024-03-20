@@ -52,14 +52,10 @@ class EpfController extends Controller
         $data['epf_mobile'] = $request['mobile_number'];
         $data['name_of_epf'] = $request['epf_name'];
         $data['epf_email'] = $request['email_id'];
-
-        // $matchthese = ['user_id'=>$userId, 'epf_type'=>'Company'];
-        // UserEpfDetail::where($matchthese)->delete();
         $lastInsertedId = UserEpfDetail::Create($data)->id;
         
         if ($request->has('epfsignatory')) {
             $epfsignatory = $request->input('epfsignatory');
-            UserEpfSignatory::where('user_id', $userId)->delete();
             foreach ($epfsignatory as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Epf/Company/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'EPF Signatory');

@@ -58,13 +58,10 @@ class CompanyController extends Controller
         $data['name_of_company'] = $request->input('name_of_company');
         $data['company_email'] = $request->input('company_email');
         $data['company_mobile'] = $request->input('company_mobile');
-        // $matchthese = ['user_id'=>$userId];
-        // UserCompanyDetail::where($matchthese)->delete();
         $lastInsertedId = UserCompanyDetail::Create($data)->id;        
 
         if ($request->has('companysignatory')) {
             $companysignatory = $request->input('companysignatory');
-            UserCompanySignatory::where(['user_id' => $userId])->delete();
             foreach ($companysignatory as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Company/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'COMPANY Signatory');

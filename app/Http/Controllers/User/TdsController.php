@@ -53,8 +53,6 @@ class TdsController extends Controller
         $data['tds_amount'] = $request['tds_amount'];
         $data['tds_date'] = $request['tds_date'];
         $data['section'] = $request['section'];
-        $matchthese = ['user_id' => $userId];
-        // UserTdsDetail::where($matchthese)->delete();
         $lastInsertedId = UserTdsDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

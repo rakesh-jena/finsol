@@ -63,7 +63,6 @@ class TradeMarkController extends Controller
 
         if ($request->has('trademarksignatory')) {
             $trademarksignatory = $request->input('trademarksignatory');
-            UserTrademarkSignatory::where(['user_id' => $userId])->delete();
             foreach ($trademarksignatory as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Trademark/Company/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'TRADEMARK Signatory');
@@ -102,8 +101,6 @@ class TradeMarkController extends Controller
         $data['trademark_type'] = $request['trademark_type'];
         $data['name_of_trademark'] = $request['name_of_trademark'];
         $data['name_of_business'] = $request['name_of_business'];
-        // $matchthese = ['user_id' => $userId, 'trademark_type' => 'Others'];
-        // UserTrademarkDetail::where($matchthese)->delete();
         $lastInsertedId = UserTrademarkDetail::updateOrCreate($data)->id;
 
         if (isset ($lastInsertedId) && !empty ($lastInsertedId)) {

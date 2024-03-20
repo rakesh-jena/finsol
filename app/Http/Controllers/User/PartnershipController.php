@@ -50,13 +50,10 @@ class PartnershipController extends Controller
         $data['name_of_partnership'] = $request->input('name_of_partnership');
         $data['partnership_email'] = $request->input('partnership_email');
         $data['partnership_mobile'] = $request->input('partnership_mobile');
-        // $matchthese = ['user_id'=>$userId];
-        // UserPartnershipDetail::where($matchthese)->delete();
         $lastInsertedId = UserPartnershipDetail::Create($data)->id;
 
         if ($request->has('partnershippartner')) {
             $partnershippartner = $request->input('partnershippartner');
-            UserPartnershipPartner::where(['user_id' => $userId])->delete();
             foreach ($partnershippartner as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Partnership/Partner';
                 $partner = Helper::uploadAddMultipleImages($request, $key, $userId, $folderName, $dataon, 'PARTNERSHIP Partner');

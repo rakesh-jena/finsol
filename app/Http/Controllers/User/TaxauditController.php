@@ -51,8 +51,6 @@ class TaxauditController extends Controller
         $data['mobile_number'] = $request['mobile_number'];
         $data['gst_id'] = $request['gst_id'];
         $data['gst_password'] = $request['gst_password'];
-        $matchthese = ['user_id' => $userId];
-        // UserTaxauditDetail::where($matchthese)->delete();
         $lastInsertedId = UserTaxauditDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

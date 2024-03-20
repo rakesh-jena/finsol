@@ -51,8 +51,6 @@ class TanController extends Controller
         $data['email_id'] = $request['email_id'];
         $data['name_of_tan'] = $request['tan_name'];
         $data['mobile_number'] = $request['mobile_number'];
-        $matchthese = ['user_id' => $userId];
-        // UserTanDetail::where($matchthese)->delete();
         $insert_data = UserTanDetail::Create($data);
 
         if (isset($insert_data->id) && !empty($insert_data->id)) {

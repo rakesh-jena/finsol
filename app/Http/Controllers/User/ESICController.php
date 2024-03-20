@@ -58,13 +58,10 @@ class ESICController extends Controller
         $data['name_of_esic'] = $request['name_of_esic'];
         $data['esic_email'] = $request['email_id'];
         $data['esic_mobile'] = $request['mobile_number'];
-        // $matchthese = ['user_id'=>$userId, 'esic_type'=>'Company'];
-        // UserEsicDetail::where($matchthese)->delete();
         $lastInsertedId = UserEsicDetail::Create($data)->id;
 
         if ($request->has('esicsignatory')) {
             $esicsignatory = $request->input('esicsignatory');
-            UserEsicSignatory::where(['user_id' => $userId])->delete();
             foreach ($esicsignatory as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Esic/Company/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'ESIC Signatory');
@@ -103,8 +100,6 @@ class ESICController extends Controller
         $data['esic_email'] = $request['email_id'];
         $data['esic_mobile'] = $request['mobile_number'];
         $data['name_of_esic'] = $request['name_of_esic'];
-        // $matchthese = ['user_id' => $userId, 'esic_type' => 'Others'];
-        // UserEsicDetail::where($matchthese)->delete();
         $lastInsertedId = UserEsicDetail::updateOrCreate($data)->id;
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {
             $data['insert_id'] = $lastInsertedId;

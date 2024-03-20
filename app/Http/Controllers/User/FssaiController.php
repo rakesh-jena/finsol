@@ -51,7 +51,6 @@ class FssaiController extends Controller
         $data['name_of_fssai'] = $request['fssai_name'];
         $data['mobile_number'] = $request['mobile_number'];
         $matchthese = ['user_id' => $userId];
-        // UserFssaiDetail::where($matchthese)->delete();
         $lastInsertedId = UserFssaiDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

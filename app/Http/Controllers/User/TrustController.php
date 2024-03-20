@@ -54,7 +54,6 @@ class TrustController extends Controller
 
         if ($request->has('trustmember')) {
             $trustmember = $request->input('trustmember');
-            UserTrustMember::where(['user_id' => $userId])->delete();
             foreach ($trustmember as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Trust/Member';
                 $member = Helper::uploadAddMultipleImages($request, $key, $userId, $folderName, $dataon, 'TRUST Member');
