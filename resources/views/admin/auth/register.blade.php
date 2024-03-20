@@ -102,6 +102,7 @@
     </div>
     </div>
 @endsection
+@section('js')
 <script>
     $(document).ready(function() {
         $('#typeofuser').change(function() {
@@ -171,3 +172,4 @@
         });
     });
 </script>
+@endsection
