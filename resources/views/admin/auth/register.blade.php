@@ -103,73 +103,73 @@
     </div>
 @endsection
 @section('js')
-<script>
-    $(document).ready(function() {
-        $('#typeofuser').change(function() {
-            var selected = $(this).val();
-            switch (selected) {
-                case "State Office":
-                    $('#select-state').removeClass('d-none');
-                    break;
-                case "District Office":
-                    $('#select-state').removeClass('d-none');
-                    $('#select-district').removeClass('d-none');
-                    break;
-                case "Block Office":
-                    $('#select-state').removeClass('d-none');
-                    $('#select-district').removeClass('d-none');
-                    $('#select-block').removeClass('d-none');
-                    break;
-                default:
-                    $('#select-state').addClass('d-none');
-                    $('#select-district').addClass('d-none');
-                    $('#select-block').addClass('d-none');
-            }
-        })
+    <script>
+        $(document).ready(function() {
+            $('#typeofuser').change(function() {
+                var selected = $(this).val();
+                switch (selected) {
+                    case "State Office":
+                        $('#select-state').removeClass('d-none');
+                        break;
+                    case "District Office":
+                        $('#select-state').removeClass('d-none');
+                        $('#select-district').removeClass('d-none');
+                        break;
+                    case "Block Office":
+                        $('#select-state').removeClass('d-none');
+                        $('#select-district').removeClass('d-none');
+                        $('#select-block').removeClass('d-none');
+                        break;
+                    default:
+                        $('#select-state').addClass('d-none');
+                        $('#select-district').addClass('d-none');
+                        $('#select-block').addClass('d-none');
+                }
+            })
 
-        $('#stateSelect').change(function() {
+            $('#stateSelect').change(function() {
 
-            var stateId = $(this).val();
-            if (stateId) {
-                $.ajax({
-                    url: '{{ url('admin/get-districts') }}/' + stateId,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        $('#districtSelect').empty().append(
-                            '<option value="">Select District</option>');
-                        $.each(data, function(key, value) {
-                            $('#districtSelect').append('<option value="' + value
-                                .d_code + '">' + value.name + '</option>');
-                        });
-                    }
-                });
-            } else {
-                $('#districtSelect').empty().append('<option value="">Select District</option>');
-                $('#blockSelect').empty().append('<option value="">Select Block</option>');
-            }
+                var stateId = $(this).val();
+                if (stateId) {
+                    $.ajax({
+                        url: '{{ url('admin/get-districts') }}/' + stateId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#districtSelect').empty().append(
+                                '<option value="">Select District</option>');
+                            $.each(data, function(key, value) {
+                                $('#districtSelect').append('<option value="' + value
+                                    .d_code + '">' + value.name + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#districtSelect').empty().append('<option value="">Select District</option>');
+                    $('#blockSelect').empty().append('<option value="">Select Block</option>');
+                }
+            });
+
+            $('#districtSelect').change(function() {
+                var districtId = $(this).val();
+                if (districtId) {
+                    $.ajax({
+                        url: '{{ url('admin/get-blocks') }}/' + districtId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#blockSelect').empty().append(
+                                '<option value="">Select Block</option>');
+                            $.each(data, function(key, value) {
+                                $('#blockSelect').append('<option value="' + value.id +
+                                    '">' + value.name + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#blockSelect').empty().append('<option value="">Select Block</option>');
+                }
+            });
         });
-
-        $('#districtSelect').change(function() {
-            var districtId = $(this).val();
-            if (districtId) {
-                $.ajax({
-                    url: '{{ url('admin/get-blocks') }}/' + districtId,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        $('#blockSelect').empty().append(
-                            '<option value="">Select Block</option>');
-                        $.each(data, function(key, value) {
-                            $('#blockSelect').append('<option value="' + value.id +
-                                '">' + value.name + '</option>');
-                        });
-                    }
-                });
-            } else {
-                $('#blockSelect').empty().append('<option value="">Select Block</option>');
-            }
-        });
-    });
-</script>
+    </script>
 @endsection

@@ -8,6 +8,7 @@ use App\Models\PaymentValue;
 use App\Models\User;
 use App\Models\State;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -17,51 +18,59 @@ class PaymentController extends Controller
     }
 
     public function userPaymentDetails($userId)
-    {        
+    {
         $data['user'] = User::where('id', $userId)->first();
         $data['transaction'] = Instamojo::select('*')->where('user_id', $userId)->orderBy('updated_at', 'DESC')->get();
-        
+
         return view('admin.pages.users.payment')->with($data);
     }
 
     public function allTransactions()
     {
-        $data['states'] = State::orderBy('name', 'asc')->get();
-        if(request()->has('state') && request('state') != null)
-        {   
-            if(request()->has('district') && request('district') != null)
-            {
-                if(request()->has('block') && request('block') != null)
-                {
-                    $users = User::select('id')->where('block', request('block'))->get()->toArray();                    
-                    $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
+        $user = Auth::user();
+        $data['auth'] = $user;
+        if ($user->type_of_user == 'Head Office') {
+            $data['states'] = State::orderBy('name', 'asc')->get();
+            if (request()->has('state') && request('state') != null) {
+                if (request()->has('district') && request('district') != null) {
+                    if (request()->has('block') && request('block') != null) {
+                        $users = User::select('id')->where('block', request('block'))->get()->toArray();
+                        $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
+                    } else {
+                        $users = User::select('id')->where('district', request('district'))->get()->toArray();
+                        $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
+                    }
                 } else {
-                    $users = User::select('id')->where('district', request('district'))->get()->toArray();                    
+                    $users = User::select('id')->where('state', request('state'))->get()->toArray();
                     $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
                 }
             } else {
-                $users = User::select('id')->where('state', request('state'))->get()->toArray();
-                $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
+                $data['transaction'] = Instamojo::select('*')->orderBy('updated_at', 'DESC')->get();
             }
+
+            if (request()->has('from') && request()->has('to') && request('from') != null && request('to') != null) {
+                $data['transaction'] = $data['transaction']->intersect(Instamojo::where('staus', 'Credit')->whereBetween('created_at', [request('from'), request('to')])->orderBy('updated_at', 'DESC')->get());
+            }
+
+            $total = 0;
+            foreach ($data['transaction'] as $trans) {
+                if ($trans->staus === 'Credit') {
+                    $total += (int) $trans->amount;
+                }
+            }
+
+            $data['total'] = $total;
+        } elseif ($user->type_of_user == 'State Office') {
+            $users = User::select('id')->where('state', $user->access_level_id)->get()->toArray();
+            $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
+        } elseif ($user->type_of_user == 'District Office') {
+            $users = User::select('id')->where('district', $user->access_level_id)->get()->toArray();
+            $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
         } else {
-            $data['transaction'] = Instamojo::select('*')->orderBy('updated_at', 'DESC')->get();
+            $users = User::select('id')->where('block', $user->access_level_id)->get()->toArray();
+            $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();
         }
 
-        if(request()->has('from') && request()->has('to'))
-        {
-            $data['transaction'] = $data['transaction']->intersect(Instamojo::whereBetween('created_at', [request('from'), request('to')])->orderBy('updated_at', 'DESC')->get());
-        }
-        
-        $total = 0;
-        foreach($data['transaction'] as $trans)
-        {
-            if($trans->staus === 'Credit')
-            {
-                $total += (int)$trans->amount;
-            }
-        }
-
-        $data['total'] = $total;
         return view('admin.pages.payment.history.transactions')->with($data);
     }
 

@@ -81,8 +81,7 @@ class UserController extends Controller
                     }
                 } else {
                     $data['users'] = User::orderBy('created_at', 'DESC')->get();
-                }
-                
+                }                
         }
 
         return view('admin.pages.users.index')->with($data);

@@ -12,6 +12,7 @@ use App\Models\CompaniesAct\UserDinkycDetail;
 use App\Models\CompaniesAct\UserMgtDetail;
 use App\Models\CompaniesAct\UserMinutesDetail;
 use App\Models\CompaniesAct\UserStatutoryAuditDetail;
+use App\Models\Instamojo;
 use App\Models\LegalWork;
 use App\Models\LoanFinance\CMA;
 use App\Models\LoanFinance\Estimated;
@@ -56,7 +57,39 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.pages.dashboard');
+        $user = Auth::user();
+        $total = 0;
+        $users = User::where('type_of_user', 'Customer');
+        switch ($user->type_of_user) {
+            case "State Office":
+                $count = $users->where("state", $user->access_level_id)->count();
+                $userIds = $users->select("id")->where("state", $user->access_level_id)->get()->toArray();
+                foreach (Instamojo::where('staus', 'Credit')->whereIn('user_id', $userIds)->get() as $transaction) {
+                    $total += (int) $transaction->amount;
+                }
+                break;
+            case "District Office":
+                $count = $users->where("district", $user->access_level_id)->count();
+                $userIds = $users->select("id")->where("district", $user->access_level_id)->get()->toArray();
+                foreach (Instamojo::where('staus', 'Credit')->whereIn('user_id', $userIds)->get() as $transaction) {
+                    $total += (int) $transaction->amount;
+                }
+                break;
+            case "Block Office":
+                $count = $users->where("block", $user->access_level_id)->count();
+                $userIds = $users->select("id")->where("block", $user->access_level_id)->get()->toArray();
+                foreach (Instamojo::where('staus', 'Credit')->whereIn('user_id', $userIds)->get() as $transaction) {
+                    $total += (int) $transaction->amount;
+                }
+                break;
+            default:
+                $count = $users->count();
+                foreach (Instamojo::where('staus', 'Credit')->get() as $transaction) {
+                    $total += (int) $transaction->amount;
+                }
+        }       
+        
+        return view('admin.pages.dashboard', compact('user', 'count', 'total'));
     }
 
     public function user_list()
@@ -84,13 +117,10 @@ class AdminController extends Controller
                     ->get();
                 break;
 
-            default:                
-                if(request()->has('state') && request('state') != null)
-                {   
-                    if(request()->has('district') && request('district') != null)
-                    {
-                        if(request()->has('block') && request('block') != null)
-                        {                   
+            default:
+                if (request()->has('state') && request('state') != null) {
+                    if (request()->has('district') && request('district') != null) {
+                        if (request()->has('block') && request('block') != null) {
                             $data['users'] = User::where('block', request('block'))->orderBy('created_at', 'DESC')->get();
                         } else {
                             $data['users'] = User::where('district', request('district'))->orderBy('created_at', 'DESC')->get();

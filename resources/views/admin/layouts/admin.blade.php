@@ -149,11 +149,21 @@
                                                 </a><!-- more inner pages-->
                                             </li>
                                         </ul>
-                                        <ul class="nav collapse" id="all-forms">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ url('admin/forms/GST') }}">
-                                                    <div class="d-flex align-items-center">
-                                                        <span class="nav-link-text ps-1">GST</span>
+                                    </li>
+                                    @else
+                                    <li class="nav-item">
+                                        <a class="nav-link dropdown-indicator" href="#payment" role="button"
+                                            data-bs-toggle="collapse" aria-expanded="false" aria-controls="forms">
+                                            <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                                                        class="fas fa-rupee-sign"></span></span><span
+                                                    class="nav-link-text ps-1">Payment</span>
+                                            </div>
+                                        </a>
+                                        <ul class="nav collapse" id="payment">
+                                            <li class="nav-item"><a class="nav-link"
+                                                    href="{{ url('admin/payment/history') }}">
+                                                    <div class="d-flex align-items-center"><span
+                                                            class="nav-link-text ps-1">History</span>
                                                     </div>
                                                 </a><!-- more inner pages-->
                                             </li>
