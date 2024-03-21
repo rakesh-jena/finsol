@@ -68,8 +68,10 @@ class UserController extends Controller
                 $data['states'] = State::orderBy('name', 'asc')->get();
                 if(request()->has('state') && request('state') != null)
                 {   
+                    $data['districts'] = District::where('state_id', request('state'))->orderBy('name', 'asc')->get();
                     if(request()->has('district') && request('district') != null)
                     {
+                        $data['blocks'] = Block::where('district_id', request('district'))->orderBy('name', 'asc')->get();
                         if(request()->has('block') && request('block') != null)
                         {                   
                             $data['users'] = User::where('block', request('block'))->orderBy('created_at', 'DESC')->get();

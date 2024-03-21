@@ -46,24 +46,57 @@
                                     <div class="col-md-3 col-12 mb-sm-2">
                                         <select class="form-select form-select-sm mb-3" id="filter-select-state"
                                             name="state">
-                                            <option selected="" value="">Select State</option>
-                                            @foreach ($states as $state)
-                                                <option value="{{ $state->id }}">{{ $state->name }}
-                                                </option>
-                                            @endforeach
+                                            @if (request()->has('state') && request('state') != null)
+                                                @foreach ($states as $state)
+                                                    <option value="{{ $state->id }}"
+                                                        @if ((int) request('state') === $state->id) selected @endif>
+                                                        {{ $state->name }}
+                                                    </option>
+                                                @endforeach
+                                            @else
+                                                <option selected="" value="">Select State</option>
+                                                @foreach ($states as $state)
+                                                    <option value="{{ $state->id }}">{{ $state->name }}
+                                                    </option>
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
 
                                     <div class="col-md-3 col-12 px-3">
                                         <select class="form-select form-select-sm mb-3" id="filter-select-district"
                                             name="district">
-                                            <option selected="" value="">Select District</option>
+                                            @if (request()->has('state') && request('state') != null)
+                                                @if (request()->has('district') && request('district') == null)
+                                                    <option selected="" value="">Select Block</option>
+                                                @endif
+                                                @foreach ($districts as $district)
+                                                    <option value="{{ $district->d_code }}"
+                                                        @if (request()->has('district') && (int) request('district') === $district->d_code) selected @endif>
+                                                        {{ $district->name }}
+                                                    </option>
+                                                @endforeach
+                                            @else
+                                                <option selected="" value="">Select District</option>
+                                            @endif
                                         </select>
                                     </div>
                                     <div class="col-md-3 col-12">
                                         <select class="form-select form-select-sm mb-3" id="filter-select-block"
                                             name="block">
-                                            <option selected="" value="">Select Block</option>
+                                            @if (request()->has('district') && request('district') != null)
+                                                @if (request()->has('block') && request('block') == null)
+                                                    <option selected="" value="">Select Block</option>
+                                                @endif
+                                                @foreach ($blocks as $block)
+                                                    <option value="{{ $block->id }}"
+                                                        @if (request()->has('block') && (int) request('block') === $block->id) selected @endif>
+                                                        {{ $block->name }}
+                                                    </option>
+                                                @endforeach
+                                            @else
+                                                <option selected="" value="">Select Block</option>
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
@@ -74,12 +107,12 @@
                                     <div class="col-md-3 col-12 mb-2">
                                         <input class="form-control form-control-sm" type="date" name="from"
                                             id="from" placeholder="From date..."
-                                            value="@if (request('from')) <?= date_format(date_create(request('from')), 'Y-m-d') ?> @endif">
+                                           @if (request('from')) value="<?= date_format(date_create(request('from')), 'Y-m-d') ?>" @endif>
                                     </div>
                                     <div class="col-md-3 col-12 mb-2">
                                         <input class="form-control form-control-sm" type="date" name="to"
                                             id="to" placeholder="To date..."
-                                            value="@if (request('to')) <?= date_format(date_create(request('to')), 'Y-m-d') ?> @endif">
+                                            @if (request('to')) value="<?= date_format(date_create(request('to')), 'Y-m-d') ?>" @endif>
                                     </div>
                                     <div class="col-md-3 col-12 mb-2">
                                         <button class="btn btn-primary btn-sm" type="submit">

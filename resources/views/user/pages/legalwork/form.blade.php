@@ -68,11 +68,11 @@
                                     <label class="form-label" for="form-wizard-progress-wizard-addregnum">Registration
                                         Type</label>
                                     <select class="form-select" name="form_type" aria-label="Registration Type" required>
-                                        <option selected="" value="IT">Income Tax</option>
+                                        <option selected="" value="Income Tax">Income Tax</option>
                                         <option value="GST">GST</option>
                                         <option value="MCA">MCA</option>
                                         <option value="IPC">IPC</option>
-                                        <option value="NF">NF Act</option>
+                                        <option value="NF Act">NF Act</option>
                                         <option value="Other">Other</option>
                                     </select>
                                     <div class="invalid-feedback">Please select a registration type</div>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Block;
+use App\Models\District;
 use App\Models\Instamojo;
 use App\Models\PaymentValue;
 use App\Models\User;
@@ -32,7 +34,9 @@ class PaymentController extends Controller
         if ($user->type_of_user == 'Head Office') {
             $data['states'] = State::orderBy('name', 'asc')->get();
             if (request()->has('state') && request('state') != null) {
+                $data['districts'] = District::where('state_id', request('state'))->orderBy('name', 'asc')->get();
                 if (request()->has('district') && request('district') != null) {
+                    $data['blocks'] = Block::where('district_id', request('district'))->orderBy('name', 'asc')->get();
                     if (request()->has('block') && request('block') != null) {
                         $users = User::select('id')->where('block', request('block'))->get()->toArray();
                         $data['transaction'] = Instamojo::select('*')->whereIn('user_id', $users)->orderBy('updated_at', 'DESC')->get();

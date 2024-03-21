@@ -45,9 +45,12 @@ class LegalController extends Controller
         $folderName = 'public/uploads/users/' . $useName . '/LegalWork';
         $data = Helper::uploadImagesNew($request, $userId, $folderName, 'LEGALWORK');
         $data['user_id'] = $userId;
-        $data['email_id'] = $request['email_id'];
-        $data['name'] = $request['name'];
-        $data['mobile_number'] = $request['mobile_number'];
+        $data['email_id'] = $request->input('email_id');
+        $data['name'] = $request->input('name');
+        $data['mobile_number'] = $request->input('mobile_number');
+        $data['subject'] = $request->input('subject');
+        $data['description'] = $request->input('description');
+        $data['form_type'] = $request->input('form_type');
         $insert_data = LegalWork::Create($data);
 
         if (isset($insert_data->id) && !empty($insert_data->id)) {
