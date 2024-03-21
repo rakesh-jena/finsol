@@ -87,8 +87,8 @@ class AdminController extends Controller
                 foreach (Instamojo::where('staus', 'Credit')->get() as $transaction) {
                     $total += (int) $transaction->amount;
                 }
-        }       
-        
+        }
+
         return view('admin.pages.dashboard', compact('user', 'count', 'total'));
     }
 
@@ -492,6 +492,10 @@ class AdminController extends Controller
     public function status_list($status)
     {
         $data['states'] = State::orderBy('name', 'asc')->get();
+        if (request()->has('state') && request('state') != null)
+            $data['districts'] = District::where('state_id', request('state'))->orderBy('name', 'asc')->get();
+        if (request()->has('district') && request('district') != null)
+            $data['blocks'] = Block::where('district_id', request('district'))->orderBy('name', 'asc')->get();
         switch ($status) {
             case 'processing':
                 $data['forms'] = AdminController::all_forms(1);
@@ -519,6 +523,11 @@ class AdminController extends Controller
             $users[] = (int) $user->id;
         }
         $data['states'] = State::orderBy('name', 'asc')->get();
+        if (request()->has('state') && request('state') != null)
+            $data['districts'] = District::where('state_id', request('state'))->orderBy('name', 'asc')->get();
+        if (request()->has('district') && request('district') != null)
+            $data['blocks'] = Block::where('district_id', request('district'))->orderBy('name', 'asc')->get();
+            
         switch ($request->form_type) {
             case 'pan':
                 $data['forms'] = UserPanDetail::whereIn('status', [1, 2, 3, 4])

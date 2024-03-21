@@ -28,7 +28,6 @@
                                     <div class="col-md-3 col-12">
                                         <select class="form-select form-select-sm mb-3" id="filter-select-state"
                                             name="state">
-
                                             @if (request()->has('state') && request('state') != null)
                                                 @foreach ($states as $state)
                                                     <option value="{{ $state->id }}"
