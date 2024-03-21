@@ -81,7 +81,7 @@
                             @endif
                         </td>
                         <td class="detail">
-                            <a href="{{ url('admin/user/forms/details/' . request('form_type') . '/' . $form->id) }}">
+                            <a href="{{ $url . '/' . $form->id }}">
                                 Details
                             </a>
                         </td>

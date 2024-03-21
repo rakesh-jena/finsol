@@ -534,238 +534,238 @@ class AdminController extends Controller
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/pan');
                 break;
             case 'tan':
                 $data['forms'] = UserTanDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/tan');
                 break;
             case 'gst':
                 $data['forms'] = UserGstDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/gsttype/details');
                 break;
             case 'epf':
                 $data['forms'] = UserEpfDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/epf');
                 break;
             case 'esic':
                 $data['forms'] = UserEsicDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/esic');
                 break;
             case 'huf':
                 $data['forms'] = UserHufDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/huf');
                 break;
             case 'trust':
                 $data['forms'] = UserTrustDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/trust');
                 break;
             case 'trademark':
                 $data['forms'] = UserTrademarkDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/trademark');
                 break;
             case 'company':
                 $data['forms'] = UserCompanyDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/company');
                 break;
             case 'udamy':
                 $data['forms'] = UserUdamyDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/udamy');
                 break;
             case 'partnership':
                 $data['forms'] = UserPartnershipDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/partnership');
                 break;
             case 'import':
                 $data['forms'] = UserImportExportDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/importexport');
                 break;
             case 'factory':
                 $data['forms'] = UserFactoryLicenseDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/factorylicense');
                 break;
             case 'labour':
                 $data['forms'] = UserLabourDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/labour');
                 break;
             case 'shop':
                 $data['forms'] = UserShopDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/shop');
                 break;
             case 'iso':
                 $data['forms'] = UserIsoDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/iso');
                 break;
             case 'fssai':
                 $data['forms'] = UserFssaiDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/fssai');
                 break;
             case 'itr':
                 $data['forms'] = UserItrDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/itr');
                 break;
             case 'tds':
                 $data['forms'] = UserTdsDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/tdr');
                 break;
             case 'tax':
                 $data['forms'] = UserTaxauditDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/taxaudit');
                 break;
             case 'isi':
                 $data['forms'] = UserISIDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/forms/dashboard/details');
+                $data['url'] = url('admin/user/forms/dashboard/details/isi');
                 break;
             case 'cma':
                 $data['forms'] = CMA::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/loan-finance/dashboard/details');
+                $data['url'] = url('admin/user/loan-finance/details/cma');
                 break;
             case 'estimated':
                 $data['forms'] = Estimated::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/loan-finance/dashboard/details');
+                $data['url'] = url('admin/user/loan-finance/details/estimated');
                 break;
             case 'project_report':
                 $data['forms'] = ProjectReport::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/loan-finance/dashboard/details');
+                $data['url'] = url('admin/user/loan-finance/details/projectReport');
                 break;
             case 'legal':
                 $data['forms'] = LegalWork::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/legal-work/dashboard/details');
+                $data['url'] = url('admin/user/legal-work/details');
                 break;
             case 'mgt':
                 $data['forms'] = UserMgtDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/companiesact/dashboard/details');
+                $data['url'] = url('admin/user/companiesact/details/mgt');
                 break;
             case 'adt':
                 $data['forms'] = UserAdtDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/companiesact/dashboard/details');
+                $data['url'] = url('admin/user/companiesact/details/adt');
                 break;
             case 'aoc':
                 $data['forms'] = UserAocDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/companiesact/dashboard/details');
+                $data['url'] = url('admin/user/companiesact/details/aoc');
                 break;
             case 'minute':
                 $data['forms'] = UserMinutesDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/companiesact/dashboard/details');
+                $data['url'] = url('admin/user/companiesact/details/minutes');
                 break;
             case 'din_kyc':
                 $data['forms'] = UserDinkycDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/companiesact/dashboard/details');
+                $data['url'] = url('admin/user/companiesact/details/dinkyc');
                 break;
             case 'sa':
                 $data['forms'] = UserStatutoryAuditDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/companiesact/dashboard/details');
+                $data['url'] = url('admin/user/companiesact/details/statutoryaudit/');
                 break;
             case 'ca':
                 $data['forms'] = UserCaDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/certification/dashboard/details');
+                $data['url'] = url('admin/user/certification/details/ca');
                 break;
             case 'worth':
                 $data['forms'] = UserNetworthDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/certification/dashboard/details');
+                $data['url'] = url('admin/user/certification/details/networth');
                 break;
             case 'turnover':
                 $data['forms'] = UserTurnoverDetail::whereIn('status', [1, 2, 3, 4])
                     ->whereIn('user_id', $users)
                     ->orderBy('id', 'DESC')
                     ->get();
-                $data['url'] = url('admin/user/certification/dashboard/details');
+                $data['url'] = url('admin/user/certification/details/turnover');
                 break;
             default:
         }
