@@ -70,7 +70,7 @@ class TradeMarkController extends Controller
                 $partner['user_id'] = $userId;
                 $partner['trademark_sign_email'] = $ps['email'];
                 $partner['trademark_sign_mobile'] = $ps['mobile'];
-                UserTrademarkSignatory::Create($partner);
+                UserTrademarkSignatory::updateOrCreate($partner);
             }
         }
 

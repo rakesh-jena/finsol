@@ -60,6 +60,7 @@ class HufController extends Controller
                 $partner['user_huf_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;
                 $partner['name_of_member'] = $ps['name_of_member'];
+                
                 UserHufMember::Create($partner);
             }
         }

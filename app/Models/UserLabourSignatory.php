@@ -20,7 +20,7 @@ class UserLabourSignatory extends Authenticatable
         'labour_sign_aadhar_img',
         'labour_sign_photo_img',
         'labour_sign_spaceman_img',
-        'labour_sign_declare_img' .
+        'labour_sign_declare_img',
         'labour_signaff_img',
         'docs_img',
     ];

@@ -25,7 +25,7 @@
                                     <tr class="align-middle" data-toggle="collapse" class="accordion-toggle">
 
                                         <td class="text-nowrap">
-                                            {{ $detail->name_of_firm ? $detail->name_of_firm : '--' }}
+                                            {{ $detail->name_of_facl ? $detail->name_of_facl : '--' }}
                                         </td>
                                         <td class="text-nowrap">{{ $detail->type ? $detail->type : '--' }}</td>
                                         <td>{{ $detail->admin_note ? $detail->admin_note : '--' }}</td>

@@ -135,9 +135,9 @@
             laboursignatoryIndex +
             '][labour_sign_spaceman_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div> <div class="col-4 mb-3"> <div class="mb-3"> <label> Declaration :</label> <!-- required="required" --> <input type="file" name="laboursignatory[' +
             laboursignatoryIndex +
-            '][labour_sign_declare_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="col-4 mb-3"> <div class="mb-3"> <label>Upload Other Documents :</label> <!-- required="required" --> <input type="file" name="laboursignatory[' +
+            '][labour_sign_declare_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="col-4 mb-3"> <div class="mb-3"> <label>Attorney and affidavit (Formet Attached) :</label> <!-- required="required" --> <input type="file" name="laboursignatory[' +
             laboursignatoryIndex +
-            '][docs_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="mt-1 row g-2"> <button class="deletelaboursignatory btn btn-outline-primary me-1 mb-1" type="button"><span class="fas fa-trash me-1" data-fa-transform="shrink-3"></span> Delete Signatory </button> </div></div>'
+            '][labour_signaff_img][]" id="image-upload" class="myfrm form-control" multiple=""> </div> </div><div class="mt-1 row g-2"> <button class="deletelaboursignatory btn btn-outline-primary me-1 mb-1" type="button"><span class="fas fa-trash me-1" data-fa-transform="shrink-3"></span> Delete Signatory </button> </div></div>'
         );
     });
 

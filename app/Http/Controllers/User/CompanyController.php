@@ -67,8 +67,8 @@ class CompanyController extends Controller
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'COMPANY Signatory');
                 $partner['user_comp_id'] = $lastInsertedId;
                 $partner['user_id'] = $userId;
-                $partner['comp_sign_email'] = $ps['email'];
-                $partner['comp_sign_mobile'] = $ps['mobile'];
+                $partner['comp_sign_email'] = $ps['comp_sign_email'];
+                $partner['comp_sign_mobile'] = $ps['comp_sign_mobile'];                
                 UserCompanySignatory::Create($partner);
             }
         }

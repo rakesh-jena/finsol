@@ -20,7 +20,7 @@ class UserPartnershipPartner extends Authenticatable
         'partner_aadhar_img',
         'partner_photo_img',
         'partner_spaceman_img',
-        'partner_declare_img' .
+        'partner_declare_img',
         'partner_aff_img',
         'docs_img',
     ];

@@ -45,8 +45,6 @@
         </div>
     </div>
 
-    </div>
-
     <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">
         <h6 class="detailspadding mb-0">Upload documents of Member</h6>
     </div>

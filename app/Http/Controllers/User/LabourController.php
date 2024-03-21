@@ -59,6 +59,7 @@ class LabourController extends Controller
         
         if ($request->has('laboursignatory')) {
             $laboursignatory = $request->input('laboursignatory');
+            
             foreach ($laboursignatory as $key => $ps) {
                 $folderName = 'public/uploads/users/' . $useName . '/Labour/Petty/Signatory';
                 $partner = Helper::uploadSignatoryImages($request, $key, $userId, $folderName, $dataon, 'Petty Contract Signatory');
