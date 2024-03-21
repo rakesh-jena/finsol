@@ -280,7 +280,6 @@
 <!-- Legal Note Modal -->
 <div id="myLegalCommonNoteModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
         <div class="modal-content">
             <form action="{{ url('admin/user/legal-work/change_status') }}" method="post"
                 enctype="multipart/form-data">
@@ -310,7 +309,6 @@
                 </div>
             </form>
         </div>
-
     </div>
 </div>
 
@@ -342,14 +340,12 @@
                 </div>
             </form>
         </div>
-
     </div>
 </div>
 
 <!-- Loan Note Modal -->
 <div id="myLoanCommonNoteModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
         <div class="modal-content">
             <form action="{{ url('admin/user/loan-finance/change_status') }}" method="post"
                 enctype="multipart/form-data">

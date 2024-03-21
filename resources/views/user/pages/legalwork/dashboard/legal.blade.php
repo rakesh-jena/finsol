@@ -70,7 +70,7 @@
                                 @if ($detail->raised_img != '')
                                     <form action="{{ route('legalwork_web_raisedFile') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="form_type" value="Legal">
+                                        <input type="hidden" name="form_type" value="LegalWork">
                                         <input type="hidden" name="files" value="{{ $detail->raised_img }}">
 
                                         <button class="btn btn-primary btn-xs mt-2 bsgstdwbtn"
@@ -95,7 +95,7 @@
                                             <form action="{{ route('legalwork_web_approvedFile') }}"
                                                 method="POST">
                                                 @csrf
-                                                <input type="hidden" name="form_type" value="Legal">
+                                                <input type="hidden" name="form_type" value="LegalWork">
                                                 <input type="hidden" name="files"
                                                     value="{{ $detail->approved_img }}">
 
@@ -144,7 +144,7 @@
                                             <label>Enter Your Suggestion:</label>
                                             <textarea name="user_note" style="height:90px;width:100%"></textarea>
 
-                                            <input type="hidden" name="form_type" value="Legal" />
+                                            <input type="hidden" name="form_type" value="LegalWork" />
 
                                             <input type="hidden" name="id" value="{{ $detail->id }}" />
                                             <div class="mt-3">

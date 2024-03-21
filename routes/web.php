@@ -299,6 +299,7 @@ Route::group(
         Route::get('legal-work/store_payment_data', 'DashboardController@storePaymentData')->name('legalwork.storedata');
     }
 );
+
 Route::get('register/get-districts/{stateId}', [DropdownController::class, 'getDistricts']);
 Route::get('register/get-blocks/{districtId}', [DropdownController::class, 'getBlocks']);
 Route::get('payments', 'PaymentsController@index')->name('form_payment');

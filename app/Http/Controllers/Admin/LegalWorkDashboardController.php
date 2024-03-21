@@ -128,19 +128,14 @@ class LegalWorkDashboardController extends Controller
     // change note to quary raised, and query updated to approve
     public function change_status(Request $request)
     {
-
         $userId = $request->userid;
-        $userDetails = User::find($userId);
         $useName = $userId;
-        $route = $request->routeis;
         $panid = $request->id;
         $datas = LegalWork::find($panid);
-        $fName = "Legal";
+        $fName = "LegalWork";
 
         $folderNameChange = ($request->type == 'approve') ? '/' . $fName . '/ApprovedImg' : '/' . $fName . '/RaisedImg';
         $folderName = 'public/uploads/users/' . $useName . $folderNameChange;
-        // $panid = $request->id;
-        // $datas = UserPanDetail::find($panid);
         $status = ($request->type == 'approve') ? 4 : 2;
         $datas->last_update_by = 'admin';
         $datas->status = $status; // Approved
@@ -163,7 +158,6 @@ class LegalWorkDashboardController extends Controller
     {
         $files = $request->input('files');
         $commaValues = explode(",", $files);
-        $userDetails = User::find($userId);
         $formType = $request->form_type;
 
         $useName = $userId;
@@ -196,10 +190,8 @@ class LegalWorkDashboardController extends Controller
     // download approved file for admin
     public function approvedFile(Request $request, $userId)
     {
-
         $files = $request->input('files');
         $commaValues = explode(",", $files);
-        $userDetails = User::find($userId);
         $formType = $request->form_type;
 
         $useName = $userId;

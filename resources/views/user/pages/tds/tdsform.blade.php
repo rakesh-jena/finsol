@@ -14,9 +14,6 @@
     <div class="row g-0">
         <div class="col-xl-12">
             <div class="card mb-3">
-                <!--  <div class="card-header">
-                                         <h6 class="mb-0">Select the Registration type</h6>
-                                    </div> -->
                 <div class="card-body">
                     @if (session('success'))
                         <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
@@ -81,7 +78,7 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="form-wizard-progress-wizard-amount">Amount
                                         (Gross) </label><input class="form-control" required="" type="text"
-                                        name="tds_amount" placeholder="Enter Pan No"
+                                        name="tds_amount" placeholder="Enter Gross Amount"
                                         id="form-wizard-progress-wizard-amount" />
                                     <div class="invalid-feedback">Please provide Amount
                                     </div>

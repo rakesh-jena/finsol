@@ -60,7 +60,7 @@
                                                                 action="{{ url('admin/user/legal-work/additional/file/' . $detail->user_id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                <input type="hidden" name="form_type" value="legal">
+                                                                <input type="hidden" name="form_type" value="LegalWork">
                                                                 <input type="hidden" name="files"
                                                                     value="{{ $detail->additional_img }}">
 
@@ -84,7 +84,7 @@
                                                                 action="{{ url('admin/user/legal-work/approved/file/' . $detail->user_id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                <input type="hidden" name="form_type" value="legal">
+                                                                <input type="hidden" name="form_type" value="LegalWork">
                                                                 <input type="hidden" name="files"
                                                                     value="{{ $detail->approved_img }}">
 
@@ -166,7 +166,6 @@
     var adminUrl = "{{ url('admin') }}";
 
     function openLegalNoteModal(itemId) {
-
         $.ajax({
             url: adminUrl + '/user/legal-work/statusview' + '?for=note&formtype=legal&id=' + itemId,
             type: 'GET',
@@ -181,9 +180,7 @@
     }
 
     function openLegalApproveModal(itemId) {
-
         $.ajax({
-
             url: adminUrl + '/user/legal-work/statusview' + '?for=approve&formtype=legal&id=' + itemId,
             type: 'GET',
             success: function(data) {

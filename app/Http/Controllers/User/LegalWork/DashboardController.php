@@ -38,7 +38,7 @@ class DashboardController extends Controller
             $folderName = 'public/uploads/users/' . $useName . '/' . $formType . '/AdditionalImg';
             $name = 'additional_img';
             $img = Helper::uploadImagesNormal($request, $userId, $folderName, $name);
-            if ($formType == 'Legal') {
+            if ($formType == 'LegalWork') {
                 $datas = LegalWork::find($id);
             }
 
@@ -54,7 +54,6 @@ class DashboardController extends Controller
 
     public function approvedFile(Request $request)
     {
-
         $files = $request->input('files');
         $commaValues = explode(",", $files);
         $userId = auth()->user()->id;
