@@ -1,5 +1,8 @@
 <?php
 use App\Http\Controllers\DropdownController;
+use App\Http\Controllers\SitemapController;
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 Route::get('/', function () {
     return view('welcome');

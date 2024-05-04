@@ -22,9 +22,7 @@ Route::group(
     ],
     function () {
         // for all admins
-        Route::get('/', 'AdminController@index')->name('dashboard');
-        Route::get('home', 'AdminController@index')->name('dashboard');
-        Route::get('dashboard', 'AdminController@index')->name('dashboard');
+        Route::get('admin', 'AdminController@index')->name('dashboard');
 
         // for administrator
         Route::group(['middleware' => ['role:administrator']], function () {
@@ -102,7 +100,7 @@ Route::group(
                 Route::post('legal-work/additional/file/{id}', 'LegalWorkDashboardController@additionalFile')->name('legal_additionalFile');
                 Route::post('legal-work/approved/file/{id}', 'LegalWorkDashboardController@approvedFile')->name('legal_approvedFile');
                 Route::get('legal-work/details/{id1}', 'LegalWorkDashboardController@allProfile')->name('legal_allformProfile');
-                Route::post('legal-work/{id}', 'LegalWorkDashboardController@allProfileDocDownload')->name('companiesact_allprofiledocdownload');
+                Route::post('legal-work/{id}', 'LegalWorkDashboardController@allProfileDocDownload')->name('legal_allprofiledocdownload');
 
                 // Display all form related to this user on Legal Work
                 Route::get('loan-finance/dashboard/details/{id}', 'LoanDashboardController@index')->name('loan_dashboard');
@@ -111,7 +109,7 @@ Route::group(
                 Route::post('loan-finance/additional/file/{id}', 'LoanDashboardController@additionalFile')->name('loan_additionalFile');
                 Route::post('loan-finance/approved/file/{id}', 'LoanDashboardController@approvedFile')->name('loan_approvedFile');
                 Route::get('loan-finance/details/{name}/{id}', 'LoanDashboardController@allProfile')->name('loan_allformProfile');
-                Route::post('loan-finance/{id}', 'LoanDashboardController@allProfileDocDownload')->name('companiesact_allprofiledocdownload');
+                Route::post('loan-finance/{id}', 'LoanDashboardController@allProfileDocDownload')->name('loan_allprofiledocdownload');
 
                 //User Payments
                 Route::get('payments/{userId}', 'PaymentController@userPaymentDetails');
