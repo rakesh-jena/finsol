@@ -23,7 +23,7 @@
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/mstile-150x150.png') }}">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    crossorigin="anonymous">
+        crossorigin="anonymous">
     <link href="{{ asset('vendors/datatables.net-bs5/dataTables.bootstrap5.min.css') }}" rel="stylesheet">
     <script src="{{ asset('assets/js/config.js') }}"></script>
     <script src="{{ asset('vendors/simplebar/simplebar.min.js') }}"></script>
@@ -80,7 +80,7 @@
                                             <span class="nav-link-icon">
                                                 <span class="fas fa-chart-pie"></span>
                                             </span>
-                                            <span class="nav-link-text ps-1">Dashboard</span>
+                                            <span class="nav-link-text ps-1 me-auto">Dashboard</span>
                                         </div>
                                     </a>
                                 </li>
@@ -150,7 +150,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    @else
+                                @else
                                     <li class="nav-item">
                                         <a class="nav-link dropdown-indicator" href="#payment" role="button"
                                             data-bs-toggle="collapse" aria-expanded="false" aria-controls="forms">
@@ -173,49 +173,130 @@
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator" href="#forms" role="button"
                                         data-bs-toggle="collapse" aria-expanded="false" aria-controls="forms">
-                                        <div class="d-flex align-items-center"><span class="nav-link-icon"><span
-                                                    class="fas fa-file-alt"></span></span><span
-                                                class="nav-link-text ps-1">All
+                                        <div class="d-flex align-items-center">
+                                            <span class="nav-link-icon">
+                                                <span class="fas fa-file-alt"></span>
+                                            </span>
+                                            <span class="nav-link-text ps-1 me-auto">All
                                                 Forms</span>
                                         </div>
                                     </a>
                                     <ul class="nav collapse" id="forms">
-
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/PAN?form_type=pan') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">PAN</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">PAN</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserPanDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserPanDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a><!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/TAN?form_type=tan') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">TAN</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">TAN</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserTanDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserTanDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/GST?form_type=gst') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">GST</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">GST</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserPanDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserPanDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/EPF?form_type=epf') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">EPF</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">EPF</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserEpfDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserEpfDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/ESIC?form_type=esic') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">ESIC</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">ESIC</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserEsicDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserEsicDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
@@ -223,17 +304,50 @@
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/trademark?form_type=trademark') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Trade
-                                                        Mark</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Trade
+                                                        Mark</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserTrademarkDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserTrademarkDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/company?form_type=company') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Company</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Company</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserCompanyDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserCompanyDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
@@ -241,15 +355,48 @@
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/partnership?form_type=partnership') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Partnership</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Partnership</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserPartnershipDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserPartnershipDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/HUF?form_type=huf') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">HUF</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">HUF</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserHufDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserHufDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
@@ -257,16 +404,49 @@
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/trust?form_type=trust') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Trust/NGO</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Trust/NGO</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserTrustDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserTrustDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/udamy?form_type=udamy') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Udamy</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Udyam</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserUdamyDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserUdamyDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
@@ -274,41 +454,125 @@
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/import-export?form_type=import') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Import Export
-                                                        Code</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Import Export
+                                                        Code</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserImportExportDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserImportExportDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/labour?form_type=labour') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Labour
-                                                        Licence</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Labour
+                                                        Licence</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserLabourDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserLabourDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/shop?form_type=shop') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Shop and
-                                                        Establishment</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Shop and
+                                                        Establishment</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserShopDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserShopDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/ISO?form_type=iso') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">ISO</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">ISO</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserIsoDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserIsoDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/ISI?form_type=isi') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">ISI</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">ISI</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserISIDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserISIDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
@@ -316,9 +580,26 @@
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/FSSAI?form_type=fssai') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">FSSAI
-                                                        License</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">FSSAI
+                                                        License</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserFssaiDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserFssaiDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
@@ -326,75 +607,223 @@
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/factory-license?form_type=factory') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Factory
-                                                        License</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Factory
+                                                        License</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserFactoryLicenseDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserFactoryLicenseDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/ITR?form_type=itr') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">ITR</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">ITR</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserItrDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserItrDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/TDS?form_type=tds') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">TDS/TCS
-                                                        Returns</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">TDS/TCS
+                                                        Returns</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserTdsDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserTdsDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/tax-audit?form_type=tax') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Tax
-                                                        Audit</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Tax
+                                                        Audit</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\UserTaxauditDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\UserTaxauditDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/statutory-audit?form_type=sa') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Statutory
-                                                        Audit</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Statutory
+                                                        Audit</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\CompaniesAct\UserStatutoryAuditDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\CompaniesAct\UserStatutoryAuditDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/DIN-KYC?form_type=din_kyc') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">DIN KYC</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">DIN KYC</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\CompaniesAct\UserDinkycDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\CompaniesAct\UserDinkycDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/AOC?form_type=aoc') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">AOC-4</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">AOC-4</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\CompaniesAct\UserAocDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\CompaniesAct\UserAocDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/MGT?form_type=mgt') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">MGT-7</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">MGT-7</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\CompaniesAct\UserMgtDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\CompaniesAct\UserMgtDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/ADT?form_type=adt') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">ADT-1</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">ADT-1</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\CompaniesAct\UserAdtDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\CompaniesAct\UserAdtDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
@@ -402,8 +831,24 @@
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/minute?form_type=minute') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Minutes</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Minutes</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\CompaniesAct\UserMinutesDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\CompaniesAct\UserMinutesDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
@@ -412,9 +857,25 @@
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/legal-form?form_type=legal') }}">
                                                 <div class="d-flex align-items-center">
-                                                    <span class="nav-link-text ps-1">
+                                                    <span class="nav-link-text ps-1 me-auto">
                                                         Legal Form
                                                     </span>
+
+                                                    @php
+                                                        $proccessing = App\Models\LegalWork::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\LegalWork::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
@@ -422,15 +883,48 @@
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/estimated?form_type=estimated') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Estimated/Projected</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Estimated/Projected</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\LoanFinance\Estimated::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\LoanFinance\Estimated::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/CMA?form_type=cma') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">CMA</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">CMA</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\LoanFinance\CMA::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\LoanFinance\CMA::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
                                                 </div>
                                             </a>
                                             <!-- more inner pages-->
@@ -438,34 +932,102 @@
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/project-report?form_type=project_report') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Project
-                                                        Report</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Project
+                                                        Report</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\LoanFinance\ProjectReport::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\LoanFinance\ProjectReport::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('admin/forms/CA?form_type=ca') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">CA
-                                                        Certificate</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">CA
+                                                        Certificate</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\Certification\UserCaDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\Certification\UserCaDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/net-worth?form_type=worth') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Networth</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Networth</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\Certification\UserNetworthDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\Certification\UserNetworthDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                 href="{{ url('admin/forms/turnover?form_type=turnover') }}">
-                                                <div class="d-flex align-items-center"><span
-                                                        class="nav-link-text ps-1">Turnover
-                                                        Certificate</span></div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="nav-link-text ps-1 me-auto">Turnover
+                                                        Certificate</span>
+
+                                                    @php
+                                                        $proccessing = App\Models\Certification\UserTurnoverDetail::where(
+                                                            'status',
+                                                            1,
+                                                        )->count();
+                                                        $query_updated = App\Models\Certification\UserTurnoverDetail::where(
+                                                            'status',
+                                                            3,
+                                                        )->count();
+                                                    @endphp
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-primary">{{ $proccessing }}
+                                                    </span>
+                                                    <span
+                                                        class="badge rounded-pill ms-2 badge-subtle-warning">{{ $query_updated }}</span>
+                                                </div>
                                             </a>
                                             <!-- more inner pages-->
                                         </li>

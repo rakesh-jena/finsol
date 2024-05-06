@@ -22,7 +22,7 @@ Route::group(
     ],
     function () {
         // for all admins
-        Route::get('admin', 'AdminController@index')->name('dashboard');
+        Route::get('/', 'AdminController@index')->name('dashboard');
 
         // for administrator
         Route::group(['middleware' => ['role:administrator']], function () {
