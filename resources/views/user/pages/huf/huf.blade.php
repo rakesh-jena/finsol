@@ -43,6 +43,17 @@
                     number</div>
             </div>
         </div>
+        <div class="col-6">
+            <div class="mb-3">
+                <label class="form-label" for="bootstrap-wizard-validation-wizard-email">
+                    Registration Type
+                </label>
+                <select class="form-control" name="registrion_type" required>
+                    <option value="new" selected>New Registration</option>
+                    <option value="renewal">Renewal</option>
+                </select>  
+            </div>
+        </div>
     </div>
 
     <div class="detailsmargin card-header d-flex flex-between-center bg-light py-2">

@@ -18,6 +18,7 @@ class UserImportExportDetail extends Authenticatable
         'payment_unique_id',
         'firm_number',
         'firm_email',
+        'registration_type',
         'firm_mobile',
         'firm_pan_img',
         'cheque_img',

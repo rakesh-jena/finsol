@@ -50,6 +50,7 @@ class PartnershipController extends Controller
         $data['name_of_partnership'] = $request->input('name_of_partnership');
         $data['partnership_email'] = $request->input('partnership_email');
         $data['partnership_mobile'] = $request->input('partnership_mobile');
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserPartnershipDetail::Create($data)->id;
 
         if ($request->has('partnershippartner')) {

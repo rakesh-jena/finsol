@@ -50,6 +50,7 @@ class IsoController extends Controller
         $data['email_id'] = $request['email_id'];
         $data['name_of_iso'] = $request['iso_name'];
         $data['mobile_number'] = $request['mobile_number'];
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserIsoDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

@@ -16,6 +16,7 @@ class UserShopDetail extends Authenticatable
         'payment_status',
         'payment_unique_id',
         'email_id',
+        'registration_type',
         'name_of_shop',
         'shop_number',
         'mobile_number',

@@ -42,7 +42,6 @@ class LabourController extends Controller
 
     public function storePetty(Request $request)
     {
-
         $userId = auth()->user()->id;
         $dataon = 'laboursignatory';
         $useName = $userId;
@@ -54,7 +53,7 @@ class LabourController extends Controller
         $data['labour_email'] = $request['email_id'];
         $data['labour_mobile'] = $request['mobile_number'];
         $data['name_of_business'] = $request['name_of_business'];
-
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserLabourDetail::updateOrCreate($data)->id;
         
         if ($request->has('laboursignatory')) {
@@ -98,6 +97,7 @@ class LabourController extends Controller
         $data['labour_type'] = $request['labour_type'];
         $data['name_of_labour'] = $request['name_of_labour'];
         $data['name_of_business'] = $request['name_of_business'];
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserLabourDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

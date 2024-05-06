@@ -16,6 +16,7 @@ class UserIsoDetail extends Authenticatable
         'payment_status',
         'payment_unique_id',
         'email_id',
+        'registration_type',
         'name_of_iso',
         'iso_number',
         'mobile_number',

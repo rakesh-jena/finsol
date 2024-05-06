@@ -18,6 +18,7 @@ class UserUdamyDetail extends Authenticatable
         'name_of_udamy',
         'udamy_number',
         'udamy_email',
+        'registration_type',
         'udamy_mobile',
         'docs_img',
         'pan_img',

@@ -18,6 +18,7 @@ class UserFactoryLicenseDetail extends Authenticatable
         'name_of_facl',
         'facl_number',
         'facl_email',
+        'registration_type',
         'facl_mobile',
         'land_img',
         'dep_img',

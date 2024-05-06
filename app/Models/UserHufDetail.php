@@ -18,6 +18,7 @@ class UserHufDetail extends Authenticatable
         'name_of_huf',
         'huf_number',
         'huf_email',
+        'registration_type',
         'huf_mobile',
         'name_of_karta',
         'status',

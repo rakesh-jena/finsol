@@ -16,6 +16,7 @@ class UserPartnershipDetail extends Authenticatable
         'name_of_partnership',
         'partnership_number',
         'partnership_email',
+        'registration_type',
         'payment_status',
         'payment_unique_id',
         'partnership_mobile',

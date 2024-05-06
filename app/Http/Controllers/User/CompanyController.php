@@ -22,7 +22,6 @@ class CompanyController extends Controller
 
     public function register_form()
     {
-
         if (isset($_REQUEST["payment_id"]) && !empty($_REQUEST["payment_request_id"])) {
             UserCompanyDetail::where('payment_unique_id', '=', $_REQUEST["payment_request_id"])->update(array('payment_status' => $_REQUEST["payment_status"]));
             $response = $_REQUEST;
@@ -58,6 +57,7 @@ class CompanyController extends Controller
         $data['name_of_company'] = $request->input('name_of_company');
         $data['company_email'] = $request->input('company_email');
         $data['company_mobile'] = $request->input('company_mobile');
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserCompanyDetail::Create($data)->id;        
 
         if ($request->has('companysignatory')) {

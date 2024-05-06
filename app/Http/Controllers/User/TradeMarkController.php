@@ -58,7 +58,7 @@ class TradeMarkController extends Controller
         $data['trademark_email'] = $request['email_id'];
         $data['trademark_mobile'] = $request['mobile_number'];
         $data['name_of_business'] = $request['name_of_business'];
-
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserTrademarkDetail::updateOrCreate($data)->id;
 
         if ($request->has('trademarksignatory')) {

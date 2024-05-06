@@ -50,6 +50,7 @@ class TrustController extends Controller
         $data['nature_of_trust'] = $request->input('nature_of_trust');
         $data['trust_email'] = $request->input('trust_email');
         $data['trust_mobile'] = $request->input('trust_mobile');
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserTrustDetail::Create($data)->id;
 
         if ($request->has('trustmember')) {

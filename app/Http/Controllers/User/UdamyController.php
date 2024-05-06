@@ -51,6 +51,7 @@ class UdamyController extends Controller
         $data['name_of_udamy'] = $request['name_of_udamy'];
         $data['udamy_email'] = $request['udamy_email'];
         $data['udamy_mobile'] = $request['udamy_mobile'];
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserUdamyDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

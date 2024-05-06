@@ -50,6 +50,7 @@ class FssaiController extends Controller
         $data['email_id'] = $request['email_id'];
         $data['name_of_fssai'] = $request['fssai_name'];
         $data['mobile_number'] = $request['mobile_number'];
+        $data['registration_type'] = $request->input('registration_type');
         $matchthese = ['user_id' => $userId];
         $lastInsertedId = UserFssaiDetail::Create($data)->id;
 

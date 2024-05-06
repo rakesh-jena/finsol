@@ -16,6 +16,7 @@ class UserFssaiDetail extends Authenticatable
         'payment_status',
         'payment_unique_id',
         'email_id',
+        'registration_type',
         'name_of_fssai',
         'fssai_number',
         'mobile_number',

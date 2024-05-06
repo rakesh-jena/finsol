@@ -14,6 +14,7 @@ class UserTanDetail extends Authenticatable
     protected $fillable = [
         'user_id',
         'email_id',
+        'registration_type',
         'name_of_tan',
         'tan_number',
         'mobile_number',

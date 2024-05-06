@@ -46,6 +46,7 @@ class ImportExportController extends Controller
         $data['name_of_firm'] = $request['name_of_firm'];
         $data['firm_email'] = $request['firm_email'];
         $data['firm_mobile'] = $request['firm_mobile'];
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserImportExportDetail::Create($data)->id;
 
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {

@@ -19,6 +19,7 @@ class UserLabourDetail extends Authenticatable
         'name_of_business',
         'name_of_labour',
         'labour_email',
+        'registration_type',
         'labour_mobile',
         'labour_type',
         'labour_pan_img',

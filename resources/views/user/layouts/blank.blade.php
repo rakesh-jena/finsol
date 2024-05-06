@@ -49,12 +49,12 @@
 
         gtag('config', 'G-S3LT0G4S1L');
     </script>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicons/favicon-16x16.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicons/favicon.ico') }}">
-    <link rel="manifest" href="{{ asset('assets/img/favicons/manifest.json') }}">
-    <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/mstile-150x150.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/admin/finsollogo180.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/admin/finsollogo32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/admin/finsollogo16.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/admin/favicon.ico') }}">
+    <link rel="manifest" href="{{ asset('images/admin/site.webmanifest') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('images/admin/finsollogo180.png') }}">
     <meta name="theme-color" content="#ffffff">
 
     <!-- ===============================================-->

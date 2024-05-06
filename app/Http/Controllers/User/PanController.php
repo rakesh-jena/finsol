@@ -39,7 +39,6 @@ class PanController extends Controller
 
     public function storePan(Request $request)
     {
-
         $userId = auth()->user()->id;
         $useName = $userId;
         $folderName = 'public/uploads/users/' . $useName . '/Pan';
@@ -48,6 +47,7 @@ class PanController extends Controller
         $data['email_id'] = $request['email_id'];
         $data['name_of_pan'] = $request['pan_name'];
         $data['mobile_number'] = $request['mobile_number'];
+        $data['registration_type'] = $request->input('registration_type');
         $insert_data = UserPanDetail::Create($data);
 
         if (isset($insert_data->id) && !empty($insert_data->id)) {

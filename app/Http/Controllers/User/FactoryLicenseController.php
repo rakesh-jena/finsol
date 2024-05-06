@@ -50,6 +50,7 @@ class FactoryLicenseController extends Controller
         $data['name_of_facl'] = $request['name_of_facl'];
         $data['facl_email'] = $request['facl_email'];
         $data['facl_mobile'] = $request['facl_mobile'];
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserFactoryLicenseDetail::Create($data)->id;
         if (isset($lastInsertedId) && !empty($lastInsertedId)) {
             $data['insert_id'] = $lastInsertedId;

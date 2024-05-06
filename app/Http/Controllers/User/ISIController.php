@@ -48,6 +48,7 @@ class ISIController extends Controller
         $data['email_id'] = $request['email_id'];
         $data['name_of_company'] = $request['name_of_company'];
         $data['mobile_number'] = $request['mobile_number'];
+        $data['registration_type'] = $request->input('registration_type');
         $insert_data = UserISIDetail::Create($data);
 
         if (isset($insert_data->id) && !empty($insert_data->id)) {

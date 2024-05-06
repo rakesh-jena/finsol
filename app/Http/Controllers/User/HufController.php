@@ -40,7 +40,6 @@ class HufController extends Controller
 
     public function storeHuf(Request $request)
     {
-
         $userId = auth()->user()->id;
         $dataon = 'hufmember';
         $useName = $userId;
@@ -50,6 +49,7 @@ class HufController extends Controller
         $data['name_of_karta'] = $request->input('name_of_karta');
         $data['huf_email'] = $request->input('huf_email');
         $data['huf_mobile'] = $request->input('huf_mobile');
+        $data['registration_type'] = $request->input('registration_type');
         $lastInsertedId = UserHufDetail::Create($data)->id;
         
         if ($request->has('hufmember')) {

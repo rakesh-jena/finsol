@@ -17,6 +17,7 @@ class UserISIDetail extends Authenticatable
         'payment_status',
         'payment_unique_id',
         'email_id',
+        'registration_type',
         'name_of_company',
         'company_number',
         'mobile_number',

@@ -19,6 +19,7 @@ class UserTrademarkDetail extends Authenticatable
         'name_of_business',
         'name_of_trademark',
         'trademark_email',
+        'registration_type',
         'trademark_mobile',
         'trademark_type',
         'trademark_pan_img',
